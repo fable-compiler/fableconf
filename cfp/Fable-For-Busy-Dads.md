@@ -8,7 +8,7 @@ Fable for busy dads: how Fable helps me to spend more time with my children
 
 ## Abstract
 
-Fable's motto could be: **if it compiles then it works. **
+Fable's motto could be: **if it compiles then it works.**
 
 As a freelancer, using a functional language in Creepy Mutable Land just allows me to code faster, to release sooner and of course, to avoid running after runtime errors.
 
