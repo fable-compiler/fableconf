@@ -85,3 +85,56 @@ let Maxime =
     twitter = Some "MangelMaxime"
     github = Some "MangelMaxime"
   }
+
+let Indy =
+  {
+    name = "Indy M."
+    picture = "img/Indy.jpeg"
+    talk = Some {
+      title = "Thinking Feeling Acting agents - Train an AI spacecraft to explore in your browser"
+      content = str "We will look at how to train an Recurrent Neural Network based agent (spacecraft) to navigate a simulated asteroid field. Unlike the game playing Deep Learning methods that use the screen pixels as the input, our agent is situated in the environment that it is acting in. It sees the world around it using its sensors. It decides where to look and what to pay attention to. It decides when to use the thrusters to move but it has to conserve its limited fuel. We will look at how to use evolutionary strategies to train these and a bit of philosophical view of what AI is and can be."
+    }
+    bio = Some "Indy is the lead architect at heyolly.com ambitiously creating a robot with personality, which learns from users' actions and behaviours. Previously was at Microsoft Research Cambridge where he created large scale machine learning infrastructure with F# and contributed to medical image analysis research among other things."
+    twitter = Some "indy9000"
+    github = Some "Indy9000"
+  }
+
+let Sven =
+  {
+    name = "Sven Sauleau"
+    picture = "img/Sven.jpeg"
+    talk = None
+    bio = None
+    twitter = Some "svensauleau"
+    github = Some "xtuc"
+  }
+
+let Karsten =
+  {
+    name = "Karsten Gebbert"
+    picture = "img/Karsten.jpeg"
+    talk = None
+    bio = None
+    twitter = Some "krstngbbrt"
+    github = Some "krgn"
+  }
+
+let Alfonso =
+  {
+    name = "Alfonso García-Caro"
+    picture = "img/Alfonso.jpeg"
+    talk = None
+    bio = None
+    twitter = Some "alfonsogcnunez"
+    github = Some "alfonsogarciacaro"
+  }
+
+let Krzysztof =
+  {
+    name = "Krzysztof Cieślak"
+    picture = "img/Krzysztof.jpg"
+    talk = None
+    bio = None
+    twitter = Some "k_cieslak"
+    github = Some "Krzysztof-Cieslak"
+  }

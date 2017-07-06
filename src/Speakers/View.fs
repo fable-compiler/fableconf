@@ -61,7 +61,7 @@ let cardView dispatch (speaker: Speaker) =
         | None -> ()
       ] [
         p [ClassName "title is-4 has-text-centered"] [str speaker.name]
-        p [ClassName "subtitle is-6"] [str (match speaker.talk with Some t -> t.title | None -> "TBD")]
+        p [ClassName "subtitle is-6 has-text-centered"] [str (match speaker.talk with Some t -> t.title | None -> "TBD")]
       ]
       div [ClassName "level is-mobile"] [
         speaker.twitter |> Option.map (fun username ->
@@ -88,6 +88,11 @@ let root model dispatch =
     cardView dispatch Eugene
     cardView dispatch François
     cardView dispatch Maxime
+    cardView dispatch Indy
+    cardView dispatch Sven
+    cardView dispatch Karsten
+    cardView dispatch Alfonso
+    cardView dispatch Krzysztof
     model.modal |> Option.map (fun (speaker, talk) ->
       modalView dispatch speaker talk) |> opt
   ]
