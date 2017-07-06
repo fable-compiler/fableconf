@@ -48,21 +48,8 @@ let root model dispatch =
     []
     [ div
         [ ClassName "navbar-bg" ]
-        [ div
-            [ ClassName "container" ]
-            [ Navbar.View.root ] ]
-      div
-        [ ClassName "section" ]
-        [ div
-            [ ClassName "container" ]
-            [ div
-                [ ClassName "columns" ]
-                [ div
-                    [ ClassName "column is-2" ]
-                    [ menu model.currentPage ]
-                  div
-                    [ ClassName "column" ]
-                    [ pageHtml model.currentPage ] ] ] ] ]
+        [ Navbar.View.root model.currentPage ]
+      pageHtml model.currentPage ]
 
 open Elmish.React
 open Elmish.Debug

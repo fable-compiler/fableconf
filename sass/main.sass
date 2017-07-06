@@ -6,13 +6,20 @@ $black: #202020
 
 @import '../node_modules/bulma/bulma'
 
-.navbar-bg
+.navbar
   background-color: $black
   .nav
     background-color: $black
   .title
     color: #686868
     font-weight: 600
+  .navbar-start
+    .navbar-item
+      color: white
+    .navbar-item.is-active
+      background-color: #686868
+    .navbar-item:hover
+      color: black
 
 .twitter
   color: #55acee !important // Override bulma

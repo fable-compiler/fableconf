@@ -81,7 +81,7 @@ let Maxime =
           p [] [str "We will talk about how Fable has been used to create a library as Hink (benefit of mixing OOP and functional design). And see how Hink can be used to prototype application."]
         ]
     }
-    bio = Some "Maxime's has been testing a lot of language over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
+    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
     twitter = Some "MangelMaxime"
     github = Some "MangelMaxime"
   }
