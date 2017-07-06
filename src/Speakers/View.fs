@@ -35,7 +35,7 @@ let modalView dispatch (speaker: Speaker) (talk: Talk) =
 let cardView dispatch (speaker: Speaker) =
   div [
     ClassName "card"
-    Style [CSSProp.Width "300px"; Margin "10px"]
+    Style [CSSProp.Width "300px"; Margin "5px"]
   ] [
     div [ClassName "card-image"] [
       Image.image [] [
@@ -78,7 +78,6 @@ let cardView dispatch (speaker: Speaker) =
 
 let root model dispatch =
   div [
-    ClassName "container"
     Style [
       Display "flex"
       FlexWrap "wrap"
