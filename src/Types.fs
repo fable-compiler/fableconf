@@ -3,11 +3,11 @@ module App.Types
 open Global
 
 type Msg =
-  | CounterMsg of Counter.Types.Msg
+  | SpeakersMsg of Speakers.Types.Msg
   | HomeMsg of Home.Types.Msg
 
 type Model = {
     currentPage: Page
-    counter: Counter.Types.Model
+    speakers: Speakers.Types.Model
     home: Home.Types.Model
   }

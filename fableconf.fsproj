@@ -7,10 +7,10 @@
     <Compile Include="src/Global.fs" />
     <!-- Info -->
     <Compile Include="src/Info/View.fs" />
-    <!-- Counter -->
-    <Compile Include="src/Counter/Types.fs" />
-    <Compile Include="src/Counter/State.fs" />
-    <Compile Include="src/Counter/View.fs" />
+    <!-- Speakers -->
+    <Compile Include="src/Speakers/Types.fs" />
+    <Compile Include="src/Speakers/State.fs" />
+    <Compile Include="src/Speakers/View.fs" />
     <!-- Home -->
     <Compile Include="src/Home/Types.fs" />
     <Compile Include="src/Home/State.fs" />

@@ -2,11 +2,11 @@ module Global
 
 type Page =
   | Home
-  | Counter
-  | About
+  | Speakers
+  | Location
 
 let toHash page =
   match page with
-  | About -> "#about"
-  | Counter -> "#counter"
+  | Location -> "#location"
+  | Speakers -> "#speakers"
   | Home -> "#home"

@@ -33,15 +33,15 @@ let menu currentPage =
       ul
         [ ClassName "menu-list" ]
         [ menuItem "Home" Home currentPage
-          menuItem "Counter sample" Counter currentPage
-          menuItem "About" Page.About currentPage ] ]
+          menuItem "Speakers" Speakers currentPage
+          menuItem "Location" Page.Location currentPage ] ]
 
 let root model dispatch =
 
   let pageHtml =
     function
-    | Page.About -> Info.View.root
-    | Counter -> Counter.View.root model.counter (CounterMsg >> dispatch)
+    | Page.Location -> Info.View.root
+    | Speakers -> Speakers.View.root model.speakers (SpeakersMsg >> dispatch)
     | Home -> Home.View.root model.home (HomeMsg >> dispatch)
 
   div
@@ -58,7 +58,7 @@ let root model dispatch =
             [ div
                 [ ClassName "columns" ]
                 [ div
-                    [ ClassName "column is-3" ]
+                    [ ClassName "column is-2" ]
                     [ menu model.currentPage ]
                   div
                     [ ClassName "column" ]
