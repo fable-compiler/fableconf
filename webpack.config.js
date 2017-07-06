@@ -18,7 +18,7 @@ module.exports = {
   entry: resolve('./fableconf.fsproj'),
   output: {
     filename: 'bundle.js',
-    path: resolve('./public'),
+    path: resolve('.'),
   },
   resolve: {
     modules: [
@@ -26,7 +26,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: resolve('./public'),
+    contentBase: resolve('.'),
     port: 8080
   },
   module: {
