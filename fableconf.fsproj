@@ -16,6 +16,8 @@
     <Compile Include="src/Home/State.fs" />
     <Compile Include="src/Home/View.fs" />
     <!-- Navbar -->
+    <Compile Include="src/Navbar/Types.fs" />
+    <Compile Include="src/Navbar/State.fs" />
     <Compile Include="src/Navbar/View.fs" />
     <!-- App -->
     <Compile Include="src/Types.fs" />

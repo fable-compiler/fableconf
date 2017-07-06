@@ -48,7 +48,7 @@ let root model dispatch =
     []
     [ div
         [ ClassName "navbar-bg" ]
-        [ Navbar.View.root model.currentPage ]
+        [ Navbar.View.root model.currentPage model.navbar (NavbarMsg >> dispatch) ]
       pageHtml model.currentPage ]
 
 open Elmish.React

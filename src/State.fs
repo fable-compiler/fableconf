@@ -24,10 +24,12 @@ let urlUpdate (result: Option<Page>) model =
 
 let init result =
   let (speakers, speakersCmd) = Speakers.State.init()
+  let (navbar, maCmd) = Navbar.State.init()
   let (home, homeCmd) = Home.State.init()
   let (model, cmd) =
     urlUpdate result
       { currentPage = Home
+        navbar = navbar
         speakers = speakers
         home = home }
   model, Cmd.batch [ cmd
@@ -36,6 +38,9 @@ let init result =
 
 let update msg model =
   match msg with
+  | NavbarMsg msg ->
+      let (navbar, navbarCmd) = Navbar.State.update msg model.navbar
+      { model with navbar = navbar }, Cmd.map NavbarMsg navbarCmd
   | SpeakersMsg msg ->
       let (speakers, speakersCmd) = Speakers.State.update msg model.speakers
       { model with speakers = speakers }, Cmd.map SpeakersMsg speakersCmd
