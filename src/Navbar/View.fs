@@ -29,5 +29,5 @@ let root =
         [ ClassName "nav-left" ]
         [ h1
             [ ClassName "nav-item is-brand title is-4" ]
-            [ str "FableConf Bordeaux 2017" ] ]
+            [ str "FableConf 2017" ] ]
       navButtons ]

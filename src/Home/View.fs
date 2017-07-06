@@ -14,7 +14,7 @@ let root model dispatch =
       Icon.icon [Icon.isMedium] [i [ClassName "fa fa-calendar"] []]
       str " 22 September  "
       Icon.icon [Icon.isMedium] [i [ClassName "fa fa-map-marker"] []]
-      str " Bordeaux, Paris"
+      str " Bordeaux, France"
     ]
     Image.image [] [img [Src "img/fableconf.png"]]
     div [ClassName "content"] [
