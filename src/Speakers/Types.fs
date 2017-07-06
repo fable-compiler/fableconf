@@ -26,7 +26,7 @@ type Msg =
 let Eugene =
   {
     name = "Eugene Tolmachev"
-    picture = "img/eugene.png"
+    picture = "img/Eugene.png"
     talk = Some {
       title = "Elmish: the foundation your Web or Native applications deserve"
       content = str "Elmish has become known as a way for building UIs with React and React Native, but the reason it was developed was to provide a solid foundation for event-driven applications running on the client. We program for an increasingly connected world and most APIs we'll call will be asynchronous. Discover how elmish streams data from callbacks, promises, successes and failures by representing them as a Message. Whether they are generated internally, by the user or came from a websocket they are all routed to the analytical core of your application."
@@ -72,7 +72,7 @@ let François =
 let Maxime =
   {
     name = "Maxime Mangel"
-    picture = "img/Maxime.png"
+    picture = "img/maxime.png"
     talk = Some {
       title = "Hink: Write Web applications without CSS"
       content =
