@@ -37,7 +37,8 @@ module.exports = {
           loader: "fable-loader",
           options: {
             babel: babelOptions,
-            define: isProduction ? [] : ["DEBUG"]
+            define: isProduction ? [] : ["DEBUG"],
+            extra: { useCache: true }
           }
         }
       },
@@ -53,7 +54,7 @@ module.exports = {
         test: /\.sass$/,
         use: [
           "style-loader",
-          "css-loader",
+          "css-loader?url=false",
           "sass-loader"
         ]
       }
