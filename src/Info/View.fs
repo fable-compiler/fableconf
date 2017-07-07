@@ -7,19 +7,11 @@ open Elmish.Bulma.Elements
 
 let root =
   div [] [
-    section [
-      ClassName "hero is-medium is-primary"
-      Style [
-        BackgroundImage "url(img/cap-sciences.jpg)"
-        BackgroundRepeat "no-repeat"
-        !!("backgroundSize", "cover")
-        !!("backgroundPositionY", "-100px")
-      ]
-    ] [
+    section [ClassName "hero is-medium is-primary cap-sciences"] [
       div [ClassName "hero-body"] [
         div [ClassName "container"] [
-          h1 [ClassName "title"] [str "Cap Sciences"]
-          h2 [ClassName "subtitle"] [str "Bordeaux, France"]
+          h1 [ClassName "title is-1"] [str "Cap Sciences"]
+          h2 [ClassName "subtitle is-3"] [str "Bordeaux, France"]
         ]
       ]
     ]
@@ -40,8 +32,8 @@ let root =
       ]
     ]
     iframe [
+      ClassName "google-map"
       Src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5656.240080660091!2d-0.5584963664357877!3d44.85985097909837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55288fe041f36f%3A0xc849cfd5c16a7bb8!2sCap+Sciences!5e0!3m2!1sen!2ses!4v1499327326158"
-      Style [Border 0; Height 450; CSSProp.Width "100%"]
       AllowFullScreen true
     ] []
   ]

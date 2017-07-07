@@ -12,6 +12,8 @@ $black: #202020
     color: #686868
     font-weight: 600
     margin-bottom: 0
+  .navbar-burger span
+    background-color: white
   .navbar-start
     .navbar-item
       color: white
@@ -27,6 +29,19 @@ $black: #202020
 .github
   color: $black !important // Override bulma
   border-color: $black
+
+.cap-sciences
+  background-image: url(/img/cap-sciences.jpg)
+  background-repeat: no-repeat
+  background-size: cover !important
+  background-position-y: -100px
+  @media screen and (max-width: 500px)
+    background-position-y: 0
+
+.google-map
+  border: 0
+  width: 100%
+  height: 450px
 
 // Needed otherwise iframes show a disabled scrollbar
 html,
