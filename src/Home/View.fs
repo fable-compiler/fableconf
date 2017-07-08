@@ -10,7 +10,7 @@ open Types
 let root model dispatch =
   div [] [
     Image.image [] [
-      img [Src "img/fableconf.png"]
+      img [Src "img/fableconf.svg"]
     ]
     div [ClassName "container"] [
       // h1 [ClassName "title is-1"] [str "FableConf 2017"]
