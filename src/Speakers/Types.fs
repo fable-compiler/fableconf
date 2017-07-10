@@ -103,7 +103,10 @@ let Sven =
   {
     name = "Sven Sauleau"
     picture = "img/Sven.jpeg"
-    talk = None
+    talk = Some {
+      title = "Behind the scenes of Fable: Babel"
+      content = str ""
+    }
     bio = None
     twitter = Some "svensauleau"
     github = Some "xtuc"
