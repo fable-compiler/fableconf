@@ -17,7 +17,8 @@ type Speaker =
   }
 
 type Model =
-  { modal: (Speaker * Talk) option }
+  { modal: (Speaker * Talk) option
+    speakers: Speaker list }
 
 type Msg =
   | OpenModal of Speaker * Talk

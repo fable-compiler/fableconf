@@ -84,14 +84,7 @@ let root model dispatch =
       JustifyContent "center"
     ]
   ] [
-    cardView dispatch Eugene
-    cardView dispatch François
-    cardView dispatch Maxime
-    cardView dispatch Indy
-    cardView dispatch Sven
-    cardView dispatch Karsten
-    cardView dispatch Alfonso
-    cardView dispatch Krzysztof
-    model.modal |> Option.map (fun (speaker, talk) ->
+    yield! model.speakers |> List.map (cardView dispatch)
+    yield model.modal |> Option.map (fun (speaker, talk) ->
       modalView dispatch speaker talk) |> opt
   ]

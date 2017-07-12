@@ -18,9 +18,14 @@ let urlUpdate (result: Option<Page>) model =
   match result with
   | None ->
     console.error("Error parsing url")
-    model,Navigation.modifyUrl (toHash model.currentPage)
+    model, Navigation.modifyUrl (toHash model.currentPage)
+  | Some Speakers ->
+      let speakers =
+        {model.speakers with speakers = Speakers.State.shuffle model.speakers.speakers }
+      speakers.speakers |> List.map (fun x -> x.name) |> printfn "Speakers %A"
+      { model with speakers = speakers; currentPage = Speakers }, []
   | Some page ->
-      { model with currentPage = page }, []
+    { model with currentPage = page }, []
 
 let init result =
   let (speakers, speakersCmd) = Speakers.State.init()
