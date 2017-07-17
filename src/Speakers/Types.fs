@@ -2,6 +2,7 @@ module Speakers.Types
 
 open Fable.Import.React
 open Fable.Helpers.React
+open Fable.Helpers.React.Props
 
 type Talk =
   { title: string; content: ReactElement }
@@ -129,7 +130,23 @@ let Alfonso =
     picture = "img/Alfonso.jpeg"
     talk = Some {
       title = "Towards a new way of programming collaboration"
-      content = str ""
+      content =
+        div [] [
+          p [] [str "Fable, Babel and many other open source projects are just examples of the magic that happens when people all over the world start collaborating together. Today, someone has an idea and posts a prototype, then thousand of miles away another one likes it and starts collaborating, then users come in and contribute valuable feedback and suggestion, making the project better and better. All of this happened thanks to sites like Github which removed the barriers from coding alone to coding in public."]
+          p [] [str "However, for the most part it's only us programmers who are invited to the party. If we really want to change the world, we need to bring in experts from other disciplines: Economy, Medicine, Architecture... And we can only achieve this by tearing down the remaining barriers for programming collaboration:"]
+          ul [] [
+            li [] [str "Contributors should be able to start editing the program and see the results online"]
+            li [] [str "Contributors should have tools to help them: autocompletion, validation..."]
+            li [] [str "Contributors should not need to know a programming language. Domain-specific problems must be resolved with simple domain-specific languages (DSL)"]
+            li [] [str "Everybody should be able to embed this kind of environment in their websites and let run everything in the browser"]
+          ]
+          p [] [
+            str "Fable brings together the dynamicity of JavaScript to run code live on the web, and the expressiveness of F# to create a custom DSL and easily communicate with domain experts. Inspired by "
+            a [Href "https://thegamma.net/"] [str "the Gamma Project"]
+            str ", in this talk we'll see how to write an algorithm for Economic simulations and let non-programmers edit it online to share their findings and achieve our goal together."
+          ]
+          p [] [str "Will this be the start of a new way of collaboration in the web? Come to FableConf and let's find it out together!"]
+        ]
     }
     bio = Some "A linguist by heart and a programmer by choice, Alfonso has brought his passion for natural languages to the computing world. He is the creator of Fable and coauthor of the book \"Mastering F#\". He currently works at nsynk.de building control systems for digital art performances."
     twitter = Some "alfonsogcnunez"
