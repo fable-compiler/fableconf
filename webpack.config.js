@@ -38,7 +38,6 @@ module.exports = {
           options: {
             babel: babelOptions,
             define: isProduction ? [] : ["DEBUG"],
-            extra: { useCache: true }
           }
         }
       },
