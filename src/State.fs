@@ -20,23 +20,21 @@ let urlUpdate (result: Option<Page>) model =
   | None ->
     console.error("Error parsing url")
     model, Navigation.modifyUrl (toHash model.currentPage)
-  | Some(Speakers speaker) ->
-      let shuffledSpeakers = Speakers.State.shuffle model.speakers.speakers
+  | Some(Speakers(Some speaker)) ->
       let modal =
-        match speaker with
-        | Some speaker ->
-          let speaker = Speakers.Types.speakersMap |> Map.find speaker
-          Some(speaker, defaultArg speaker.talk (Speakers.Types.defaultTalk()))
-        | None -> model.speakers.modal
-      let speakers =
-        {model.speakers with speakers = shuffledSpeakers; modal = modal }
-      { model with speakers = speakers; currentPage = Speakers speaker }, []
+        let speaker = Speakers.Types.speakersMap |> Map.find speaker
+        Some(speaker, defaultArg speaker.talk (Speakers.Types.defaultTalk()))
+      let speakers = { model.speakers with modal = modal }
+      { model with speakers = speakers; currentPage = Speakers (Some speaker) }, []
+  | Some(Speakers None) ->
+      let speakers = { model.speakers with modal = None }
+      { model with speakers = speakers; currentPage = Speakers None }, []
   | Some page ->
     { model with currentPage = page }, []
 
 let init result =
-  let (speakers, speakersCmd) = Speakers.State.init()
-  let (navbar, maCmd) = Navbar.State.init()
+  let speakers = Speakers.State.init()
+  let (navbar, navCmd) = Navbar.State.init()
   let (home, homeCmd) = Home.State.init()
   let (model, cmd) =
     urlUpdate result
@@ -45,7 +43,7 @@ let init result =
         speakers = speakers
         home = home }
   model, Cmd.batch [ cmd
-                     Cmd.map SpeakersMsg speakersCmd
+                     Cmd.map NavbarMsg navCmd
                      Cmd.map HomeMsg homeCmd ]
 
 let update msg model =
@@ -53,9 +51,6 @@ let update msg model =
   | NavbarMsg msg ->
       let (navbar, navbarCmd) = Navbar.State.update msg model.navbar
       { model with navbar = navbar }, Cmd.map NavbarMsg navbarCmd
-  | SpeakersMsg msg ->
-      let (speakers, speakersCmd) = Speakers.State.update msg model.speakers
-      { model with speakers = speakers }, Cmd.map SpeakersMsg speakersCmd
   | HomeMsg msg ->
       let (home, homeCmd) = Home.State.update msg model.home
       { model with home = home }, Cmd.map HomeMsg homeCmd

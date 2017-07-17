@@ -7,11 +7,11 @@ open Fable.Helpers.React.Props
 open Elmish.Bulma.Elements
 open Types
 
-let modalView dispatch (speaker: Speaker) (talk: Talk) =
+let modalView (speaker: Speaker) (talk: Talk) =
   div [ClassName "modal is-active"] [
-    div [
+    a [
+      Href "#speakers"
       ClassName "modal-background"
-      OnClick (fun _ -> dispatch CloseModal)
     ] []
     div [ClassName "modal-content"] [
       div [ClassName "box"] [
@@ -32,7 +32,7 @@ let modalView dispatch (speaker: Speaker) (talk: Talk) =
     // ] []
   ]
 
-let cardView dispatch (speaker: Speaker) =
+let cardView (speaker: Speaker) =
   div [
     ClassName "card"
     Style [CSSProp.Width "300px"; Margin "5px"]
@@ -51,14 +51,11 @@ let cardView dispatch (speaker: Speaker) =
         ]
       ]
     ]
-    div [ClassName "card-content"] [
+    a [
+      Href ("#speakers/" + speaker.shortname)
+      ClassName "card-content"] [
       div [
         yield upcast ClassName "content"
-        match speaker.talk with
-        | Some talk ->
-          yield upcast Style [!!("cursor", "pointer")]
-          yield upcast OnClick (fun _ -> OpenModal(speaker, talk) |> dispatch)
-        | None -> ()
       ] [
         p [ClassName "title is-4 has-text-centered"] [str speaker.name]
         p [ClassName "subtitle is-6 has-text-centered"] [str (match speaker.talk with Some t -> t.title | None -> "TBD")]
@@ -76,7 +73,7 @@ let cardView dispatch (speaker: Speaker) =
     ]
   ]
 
-let root model dispatch =
+let root model =
   div [
     Style [
       Display "flex"
@@ -84,7 +81,7 @@ let root model dispatch =
       JustifyContent "center"
     ]
   ] [
-    yield! model.speakers |> List.map (cardView dispatch)
+    yield! model.speakers |> List.map cardView
     yield model.modal |> Option.map (fun (speaker, talk) ->
-      modalView dispatch speaker talk) |> opt
+      modalView speaker talk) |> opt
   ]

@@ -15,7 +15,7 @@ let shuffle (org:_ list) =
         arr
     [|0..max|] |> Array.fold randomSwap arr |> Array.toList
 
-let init () : Model * Cmd<Msg> =
+let init () : Model =
   let speakers =
     [ Eugene
       François
@@ -25,9 +25,4 @@ let init () : Model * Cmd<Msg> =
       Karsten
       Alfonso
       Krzysztof ]
-  { modal = None; speakers = shuffle speakers }, []
-
-let update msg model =
-  match msg with
-  | OpenModal(speaker, talk) -> { model with modal = Some(speaker, talk) }, []
-  | CloseModal -> { model with modal = None }, []
+  { modal = None; speakers = shuffle speakers }

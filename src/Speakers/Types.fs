@@ -9,6 +9,7 @@ type Talk =
 
 type Speaker =
   {
+    shortname: string
     name: string
     picture: string
     talk: Talk option
@@ -21,12 +22,9 @@ type Model =
   { modal: (Speaker * Talk) option
     speakers: Speaker list }
 
-type Msg =
-  | OpenModal of Speaker * Talk
-  | CloseModal
-
 let Eugene =
   {
+    shortname = "eugene"
     name = "Eugene Tolmachev"
     picture = "img/Eugene.png"
     talk = Some {
@@ -40,6 +38,7 @@ let Eugene =
 
 let François =
   {
+    shortname = "francois"
     name = "François Nicaise"
     picture = "img/François.jpg"
     talk = Some {
@@ -73,6 +72,7 @@ let François =
 
 let Maxime =
   {
+    shortname = "maxime"
     name = "Maxime Mangel"
     picture = "img/maxime.png"
     talk = Some {
@@ -90,6 +90,7 @@ let Maxime =
 
 let Indy =
   {
+    shortname = "indy"
     name = "Indy M."
     picture = "img/Indy.jpeg"
     talk = Some {
@@ -103,6 +104,7 @@ let Indy =
 
 let Sven =
   {
+    shortname = "sven"
     name = "Sven Sauleau"
     picture = "img/Sven.jpeg"
     talk = Some {
@@ -116,6 +118,7 @@ let Sven =
 
 let Karsten =
   {
+    shortname = "karsten"
     name = "Karsten Gebbert"
     picture = "img/Karsten.jpeg"
     talk = None
@@ -126,6 +129,7 @@ let Karsten =
 
 let Alfonso =
   {
+    shortname = "alfonso"
     name = "Alfonso García-Caro"
     picture = "img/Alfonso.jpeg"
     talk = Some {
@@ -155,6 +159,7 @@ let Alfonso =
 
 let Krzysztof =
   {
+    shortname = "krzysztof"
     name = "Krzysztof Cieślak"
     picture = "img/Krzysztof.jpg"
     talk = None
@@ -167,13 +172,13 @@ let defaultTalk() =
   { title = "TBD"; content = str "" }
 
 let speakersMap =
-  [ "eugene", Eugene
-    "françois", François
-    "maxime", Maxime
-    "sven", Sven
-    "indy", Indy
-    "karsten", Karsten
-    "alfonso", Alfonso
-    "krzysztof", Krzysztof
+  [ Eugene.shortname, Eugene
+    François.shortname, François
+    Maxime.shortname, Maxime
+    Sven.shortname, Sven
+    Indy.shortname, Indy
+    Karsten.shortname, Karsten
+    Alfonso.shortname, Alfonso
+    Krzysztof.shortname, Krzysztof
   ] |> Map
 

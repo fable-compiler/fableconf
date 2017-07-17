@@ -41,7 +41,7 @@ let root model dispatch =
   let pageHtml =
     function
     | Page.Location -> Info.View.root
-    | Speakers speaker -> Speakers.View.root model.speakers (SpeakersMsg >> dispatch)
+    | Speakers speaker -> Speakers.View.root model.speakers
     | Home -> Home.View.root model.home (HomeMsg >> dispatch)
 
   div

@@ -3,7 +3,6 @@ module App.Types
 open Global
 
 type Msg =
-  | SpeakersMsg of Speakers.Types.Msg
   | HomeMsg of Home.Types.Msg
   | NavbarMsg of Navbar.Types.Msg
 
