@@ -31,9 +31,33 @@ let root =
         br []
       ]
     ]
+    div [ClassName "container"] [
+      div [ClassName "content"] [
+        h1 [ClassName "has-text-centered"] [str "Transportation"]
+        h2 [] [str "Direct Shuttle from the airport to the train station"]
+        ul [] [
+          li [] [strong [] [str "time: "]; str "30'"]
+          li [] [strong [] [str "price: "]; str "8€ (one way)"]
+          li [] [a [Href "http://30direct.com/en/high-season-schedule/"] [str "Timetables"]]
+          li [] [a [Href "http://30direct.com/en/tarifs-vente-tickets/"] [str "Fares"]]
+        ]
+        h2 [] [str "Tram from the train station to Cap-Sciences"]
+        ul [] [
+          li [] [strong [] [str "time: "]; str "22'"]
+          li [] [strong [] [str "price: "]; str "1.50€ (one way)"]
+        ]
+        ol [] [
+          li [] [str "Tram C from Train station (Gare St Jean) to Quinconces (direction> Gare de Blanquefort) (15 minutes)"]
+          li [] [str "Change tram lines"]
+          li [] [str "Tram B from Quinconces to Cité du vin (7 minutes)"]
+        ]
+        p [] [str "More info at "; a [Href "https://www.infotbm.com/en"] [str "www.infotbm.com"]]
+        br []
+      ]
+    ]
     iframe [
       ClassName "google-map"
-      Src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5656.240080660091!2d-0.5584963664357877!3d44.85985097909837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd55288fe041f36f%3A0xc849cfd5c16a7bb8!2sCap+Sciences!5e0!3m2!1sen!2ses!4v1499327326158"
+      Src "https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d22631.531410073396!2d-0.5816984!3d44.8431262!3m2!1i1024!2i768!4f13.1!4m13!3e3!4m5!1s0xd5526492c8365af%3A0x24c6bd58a0525021!2sGare+Saint-Jean%2C+Bordeaux%2C+France!3m2!1d44.8259081!2d-0.5567968!4m5!1s0xd55288fe041f36f%3A0xc849cfd5c16a7bb8!2sCap+Sciences%2C+Hangar+20%2C+Quai+de+Bacalan%2C+33300+Bordeaux%2C+France!3m2!1d44.859851!2d-0.554119!5e0!3m2!1sen!2sus!4v1500308157035"
       AllowFullScreen true
     ] []
   ]
