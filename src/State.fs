@@ -10,7 +10,8 @@ open Types
 let pageParser: Parser<Page->Page,Page> =
   oneOf [
     map Location (s "location")
-    map Speakers (s "speakers")
+    map (Some >> Speakers) (s "speakers" </> str)
+    map (Speakers None) (s "speakers")
     map Home (s "home")
   ]
 
@@ -19,11 +20,17 @@ let urlUpdate (result: Option<Page>) model =
   | None ->
     console.error("Error parsing url")
     model, Navigation.modifyUrl (toHash model.currentPage)
-  | Some Speakers ->
+  | Some(Speakers speaker) ->
+      let shuffledSpeakers = Speakers.State.shuffle model.speakers.speakers
+      let modal =
+        match speaker with
+        | Some speaker ->
+          let speaker = Speakers.Types.speakersMap |> Map.find speaker
+          Some(speaker, defaultArg speaker.talk (Speakers.Types.defaultTalk()))
+        | None -> model.speakers.modal
       let speakers =
-        {model.speakers with speakers = Speakers.State.shuffle model.speakers.speakers }
-      speakers.speakers |> List.map (fun x -> x.name) |> printfn "Speakers %A"
-      { model with speakers = speakers; currentPage = Speakers }, []
+        {model.speakers with speakers = shuffledSpeakers; modal = modal }
+      { model with speakers = speakers; currentPage = Speakers speaker }, []
   | Some page ->
     { model with currentPage = page }, []
 

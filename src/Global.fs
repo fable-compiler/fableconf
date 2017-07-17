@@ -2,11 +2,12 @@ module Global
 
 type Page =
   | Home
-  | Speakers
+  | Speakers of speaker: string option
   | Location
 
 let toHash page =
   match page with
   | Location -> "#location"
-  | Speakers -> "#speakers"
+  | Speakers (Some speaker) -> "#speakers/" + speaker
+  | Speakers None -> "#speakers"
   | Home -> "#home"

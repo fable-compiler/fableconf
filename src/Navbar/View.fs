@@ -49,7 +49,7 @@ let root currentPage (model: Model) dispatch =
     div [classList ["navbar-menu", true; "is-active", model.isBurgerOpen]] [
       div [ClassName "navbar-start"] [
         menuItem "Home" Home currentPage
-        menuItem "Speakers" Speakers currentPage
+        menuItem "Speakers" (Speakers None) currentPage
         menuItem "Location" Page.Location currentPage
       ]
       div [ClassName "navbar-end"] [navButtons]

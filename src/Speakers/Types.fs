@@ -127,8 +127,11 @@ let Alfonso =
   {
     name = "Alfonso García-Caro"
     picture = "img/Alfonso.jpeg"
-    talk = None
-    bio = None
+    talk = Some {
+      title = "Towards a new way of programming collaboration"
+      content = str ""
+    }
+    bio = Some "A linguist by heart and a programmer by choice, Alfonso has brought his passion for natural languages to the computing world. He is the creator of Fable and coauthor of the book \"Mastering F#\". He currently works at nsynk.de building control systems for digital art performances."
     twitter = Some "alfonsogcnunez"
     github = Some "alfonsogarciacaro"
   }
@@ -142,3 +145,18 @@ let Krzysztof =
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
   }
+
+let defaultTalk() =
+  { title = "TBD"; content = str "" }
+
+let speakersMap =
+  [ "eugene", Eugene
+    "françois", François
+    "maxime", Maxime
+    "sven", Sven
+    "indy", Indy
+    "karsten", Karsten
+    "alfonso", Alfonso
+    "krzysztof", Krzysztof
+  ] |> Map
+

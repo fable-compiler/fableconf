@@ -33,7 +33,7 @@ let menu currentPage =
       ul
         [ ClassName "menu-list" ]
         [ menuItem "Home" Home currentPage
-          menuItem "Speakers" Speakers currentPage
+          menuItem "Speakers" (Speakers None) currentPage
           menuItem "Location" Page.Location currentPage ] ]
 
 let root model dispatch =
@@ -41,7 +41,7 @@ let root model dispatch =
   let pageHtml =
     function
     | Page.Location -> Info.View.root
-    | Speakers -> Speakers.View.root model.speakers (SpeakersMsg >> dispatch)
+    | Speakers speaker -> Speakers.View.root model.speakers (SpeakersMsg >> dispatch)
     | Home -> Home.View.root model.home (HomeMsg >> dispatch)
 
   div
