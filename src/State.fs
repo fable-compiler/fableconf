@@ -10,6 +10,7 @@ open Types
 let pageParser: Parser<Page->Page,Page> =
   oneOf [
     map Location (s "location")
+    map Food (s "food")
     map (Some >> Speakers) (s "speakers" </> str)
     map (Speakers None) (s "speakers")
     map Home (s "home")

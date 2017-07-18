@@ -50,6 +50,7 @@ let root currentPage (model: Model) dispatch =
       div [ClassName "navbar-start"] [
         menuItem "Home" Home currentPage
         menuItem "Speakers" (Speakers None) currentPage
+        menuItem "Food" Food currentPage
         menuItem "Location" Page.Location currentPage
       ]
       div [ClassName "navbar-end"] [navButtons]

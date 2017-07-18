@@ -11,7 +11,7 @@ let root =
       div [ClassName "hero-body"] [
         div [ClassName "container"] [
           h1 [ClassName "title is-1"] [str "Cap Sciences"]
-          h2 [ClassName "subtitle is-3"] [str "Bordeaux, France"]
+          h3 [ClassName "subtitle is-3"] [str "Bordeaux, France"]
         ]
       ]
     ]
@@ -33,7 +33,7 @@ let root =
     ]
     div [ClassName "container"] [
       div [ClassName "content"] [
-        h1 [ClassName "has-text-centered"] [str "Transportation"]
+        // h1 [ClassName "has-text-centered"] [str "Transportation"]
         h2 [] [str "Direct Shuttle from the airport to the train station"]
         ul [] [
           li [] [strong [] [str "time: "]; str "30'"]

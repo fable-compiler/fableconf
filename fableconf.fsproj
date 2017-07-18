@@ -7,6 +7,7 @@
     <Compile Include="src/Global.fs" />
     <!-- Info -->
     <Compile Include="src/Info/View.fs" />
+    <Compile Include="src/Food/View.fs" />
     <!-- Speakers -->
     <Compile Include="src/Speakers/Types.fs" />
     <Compile Include="src/Speakers/State.fs" />

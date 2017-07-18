@@ -40,7 +40,8 @@ let root model dispatch =
 
   let pageHtml =
     function
-    | Page.Location -> Info.View.root
+    | Location -> Info.View.root
+    | Food -> Food.View.root
     | Speakers speaker -> Speakers.View.root model.speakers
     | Home -> Home.View.root model.home (HomeMsg >> dispatch)
 
