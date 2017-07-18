@@ -58,7 +58,7 @@ let cardView (speaker: Speaker) =
         yield upcast ClassName "content"
       ] [
         p [ClassName "title is-4 has-text-centered"] [str speaker.name]
-        p [ClassName "subtitle is-6 has-text-centered"] [str (match speaker.talk with Some t -> t.title | None -> "TBD")]
+        p [ClassName "subtitle is-6 has-text-centered"] [str speaker.talk.title]
       ]
       div [ClassName "level is-mobile"] [
         speaker.twitter |> Option.map (fun username ->

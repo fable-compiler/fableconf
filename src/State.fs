@@ -24,7 +24,7 @@ let urlUpdate (result: Option<Page>) model =
   | Some(Speakers(Some speaker)) ->
       let modal =
         let speaker = Speakers.Types.speakersMap |> Map.find speaker
-        Some(speaker, defaultArg speaker.talk (Speakers.Types.defaultTalk()))
+        Some(speaker, speaker.talk)
       let speakers = { model.speakers with modal = modal }
       { model with speakers = speakers; currentPage = Speakers (Some speaker) }, []
   | Some(Speakers None) ->
