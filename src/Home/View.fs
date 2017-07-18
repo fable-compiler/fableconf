@@ -11,7 +11,7 @@ let genericCard isTalk time body =
   let typ = if isTalk then "talk" else "break"
   div [ClassName "columns schedule"] [
     div [ClassName ("column is-one-quarter schedule-time schedule-" + typ)] [
-      h5 [ClassName "title is-5"] [strong [] [str time]]
+      p [ClassName "title is-5"] [str time]
     ]
     div [ClassName ("column schedule-content schedule-" + typ)] [
       body
@@ -23,13 +23,13 @@ let breakCard time text =
   |> genericCard false time
 
 let workshopCard time text =
-  h5 [ClassName "title is-5"] [str text]
+  p [ClassName "title is-5"] [str text]
   |> genericCard true time
 
 let speakerCard time (speaker: Speakers.Types.Speaker) =
   div [ClassName "columns schedule"] [
     div [ClassName "column is-one-quarter schedule-time schedule-talk"] [
-      h5 [ClassName "title is-5"] [strong [] [str time]]
+      p [ClassName "title is-5"] [str time]
     ]
     div [ClassName "column schedule-content schedule-talk"] [
       article [ClassName "media"] [
@@ -91,32 +91,38 @@ let root model dispatch =
     ]
     div [ClassName "container"] [
       h2 [ClassName "title is-2 has-text-centered"] [str "Friday"]
-      breakCard   "8:30 - 9:30" "Breakfast"
-      speakerCard "9:30 - 10:30" Speakers.Types.Alfonso
-      breakCard   "10:30 - 10:45" "Break"
-      speakerCard "10:45 - 11:30" Speakers.Types.Eugene
-      breakCard   "11:30 - 11:45" "Break"
-      speakerCard "11:45 - 12:30" Speakers.Types.François
-      breakCard   "12:30 - 14:00" "Lunch"
-      speakerCard "14:00 - 14:15" Speakers.Types.Karsten
-      speakerCard "14:15 - 15:00" Speakers.Types.Krzysztof
-      breakCard   "15:00 - 15:15" "Break"
-      speakerCard "15:15 - 15:30" Speakers.Types.Maxime
-      speakerCard "15:30 - 16:15" Speakers.Types.Sven
-      breakCard   "16:15 - 16:30" "Break"
-      breakCard   "16:30 - 16:45" "Lightning talk: TBA"
-      speakerCard "16:45 - 17:30" Speakers.Types.Indy
+      div [] [ // Group so :first-child :last-child rules apply
+        breakCard   "8:30 - 9:30" "Breakfast"
+        speakerCard "9:30 - 10:30" Speakers.Types.Alfonso
+        breakCard   "10:30 - 10:45" "Break"
+        speakerCard "10:45 - 11:30" Speakers.Types.Eugene
+        breakCard   "11:30 - 11:45" "Break"
+        speakerCard "11:45 - 12:30" Speakers.Types.François
+        breakCard   "12:30 - 14:00" "Lunch"
+        speakerCard "14:00 - 14:15" Speakers.Types.Karsten
+        speakerCard "14:15 - 15:00" Speakers.Types.Krzysztof
+        breakCard   "15:00 - 15:15" "Break"
+        speakerCard "15:15 - 15:30" Speakers.Types.Maxime
+        speakerCard "15:30 - 16:15" Speakers.Types.Sven
+        breakCard   "16:15 - 16:30" "Break"
+        breakCard   "16:30 - 16:45" "Lightning talk: TBA"
+        speakerCard "16:45 - 17:30" Speakers.Types.Indy
+      ]
+      br []
 
       h2 [ClassName "title is-2 has-text-centered"] [str "Saturday"]
-      workshopCard "9:00 - 13:00" "Workshops"
-      genericCard  false "13:00 - 14:00"
-        (h5 [ClassName "title is-5"] [str "Break"])
-      workshopCard "14:00 - 18:00" "Workshops"
+      div [] [ // Group so :first-child :last-child rules apply
+        workshopCard "9:00 - 13:00" "Workshops"
+        genericCard  false "13:00 - 14:00"
+          (h5 [ClassName "title is-5"] [str "Break"])
+        workshopCard "14:00 - 18:00" "Workshops"
+      ]
+      br []
 
       article [ClassName "message is-primary"] [
         div [ClassName "message-body has-text-centered"] [
           str "More details about the workshops will be uploaded soon. Please note "
-          strong [] [str "food is not provided on Saturday"]
+          strong [] [str "food won't be provided on Saturday"]
           str "."
         ]
       ]
@@ -140,6 +146,11 @@ let root model dispatch =
       div [ClassName "level-item"] [
         a [Href "http://fsharp.org/"] [
           Image.image [] [img [Src "img/fsharp.png"]]
+        ]
+      ]
+      div [ClassName "level-item"] [
+        a [Href "http://nsynk.de/"] [
+          Image.image [] [img [Src "img/nsynk2.png"]]
         ]
       ]
     ]
