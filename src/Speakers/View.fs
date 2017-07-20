@@ -51,16 +51,18 @@ let cardView (speaker: Speaker) =
         ]
       ]
     ]
-    a [
-      Href ("#speakers/" + speaker.shortname)
-      ClassName "card-content"] [
-      div [
-        yield upcast ClassName "content"
+    div [ClassName "card-content"] [
+      a [
+        Href ("#speakers/" + speaker.shortname)
+        ClassName "content"
       ] [
         p [ClassName "title is-4 has-text-centered"] [str speaker.name]
         p [ClassName "subtitle is-6 has-text-centered"] [str speaker.talk.title]
       ]
-      div [ClassName "level is-mobile"] [
+      div [
+        ClassName "level is-mobile"
+        Style [MarginTop "20px"]
+      ] [
         speaker.twitter |> Option.map (fun username ->
           a [ClassName "level-item"; Href ("https://twitter.com/" + username) ] [
             Icon.icon [Icon.isMedium] [i [ClassName "fa fa-twitter"] []]
