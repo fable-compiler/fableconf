@@ -163,9 +163,14 @@ let Krzysztof =
     name = "Krzysztof Cieślak"
     picture = "img/Krzysztof.jpg"
     talk =
-      { title = "Developing VS Code extensions with Fable"
-        content = str "" }
-    bio = Some "Krzysztof is an F# developer, open source contributor and active member of the F# community. He is the maintainer of several popular projects such as Ionide (F#, Paket and FAKE support in Atom and VS Code) and Forge. In his free time, he tries to spread love to F# and functional programming speaking on local user groups and conferences."
+      { title = "Building editor tooling with Fable"
+        content = 
+          div [] [
+            p [] [str "One of the Fable aims is to bring happiness, create ecosystem that's easy and fun to use. Such ecosystem consists of not only great compiler (and Fable is great), and good libraries (and we have some amazing libraries) but it also needs to includes great tooling around it."]
+            p [] [str "In the talk I'll show how Fable enables us to easily create rich editor tooling in VSCode (lightweight, cross platform IDE) and Monaco ( online editor). It will be based on over a year of experience of using Fable 'in production' to create Ionide - F# tooling in VSCode, and Ionide-web - online editor for F#"]
+          ]
+      }
+    bio = Some "Krzysztof is an software developer, consultant, open source contributor and active member of the F# community."
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
   }
