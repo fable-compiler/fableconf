@@ -80,6 +80,7 @@ let Maxime =
         div [] [
           p [] [str "Hink, is a library allowing developers to write web application without CSS. It's primary goal is to provide the basics stack needed to create an UI."]
           p [] [str "We will talk about how Fable has been used to create a library as Hink (benefit of mixing OOP and functional design). And see how Hink can be used to prototype application."]
+          img [Src "img/hink.gif"]
         ]
      }
     bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
