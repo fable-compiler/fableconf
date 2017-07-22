@@ -1,0 +1,32 @@
+<Project Sdk="FSharp.NET.Sdk;Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard1.6</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- Global to the app -->
+    <Compile Include="Global.fs" />
+    <!-- Info -->
+    <Compile Include="Info/View.fs" />
+    <Compile Include="Food/View.fs" />
+    <!-- Speakers -->
+    <Compile Include="Speakers/Types.fs" />
+    <Compile Include="Speakers/State.fs" />
+    <Compile Include="Speakers/View.fs" />
+    <!-- Home -->
+    <Compile Include="Home/Types.fs" />
+    <Compile Include="Home/State.fs" />
+    <Compile Include="Home/View.fs" />
+    <!-- Navbar -->
+    <Compile Include="Navbar/Types.fs" />
+    <Compile Include="Navbar/State.fs" />
+    <Compile Include="Navbar/View.fs" />
+    <!-- App -->
+    <Compile Include="Types.fs" />
+    <Compile Include="State.fs" />
+    <Compile Include="App.fs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FSharp.NET.Sdk" Version="1.0.*" PrivateAssets="All" />
+  </ItemGroup>
+  <Import Project="..\.paket\Paket.Restore.targets" />
+</Project>

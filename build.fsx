@@ -102,7 +102,7 @@ let dotnetcliVersion = "1.0.4"
 let mutable dotnetExePath = environVarOrDefault "DOTNET" "dotnet"
 
 Target "Clean" (fun () ->
-    !! "**/bin" ++ "**/obj/" |> CleanDirs
+    !! "src/**/bin" ++ "src/**/obj/" |> CleanDirs
 )
 
 Target "InstallDotNetSdk"  (fun () ->
@@ -111,11 +111,11 @@ Target "InstallDotNetSdk"  (fun () ->
 
 Target "Restore" (fun () ->
     Util.run root "yarn" "install"
-    Util.run root dotnetExePath "restore"
+    Util.run (root </> "src") dotnetExePath "restore"
 )
 
 Target "Build" (fun () ->
-    Util.run root dotnetExePath "fable yarn-build"
+    Util.run (root </> "src") dotnetExePath "fable yarn-build"
 )
 
 let bumpVersion() =
@@ -124,12 +124,17 @@ let bumpVersion() =
     let mainFile = root </> "public/index.html"
     (reg, mainFile) ||> Util.replaceLines (fun line m ->
         newVersion <- (int m.Groups.[1].Value) + 1
-        sprintf "?v=%i" newVersion |> Some)
+        reg.Replace(line, sprintf "?v=%i" newVersion) |> Some)
     newVersion
 
-let commitAndPush workingDir message =
-    StageAll workingDir
+let commit workingDir files message =
+    match files with
+    | Some files -> files |> List.iter (StageFile workingDir >> ignore)
+    | None -> StageAll workingDir
     Git.Commit.Commit workingDir message
+
+let commitAndPush workingDir files message =
+    commit workingDir files message
     Branches.push workingDir
 
 Target "Publish" (fun () ->
@@ -138,16 +143,19 @@ Target "Publish" (fun () ->
     let githubLink = sprintf "https://github.com/%s/%s.git" gitOwner gitProject
 
     let newVersion = bumpVersion()
-    commitAndPush root (sprintf "Bump version (%i)" newVersion)
+    sprintf "Bump version (%i)" newVersion
+    |> commit root (Some [root </> "public/index.html"])
 
     CleanDir tempDir
-    Repository.cloneSingleBranch root githubLink publishBranch publishDir
+    Repository.cloneSingleBranch root githubLink publishBranch tempDir
     CopyRecursive publishDir tempDir true |> ignore
-    commitAndPush tempDir (sprintf "Update site (v%i)" newVersion)
+    sprintf "Update site (v%i)" newVersion
+    |> commitAndPush tempDir None
 )
 
 "Clean"
 ==> "InstallDotNetSdk"
+==> "Restore"
 ==> "Build"
 ==> "Publish"
 
