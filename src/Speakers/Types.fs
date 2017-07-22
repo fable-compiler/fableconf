@@ -29,7 +29,15 @@ let Eugene =
     picture = "img/Eugene.png"
     talk =
      { title = "Elmish: the foundation your Web or Native applications deserve"
-       content = str "Elmish has become known as a way for building UIs with React and React Native, but the reason it was developed was to provide a solid foundation for event-driven applications running on the client. We program for an increasingly connected world and most APIs we'll call will be asynchronous. Discover how elmish streams data from callbacks, promises, successes and failures by representing them as a Message. Whether they are generated internally, by the user or came from a websocket they are all routed to the analytical core of your application." }
+       content =
+        div [] [
+          p [] [str "Elmish has become known as a way for building UIs with React and React Native, but the reason it was developed was to provide a solid foundation for event-driven applications running on the client. We program for an increasingly connected world and most APIs we'll call will be asynchronous. Discover how elmish streams data from callbacks, promises, successes and failures by representing them as a Message. Whether they are generated internally, by the user or came from a websocket they are all routed to the analytical core of your application."]
+          p [] [
+            str "Learn more at "
+            a [Href "https://fable-elmish.github.io/"] [str "Fable.Elmish site"]
+            str "."
+          ]
+        ] }
     bio = Some "Eugene's has been programming for over 20 years and finally found his way to F# and Fable. He's F#unctional Toronto organizer, a Novell alumni and a veteran of several startups, presently working at Prolucid on scalable and fault-tolerant systems."
     twitter = None
     github = Some "et1975"
@@ -164,7 +172,7 @@ let Krzysztof =
     picture = "img/Krzysztof.jpg"
     talk =
       { title = "Building editor tooling with Fable"
-        content = 
+        content =
           div [] [
             p [] [str "One of the Fable aims is to bring happiness, create ecosystem that's easy and fun to use. Such ecosystem consists of not only great compiler (and Fable is great), and good libraries (and we have some amazing libraries) but it also needs to includes great tooling around it."]
             p [] [str "In the talk I'll show how Fable enables us to easily create rich editor tooling in VSCode (lightweight, cross platform IDE) and Monaco ( online editor). It will be based on over a year of experience of using Fable 'in production' to create Ionide - F# tooling in VSCode, and Ionide-web - online editor for F#"]
