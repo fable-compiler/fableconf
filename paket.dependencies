@@ -1,9 +1,0 @@
-source https://nuget.org/api/v2
-
-clitool dotnet-fable
-nuget FSharp.Core
-nuget Fable.Core
-nuget Fable.Elmish.React
-nuget Fable.Elmish.Browser
-nuget Fable.Elmish.Debugger
-nuget Fable.Elmish.Bulma
