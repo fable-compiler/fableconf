@@ -6,7 +6,7 @@ open Fable.Core.JsInterop
 open Elmish.Bulma.Elements
 
 let root =
-  div [] [
+  div [Style [!!("overflowY", "hidden")]] [
     section [ClassName "hero is-medium is-primary cap-sciences"] [
       div [ClassName "hero-body"] [
         div [ClassName "container"] [

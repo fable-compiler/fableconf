@@ -102,7 +102,7 @@ let speakerCard time (speaker: Speakers.Types.Speaker) =
   ]
 
 let root model dispatch =
-  div [] [
+  div [Style [!!("overflowY", "hidden")]] [
     Image.image [] [
       img [Src "img/fableconf.svg"]
     ]
