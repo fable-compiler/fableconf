@@ -7,6 +7,53 @@ open Fable.Helpers.React.Props
 open Elmish.Bulma.Elements
 open Types
 
+module Workshops =
+  let aTitle = "Developing web apps with Elmish"
+  let aBody =
+    div [] [
+      p [] [
+        str "Thanks to the model-view-update architecture you can easily create a web app without any mutable state messing around. But even if you do need to get your hands dirty to interact with external components, you will learn how Elmish allows you do that without a hassle."
+      ]
+      p [] [
+        str "In this workshop you will be also introduced to an Elmish extension that makes dealing with CSS a much more pleasant task: "
+        a [Href "https://mangelmaxime.github.io/Fable.Elmish.Bulma/#elements/button"] [str "Fable.Elmish.Bulma"]
+      ]
+    ]
+
+  let bTitle = "Data visualization on-the-fly"
+  let bBody =
+    div [] [
+      p [] [
+        str "From its very beginning, F# has been a great language for exploring data, even more so thanks to tools like "
+        a [Href "https://fslab.org/"] [str "FsLab"]
+        str ". However the solution to visualize the results has not been always ideal: sometimes it was Windows-only and other times was a bit cumbersome and slow."
+      ]
+      p [] [
+        str "Luckily, Fable now brings the whole power of browser graphics to F#. In this workshop you'll learn how to combine .NET F# for data manipulation with JS F# for instantaneous representation in a way that can be later easily embedded in a web while keeping your graphics interactive."
+      ]
+    ]
+
+  let cTitle = "Write your own VS Code extension"
+  let cBody =
+    div [] [
+      a [Href "#speakers/krzysztof"] [str "Krzysztof Cieślak"]
+      str ", "
+      a [Href "http://ionide.io/"] [str "Ionide"]
+      str " author and one of the most veteran Fable users, will show us how easy is to use the power and expressiveness of F# to create extensions for Visual Studio Code, automate common tasks and increase your productivity."
+    ]
+
+  let dTitle = "Make a simple (but addictive!) game"
+  let dBody =
+    div [] [
+      p [] [
+        str "It's time for some fun! Let's close FableConf with a game. We will use the same Elmish architecture as for web apps, in order to reuse our knowledge and tools like the time-travel debugger, but with a different renderer: "
+        a [Href "http://www.pixijs.com/"] [str "PixiJS"]
+      ]
+      p [] [
+        str "You will also learn some techniques to improve performance and make your games run smoothly on any device, like object pooling or background computations with a web worker."
+      ]
+    ]
+
 let genericCard isTalk time body =
   let typ = if isTalk then "talk" else "break"
   div [ClassName "columns schedule"] [
@@ -19,11 +66,14 @@ let genericCard isTalk time body =
   ]
 
 let breakCard time text =
-  a [Href "#food"; ClassName "title is-5"] [str text]
+  h5 [ClassName "title is-5"] [str text]
   |> genericCard false time
 
-let workshopCard time text =
-  p [ClassName "title is-5"] [str text]
+let workshopCard time title body =
+  div [ClassName "workshop"] [
+    h3 [ClassName "title is-6"] [str title]
+    body
+  ]
   |> genericCard true time
 
 let speakerCard time (speaker: Speakers.Types.Speaker) =
@@ -90,40 +140,50 @@ let root model dispatch =
       ]
     ]
     div [ClassName "container"] [
-      h2 [ClassName "title is-2 has-text-centered"] [str "Friday"]
+      h2 [ClassName "title is-2 has-text-centered"] [str "Friday: Talks"]
       div [] [ // Group so :first-child :last-child rules apply
-        breakCard   "8:30 - 9:30" "Breakfast"
-        speakerCard "9:30 - 10:30" Speakers.Types.Alfonso
-        breakCard   "10:30 - 10:45" "Break"
+        breakCard   "8:30 - 9:30"   "Breakfast"
+        speakerCard "9:30 - 10:30"  Speakers.Types.Alfonso
+        breakCard   "10:30 - 10:45" "Coffee Break"
         speakerCard "10:45 - 11:30" Speakers.Types.Eugene
-        breakCard   "11:30 - 11:45" "Break"
+        breakCard   "11:30 - 11:45" "Coffee Break"
         speakerCard "11:45 - 12:30" Speakers.Types.François
         breakCard   "12:30 - 14:00" "Lunch"
         speakerCard "14:00 - 14:15" Speakers.Types.Karsten
         speakerCard "14:15 - 15:00" Speakers.Types.Krzysztof
-        breakCard   "15:00 - 15:15" "Break"
+        breakCard   "15:00 - 15:15" "Coffee Break"
         speakerCard "15:15 - 15:30" Speakers.Types.Maxime
         speakerCard "15:30 - 16:15" Speakers.Types.Sven
-        breakCard   "16:15 - 16:30" "Break"
+        breakCard   "16:15 - 16:30" "Coffee Break"
         breakCard   "16:30 - 16:45" "Lightning talk: TBA"
         speakerCard "16:45 - 17:30" Speakers.Types.Indy
       ]
       br []
+      br []
 
-      h2 [ClassName "title is-2 has-text-centered"] [str "Saturday"]
+      h2 [ClassName "title is-2 has-text-centered"] [str "Saturday: Workshops"]
       div [] [ // Group so :first-child :last-child rules apply
-        workshopCard "9:00 - 13:00" "Workshops"
-        genericCard  false "13:00 - 14:00"
-          (h5 [ClassName "title is-5"] [str "Break"])
-        workshopCard "14:00 - 18:00" "Workshops"
+        workshopCard "9:00 - 10:50"  Workshops.aTitle Workshops.aBody
+        breakCard    "10:50 - 11:10" "Break"
+        workshopCard "11:10 - 13:00" Workshops.bTitle Workshops.bBody
+        breakCard    "13:00 - 14:00" "Break"
+        workshopCard "14:00 - 15:50" Workshops.cTitle Workshops.cBody
+        breakCard    "15:50 - 16:10" "Break"
+        workshopCard "16:10 - 18:00" Workshops.dTitle Workshops.dBody
       ]
       br []
 
       article [ClassName "message is-primary"] [
         div [ClassName "message-body has-text-centered"] [
-          str "More details about the workshops will be uploaded soon. Please note "
-          strong [] [str "food won't be provided on Saturday"]
-          str "."
+          p [] [
+            str "Workshops will take place at "
+            a [Href "http://www.coolworking.fr/"] [str "Coolworking"]
+            str ". Please check your system meets "
+            a [Href "http://fable.io/pages/prerequisites.html"] [str "the requirements"]
+            str " to run Fable."
+          ]
+          p [] [str "Seats are limited so there's a possibility not everybody can attend all the workshops. Thanks for your understanding."]
+          p [] [str "Please note food won't be provided on Saturday."]
         ]
       ]
     ]

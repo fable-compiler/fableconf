@@ -31,6 +31,15 @@ let root =
         br []
       ]
     ]
+    article [ClassName "message is-primary"] [
+      div [ClassName "message-body has-text-centered"] [
+        p [] [
+          str "Please note workshops will take place at "
+          a [Href "http://www.coolworking.fr/"] [str "Coolworking"]
+          str "."
+        ]
+      ]
+    ]
     div [ClassName "container"] [
       div [ClassName "content"] [
         // h1 [ClassName "has-text-centered"] [str "Transportation"]
