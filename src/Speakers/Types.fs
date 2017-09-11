@@ -116,8 +116,8 @@ let Sven =
     picture = "img/Sven.jpeg"
     talk =
       { title = "Behind the scenes of Fable: Babel"
-        content = str "" }
-    bio = None
+        content = str "We will have a look at Fable behind the scene, demystifying how you end up with JavaScript, and exposing the role of Babel in our ecosystem. Integration with the JavaScript environment is one of the key points of Fable, I will show you different tools to achieve that and in bonus, some optimizations/tricks." }
+    bio = Some "Member of the Babel maintainers. Passionated by functional programming, distributed systems or compilers."
     twitter = Some "svensauleau"
     github = Some "xtuc"
   }
