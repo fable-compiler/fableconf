@@ -3,7 +3,7 @@ module Info.View
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fable.Core.JsInterop
-open Elmish.Bulma.Elements
+open Fulma.Elements
 
 let root =
   div [Style [!!("overflowY", "hidden")]] [

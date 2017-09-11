@@ -4,7 +4,7 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Elmish.Bulma.Elements
+open Fulma.Elements
 open Types
 
 module Workshops =
@@ -16,7 +16,7 @@ module Workshops =
       ]
       p [] [
         str "In this workshop you will be also introduced to an Elmish extension that makes dealing with CSS a much more pleasant task: "
-        a [Href "https://mangelmaxime.github.io/Fable.Elmish.Bulma/#elements/button"] [str "Fable.Elmish.Bulma"]
+        a [Href "https://mangelmaxime.github.io/Fable.Fulma/#elements/button"] [str "Fable.Fulma"]
       ]
     ]
 

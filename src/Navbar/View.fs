@@ -3,8 +3,8 @@ module Navbar.View
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Elmish.Bulma.Components
-open Elmish.Bulma.Elements.Form
+open Fulma.Components
+open Fulma.Elements.Form
 open Global
 open Types
 

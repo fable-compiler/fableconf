@@ -1,4 +1,4 @@
-#r "packages/FAKE/tools/FakeLib.dll"
+#r "packages/build/FAKE/tools/FakeLib.dll"
 #r "System.IO.Compression.FileSystem"
 
 open System
@@ -18,32 +18,6 @@ System.Console.OutputEncoding <- System.Text.Encoding.UTF8
 module Util =
     open System.Net
 
-    let retryIfFails maxRetries f =
-        let rec loop retriesRemaining =
-            try
-                f ()
-            with _ when retriesRemaining > 0 ->
-                loop (retriesRemaining - 1)
-        loop maxRetries
-
-    let (|RegexReplace|_|) =
-        let cache = new Dictionary<string, Regex>()
-        fun pattern (replacement: string) input ->
-            let regex =
-                match cache.TryGetValue(pattern) with
-                | true, regex -> regex
-                | false, _ ->
-                    let regex = Regex pattern
-                    cache.Add(pattern, regex)
-                    regex
-            let m = regex.Match(input)
-            if m.Success
-            then regex.Replace(input, replacement) |> Some
-            else None
-
-    let join pathParts =
-        Path.Combine(Array.ofSeq pathParts)
-
     let run workingDir fileName args =
         printfn "CWD: %s" workingDir
         let fileName, args =
@@ -56,32 +30,10 @@ module Util =
                 info.Arguments <- args) TimeSpan.MaxValue
         if not ok then failwith (sprintf "'%s> %s %s' task failed" workingDir fileName args)
 
-    let runAndReturn workingDir fileName args =
-        printfn "CWD: %s" workingDir
-        let fileName, args =
-            if EnvironmentHelper.isUnix
-            then fileName, args else "cmd", ("/C " + args)
-        ExecProcessAndReturnMessages (fun info ->
-            info.FileName <- fileName
-            info.WorkingDirectory <- workingDir
-            info.Arguments <- args) TimeSpan.MaxValue
-        |> fun p -> p.Messages |> String.concat "\n"
-
     let visitFile (visitor: string->string) (fileName : string) =
         File.ReadAllLines(fileName)
         |> Array.map (visitor)
         |> fun lines -> File.WriteAllLines(fileName, lines)
-
-        // This code is supposed to prevent OutOfMemory exceptions but it outputs wrong BOM
-        // use reader = new StreamReader(fileName, encoding)
-        // let tempFileName = Path.GetTempFileName()
-        // use writer = new StreamWriter(tempFileName, false, encoding)
-        // while not reader.EndOfStream do
-        //     reader.ReadLine() |> visitor |> writer.WriteLine
-        // reader.Close()
-        // writer.Close()
-        // File.Delete(fileName)
-        // File.Move(tempFileName, fileName)
 
     let replaceLines (replacer: string->Match->string option) (reg: Regex) (fileName: string) =
         fileName |> visitFile (fun line ->
@@ -98,7 +50,7 @@ let root = __SOURCE_DIRECTORY__
 let gitOwner = "fable-compiler"
 let gitProject = "fableconf"
 
-let dotnetcliVersion = "1.0.4"
+let dotnetcliVersion = "2.0.0"
 let mutable dotnetExePath = environVarOrDefault "DOTNET" "dotnet"
 
 Target "Clean" (fun () ->
