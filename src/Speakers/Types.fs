@@ -122,26 +122,13 @@ let Sven =
     github = Some "xtuc"
   }
 
-let Karsten =
-  {
-    shortname = "karsten"
-    name = "Karsten Gebbert"
-    picture = "img/Karsten.jpeg"
-    talk =
-      { title = "TBA"
-        content = str "" }
-    bio = None
-    twitter = Some "krstngbbrt"
-    github = Some "krgn"
-  }
-
 let Alfonso =
   {
     shortname = "alfonso"
     name = "Alfonso García-Caro"
     picture = "img/Alfonso.jpeg"
     talk =
-     { title = "Towards a new way of programming collaboration"
+     { title = "Towards a new way of collaboration"
        content =
         div [] [
           p [] [str "Fable, Babel and many other open source projects are just examples of the magic that happens when people all over the world start collaborating together. Today, someone has an idea and posts a prototype, then thousand of miles away another one likes it and starts collaborating, then users come in and contribute valuable feedback and suggestion, making the project better and better. All of this happened thanks to sites like Github which removed the barriers from coding alone to coding in public."]
@@ -189,7 +176,6 @@ let speakersMap =
     Maxime.shortname, Maxime
     Sven.shortname, Sven
     Indy.shortname, Indy
-    Karsten.shortname, Karsten
     Alfonso.shortname, Alfonso
     Krzysztof.shortname, Krzysztof
   ] |> Map

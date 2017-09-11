@@ -22,7 +22,6 @@ let init () : Model =
       Maxime
       Indy
       Sven
-      Karsten
       Alfonso
       Krzysztof ]
   { modal = None; speakers = shuffle speakers }

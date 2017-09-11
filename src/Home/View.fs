@@ -16,7 +16,7 @@ module Workshops =
       ]
       p [] [
         str "In this workshop you will be also introduced to an Elmish extension that makes dealing with CSS a much more pleasant task: "
-        a [Href "https://mangelmaxime.github.io/Fable.Fulma/#elements/button"] [str "Fable.Fulma"]
+        a [Href "https://mangelmaxime.github.io/Fable.Elmish.Bulma"] [str "Fable.Fulma"]
       ]
     ]
 
@@ -64,6 +64,9 @@ let genericCard isTalk time body =
       body
     ]
   ]
+
+let linkImage src href =
+  a [Href href] [img [Src ("img/" + src)]]
 
 let breakCard time text =
   h5 [ClassName "title is-5"] [str text]
@@ -149,13 +152,12 @@ let root model dispatch =
         breakCard   "11:30 - 11:45" "Coffee Break"
         speakerCard "11:45 - 12:30" Speakers.Types.François
         breakCard   "12:30 - 14:00" "Lunch"
-        speakerCard "14:00 - 14:15" Speakers.Types.Karsten
-        speakerCard "14:15 - 15:00" Speakers.Types.Krzysztof
-        breakCard   "15:00 - 15:15" "Coffee Break"
-        speakerCard "15:15 - 15:30" Speakers.Types.Maxime
-        speakerCard "15:30 - 16:15" Speakers.Types.Sven
-        breakCard   "16:15 - 16:30" "Coffee Break"
-        breakCard   "16:30 - 16:45" "Lightning talk: TBA"
+        speakerCard "14:00 - 14:40" Speakers.Types.Sven
+        breakCard   "14:40 - 14:50" "Coffee Break"
+        speakerCard "14:50 - 15:30" Speakers.Types.Maxime
+        breakCard   "15:30 - 15:45" "Coffee Break"
+        speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
+        breakCard   "16:30 - 16:45" "Coffee Break"
         speakerCard "16:45 - 17:30" Speakers.Types.Indy
       ]
       br []
@@ -177,12 +179,16 @@ let root model dispatch =
         div [ClassName "message-body has-text-centered"] [
           p [] [
             str "Workshops will take place at "
-            a [Href "http://www.coolworking.fr/"] [str "Coolworking"]
-            str ". Please check your system meets "
-            a [Href "http://fable.io/pages/prerequisites.html"] [str "the requirements"]
+            a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
+            str ", five minutes walking from "
+            a [Href "#location"] [str "Cap Sciences"]
+            str "."
+          ]
+          p [] [
+            str "Check your system meets "
+            a [Href "http://fable.io/docs/getting-started.html#requirements"] [str "the requirements"]
             str " to run Fable."
           ]
-          p [] [str "Seats are limited so there's a possibility not everybody can attend all the workshops. Thanks for your understanding."]
           p [] [str "Please note food won't be provided on Saturday."]
         ]
       ]
@@ -202,18 +208,14 @@ let root model dispatch =
     br []
     h1 [ClassName "title is-1 has-text-centered"] [str "Sponsors"]
     h4 [ClassName "subtitle is-4 has-text-centered"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
-    div [ClassName "level"] [
-      div [ClassName "level-item"] [
-        a [Href "http://fsharp.org/"] [
-          Image.image [] [img [Src "img/fsharp.png"]]
-        ]
-      ]
-      div [ClassName "level-item"] [
-        a [Href "http://nsynk.de/"] [
-          Image.image [] [img [Src "img/nsynk2.png"]]
-        ]
-      ]
+    div [ClassName "flex-wrap sponsors"] [
+      linkImage "fsharp.png" "http://fsharp.org/"
+      linkImage "nsynk2.png" "http://nsynk.de/"
+      linkImage "syrpin.jpg" "http://www.syrpin.org/"
+      linkImage "BxGames.png" "http://bordeauxgames.com/"
+      linkImage "compositional-it.png" "https://compositional-it.com/"
     ]
+    br []
     div [ClassName "container"] [
       div [ClassName "columns"] [
         div [ClassName "column is-three-quarters"] [

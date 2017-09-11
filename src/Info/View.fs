@@ -35,8 +35,8 @@ let root =
       div [ClassName "message-body has-text-centered"] [
         p [] [
           str "Please note workshops will take place at "
-          a [Href "http://www.coolworking.fr/"] [str "Coolworking"]
-          str "."
+          a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
+          str ", five minutes walking from Cap Sciences."
         ]
       ]
     ]
