@@ -4,6 +4,7 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
+open Fulma.Extra.FontAwesome
 open Fulma.Elements
 open Types
 
@@ -78,6 +79,10 @@ let workshopCard time title body =
     body
   ]
   |> genericCard true time
+
+let partyCard isTalk time body =
+  div [ClassName "party"] body
+  |> genericCard isTalk time
 
 let speakerCard time (speaker: Speakers.Types.Speaker) =
   div [ClassName "columns schedule"] [
@@ -163,15 +168,42 @@ let root model dispatch =
       br []
       br []
 
+      div [ClassName "container has-text-centered"] [
+        h2 [ClassName "title is-2"] [ //; Style [Color "#f5ec48"]] [
+          Icon.faIcon [] Fa.Star
+          Icon.faIcon [] Fa.Star
+          str "Party"
+          Icon.faIcon [] Fa.Star
+          Icon.faIcon [] Fa.Star
+        ]
+        h4 [ClassName "subtitle is-6"] [
+          str "After the talks, it is time for the "; em [] [str "Fabelous Party!"]
+          str " Join us to keep enjoying the local gastronomy and relax chatting with other community members. "
+          strong [] [str "Please note the conference ticket does not include the food and drinks for the party."]
+        ]
+      ]
+      br []
+      div [] [
+        partyCard true  "20:00 - 22:00" [
+          str "Dinner at "
+          a [Href "http://lejardinpecheur.com/"] [str "Le Jardin Pêcheur"]
+          str ", a beautiful restaurant mixing modern and traditional architecture with a strong social compromise and delicious local food. "
+          a [Href "https://docs.google.com/document/d/1AO0P7Z0Npyk62o5ZmYr9fEu1oD5pvPLUMg_ZS67GHYY/edit"] [str "Check the menu here."]
+        ]
+        partyCard false "22:00 - ???" [str "Drinks at "; em [] [str "Random Beer Heavens (TBD)"]]
+      ]
+      br []
+      br []
+
       h2 [ClassName "title is-2 has-text-centered"] [str "Saturday: Workshops"]
       div [] [ // Group so :first-child :last-child rules apply
-        workshopCard "9:00 - 10:50"  Workshops.aTitle Workshops.aBody
-        breakCard    "10:50 - 11:10" "Break"
-        workshopCard "11:10 - 13:00" Workshops.bTitle Workshops.bBody
-        breakCard    "13:00 - 14:00" "Break"
-        workshopCard "14:00 - 15:50" Workshops.cTitle Workshops.cBody
-        breakCard    "15:50 - 16:10" "Break"
-        workshopCard "16:10 - 18:00" Workshops.dTitle Workshops.dBody
+        workshopCard  "9:00 - 10:45" Workshops.aTitle Workshops.aBody
+        breakCard    "10:45 - 11:00" "Break"
+        workshopCard "11:00 - 12:45" Workshops.bTitle Workshops.bBody
+        breakCard    "12:45 - 14:00" "Break"
+        workshopCard "14:00 - 15:45" Workshops.cTitle Workshops.cBody
+        breakCard    "15:45 - 16:00" "Break"
+        workshopCard "16:00 - 17:45" Workshops.dTitle Workshops.dBody
       ]
       br []
 
@@ -212,7 +244,9 @@ let root model dispatch =
       linkImage "fsharp.png" "http://fsharp.org/"
       linkImage "nsynk2.png" "http://nsynk.de/"
       linkImage "syrpin.jpg" "http://www.syrpin.org/"
+      linkImage "digital-campus.png" "https://www.digital-campus.fr/"
       linkImage "BxGames.png" "http://bordeauxgames.com/"
+      linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
       linkImage "compositional-it.png" "https://compositional-it.com/"
     ]
     br []
@@ -229,7 +263,9 @@ let root model dispatch =
         div [ClassName "column"] [
           a [Href "http://diversitycharter.org/"] [
             figure [ClassName "image"] [
-              img [Src "img/diversity.png"]
+              img [
+                Style [Margin "0 auto"; Width "auto"]
+                Src "img/diversity.png"]
             ]
           ]
         ]
