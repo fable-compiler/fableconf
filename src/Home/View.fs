@@ -190,7 +190,11 @@ let root model dispatch =
           str ", a beautiful restaurant mixing modern and traditional architecture with a strong social compromise and delicious local food. "
           a [Href "https://docs.google.com/document/d/1AO0P7Z0Npyk62o5ZmYr9fEu1oD5pvPLUMg_ZS67GHYY/edit"] [str "Check the menu here."]
         ]
-        partyCard false "22:00 - ???" [str "Drinks at "; em [] [str "Random Beer Heavens (TBD)"]]
+        partyCard false "22:00 - ???" [
+          str "Drinks at "
+          a [Href "http://lezytho.fr/"] [str "Le Zytho"]
+          str ": (Re)discover the Craft Beer with a selection of 18 draught and 100 bottled beers!"
+        ]
       ]
       br []
       br []
