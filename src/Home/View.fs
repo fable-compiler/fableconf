@@ -167,13 +167,13 @@ let root model dispatch =
         speakerCard "11:45 - 12:30" Speakers.Types.Maxime
         breakCard   "12:30 - 14:00" "Lunch"
         speakerCard "14:00 - 14:30" Speakers.Types.Indy        
-        genericCard true "14:30 - 14:35" misterySpeaker
-        breakCard   "14:35 - 14:45" "Coffee Break"
+        breakCard   "14:30 - 14:45" "Coffee Break"
         speakerCard "14:45 - 15:30" Speakers.Types.Sven
         breakCard   "15:30 - 15:45" "Coffee Break"
         speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
         breakCard   "16:30 - 16:45" "Coffee Break"
-        speakerCard "16:45 - 17:30" Speakers.Types.François
+        speakerCard "16:45 - 17:25" Speakers.Types.François
+        genericCard true "17:25 - 17:30" misterySpeaker
       ]
       br []
       br []
