@@ -66,6 +66,15 @@ let genericCard isTalk time body =
     ]
   ]
 
+let misterySpeaker =
+  h5 [ClassName "title is-5"] [
+    Icon.faIcon [] Fa.Question
+    Icon.faIcon [] Fa.Question
+    str "Mistery Speaker"
+    Icon.faIcon [] Fa.Question
+    Icon.faIcon [] Fa.Question
+  ]
+
 let linkImage src href =
   a [Href href] [img [Src ("img/" + src)]]
 
@@ -155,15 +164,16 @@ let root model dispatch =
         breakCard   "10:30 - 10:45" "Coffee Break"
         speakerCard "10:45 - 11:30" Speakers.Types.Eugene
         breakCard   "11:30 - 11:45" "Coffee Break"
-        speakerCard "11:45 - 12:30" Speakers.Types.François
+        speakerCard "11:45 - 12:30" Speakers.Types.Maxime
         breakCard   "12:30 - 14:00" "Lunch"
-        speakerCard "14:00 - 14:40" Speakers.Types.Sven
-        breakCard   "14:40 - 14:50" "Coffee Break"
-        speakerCard "14:50 - 15:30" Speakers.Types.Maxime
+        speakerCard "14:00 - 14:30" Speakers.Types.Indy        
+        genericCard true "14:30 - 14:35" misterySpeaker
+        breakCard   "14:35 - 14:45" "Coffee Break"
+        speakerCard "14:45 - 15:30" Speakers.Types.Sven
         breakCard   "15:30 - 15:45" "Coffee Break"
         speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
         breakCard   "16:30 - 16:45" "Coffee Break"
-        speakerCard "16:45 - 17:30" Speakers.Types.Indy
+        speakerCard "16:45 - 17:30" Speakers.Types.François
       ]
       br []
       br []
