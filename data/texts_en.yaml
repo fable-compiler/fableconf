@@ -1,0 +1,73 @@
+tile1: |
+    ## Hi there, I'm a developer seeking a project!
+
+    ...and maybe you have a software project and are looking for a developer? If that's case, I'm happy to have you here! Please have a look and don't hesitate to contact me if you want to know more. I'll be very glad of meeting you!
+
+    Don't forget to scroll down so you don't miss a bit. And if you prefer a more formal presentation, please check my [LinkedIn profile](https://www.linkedin.com/in/alfonso-garcia-caro-255b17a5/).
+
+tile2: |
+    “There are two ways of constructing a software design. One way is to make it so simple that there are obviously no deficiencies. And the other way is to make it so complicated that there are no obvious deficiencies.”
+
+    Sir Charles Antony Richard Hoare
+
+card_presentation:
+    - |
+        Who am I?
+        My name is **Alfonso García-Caro** and I live in Madrid (Spain). Please click on the cards below if you want to know more about me <span class="fa fa-smile-o"></span>
+    - |
+        I am a developer...
+        Having a degree on Linguistics, in the last six years I've reoriented my career to Programming and I have now good knowledge of .NET (C#/F#) and Web (JS/TypeScript/HTML/CSS) platforms. I have been mainly involved in **application development**, either for web, mobile and desktop, but I also have experience writing backend code and with database management.
+
+        I started working for Nintendo of Europe developing tools for the Localization and QA departments. After coming back to Spain I've collaborated with several companies **in different industries** as a freelancer.
+
+    - |
+        I am an Open Source contributor...
+        I'm the author of [Fable](http://fable.io), an F# to JS compiler, which had a very good reception among the community and has spawned a [growing ecosystem](https://github.com/kunjee17/awesome-fable#-awesome-fable) to bring better practices to web development. Several companies are already [using it in production](https://twitter.com/FableCompiler/status/927454688403951617) and we recently hosted the first [FableConf](http://fable.io/fableconf/#home) in Bordeaux (France) with [great success](https://twitter.com/hashtag/FableConf).
+    - |
+        I am a speaker and author...
+        I've given talks on Programming in my three main languages (English, Spanish and Japanese) in different cities around the world, like [New York](https://www.meetup.com/nyc-fsharp/events/229591840), [Washington](https://www.meetup.com/DC-fsharp/events/229596785/), [Oslo](https://www.youtube.com/watch?v=iRDcpkphrKs), [Bordeaux](http://fable.io/fableconf/#speakers/alfonso), [Madrid](https://www.slideshare.net/alfonsogarciacaro7/functional-programming-in-c-and-f), Tokyo and [Nara](http://cufp.org/2016/t5-alfonso-garcia-caro-intro-to-fable.html) (Japan).
+
+        I have also coauthored a book: [Mastering F#](https://www.packtpub.com/application-development/mastering-f), edited by Packt Publishing, as well as several papers on Linguistics and Economics in my earlier career published by [University of Sophia](http://jairo.nii.ac.jp/0165/00029596) (Tokyo), [University of Kanagawa](http://klibredb.lib.kanagawa-u.ac.jp/dspace/items-by-author?author=Garcia-Caro+Nunez%2C+Alfonso) and [University of Málaga](http://www.eumed.net/rev/japon/03/agcn.htm).
+    - |
+        And I also am (or was) other things...
+        Before focusing on programming, I lived in Japan and Germany working as a language teacher first and as a translator later. This experience has helped me in many aspects, specially to understand the relevance **good communication** has in any professional environment.
+    - |
+        Contact me!
+        * Email: [alfonso.garcia-caro@outlook.com](mailto:alfonso.garcia-caro@outlook.com)
+        * Twitter: [@alfonsogcnunez](https://twitter.com/alfonsogcnunez)
+        * [LinkedIn](https://www.linkedin.com/in/alfonso-garcia-caro-255b17a5/)
+        * [Github](https://github.com/alfonsogarciacaro)
+
+card_demand:
+    - |
+        What do I look for?
+        Am I the best fit for your company and/or team? I want to have an honest relationship with my employer, that's why I'd like to include upfront things I consider important to give my best when working on a project.
+    - |
+        A .NET/Web project
+        I've worked mostly in **.NET** (C#, F#) and **Web** (JS and TypeScript, with HTML/CSS) projects, usually closer to the _user interface_, either with desktop and mobile apps or websites frontend, but I'm also experienced in _backend services_ and _database management_ (including SQL).
+    - |
+        A remote position
+        Because of family reasons, I'm currently not available for relocation outside the Madrid area in Spain. Fortunately, new technologies have made the world flat allowing us to collaborate together no matter how far we are apart. But I know technology is not enough, **responsibility and fluent communication** are equally important to keep a great collaboration remotely.
+    - |
+        An interesting field
+        "Making a better world" seems to be the motto of any software company nowadays. I don't know if I can change the world (the world is always changing anyways) but it feels really good when I'm close to  users and I can see how software I've contributed to helps improve their lives, if only a little. I'm particularly proud when the results are connected to _the real world_, as in my collaborations with the Green Energy and Education industries.
+    - |
+        And clear requirements
+        I'm not afraid of taking decisions by myself but I've already seen how too vague (or too broad) requirements lead to unnecessary delays in the project schedule. Writing code is not an end in itself for me, delivering a product is. And so I believe a _clear list of requirements with reasonable deadlines_ is the first step to a successful project. I know this is not always easy, and that's why I strive to keep **good communication channels** and having **a prototype as soon as possible**.
+
+card_supply:
+    - |
+        What can I offer?
+        I have a few skills that I hope can be useful for your project. Le me introduce them!
+    - |
+        I am not a genius programmer...
+        But I like to write **modular** code that's easy to **read** by others (including my future me) with _meaningful_ structure, semantics and comments. And obviously I also want my code to be easy to **test** and **deploy**, because that's the key to fast development iterations.
+    - |
+        I am not a graphic designer...
+        But I can fight with CSS and template-based HTML engines (e.g. [React](https://reactjs.org/)). I like building **intuitive** interfaces that help users boost their productivity. For this I know how important is listening to their **feedback** and keep the right balance of new features and maintaining the expected behavior when improving the app.
+    - |
+        I like to have my own space...
+        But I also know how to [collaborate](https://twitter.com/dumdidum/status/889807207474352129). There are many keys to build a good team, but I've found two of them to be specially important: **lower the barrier** for others to access your code, and **respect** your colleagues' work, as programming (like natural languages) has room for everybody to express themselves in a particular and unique way.
+    - |
+        I don't know everything...
+        But what I know I like to **teach** to others. Besides talks I've run multiple workshops, and I'm also available for **training seminars** to help improve the skills of your team.
