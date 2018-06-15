@@ -4,8 +4,8 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Fulma.Extra.FontAwesome
-open Fulma.Elements
+open Fulma.FontAwesome
+open Fulma
 open Types
 
 module Workshops =
@@ -68,11 +68,11 @@ let genericCard isTalk time body =
 
 let misterySpeaker =
   h5 [ClassName "title is-5"] [
-    Icon.faIcon [] Fa.Question
-    Icon.faIcon [] Fa.Question
+    Icon.faIcon [] [Fa.icon Fa.I.Question]
+    Icon.faIcon [] [Fa.icon Fa.I.Question]
     str "Mistery Speaker"
-    Icon.faIcon [] Fa.Question
-    Icon.faIcon [] Fa.Question
+    Icon.faIcon [] [Fa.icon Fa.I.Question]
+    Icon.faIcon [] [Fa.icon Fa.I.Question]
   ]
 
 let linkImage src href =
@@ -120,16 +120,16 @@ let speakerCard time (speaker: Speakers.Types.Speaker) =
 
 let root model dispatch =
   div [Style [!!("overflowY", "hidden")]] [
-    Image.image [] [
-      img [Src "img/fableconf.svg"]
-    ]
     div [ClassName "container"] [
+      Image.image [Image.CustomClass "fableconf-logo"] [
+        img [Src "img/fableconf.svg"]
+      ]
       // h1 [ClassName "title is-1"] [str "FableConf 2017"]
       h4 [ClassName "title is-4"] [
-        Icon.icon [Icon.isMedium] [i [ClassName "fa fa-calendar"] []]
-        str " 22-23 September  "
-        Icon.icon [Icon.isMedium] [i [ClassName "fa fa-map-marker"] []]
-        str " Bordeaux, France"
+        Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-calendar"] []]
+        str " 26-27 October  "
+        Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-map-marker"] []]
+        str " Berlin, Germany"
       ]
       h6 [ClassName "subtitle is-6"] [
         str "FableConf logo by "
@@ -137,107 +137,114 @@ let root model dispatch =
       ]
       div [ClassName "content"] [
         p [] [
-          str "Come to the beautiful city of Bordeaux and be part of the first conference focused on development for the Javascript platform in F# with "
-          a [Href "http://fable.io"] [str "Fable"]
-          str "! Fableconf will take two full days: one day of talks to learn all new possibilities Fable opens to F# programmers, and another day of workshops to put everything into practice. FableConf will also be the first opportunity for the growing Fable community to meet in person, share experiences and plan together the next big project to disrupt the web."
+          str "Come to the beautiful city of Berlin and be part of the combined FableConf and RemmiDemmi F# conferences! This year FableConf and RemmiDemmi are joining forces to provide two days of F#un opportunities for learning and meeting people from the Fable and F# communities."
         ]
         p [] [
-          str "No matter if you are new to "
-          a [Href "http://fable.io"] [str "Fable"]
-          str ", don't have much experience in web development or even if you don't know F# yet, if you are a developer interested in writing user interfaces in a functional programming language designed for high productivity and with cutting-edge tooling, FableConf will have something for you!"
+          str "We'll have two days and two tracks of sessions:"
         ]
         p [] [
-          str "Check the Programme below, get to know our "
-          a [Href "#speakers"] [str "wonderful speakers"]
-          str " and feast your eyes with the "
-          a [Href "#food"] [str "splendid menu"]
-          str " we are preparing. The only thing that is missing is you!"
+          str "Day one will consist of talks on two tracks: the Fable track will provide you with the change to learn all about the latest developments on Fable, whilst the RemmiDemmi track will be our usual \"anything goes\" F# track, with relaxed discussions and sessions on cool F# tech (with a slight focus towards SAFE Stack developments)."
         ]
+        p [] [
+          str "Day two will be filled with practical workshops and chances to sit down and work alongside fellow members of the F# community to give you confidence in writing Fable and SAFE applications that take full advantage of F#."
+        ]
+        p [] [
+          str "No matter if you are new to Fable or SAFE, don't have much experience in web development or even if you don't know F# yet - if you are a developer interested in writing user interfaces in a functional programming language designed for high productivity and with cutting-edge tooling, this year's FableConf and RemmiDemmi will have something for you!"
+        ]
+        // p [] [
+        //   str "Check the Programme below, get to know our "
+        //   a [Href "#speakers"] [str "wonderful speakers"]
+        //   str " and feast your eyes with the "
+        //   a [Href "#food"] [str "splendid menu"]
+        //   str " we are preparing. The only thing that is missing is you!"
+        // ]
         br []
       ]
     ]
     div [ClassName "container"] [
       h2 [ClassName "title is-2 has-text-centered"] [str "Friday: Talks"]
-      div [] [ // Group so :first-child :last-child rules apply
-        breakCard   "8:30 - 9:30"   "Breakfast"
-        speakerCard "9:30 - 10:30"  Speakers.Types.Alfonso
-        breakCard   "10:30 - 10:45" "Coffee Break"
-        speakerCard "10:45 - 11:30" Speakers.Types.Eugene
-        breakCard   "11:30 - 11:45" "Coffee Break"
-        speakerCard "11:45 - 12:30" Speakers.Types.Maxime
-        breakCard   "12:30 - 14:00" "Lunch"
-        speakerCard "14:00 - 14:30" Speakers.Types.Indy        
-        breakCard   "14:30 - 14:45" "Coffee Break"
-        speakerCard "14:45 - 15:30" Speakers.Types.Sven
-        breakCard   "15:30 - 15:45" "Coffee Break"
-        speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
-        breakCard   "16:30 - 16:45" "Coffee Break"
-        speakerCard "16:45 - 17:25" Speakers.Types.François
-        genericCard true "17:25 - 17:30" misterySpeaker
-      ]
-      br []
+      p [Class "has-text-centered"] [str "More info coming soon!"]
+      // div [] [ // Group so :first-child :last-child rules apply
+      //   breakCard   "8:30 - 9:30"   "Breakfast"
+      //   speakerCard "9:30 - 10:30"  Speakers.Types.Alfonso
+      //   breakCard   "10:30 - 10:45" "Coffee Break"
+      //   speakerCard "10:45 - 11:30" Speakers.Types.Eugene
+      //   breakCard   "11:30 - 11:45" "Coffee Break"
+      //   speakerCard "11:45 - 12:30" Speakers.Types.Maxime
+      //   breakCard   "12:30 - 14:00" "Lunch"
+      //   speakerCard "14:00 - 14:30" Speakers.Types.Indy
+      //   breakCard   "14:30 - 14:45" "Coffee Break"
+      //   speakerCard "14:45 - 15:30" Speakers.Types.Sven
+      //   breakCard   "15:30 - 15:45" "Coffee Break"
+      //   speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
+      //   breakCard   "16:30 - 16:45" "Coffee Break"
+      //   speakerCard "16:45 - 17:25" Speakers.Types.François
+      //   genericCard true "17:25 - 17:30" misterySpeaker
+      // ]
+      // br []
       br []
 
-      div [ClassName "container has-text-centered"] [
-        h2 [ClassName "title is-2"] [ //; Style [Color "#f5ec48"]] [
-          Icon.faIcon [] Fa.Star
-          Icon.faIcon [] Fa.Star
-          str "Party"
-          Icon.faIcon [] Fa.Star
-          Icon.faIcon [] Fa.Star
-        ]
-        h4 [ClassName "subtitle is-6"] [
-          str "After the talks, it is time for the "; em [] [str "Fabelous Party!"]
-          str " Join us to keep enjoying the local gastronomy and relax chatting with other community members. "
-          strong [] [str "Please note the conference ticket does not include the food and drinks for the party."]
-        ]
-      ]
-      br []
-      div [] [
-        partyCard true  "20:00 - 22:00" [
-          str "Dinner at "
-          a [Href "http://lejardinpecheur.com/"] [str "Le Jardin Pêcheur"]
-          str ", a beautiful restaurant mixing modern and traditional architecture with a strong social compromise and delicious local food. "
-          a [Href "https://docs.google.com/document/d/1AO0P7Z0Npyk62o5ZmYr9fEu1oD5pvPLUMg_ZS67GHYY/edit"] [str "Check the menu here."]
-        ]
-        partyCard false "22:00 - ???" [
-          str "Drinks at "
-          a [Href "http://lezytho.fr/"] [str "Le Zytho"]
-          str ": (Re)discover the Craft Beer with a selection of 18 draught and 100 bottled beers!"
-        ]
-      ]
-      br []
-      br []
+      // div [ClassName "container has-text-centered"] [
+      //   h2 [ClassName "title is-2"] [ //; Style [Color "#f5ec48"]] [
+      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
+      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
+      //     str "Party"
+      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
+      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
+      //   ]
+      //   h4 [ClassName "subtitle is-6"] [
+      //     str "After the talks, it is time for the "; em [] [str "Fabelous Party!"]
+      //     str " Join us to keep enjoying the local gastronomy and relax chatting with other community members. "
+      //     strong [] [str "Please note the conference ticket does not include the food and drinks for the party."]
+      //   ]
+      // ]
+      // br []
+      // div [] [
+      //   partyCard true  "20:00 - 22:00" [
+      //     str "Dinner at "
+      //     a [Href "http://lejardinpecheur.com/"] [str "Le Jardin Pêcheur"]
+      //     str ", a beautiful restaurant mixing modern and traditional architecture with a strong social compromise and delicious local food. "
+      //     a [Href "https://docs.google.com/document/d/1AO0P7Z0Npyk62o5ZmYr9fEu1oD5pvPLUMg_ZS67GHYY/edit"] [str "Check the menu here."]
+      //   ]
+      //   partyCard false "22:00 - ???" [
+      //     str "Drinks at "
+      //     a [Href "http://lezytho.fr/"] [str "Le Zytho"]
+      //     str ": (Re)discover the Craft Beer with a selection of 18 draught and 100 bottled beers!"
+      //   ]
+      // ]
+      // br []
+      // br []
 
       h2 [ClassName "title is-2 has-text-centered"] [str "Saturday: Workshops"]
-      div [] [ // Group so :first-child :last-child rules apply
-        workshopCard  "9:00 - 10:45" Workshops.aTitle Workshops.aBody
-        breakCard    "10:45 - 11:00" "Break"
-        workshopCard "11:00 - 12:45" Workshops.bTitle Workshops.bBody
-        breakCard    "12:45 - 14:00" "Break"
-        workshopCard "14:00 - 15:45" Workshops.cTitle Workshops.cBody
-        breakCard    "15:45 - 16:00" "Break"
-        workshopCard "16:00 - 17:45" Workshops.dTitle Workshops.dBody
-      ]
+      p [Class "has-text-centered"] [str "More info coming soon!"]
+      // div [] [ // Group so :first-child :last-child rules apply
+      //   workshopCard  "9:00 - 10:45" Workshops.aTitle Workshops.aBody
+      //   breakCard    "10:45 - 11:00" "Break"
+      //   workshopCard "11:00 - 12:45" Workshops.bTitle Workshops.bBody
+      //   breakCard    "12:45 - 14:00" "Break"
+      //   workshopCard "14:00 - 15:45" Workshops.cTitle Workshops.cBody
+      //   breakCard    "15:45 - 16:00" "Break"
+      //   workshopCard "16:00 - 17:45" Workshops.dTitle Workshops.dBody
+      // ]
       br []
 
-      article [ClassName "message is-primary"] [
-        div [ClassName "message-body has-text-centered"] [
-          p [] [
-            str "Workshops will take place at "
-            a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
-            str ", five minutes walking from "
-            a [Href "#location"] [str "Cap Sciences"]
-            str "."
-          ]
-          p [] [
-            str "Check your system meets "
-            a [Href "http://fable.io/docs/getting-started.html#requirements"] [str "the requirements"]
-            str " to run Fable."
-          ]
-          p [] [str "Please note food won't be provided on Saturday."]
-        ]
-      ]
+      // article [ClassName "message is-primary"] [
+      //   div [ClassName "message-body has-text-centered"] [
+      //     p [] [
+      //       str "Workshops will take place at "
+      //       a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
+      //       str ", five minutes walking from "
+      //       a [Href "#location"] [str "Cap Sciences"]
+      //       str "."
+      //     ]
+      //     p [] [
+      //       str "Check your system meets "
+      //       a [Href "http://fable.io/docs/getting-started.html#requirements"] [str "the requirements"]
+      //       str " to run Fable."
+      //     ]
+      //     p [] [str "Please note food won't be provided on Saturday."]
+      //   ]
+      // ]
     ]
     br []
     section [
@@ -245,7 +252,7 @@ let root model dispatch =
       ] [
         div [ClassName "hero-body"] [
           div [ClassName "container"] [
-            a [Href "https://www.eventbrite.es/e/fableconf-bordeaux-tickets-34089709238"] [
+            a [Href "https://www.eventbrite.co.uk/e/fableconf-2018-remmidemmi-in-the-safe-house-tickets-47025731228"] [
               h1 [ClassName "title is-1 has-text-centered"] [str  "GET YOUR TICKET NOW!"]
             ]
           ]
@@ -256,12 +263,13 @@ let root model dispatch =
     h4 [ClassName "subtitle is-4 has-text-centered"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
     div [ClassName "flex-wrap sponsors"] [
       linkImage "fsharp.png" "http://fsharp.org/"
-      linkImage "nsynk2.png" "http://nsynk.de/"
-      linkImage "syrpin.jpg" "http://www.syrpin.org/"
-      linkImage "digital-campus.png" "https://www.digital-campus.fr/"
-      linkImage "BxGames.png" "http://bordeauxgames.com/"
-      linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
       linkImage "compositional-it.png" "https://compositional-it.com/"
+      linkImage "microsoft.png" "https://www.microsoft.com/"
+      // linkImage "nsynk2.png" "http://nsynk.de/"
+      // linkImage "syrpin.jpg" "http://www.syrpin.org/"
+      // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
+      // linkImage "BxGames.png" "http://bordeauxgames.com/"
+      // linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
     ]
     br []
     div [ClassName "container"] [

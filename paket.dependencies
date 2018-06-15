@@ -1,11 +1,12 @@
 source https://nuget.org/api/v2
 storage: none
+framework: netstandard2.0
 
 clitool dotnet-fable
 nuget Fable.Core
-nuget Fable.Elmish.React prerelease
-nuget Fable.Elmish.Browser prerelease
-nuget Fable.Elmish.Debugger prerelease
+nuget Fable.Elmish.React
+nuget Fable.Elmish.Browser
+nuget Fable.Elmish.Debugger
 nuget Fulma prerelease
 
 group Build

@@ -4,7 +4,7 @@ open Fable.Core
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Fulma.Elements
+open Fulma
 open Types
 
 let modalView (speaker: Speaker) (talk: Talk) =
@@ -65,12 +65,12 @@ let cardView (speaker: Speaker) =
       ] [
         speaker.twitter |> Option.map (fun username ->
           a [ClassName "level-item"; Href ("https://twitter.com/" + username) ] [
-            Icon.icon [Icon.isMedium] [i [ClassName "fa fa-twitter"] []]
-          ]) |> opt
+            Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-twitter"] []]
+          ]) |> ofOption
         speaker.github |> Option.map (fun username ->
           a [ClassName "level-item"; Href ("https://github.com/" + username) ] [
-            Icon.icon [Icon.isMedium] [i [ClassName "fa fa-github"] []]
-          ]) |> opt
+            Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-github"] []]
+          ]) |> ofOption
       ]
     ]
   ]
@@ -85,5 +85,5 @@ let root model =
   ] [
     yield! model.speakers |> List.map cardView
     yield model.modal |> Option.map (fun (speaker, talk) ->
-      modalView speaker talk) |> opt
+      modalView speaker talk) |> ofOption
   ]

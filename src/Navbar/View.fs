@@ -3,13 +3,12 @@ module Navbar.View
 open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Fulma.Components
-open Fulma.Elements.Form
+open Fulma
 open Global
 open Types
 
 let navButton classy href faClass txt =
-  Control.control [ ]
+  Control.div [ ]
     [ a [ ClassName (sprintf "button %s" classy)
           Href href ]
         [ span
@@ -23,7 +22,7 @@ let navButton classy href faClass txt =
 
 let navButtons =
   div [ClassName "navbar-item"]
-    [ Field.field [ Field.isGroupedLeft ]
+    [ Field.div [ Field.IsGrouped ]
         [ navButton "twitter" "https://twitter.com/FableCompiler" "fa-twitter" "Twitter"
           navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-comments" "Gitter" ] ]
 
@@ -36,7 +35,7 @@ let menuItem label page currentPage =
 let root currentPage (model: Model) dispatch =
   nav [ClassName "navbar"] [
     div [ClassName "navbar-brand"] [
-      div [ClassName "navbar-item title is-4"] [str "FableConf 2017"]
+      div [ClassName "navbar-item title is-4"] [str "FableConf 2018"]
       div [
         ClassName "navbar-burger"
         OnClick (fun _ -> dispatch ToggleBurger)
@@ -49,8 +48,8 @@ let root currentPage (model: Model) dispatch =
     div [classList ["navbar-menu", true; "is-active", model.isBurgerOpen]] [
       div [ClassName "navbar-start"] [
         menuItem "Home" Home currentPage
-        menuItem "Speakers" (Speakers None) currentPage
-        menuItem "Food" Food currentPage
+        // menuItem "Speakers" (Speakers None) currentPage
+        // menuItem "Food" Food currentPage
         menuItem "Location" Page.Location currentPage
       ]
       div [ClassName "navbar-end"] [navButtons]

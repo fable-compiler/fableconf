@@ -41,9 +41,9 @@ let root model dispatch =
   let pageHtml =
     function
     | Location -> Info.View.root
-    | Food -> Food.View.root
-    | Speakers speaker -> Speakers.View.root model.speakers
-    | Home -> Home.View.root model.home (HomeMsg >> dispatch)
+    // | Food -> Food.View.root
+    // | Speakers speaker -> Speakers.View.root model.speakers
+    | Home | _ -> Home.View.root model.home (HomeMsg >> dispatch)
 
   div
     []

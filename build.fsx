@@ -50,7 +50,7 @@ let root = __SOURCE_DIRECTORY__
 let gitOwner = "fable-compiler"
 let gitProject = "fableconf"
 
-let dotnetcliVersion = "2.0.0"
+let dotnetcliVersion = "2.1.300"
 let mutable dotnetExePath = environVarOrDefault "DOTNET" "dotnet"
 
 Target "Clean" (fun () ->

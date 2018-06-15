@@ -3,7 +3,7 @@ module Food.View
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fable.Core.JsInterop
-open Fulma.Elements
+open Fulma
 
 let firstColumn =
   div [ClassName "column is-half"] [
