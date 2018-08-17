@@ -75,8 +75,11 @@ let misterySpeaker =
     Icon.faIcon [] [Fa.icon Fa.I.Question]
   ]
 
-let linkImage src href =
-  a [Href href] [img [Src ("img/" + src)]]
+let linkImage size css src href =
+  div[ ClassName (sprintf "column %s is-vertical-center" size)] [
+    Image.image [Image.CustomClass (sprintf "sponsor-image %s" css)] [
+      a [Href href] [img [Src ("img/" + src)]] ]
+  ]
 
 let breakCard time text =
   h5 [ClassName "title is-5"] [str text]
@@ -121,9 +124,21 @@ let speakerCard time (speaker: Speakers.Types.Speaker) =
 let root model dispatch =
   div [Style [!!("overflowY", "hidden")]] [
     div [ClassName "container"] [
-      Image.image [Image.CustomClass "fableconf-logo"] [
-        img [Src "img/logo_menu.png"] // this is in low res for now
+
+      div[ ClassName "logo"] [
+        Image.image [Image.CustomClass "fableconf-logo"] [
+          img [Src "img/fablelogo.svg"] // this is in low res for now
+        ]
+
+        Image.image [Image.CustomClass "remmidemmi"] [
+          img [Src "img/logo_Remmidemmi landing.png"] // this is in low res for now
+        ]
+
+        Image.image [Image.CustomClass "conf2018"] [
+          img [Src "img/conf2018.svg"] // this is in low res for now
+        ]
       ]
+
       // h1 [ClassName "title is-1"] [str "FableConf 2017"]
       div[ClassName "general-info"] [
         div[ ClassName "info" ] [
@@ -138,7 +153,7 @@ let root model dispatch =
             str "F# enlightenment" ]
       ]]
 
-      div [ClassName "content"] [
+      div [ClassName "content standard-margin"] [
         p [] [
           str "Come to the beautiful city of Berlin and be part of the combined FableConf and RemmiDemmi F# conferences! This year FableConf and RemmiDemmi are joining forces to provide two days of F#un opportunities for learning and meeting people from the Fable and F# communities."
         ]
@@ -268,36 +283,44 @@ let root model dispatch =
         ]
       ]
     br []
-    h1 [ClassName "title is-1 has-text-centered"] [str "Sponsors"]
-    h4 [ClassName "subtitle is-4 has-text-centered"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
-    div [ClassName "flex-wrap sponsors"] [
-      linkImage "fsharp.png" "http://fsharp.org/"
-      linkImage "compositional-it.png" "https://compositional-it.com/"
-      linkImage "microsoft.png" "https://www.microsoft.com/"
+    div[ ClassName "standard-margin"] [
+      h1 [ClassName "title is-2 title-bold"] [str "SPONSORS."]
+      h4 [ClassName "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
+    ]
+    div [ClassName "sponsors"] [
+      div[ ClassName "columns"] [
+        linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
+        linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
+        linkImage "is-4" "sponsor-ms" "microsoft.png" "https://www.microsoft.com/"
       // linkImage "nsynk2.png" "http://nsynk.de/"
       // linkImage "syrpin.jpg" "http://www.syrpin.org/"
       // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
       // linkImage "BxGames.png" "http://bordeauxgames.com/"
       // linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
+      ]
     ]
     br []
     div [ClassName "container"] [
-      div [ClassName "columns"] [
-        div [ClassName "column is-three-quarters"] [
-          h3 [ClassName "title is-3"] [str "CODE OF CONDUCT"]
-          h4 [ClassName "subtitle is-4"] [str "Be respectful, be open, and be considerate."]
+      div[ ClassName "standard-margin"] [
+        div [ClassName "columns"] [
+          div [ClassName "column is-three-quarters"] [
+            h3 [ClassName "title is-2"] [str "CODE OF CONDUCT"]
+            h4 [ClassName "subtitle is-4 neon-green"] [str "Be respectful, be open, and be considerate."]
+          ]
+          div [ClassName "column"] [
+            a [Href "http://diversitycharter.org/"] [
+              figure [ClassName "image"] [
+                img [
+                  Style [Margin "0 auto"; Width "auto"]
+                  Src "img/diversity.png"]
+              ]
+            ]
+          ]
+        ]
+        div [ClassName "content"] [
           p [] [
             str "Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, or religion (or lack thereof). We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers. "
             a [Href "http://confcodeofconduct.com/"] [str "Read more."]
-          ]
-        ]
-        div [ClassName "column"] [
-          a [Href "http://diversitycharter.org/"] [
-            figure [ClassName "image"] [
-              img [
-                Style [Margin "0 auto"; Width "auto"]
-                Src "img/diversity.png"]
-            ]
           ]
         ]
       ]

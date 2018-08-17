@@ -8,8 +8,25 @@ $neon-green: #39FBCB
 
 @import '../node_modules/bulma/bulma'
 
-.fableconf-logo
-  margin: 50px
+.logo
+  position: relative
+  margin: 5%
+
+  .fableconf-logo
+    width: 50%
+    margin-bottom: 0
+
+  .remmidemmi
+    position: absolute
+    left: 60%
+    top: 10%
+    width: 20%
+
+  .conf2018
+    position: absolute
+    left: 40%
+    top: 70%
+    width: 20%
 
 .icon .navbar-social-icon
   font-size: 2rem
@@ -96,6 +113,9 @@ $neon-green: #39FBCB
   p
     margin-bottom: 6px
 
+.neon-green
+  color: $neon-green
+
 .container
   padding: 5px
 
@@ -105,10 +125,33 @@ $neon-green: #39FBCB
   justify-content: center
   align-items: center
 
+.is-vertical-center
+  display: flex
+  align-items: center
+
+
 .sponsors
+  width: 70%
+  border: 2px solid $electric-blue
+  border-radius: 10px
+  margin-left: auto
+  margin-right: auto
+  padding: 1.5rem
   img
     max-height: 150px
-    margin: 0 10px
+    //margin: 0 10px
+    margin-left: auto
+    margin-right: auto
+
+  .sponsor-fsharp
+    width: 90%
+    margin-left: auto
+    margin-right: auto
+
+  .sponsor-ms
+    width: 70%
+    margin-left: auto
+    margin-right: auto
 
 .parisienne
   font-family: 'Parisienne', sans-serif
@@ -125,8 +168,15 @@ $neon-green: #39FBCB
   font-weight: 400
   font-family: 'Abel', sans-serif
 
+.standard-margin
+  margin-left: 20%
+  h1, h4
+    padding-bottom: 1rem
+
 .content
-  margin-left: 25%
+  width: 70%
+  p
+    text-align: justify
 
 .ticket-holder
   border-top: 2px dashed $electric-blue
@@ -145,8 +195,7 @@ $neon-green: #39FBCB
 
 .general-info
   padding: 0
-  margin-top: -150px
-  margin-left: 25%
+  margin-left: 20%
   max-width: 30%
 
   .title
