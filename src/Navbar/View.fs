@@ -7,24 +7,23 @@ open Fulma
 open Global
 open Types
 
-let navButton classy href faClass txt =
-  Control.div [ ]
-    [ a [ ClassName (sprintf "button %s" classy)
-          Href href ]
-        [ span
-            [ ClassName "icon" ]
-            [ i
-                [ ClassName (sprintf "fa %s" faClass) ]
-                [ ] ]
-          span
-            [ ]
-            [ str txt ] ] ]
+let navButton classy href faClass =
+  a [
+      Href href ]
+    [ span
+        [ ClassName "icon" ]
+        [ i
+            [ ClassName (sprintf "navbar-social-icon fa %s" faClass) ]
+            [ ] ]
+    ]
 
 let navButtons =
-  div [ClassName "navbar-item"]
-    [ Field.div [ Field.IsGrouped ]
-        [ navButton "twitter" "https://twitter.com/FableCompiler" "fa-twitter" "Twitter"
-          navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-comments" "Gitter" ] ]
+  [
+    div [ClassName "navbar-item navbar-social"]
+          [ navButton "twitter" "https://twitter.com/FableCompiler" "fa-twitter" ]
+    div [ClassName "navbar-item navbar-social"] [
+            navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-commenting"  ]
+  ]
 
 let menuItem label page currentPage =
     a [
@@ -35,7 +34,6 @@ let menuItem label page currentPage =
 let root currentPage (model: Model) dispatch =
   nav [ClassName "navbar"] [
     div [ClassName "navbar-brand"] [
-      div [ClassName "navbar-item title is-4"] [str "FableConf 2018"]
       div [
         ClassName "navbar-burger"
         OnClick (fun _ -> dispatch ToggleBurger)
@@ -47,11 +45,16 @@ let root currentPage (model: Model) dispatch =
     ]
     div [classList ["navbar-menu", true; "is-active", model.isBurgerOpen]] [
       div [ClassName "navbar-start"] [
-        menuItem "Home" Home currentPage
-        // menuItem "Speakers" (Speakers None) currentPage
-        // menuItem "Food" Food currentPage
-        menuItem "Location" Page.Location currentPage
+        div [ClassName "navbar-item navbar-logo"] [
+            img [ Src "/img/logo_menu.png" ]
+        ]
+        menuItem "Home." Home currentPage
+        menuItem "Speakers." (Speakers None) currentPage
+        menuItem "Planning." Planning currentPage
+        menuItem "Venue." Venue currentPage
+        //menuItem "Food" Food currentPage
+        menuItem "Location." Page.Location currentPage
       ]
-      div [ClassName "navbar-end"] [navButtons]
+      div [ClassName "navbar-end"] navButtons
     ]
   ]

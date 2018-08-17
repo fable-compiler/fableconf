@@ -3,29 +3,51 @@ $purple: #7a325d
 $blue: #0055a4
 $primary: $blue
 $black: #202020
+$electric-blue: #1292FF
 
 @import '../node_modules/bulma/bulma'
+
+body
+  font-family: 'Cabin', sans-serif
+  background-color: #202020
+  color: white
 
 .fableconf-logo
   margin: 50px
 
+.icon .navbar-social-icon
+  font-size: 2rem
+
 .navbar
   background-color: $black
+  border-bottom: 2px $blue solid
   .title
     color: #686868
     font-weight: 600
     margin-bottom: 0
   .navbar-burger span
     background-color: white
+
+  .navbar-logo
+    img
+      max-height: 4rem
+    padding: 0
+    padding-left: 1rem
   .navbar-burger:hover
-    background-color: #686868
+    background-color: #101010
   .navbar-start
     .navbar-item
-      color: white
+      color: $electric-blue
+      text-transform: uppercase
+      font-weight: 700
+      padding-right: 3rem
     .navbar-item.is-active
-      background-color: #686868
+      color: #39FBCB
+      //background: #262626;
+      text-shadow: 0px 0px 5px #39FBCB
     .navbar-item:hover
-      color: black
+      color: #39FBCB
+      background-color: #101010
 
 .twitter
   color: #55acee !important // Override bulma

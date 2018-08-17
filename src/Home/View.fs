@@ -122,7 +122,7 @@ let root model dispatch =
   div [Style [!!("overflowY", "hidden")]] [
     div [ClassName "container"] [
       Image.image [Image.CustomClass "fableconf-logo"] [
-        img [Src "img/fableconf.svg"]
+        img [Src "img/logo_menu.png"] // this is in low res for now
       ]
       // h1 [ClassName "title is-1"] [str "FableConf 2017"]
       h4 [ClassName "title is-4"] [
