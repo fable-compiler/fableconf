@@ -125,16 +125,19 @@ let root model dispatch =
         img [Src "img/logo_menu.png"] // this is in low res for now
       ]
       // h1 [ClassName "title is-1"] [str "FableConf 2017"]
-      h4 [ClassName "title is-4"] [
-        Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-calendar"] []]
-        str " 26-27 October  "
-        Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-map-marker"] []]
-        str " Berlin, Germany"
-      ]
-      h6 [ClassName "subtitle is-6"] [
-        str "FableConf logo by "
-        a [Href "http://paulbacchus.com/"] [str "Paul Bacchus"]
-      ]
+      div[ClassName "general-info"] [
+        div[ ClassName "info" ] [
+          h4 [ClassName "title is-4 title-bold"] [
+            str "26-27 October 2018" ]
+          h4 [ClassName "title is-4 title-light last"] [
+            str "Berlin, Germany"
+          ]
+        ]
+        div[ ClassName "fsharp"] [
+          h4 [ClassName "title is-4 title-light"] [
+            str "F# enlightenment" ]
+      ]]
+
       div [ClassName "content"] [
         p [] [
           str "Come to the beautiful city of Berlin and be part of the combined FableConf and RemmiDemmi F# conferences! This year FableConf and RemmiDemmi are joining forces to provide two days of F#un opportunities for learning and meeting people from the Fable and F# communities."
@@ -248,12 +251,18 @@ let root model dispatch =
     ]
     br []
     section [
-      ClassName "hero is-medium is-primary"
+      ClassName "hero is-medium ticket-holder"
       ] [
         div [ClassName "hero-body"] [
           div [ClassName "container"] [
-            a [Href "https://www.eventbrite.co.uk/e/fableconf-2018-remmidemmi-in-the-safe-house-tickets-47025731228"] [
-              h1 [ClassName "title is-1 has-text-centered"] [str  "GET YOUR TICKET NOW!"]
+            div[ ClassName "ticket"] [
+               a [Href "https://www.eventbrite.co.uk/e/fableconf-2018-remmidemmi-in-the-safe-house-tickets-47025731228"] [
+                h1 [ClassName "title is-1 has-text-centered"] [
+                  span [] [ str  "GET YOUR "]
+                  span [ ClassName "parisienne"] [ str  "Ticket "]
+                  span [] [ str  "NOW!"]
+                  ]
+              ]
             ]
           ]
         ]

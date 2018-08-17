@@ -4,13 +4,9 @@ $blue: #0055a4
 $primary: $blue
 $black: #202020
 $electric-blue: #1292FF
+$neon-green: #39FBCB
 
 @import '../node_modules/bulma/bulma'
-
-body
-  font-family: 'Cabin', sans-serif
-  background-color: #202020
-  color: white
 
 .fableconf-logo
   margin: 50px
@@ -19,6 +15,7 @@ body
   font-size: 2rem
 
 .navbar
+  font-family: 'Cabin', sans-serif
   background-color: $black
   border-bottom: 2px $blue solid
   .title
@@ -42,9 +39,8 @@ body
       font-weight: 700
       padding-right: 3rem
     .navbar-item.is-active
-      color: #39FBCB
-      //background: #262626;
-      text-shadow: 0px 0px 5px #39FBCB
+      color: $neon-green
+      text-shadow: 0px 0px 5px $neon-green
     .navbar-item:hover
       color: #39FBCB
       background-color: #101010
@@ -114,8 +110,61 @@ body
     max-height: 150px
     margin: 0 10px
 
+.parisienne
+  font-family: 'Parisienne', sans-serif
+  font-weight: 400
+
+.title
+  color: $electric-blue
+
+.title-bold
+  font-weight: 700
+  font-family: 'Cabin', sans-serif
+
+.title-light
+  font-weight: 400
+  font-family: 'Abel', sans-serif
+
+.content
+  margin-left: 25%
+
+.ticket-holder
+  border-top: 2px dashed $electric-blue
+  border-bottom: 2px dashed $electric-blue
+
+.ticket
+  border-radius: 10px
+  border: 2px solid $electric-blue
+  width: 50%
+  margin-right: auto
+  margin-left: auto
+  box-shadow: 0px 0px 10px $electric-blue
+  padding: 0.5rem
+  h1
+    color: $neon-green
+
+.general-info
+  padding: 0
+  margin-top: -150px
+  margin-left: 25%
+  max-width: 30%
+
+  .title
+    margin: 0
+    padding-top: 0.3rem
+    padding-bottom: 0.3rem
+    font-size: 2rem
+
+  .fsharp
+    border-top: 1px solid $neon-green
+    .title
+      color: $neon-green
+
 // Needed otherwise iframes show a disabled scrollbar
 html,
 body
   overflow-y: auto
   overflow-x: hidden
+  font-family: 'Abel', sans-serif
+  background-color: #202020
+  color: white
