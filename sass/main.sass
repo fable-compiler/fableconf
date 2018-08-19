@@ -5,6 +5,7 @@ $primary: $blue
 $black: #202020
 $electric-blue: #1292FF
 $neon-green: #39FBCB
+$dark: #101010
 
 @import '../node_modules/bulma/bulma'
 
@@ -31,6 +32,9 @@ $neon-green: #39FBCB
 .icon .navbar-social-icon
   font-size: 2rem
 
+.title-on-photo
+  text-shadow: 0px 0px 5px $dark
+
 .navbar
   font-family: 'Cabin', sans-serif
   background-color: $black
@@ -48,7 +52,8 @@ $neon-green: #39FBCB
     padding: 0
     padding-left: 1rem
   .navbar-burger:hover
-    background-color: #101010
+    background-color: $dark
+
   .navbar-start
     .navbar-item
       color: $electric-blue
@@ -58,9 +63,10 @@ $neon-green: #39FBCB
     .navbar-item.is-active
       color: $neon-green
       text-shadow: 0px 0px 5px $neon-green
+      background-color: $dark
     .navbar-item:hover
       color: #39FBCB
-      background-color: #101010
+      background-color: $dark
 
 .twitter
   color: #55acee !important // Override bulma

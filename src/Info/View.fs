@@ -10,8 +10,8 @@ let root =
     section [ClassName "hero is-medium is-primary cap-sciences"] [
       div [ClassName "hero-body"] [
         div [ClassName "container"] [
-          h1 [ClassName "title is-1"] [str "Microsoft Berlin"]
-          h3 [ClassName "subtitle is-3"] [str "Germany"]
+          h1 [ClassName "title is-1 title-on-photo"] [str "Microsoft Berlin"]
+          h3 [ClassName "subtitle is-3 title-on-photo"] [str "Germany"]
         ]
       ]
     ]
@@ -20,7 +20,7 @@ let root =
     // h3 [ClassName "title is-3"] [str "Cap Sciences"]
     // h5 [ClassName "subtitle is-5"] [str "Bordeaux, France"]
     div [ClassName "container"] [
-      div [ClassName "content"] [
+      div [ClassName "content standard-margin"] [
         br []
         p [] [
           str "FableConf will take place at Microsoft facilities located in Unter den Linden 17, one of the few well-preserved historic sites which continues to contribute to the special flair of Berlin Mitte. Originally a high-class hotel, it still attracts visitors today.
