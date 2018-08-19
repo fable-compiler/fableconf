@@ -16,6 +16,7 @@ importAll "../sass/main.sass"
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 
+(*
 let menuItem label page currentPage =
     li
       [ ]
@@ -35,6 +36,7 @@ let menu currentPage =
         [ menuItem "Home" Home currentPage
           menuItem "Speakers" (Speakers None) currentPage
           menuItem "Location" Page.Location currentPage ] ]
+*)
 
 let root model dispatch =
 
@@ -50,7 +52,19 @@ let root model dispatch =
     [ div
         [ ClassName "navbar-bg" ]
         [ Navbar.View.root model.currentPage model.navbar (NavbarMsg >> dispatch) ]
-      pageHtml model.currentPage ]
+      pageHtml model.currentPage
+      div
+        [ ClassName "footer footer-bg" ]
+        [
+          span [ClassName "title-bold"] [
+            str "FABLE "
+          ]
+          span [ClassName "parisienne neon-green"] [
+            str "Conf'18"
+          ]
+          span [] [str " is organised with passion and dedication by fellow Fsharpists!"]
+        ]
+    ]
 
 open Elmish.React
 open Elmish.Debug
