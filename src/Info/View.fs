@@ -7,11 +7,27 @@ open Fulma
 
 let root =
   div [Style [!!("overflowY", "hidden")]] [
+
+    div [ClassName "container"] [
+      div [ClassName "standard-margin"] [
+          h1 [ClassName "title is-1 title-bold"] [str "Venue."]
+          h3 [ClassName "subtitle is-4"] [
+            span [ClassName "neon-green title-bold"] [str "Microsoft Berlin"]
+            br []
+            span [ClassName "title-light neon-green"] [str "Unter den Linden 17, 10117 Berlin,"]
+            span [ClassName "title-light neon-green"] [str "Germany"]
+          ]
+          h3 [ClassName "subtitle is-4"] [
+            span [ClassName "title-light neon-green"] [str "26-27 october"]
+            br []
+            span [ClassName "title-light neon-green"] [str "8:15"]
+          ]
+      ]
+    ]
+
     section [ClassName "hero is-medium is-primary cap-sciences"] [
       div [ClassName "hero-body"] [
         div [ClassName "container"] [
-          h1 [ClassName "title is-1 title-on-photo"] [str "Microsoft Berlin"]
-          h3 [ClassName "subtitle is-3 title-on-photo"] [str "Germany"]
         ]
       ]
     ]
@@ -21,13 +37,23 @@ let root =
     // h5 [ClassName "subtitle is-5"] [str "Bordeaux, France"]
     div [ClassName "container"] [
       div [ClassName "content standard-margin"] [
-        br []
+        h3 [ClassName "subtitle is-4"] [
+          span [ClassName "red title-bold"] [str "THE LOCATION"]
+        ]
         p [] [
           str "FableConf will take place at Microsoft facilities located in Unter den Linden 17, one of the few well-preserved historic sites which continues to contribute to the special flair of Berlin Mitte. Originally a high-class hotel, it still attracts visitors today.
 The ground floor with its multifunctional spaces and the adjacent Digital Eatery provide an extraordinary atmosphere between the traditional and the modern."
         ]
         p [] [str "Berlin is a vibrant city and a popular touristic destination. Make the most of your trip and relax during the weekend enjoying its world-famous museums and spots, among many other attractions."]
         br []
+        (*
+        h3 [ClassName "subtitle is-4"] [
+          span [ClassName "red title-bold"] [str "Transportation"]
+        ]
+        p [] [
+          str "Information coming soon"
+        ]
+        *)
       ]
     ]
     // article [ClassName "message is-primary"] [
@@ -39,8 +65,8 @@ The ground floor with its multifunctional spaces and the adjacent Digital Eatery
     //     ]
     //   ]
     // ]
-    h4 [Class "title is-4 has-text-centered"] [str "Transportation info coming soon!"]
-    br []
+    //h4 [Class "title is-4 has-text-centered"] [str "Transportation info coming soon!"]
+    //br []
     // div [ClassName "container"] [
     //   div [ClassName "content"] [
     //     // h1 [ClassName "has-text-centered"] [str "Transportation"]
