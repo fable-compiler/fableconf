@@ -46,7 +46,7 @@ let root currentPage (model: Model) dispatch =
     div [classList ["navbar-menu", true; "is-active", model.isBurgerOpen]] [
       div [ClassName "navbar-start"] [
         div [ClassName "navbar-item navbar-logo"] [
-            img [ Src "/img/logo_menu.png" ]
+            img [ Src "img/logo_menu.png" ]
         ]
         menuItem "Home." Home currentPage
         // menuItem "Speakers." (Speakers None) currentPage
