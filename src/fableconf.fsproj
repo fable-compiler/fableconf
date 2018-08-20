@@ -12,6 +12,8 @@
     <Compile Include="Speakers/Types.fs" />
     <Compile Include="Speakers/State.fs" />
     <Compile Include="Speakers/View.fs" />
+    <!-- Planning -->
+    <Compile Include="Planning/Planning.fs" />
     <!-- Home -->
     <Compile Include="Home/Types.fs" />
     <Compile Include="Home/State.fs" />

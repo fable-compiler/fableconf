@@ -6,7 +6,7 @@ open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fulma.FontAwesome
 open Fulma
-open Types
+open Global
 
 module Workshops =
   let aTitle = "Developing web apps with Elmish"
@@ -96,7 +96,7 @@ let partyCard isTalk time body =
   div [ClassName "party"] body
   |> genericCard isTalk time
 
-let speakerCard time (speaker: Speakers.Types.Speaker) =
+let speakerCard time (speaker: Speaker) =
   div [ClassName "columns schedule"] [
     div [ClassName "column is-one-quarter schedule-time schedule-talk"] [
       p [ClassName "title is-5"] [str time]

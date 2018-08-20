@@ -6,6 +6,7 @@ open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Fulma
 open Types
+open Global
 
 [<RequireQualifiedAccess>]
 module Seq =

@@ -3,20 +3,7 @@ module Speakers.Types
 open Fable.Import.React
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-
-type Talk =
-  { title: string; content: ReactElement }
-
-type Speaker =
-  {
-    shortname: string
-    name: string
-    picture: string
-    talk: Talk
-    bio: string option
-    twitter: string option
-    github: string option
-  }
+open Global
 
 type Model =
   { modal: (Speaker * Talk) option
@@ -83,7 +70,7 @@ let Maxime =
     name = "Maxime Mangel"
     picture = "img/maxime.png"
     talk =
-     { title = "Hink: Write Web applications without CSS"
+     { title = "Keynote"
        content =
         div [] [
           p [] [str "Hink, is a library allowing developers to write web application without CSS. It's primary goal is to provide the basics stack needed to create an UI."]
@@ -158,16 +145,167 @@ let Krzysztof =
     name = "Krzysztof Cieślak"
     picture = "img/Krzysztof.jpg"
     talk =
-      { title = "Building editor tooling with Fable"
+      { title = "Future of web development with F#"
         content =
-          div [] [
-            p [] [str "One of the Fable aims is to bring happiness, create ecosystem that's easy and fun to use. Such ecosystem consists of not only great compiler (and Fable is great), and good libraries (and we have some amazing libraries) but it also needs to includes great tooling around it."]
-            p [] [str "In the talk I'll show how Fable enables us to easily create rich editor tooling in VSCode (lightweight, cross platform IDE) and Monaco ( online editor). It will be based on over a year of experience of using Fable 'in production' to create Ionide - F# tooling in VSCode, and Ionide-web - online editor for F#"]
-          ]
+          str "?"
       }
     bio = Some "Krzysztof is an software developer, consultant, open source contributor and active member of the F# community."
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
+  }
+
+let Gien =
+  {
+    shortname = "gien"
+    name = "Gien Verschatse"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Becoming a full stack artist: a quest into the unknown"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Sia =
+  {
+    shortname = "sia"
+    name = "Sia"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Azure Functions Deep Dive"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Evelina =
+  {
+    shortname = "evelina"
+    name = "Evelina Gabasova"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Data visualization with Fable?"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Jeff =
+  {
+    shortname = "jeff"
+    name = "Jeff Hollan"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Azure Functions"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Julien =
+  {
+    shortname = "julien"
+    name = "Julien Roncaglia"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Performance tricks for Fable/React apps?"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Tomasz =
+  {
+    shortname = "tomasz"
+    name = "Tomasz Heimowski"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Build a game in 45 minutes?"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let RomanP =
+  {
+    shortname = "romanp"
+    name = "Roman Provazník"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Event Sourcing with SAFE-Stack"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Zaid =
+  {
+    shortname = "zaid"
+    name = "Zaid Ajar"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Scaling Elmish Applications"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let RomanS =
+  {
+    shortname = "romans"
+    name = "Roman Sachse"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Domain Driven UI with SAFE-Stack"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Ketleen =
+  {
+    shortname = "ketleen"
+    name = "Ketleen Gabriels"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = "Keynote"
+        content = str "? Come back soon! "
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
+let Stachu =
+  {
+    shortname = "stachu"
+    name = "Stachu Korick"
+    picture = "img/Indy.jpeg"
+    talk =
+      { title = ""
+        content = str ""
+      }
+    bio = None
+    twitter = None
+    github = None
   }
 
 let speakersMap =
@@ -178,5 +316,16 @@ let speakersMap =
     Indy.shortname, Indy
     Alfonso.shortname, Alfonso
     Krzysztof.shortname, Krzysztof
+    Gien.shortname, Gien
+    Sia.shortname, Sia
+    Evelina.shortname, Evelina
+    Jeff.shortname, Jeff
+    Julien.shortname, Julien
+    Tomasz.shortname, Tomasz
+    RomanP.shortname, RomanP
+    Zaid.shortname, Zaid
+    RomanS.shortname, RomanS
+    Ketleen.shortname, Ketleen
+    Stachu.shortname, Stachu
   ] |> Map
 

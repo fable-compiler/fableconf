@@ -11,6 +11,7 @@ let pageParser: Parser<Page->Page,Page> =
   oneOf [
     map Home (s "home")
     map Location (s "location")
+    map Planning (s "planning")
     // map Food (s "food")
     // map (Some >> Speakers) (s "speakers" </> str)
     // map (Speakers None) (s "speakers")
@@ -36,11 +37,13 @@ let init result =
   let speakers = Speakers.State.init()
   let (navbar, navCmd) = Navbar.State.init()
   let (home, homeCmd) = Home.State.init()
+  let planning = Planning.State.init()
   let (model, cmd) =
     urlUpdate result
       { currentPage = Home
         navbar = navbar
         speakers = speakers
+        planning = planning
         home = home }
   model, Cmd.batch [ cmd
                      Cmd.map NavbarMsg navCmd
