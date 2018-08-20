@@ -7,7 +7,7 @@ nuget Fable.Core
 nuget Fable.Elmish.React
 nuget Fable.Elmish.Browser
 nuget Fable.Elmish.Debugger
-nuget Fulma prerelease
+nuget Fulma
 
 group Build
   source https://nuget.org/api/v2

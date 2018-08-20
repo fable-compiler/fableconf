@@ -134,7 +134,7 @@ module State =
       }
 
       {
-        Date="Day Two - Satruday 27 Oct. 2018"
+        Date="Day Two - Saturday 27 Oct. 2018"
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
           takeABreak "Breakfast" "08:15"
