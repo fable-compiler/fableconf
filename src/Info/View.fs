@@ -27,8 +27,7 @@ let root =
 
     section [ClassName "hero is-medium is-primary cap-sciences"] [
       div [ClassName "hero-body"] [
-        div [ClassName "container"] [
-        ]
+        div [ClassName "container"] []
       ]
     ]
     // Image.image [] [img [Src "img/cap-sciences.jpg"]]

@@ -9,27 +9,26 @@ open Types
 
 let pageParser: Parser<Page->Page,Page> =
   oneOf [
-    map Location (s "location")
-    map Food (s "food")
-    //map (Some >> Speakers) (s "speakers" </> str)
-    map (Speakers None) (s "speakers")
     map Home (s "home")
+    map Location (s "location")
+    // map Food (s "food")
+    // map (Some >> Speakers) (s "speakers" </> str)
+    // map (Speakers None) (s "speakers")
   ]
 
 let urlUpdate (result: Option<Page>) model =
   match result with
   | None ->
-    console.error("Error parsing url")
-    model, Navigation.modifyUrl (toHash model.currentPage)
-  | Some(Speakers(Some speaker)) ->
-      let modal =
-        let speaker = Speakers.Types.speakersMap |> Map.find speaker
-        Some(speaker, speaker.talk)
-      let speakers = { model.speakers with modal = modal }
-      { model with speakers = speakers; currentPage = Speakers (Some speaker) }, []
-  | Some(Speakers None) ->
-      let speakers = { model.speakers with modal = None }
-      { model with speakers = speakers; currentPage = Speakers None }, []
+    { model with currentPage = Home }, []
+  // | Some(Speakers(Some speaker)) ->
+  //     let modal =
+  //       let speaker = Speakers.Types.speakersMap |> Map.find speaker
+  //       Some(speaker, speaker.talk)
+  //     let speakers = { model.speakers with modal = modal }
+  //     { model with speakers = speakers; currentPage = Speakers (Some speaker) }, []
+  // | Some(Speakers None) ->
+  //     let speakers = { model.speakers with modal = None }
+  //     { model with speakers = speakers; currentPage = Speakers None }, []
   | Some page ->
     { model with currentPage = page }, []
 
