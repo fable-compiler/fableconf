@@ -44,7 +44,7 @@ let root model dispatch =
     function
     | Location -> Info.View.root
     // | Food -> Food.View.root
-    // | Speakers speaker -> Speakers.View.root model.speakers
+    | Speakers speaker -> Speakers.View.root model.speakers
     | Home | _ -> Home.View.root model.home (HomeMsg >> dispatch)
 
   div
@@ -63,6 +63,7 @@ let root model dispatch =
             str "Conf'18"
           ]
           span [] [str " is organised with passion and dedication by fellow Fsharpists!"]
+          a [Href "http://www.biensuratelier.com/graphisme.html";Target "_blank"] [ span [ClassName "neon-green"] [str " Website by BIENSÜR Graphisme"]]
         ]
     ]
 

@@ -7,6 +7,7 @@ $electric-blue: #1292FF
 $neon-green: #39FBCB
 $dark: #101010
 $red: #FF0054
+$speakerPicSize: 250px
 
 @import '../node_modules/bulma/bulma'
 
@@ -147,6 +148,31 @@ $red: #FF0054
 .is-vertical-center
   display: flex
   align-items: center
+
+.speakers
+  margin-top: 2rem
+  .speaker-photo
+    border-radius: 50%
+    width: $speakerPicSize
+    height: $speakerPicSize
+    max-width: $speakerPicSize
+    max-height: $speakerPicSize
+    background-position: center center
+    background-repeat: no-repeat
+    background-size: cover
+
+  .red
+    border: 5px solid $red
+    box-shadow: 0px 0px 15px $red
+
+  .green
+    border: 5px solid $neon-green
+    box-shadow: 0px 0px 15px $neon-green
+
+  .blue
+    border: 5px solid $electric-blue
+    box-shadow: 0px 0px 15px $electric-blue
+
 
 .sponsors
   width: 70%
