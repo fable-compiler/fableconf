@@ -25,10 +25,11 @@ let navButtons =
             navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-commenting"  ]
   ]
 
-let menuItem label page currentPage =
+let menuItem label page currentPage dispatch=
     a [
       classList ["navbar-item", true; "is-active", page = currentPage]
       Href (toHash page)
+      OnClick (fun _ -> dispatch ToggleBurger)
     ] [str label]
 
 let root currentPage (model: Model) dispatch =
@@ -48,11 +49,11 @@ let root currentPage (model: Model) dispatch =
         div [ClassName "navbar-item navbar-logo"] [
             img [ Src "img/logo_menu.png" ]
         ]
-        menuItem "Home." Home currentPage
+        menuItem "Home." Home currentPage dispatch
         // menuItem "Speakers." (Speakers None) currentPage
-        menuItem "Planning." Planning currentPage
+        menuItem "Planning." Planning currentPage dispatch
         // menuItem "Food" Food currentPage
-        menuItem "Location." Page.Location currentPage
+        menuItem "Location." Page.Location currentPage dispatch
       ]
       div [ClassName "navbar-end"] navButtons
     ]
