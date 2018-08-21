@@ -211,11 +211,11 @@ let root model dispatch =
     section [Class "hero is-small"] [
         div [Class "hero-body"] [
           div[ Class "standard-margin"] [
-            h1 [Class "title is-2 title-bold"] [str "SAFE-STACK SEMINAR."]
+            h1 [Class "title is-2 title-bold"] [str "PRE-CONFERENCE - CLOUD PROGRAMMING WITH F#"]
             h4 [Class "subtitle is-5 neon-green"] [
-              str "The day before a "
-              a [Href "https://safe-stack.github.io/"] [str "SAFE-Stack"]
-              str " seminar will take place as a separate event. Get your ticket "
+              str "The day before FableConf, learn how to write and host "
+              a [Href "https://safe-stack.github.io/"] [str "SAFE"]
+              str " apps on Azure with F# - available at a special low price! Get your ticket "
               a [Href "https://www.eventbrite.co.uk/e/cloud-programming-with-f-tickets-48056860363"] [str "HERE"]
               str "."
             ]
@@ -226,7 +226,7 @@ let root model dispatch =
     section [Class "hero is-small"] [
         div [Class "hero-body"] [
           div[ Class "standard-margin"] [
-            h1 [Class "title is-2 title-bold"] [str "SPONSORS."]
+            h1 [Class "title is-2 title-bold"] [str "SPONSORS"]
             h4 [Class "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
           ]
           div [Class "sponsors"] [
