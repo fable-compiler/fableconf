@@ -5,7 +5,7 @@ open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Global
-open Speakers.Types
+open Speakers
 open Fable.Import.React
 open Fulma
 

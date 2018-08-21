@@ -7,12 +7,8 @@
     <Compile Include="Global.fs" />
     <!-- Info -->
     <Compile Include="Info/View.fs" />
-    <Compile Include="Food/View.fs" />
-    <!-- Speakers -->
-    <Compile Include="Speakers/Types.fs" />
-    <Compile Include="Speakers/State.fs" />
-    <Compile Include="Speakers/View.fs" />
     <!-- Planning -->
+    <Compile Include="Planning/Speakers.fs" />
     <Compile Include="Planning/Planning.fs" />
     <!-- Home -->
     <Compile Include="Home/Types.fs" />

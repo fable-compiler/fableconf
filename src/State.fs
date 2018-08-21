@@ -21,20 +21,10 @@ let urlUpdate (result: Option<Page>) model =
   match result with
   | None ->
     { model with currentPage = Home }, []
-  // | Some(Speakers(Some speaker)) ->
-  //     let modal =
-  //       let speaker = Speakers.Types.speakersMap |> Map.find speaker
-  //       Some(speaker, speaker.talk)
-  //     let speakers = { model.speakers with modal = modal }
-  //     { model with speakers = speakers; currentPage = Speakers (Some speaker) }, []
-  // | Some(Speakers None) ->
-  //     let speakers = { model.speakers with modal = None }
-  //     { model with speakers = speakers; currentPage = Speakers None }, []
   | Some page ->
     { model with currentPage = page }, []
 
 let init result =
-  let speakers = Speakers.State.init()
   let (navbar, navCmd) = Navbar.State.init()
   let (home, homeCmd) = Home.State.init()
   let planning = Planning.State.init()
@@ -42,7 +32,6 @@ let init result =
     urlUpdate result
       { currentPage = Home
         navbar = navbar
-        speakers = speakers
         planning = planning
         home = home }
   model, Cmd.batch [ cmd
