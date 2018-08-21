@@ -57,17 +57,17 @@ module Workshops =
 
 let genericCard isTalk time body =
   let typ = if isTalk then "talk" else "break"
-  div [ClassName "columns schedule"] [
-    div [ClassName ("column is-one-quarter schedule-time schedule-" + typ)] [
-      p [ClassName "title is-5"] [str time]
+  div [Class "columns schedule"] [
+    div [Class ("column is-one-quarter schedule-time schedule-" + typ)] [
+      p [Class "title is-5"] [str time]
     ]
-    div [ClassName ("column schedule-content schedule-" + typ)] [
+    div [Class ("column schedule-content schedule-" + typ)] [
       body
     ]
   ]
 
 let misterySpeaker =
-  h5 [ClassName "title is-5"] [
+  h5 [Class "title is-5"] [
     Icon.faIcon [] [Fa.icon Fa.I.Question]
     Icon.faIcon [] [Fa.icon Fa.I.Question]
     str "Mistery Speaker"
@@ -76,40 +76,40 @@ let misterySpeaker =
   ]
 
 let linkImage size css src href =
-  div[ ClassName (sprintf "column %s is-vertical-center" size)] [
+  div[ Class (sprintf "column %s is-vertical-center" size)] [
     Image.image [Image.CustomClass (sprintf "sponsor-image %s" css)] [
       a [Href href] [img [Src ("img/" + src)]] ]
   ]
 
 let breakCard time text =
-  h5 [ClassName "title is-5"] [str text]
+  h5 [Class "title is-5"] [str text]
   |> genericCard false time
 
 let workshopCard time title body =
-  div [ClassName "workshop"] [
-    h3 [ClassName "title is-6"] [str title]
+  div [Class "workshop"] [
+    h3 [Class "title is-6"] [str title]
     body
   ]
   |> genericCard true time
 
 let partyCard isTalk time body =
-  div [ClassName "party"] body
+  div [Class "party"] body
   |> genericCard isTalk time
 
 let speakerCard time (speaker: Speaker) =
-  div [ClassName "columns schedule"] [
-    div [ClassName "column is-one-quarter schedule-time schedule-talk"] [
-      p [ClassName "title is-5"] [str time]
+  div [Class "columns schedule"] [
+    div [Class "column is-one-quarter schedule-time schedule-talk"] [
+      p [Class "title is-5"] [str time]
     ]
-    div [ClassName "column schedule-content schedule-talk"] [
-      article [ClassName "media"] [
-        figure [ClassName "media-left"] [
-          p [ClassName "image is-64x64"] [
+    div [Class "column schedule-content schedule-talk"] [
+      article [Class "media"] [
+        figure [Class "media-left"] [
+          p [Class "image is-64x64"] [
             img [Src speaker.picture]
           ]
         ]
-        figure [ClassName "media-content"] [
-          div [ClassName "content"] [
+        figure [Class "media-content"] [
+          div [Class "content"] [
             a [Href ("#speakers/" + speaker.shortname)] [
               strong [] [str speaker.name]
               br []
@@ -123,9 +123,9 @@ let speakerCard time (speaker: Speaker) =
 
 let root model dispatch =
   div [Style [!!("overflowY", "hidden")]] [
-    div [ClassName "container"] [
+    div [Class "container"] [
 
-      div[ ClassName "logo"] [
+      div[ Class "logo"] [
         Image.image [Image.CustomClass "fableconf-logo"] [
           img [Src "img/fablelogo.svg"] // this is in low res for now
         ]
@@ -139,21 +139,21 @@ let root model dispatch =
         ]
       ]
 
-      // h1 [ClassName "title is-1"] [str "FableConf 2017"]
-      div[ClassName "general-info"] [
-        div[ ClassName "info" ] [
-          h4 [ClassName "title is-4 title-bold"] [
+      // h1 [Class "title is-1"] [str "FableConf 2017"]
+      div[Class "general-info"] [
+        div[ Class "info" ] [
+          h4 [Class "title is-4 title-bold"] [
             str "26-27 October 2018" ]
-          h4 [ClassName "title is-4 title-light last"] [
+          h4 [Class "title is-4 title-light last"] [
             str "Berlin, Germany"
           ]
         ]
-        div[ ClassName "fsharp"] [
-          h4 [ClassName "title is-4 title-light"] [
+        div[ Class "fsharp"] [
+          h4 [Class "title is-4 title-light"] [
             str "F# enlightenment" ]
       ]]
 
-      div [ClassName "content standard-margin"] [
+      div [Class "content standard-margin"] [
         p [] [
           str "Come to the beautiful city of Berlin and be part of the combined FableConf and RemmiDemmi F# conferences! This year FableConf and RemmiDemmi are joining forces to provide two days of F#un opportunities for learning and meeting people from the Fable and F# communities."
         ]
@@ -179,8 +179,8 @@ let root model dispatch =
         br []
       ]
     ]
-    div [ClassName "container"] [
-      h2 [ClassName "title is-2 has-text-centered"] [str "Friday: Talks"]
+    div [Class "container"] [
+      h2 [Class "title is-2 has-text-centered"] [str "Friday: Talks"]
       p [Class "has-text-centered"] [str "More info coming soon!"]
       // div [] [ // Group so :first-child :last-child rules apply
       //   breakCard   "8:30 - 9:30"   "Breakfast"
@@ -202,15 +202,15 @@ let root model dispatch =
       // br []
       br []
 
-      // div [ClassName "container has-text-centered"] [
-      //   h2 [ClassName "title is-2"] [ //; Style [Color "#f5ec48"]] [
+      // div [Class "container has-text-centered"] [
+      //   h2 [Class "title is-2"] [ //; Style [Color "#f5ec48"]] [
       //     Icon.faIcon [] [Fa.icon Fa.I.Star]
       //     Icon.faIcon [] [Fa.icon Fa.I.Star]
       //     str "Party"
       //     Icon.faIcon [] [Fa.icon Fa.I.Star]
       //     Icon.faIcon [] [Fa.icon Fa.I.Star]
       //   ]
-      //   h4 [ClassName "subtitle is-6"] [
+      //   h4 [Class "subtitle is-6"] [
       //     str "After the talks, it is time for the "; em [] [str "Fabelous Party!"]
       //     str " Join us to keep enjoying the local gastronomy and relax chatting with other community members. "
       //     strong [] [str "Please note the conference ticket does not include the food and drinks for the party."]
@@ -233,7 +233,7 @@ let root model dispatch =
       // br []
       // br []
 
-      h2 [ClassName "title is-2 has-text-centered"] [str "Saturday: Workshops"]
+      h2 [Class "title is-2 has-text-centered"] [str "Saturday: Workshops"]
       p [Class "has-text-centered"] [str "More info coming soon!"]
       // div [] [ // Group so :first-child :last-child rules apply
       //   workshopCard  "9:00 - 10:45" Workshops.aTitle Workshops.aBody
@@ -246,8 +246,8 @@ let root model dispatch =
       // ]
       br []
 
-      // article [ClassName "message is-primary"] [
-      //   div [ClassName "message-body has-text-centered"] [
+      // article [Class "message is-primary"] [
+      //   div [Class "message-body has-text-centered"] [
       //     p [] [
       //       str "Workshops will take place at "
       //       a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
@@ -266,15 +266,15 @@ let root model dispatch =
     ]
     br []
     section [
-      ClassName "hero is-medium ticket-holder"
+      Class "hero is-medium bottom-border"
       ] [
-        div [ClassName "hero-body"] [
-          div [ClassName "container"] [
-            div[ ClassName "ticket"] [
+        div [Class "hero-body"] [
+          div [Class "container"] [
+            div[ Class "ticket"] [
                a [Href "https://www.eventbrite.co.uk/e/fableconf-2018-remmidemmi-in-the-safe-house-tickets-47025731228"] [
-                h1 [ClassName "title is-1 has-text-centered"] [
+                h1 [Class "title is-1 has-text-centered"] [
                   span [] [ str  "GET YOUR "]
-                  span [ ClassName "parisienne"] [ str  "Ticket "]
+                  span [ Class "parisienne"] [ str  "Ticket "]
                   span [] [ str  "NOW!"]
                   ]
               ]
@@ -283,12 +283,12 @@ let root model dispatch =
         ]
       ]
     br []
-    div[ ClassName "standard-margin"] [
-      h1 [ClassName "title is-2 title-bold"] [str "SPONSORS."]
-      h4 [ClassName "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
+    div[ Class "standard-margin"] [
+      h1 [Class "title is-2 title-bold"] [str "SPONSORS."]
+      h4 [Class "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
     ]
-    div [ClassName "sponsors"] [
-      div[ ClassName "columns"] [
+    div [Class "sponsors"] [
+      div[ Class "columns"] [
         linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
         linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
         linkImage "is-4" "sponsor-ms" "microsoft.png" "https://www.microsoft.com/"
@@ -300,16 +300,16 @@ let root model dispatch =
       ]
     ]
     br []
-    div [ClassName "container"] [
-      div[ ClassName "standard-margin"] [
-        div [ClassName "columns"] [
-          div [ClassName "column is-three-quarters"] [
-            h3 [ClassName "title is-2"] [str "CODE OF CONDUCT"]
-            h4 [ClassName "subtitle is-4 neon-green"] [str "Be respectful, be open, and be considerate."]
+    div [Class "container"] [
+      div[ Class "standard-margin"] [
+        div [Class "columns"] [
+          div [Class "column is-three-quarters"] [
+            h3 [Class "title is-2"] [str "CODE OF CONDUCT"]
+            h4 [Class "subtitle is-4 neon-green"] [str "Be respectful, be open, and be considerate."]
           ]
-          div [ClassName "column"] [
+          div [Class "column"] [
             a [Href "http://diversitycharter.org/"] [
-              figure [ClassName "image"] [
+              figure [Class "image"] [
                 img [
                   Style [Margin "0 auto"; Width "auto"]
                   Src "img/diversity.png"]
@@ -317,7 +317,7 @@ let root model dispatch =
             ]
           ]
         ]
-        div [ClassName "content"] [
+        div [Class "content"] [
           p [] [
             str "Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, or religion (or lack thereof). We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers. "
             a [Href "http://confcodeofconduct.com/"] [str "Read more."]

@@ -6,8 +6,8 @@ open Fable.Core.JsInterop
 open Fulma
 
 let firstColumn =
-  div [ClassName "column is-half"] [
-    div [ClassName "content"] [
+  div [Class "column is-half"] [
+    div [Class "content"] [
       h2 [] [str "Breakfast (8:30-9:30)"]
       p [] [strong [] [str "Assortiment de mini-viennoiserie"]]
       ul [] [
@@ -38,8 +38,8 @@ let firstColumn =
   ]
 
 let secondColumn =
-  div [ClassName "column is-half"] [
-    div [ClassName "content"] [
+  div [Class "column is-half"] [
+    div [Class "content"] [
       h2 [] [str "Lunch (12:30-14:00)"]
       p [] [strong [] [str "Buffet debout Les pièces à la pique"]]
       ul [] [
@@ -80,10 +80,10 @@ let secondColumn =
 let root =
   div [] [
     Image.image [] [img [Src "img/macaron.jpg"]]
-    div [ClassName "container"] [
+    div [Class "container"] [
       br []
-      article [ClassName "message is-primary"] [
-        div [ClassName "message-body has-text-centered"] [
+      article [Class "message is-primary"] [
+        div [Class "message-body has-text-centered"] [
           p [] [
             str "Sorry, no fast-food at FableConf..."
             strong [] [str " This is France! "]
@@ -96,11 +96,11 @@ let root =
           ]
         ]
       ]
-      div [ClassName "columns"] [
+      div [Class "columns"] [
         firstColumn
         secondColumn
       ]
-      h4 [ClassName "title is-4 has-text-centered"] [
+      h4 [Class "title is-4 has-text-centered"] [
         str "Caterer: "
         a [Href "http://www.lagrifgourmande.fr/"] [str "La Grif' Gourmande"]
       ]

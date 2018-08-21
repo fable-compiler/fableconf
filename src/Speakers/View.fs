@@ -23,14 +23,14 @@ module Seq =
         }
 
 let modalView (speaker: Speaker) (talk: Talk) =
-  div [ClassName "modal is-active"] [
+  div [Class "modal is-active"] [
     a [
       Href "#speakers"
-      ClassName "modal-background"
+      Class "modal-background"
     ] []
-    div [ClassName "modal-content"] [
-      div [ClassName "box"] [
-        div [ClassName "content"] [
+    div [Class "modal-content"] [
+      div [Class "box"] [
+        div [Class "content"] [
           yield h1 [] [str talk.title]
           yield talk.content
           match speaker.bio with
@@ -42,7 +42,7 @@ let modalView (speaker: Speaker) (talk: Talk) =
       ]
     ]
     // button [
-    //   ClassName "modal-close is-large"
+    //   Class "modal-close is-large"
     //   OnClick (fun _ -> dispatch CloseModal)
     // ] []
   ]
@@ -58,27 +58,27 @@ let cardView (speaker: Speaker) =
     | _ -> "blue"
 
   let speakerClass = sprintf "speaker-photo %s" color
-  div[ ClassName "column" ] [
-    div[ ClassName "columns"] [
-      div[ ClassName "column" ] [
-        div [ClassName speakerClass; Style [BackgroundImage (sprintf "url('%s')" speaker.picture)]] [
+  div[ Class "column" ] [
+    div[ Class "columns"] [
+      div[ Class "column" ] [
+        div [Class speakerClass; Style [BackgroundImage (sprintf "url('%s')" speaker.picture)]] [
         ]
       ]
-      div[ ClassName "column content" ] [
-          p [ClassName "title is-4 "] [str speaker.name]
-          p [ClassName "subtitle is-6 neon-green"] [str speaker.talk.title]
+      div[ Class "column content" ] [
+          p [Class "title is-4 "] [str speaker.name]
+          p [Class "subtitle is-6 neon-green"] [str speaker.talk.title]
           speaker.talk.content
       ]
     ]
   ]
 
   (*
-  div [ ClassName "column" ] [
+  div [ Class "column" ] [
     div [
-      ClassName "card"
+      Class "card"
       Style [CSSProp.Width "300px"]
     ] [
-      div [ClassName "card-image"] [
+      div [Class "card-image"] [
         Image.image [] [
           img [
             Src speaker.picture
@@ -92,25 +92,25 @@ let cardView (speaker: Speaker) =
           ]
         ]
       ]
-      div [ClassName "card-content"] [
+      div [Class "card-content"] [
         a [
           Href ("#speakers/" + speaker.shortname)
-          ClassName "content"
+          Class "content"
         ] [
-          p [ClassName "title is-4 has-text-centered"] [str speaker.name]
-          p [ClassName "subtitle is-6 has-text-centered"] [str speaker.talk.title]
+          p [Class "title is-4 has-text-centered"] [str speaker.name]
+          p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
         ]
         div [
-          ClassName "level is-mobile"
+          Class "level is-mobile"
           Style [MarginTop "20px"]
         ] [
           speaker.twitter |> Option.map (fun username ->
-            a [ClassName "level-item"; Href ("https://twitter.com/" + username) ] [
-              Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-twitter"] []]
+            a [Class "level-item"; Href ("https://twitter.com/" + username) ] [
+              Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-twitter"] []]
             ]) |> ofOption
           speaker.github |> Option.map (fun username ->
-            a [ClassName "level-item"; Href ("https://github.com/" + username) ] [
-              Icon.icon [Icon.Size Size.IsMedium] [i [ClassName "fa fa-github"] []]
+            a [Class "level-item"; Href ("https://github.com/" + username) ] [
+              Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-github"] []]
             ]) |> ofOption
         ]
       ]
@@ -122,10 +122,10 @@ let root model =
 
   let components =
     [
-      div[ ClassName "container"] [
-        div[ ClassName "standard-margin"] [
-          h1 [ClassName "title is-1 title-bold"] [str "SPEAKERS."]
-          h4 [ClassName "subtitle is-3 neon-green"] [str "Discover your fellow F# speakers!"]
+      div[ Class "container"] [
+        div[ Class "standard-margin"] [
+          h1 [Class "title is-1 title-bold"] [str "SPEAKERS."]
+          h4 [Class "subtitle is-3 neon-green"] [str "Discover your fellow F# speakers!"]
         ]
       ]
     ]
@@ -137,14 +137,14 @@ let root model =
         |> Seq.SplitInto 2
         |> Seq.map( fun currentList ->
           let cards = currentList |> Seq.toList |> List.map cardView
-          div [ClassName "container speakers columns"] cards
+          div [Class "container speakers columns"] cards
         )
         |> Seq.toList
 
     let modals = [ model.modal |> Option.map (fun (speaker, talk) -> modalView speaker talk) |> ofOption ]
 
     [
-      div[ ClassName ""] (speakerCards @ modals)
+      div[ Class ""] (speakerCards @ modals)
     ]
 
   div [

@@ -27,12 +27,12 @@ let menuItem label page currentPage =
 
 let menu currentPage =
   aside
-    [ ClassName "menu" ]
+    [ Class "menu" ]
     [ p
-        [ ClassName "menu-label" ]
+        [ Class "menu-label" ]
         [ str "General" ]
       ul
-        [ ClassName "menu-list" ]
+        [ Class "menu-list" ]
         [ menuItem "Home" Home currentPage
           menuItem "Speakers" (Speakers None) currentPage
           menuItem "Location" Page.Location currentPage ] ]
@@ -51,20 +51,20 @@ let root model dispatch =
   div
     []
     [ div
-        [ ClassName "navbar-bg" ]
+        [ Class "navbar-bg" ]
         [ Navbar.View.root model.currentPage model.navbar (NavbarMsg >> dispatch) ]
       pageHtml model.currentPage
       div
-        [ ClassName "footer footer-bg" ]
+        [ Class "footer footer-bg" ]
         [
-          span [ClassName "title-bold"] [
+          span [Class "title-bold"] [
             str "FABLE "
           ]
-          span [ClassName "parisienne neon-green"] [
+          span [Class "parisienne neon-green"] [
             str "Conf'18"
           ]
           span [] [str " is organised with passion and dedication by fellow Fsharpists!"]
-          a [Href "http://www.biensuratelier.com/graphisme.html";Target "_blank"] [ span [ClassName "neon-green"] [str " web design by Atelier BIENSÜR Graphisme"]]
+          a [Href "http://www.biensuratelier.com/graphisme.html";Target "_blank"] [ span [Class "neon-green"] [str " web design by Atelier BIENSÜR Graphisme"]]
         ]
     ]
 

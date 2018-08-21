@@ -11,17 +11,17 @@ let navButton classy href faClass =
   a [
       Href href ]
     [ span
-        [ ClassName "icon" ]
+        [ Class "icon" ]
         [ i
-            [ ClassName (sprintf "navbar-social-icon fa %s" faClass) ]
+            [ Class (sprintf "navbar-social-icon fa %s" faClass) ]
             [ ] ]
     ]
 
 let navButtons =
   [
-    div [ClassName "navbar-item navbar-social"]
+    div [Class "navbar-item navbar-social"]
           [ navButton "twitter" "https://twitter.com/FableCompiler" "fa-twitter" ]
-    div [ClassName "navbar-item navbar-social"] [
+    div [Class "navbar-item navbar-social"] [
             navButton "github" "https://gitter.im/fable-compiler/Fable" "fa-commenting"  ]
   ]
 
@@ -33,10 +33,10 @@ let menuItem label page currentPage dispatch=
     ] [str label]
 
 let root currentPage (model: Model) dispatch =
-  nav [ClassName "navbar"] [
-    div [ClassName "navbar-brand"] [
+  nav [Class "navbar"] [
+    div [Class "navbar-brand"] [
       div [
-        ClassName "navbar-burger"
+        Class "navbar-burger"
         OnClick (fun _ -> dispatch ToggleBurger)
       ] [
         span [] []
@@ -45,8 +45,8 @@ let root currentPage (model: Model) dispatch =
       ]
     ]
     div [classList ["navbar-menu", true; "is-active", model.isBurgerOpen]] [
-      div [ClassName "navbar-start"] [
-        div [ClassName "navbar-item navbar-logo"] [
+      div [Class "navbar-start"] [
+        div [Class "navbar-item navbar-logo"] [
             img [ Src "img/logo_menu.png" ]
         ]
         menuItem "Home." Home currentPage dispatch
@@ -55,6 +55,6 @@ let root currentPage (model: Model) dispatch =
         // menuItem "Food" Food currentPage
         menuItem "Location." Page.Location currentPage dispatch
       ]
-      div [ClassName "navbar-end"] navButtons
+      div [Class "navbar-end"] navButtons
     ]
   ]
