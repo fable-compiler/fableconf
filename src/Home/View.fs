@@ -122,7 +122,7 @@ let speakerCard time (speaker: Speaker) =
   ]
 
 let root model dispatch =
-  div [Style [!!("overflowY", "hidden")]] [
+  div [Id "home-page"; Style [!!("overflowY", "hidden")]] [
     div [Class "container"] [
 
       div[ Class "logo"] [
@@ -179,95 +179,20 @@ let root model dispatch =
         br []
       ]
     ]
-    div [Class "container"] [
-      h2 [Class "title is-2 has-text-centered"] [str "Friday: Talks"]
-      p [Class "has-text-centered"] [str "More info coming soon!"]
-      // div [] [ // Group so :first-child :last-child rules apply
-      //   breakCard   "8:30 - 9:30"   "Breakfast"
-      //   speakerCard "9:30 - 10:30"  Speakers.Types.Alfonso
-      //   breakCard   "10:30 - 10:45" "Coffee Break"
-      //   speakerCard "10:45 - 11:30" Speakers.Types.Eugene
-      //   breakCard   "11:30 - 11:45" "Coffee Break"
-      //   speakerCard "11:45 - 12:30" Speakers.Types.Maxime
-      //   breakCard   "12:30 - 14:00" "Lunch"
-      //   speakerCard "14:00 - 14:30" Speakers.Types.Indy
-      //   breakCard   "14:30 - 14:45" "Coffee Break"
-      //   speakerCard "14:45 - 15:30" Speakers.Types.Sven
-      //   breakCard   "15:30 - 15:45" "Coffee Break"
-      //   speakerCard "15:45 - 16:30" Speakers.Types.Krzysztof
-      //   breakCard   "16:30 - 16:45" "Coffee Break"
-      //   speakerCard "16:45 - 17:25" Speakers.Types.François
-      //   genericCard true "17:25 - 17:30" misterySpeaker
-      // ]
-      // br []
-      br []
-
-      // div [Class "container has-text-centered"] [
-      //   h2 [Class "title is-2"] [ //; Style [Color "#f5ec48"]] [
-      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
-      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
-      //     str "Party"
-      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
-      //     Icon.faIcon [] [Fa.icon Fa.I.Star]
-      //   ]
-      //   h4 [Class "subtitle is-6"] [
-      //     str "After the talks, it is time for the "; em [] [str "Fabelous Party!"]
-      //     str " Join us to keep enjoying the local gastronomy and relax chatting with other community members. "
-      //     strong [] [str "Please note the conference ticket does not include the food and drinks for the party."]
-      //   ]
-      // ]
-      // br []
-      // div [] [
-      //   partyCard true  "20:00 - 22:00" [
-      //     str "Dinner at "
-      //     a [Href "http://lejardinpecheur.com/"] [str "Le Jardin Pêcheur"]
-      //     str ", a beautiful restaurant mixing modern and traditional architecture with a strong social compromise and delicious local food. "
-      //     a [Href "https://docs.google.com/document/d/1AO0P7Z0Npyk62o5ZmYr9fEu1oD5pvPLUMg_ZS67GHYY/edit"] [str "Check the menu here."]
-      //   ]
-      //   partyCard false "22:00 - ???" [
-      //     str "Drinks at "
-      //     a [Href "http://lezytho.fr/"] [str "Le Zytho"]
-      //     str ": (Re)discover the Craft Beer with a selection of 18 draught and 100 bottled beers!"
-      //   ]
-      // ]
-      // br []
-      // br []
-
-      h2 [Class "title is-2 has-text-centered"] [str "Saturday: Workshops"]
-      p [Class "has-text-centered"] [str "More info coming soon!"]
-      // div [] [ // Group so :first-child :last-child rules apply
-      //   workshopCard  "9:00 - 10:45" Workshops.aTitle Workshops.aBody
-      //   breakCard    "10:45 - 11:00" "Break"
-      //   workshopCard "11:00 - 12:45" Workshops.bTitle Workshops.bBody
-      //   breakCard    "12:45 - 14:00" "Break"
-      //   workshopCard "14:00 - 15:45" Workshops.cTitle Workshops.cBody
-      //   breakCard    "15:45 - 16:00" "Break"
-      //   workshopCard "16:00 - 17:45" Workshops.dTitle Workshops.dBody
-      // ]
-      br []
-
-      // article [Class "message is-primary"] [
-      //   div [Class "message-body has-text-centered"] [
-      //     p [] [
-      //       str "Workshops will take place at "
-      //       a [Href "https://www.google.fr/maps/place/Bordeaux+Digital+Campus/@44.863924,-0.5613694,16z/data=!4m5!3m4!1s0xd54d9a55ce015bf:0xd2da001c64f8dddc!8m2!3d44.863924!4d-0.556992"] [str "Bordeaux Digital Campus"]
-      //       str ", five minutes walking from "
-      //       a [Href "#location"] [str "Cap Sciences"]
-      //       str "."
-      //     ]
-      //     p [] [
-      //       str "Check your system meets "
-      //       a [Href "http://fable.io/docs/getting-started.html#requirements"] [str "the requirements"]
-      //       str " to run Fable."
-      //     ]
-      //     p [] [str "Please note food won't be provided on Saturday."]
-      //   ]
-      // ]
+    section [Class "hero is-small"] [
+      div [Class "hero-body"] [
+        div [Class "container"] [
+          h2 [Class "title is-2 has-text-centered"] [str "Friday: Talks"]
+          p [Class "has-text-centered"] [str "More info coming soon!"]
+          br []
+          h2 [Class "title is-2 has-text-centered"] [str "Saturday: Workshops"]
+          p [Class "has-text-centered"] [str "More info coming soon!"]
+          br []
+        ]
+      ]
     ]
     br []
-    section [
-      Class "hero is-medium bottom-border"
-      ] [
+    section [Class "hero is-small"] [
         div [Class "hero-body"] [
           div [Class "container"] [
             div[ Class "ticket"] [
@@ -283,21 +208,40 @@ let root model dispatch =
         ]
       ]
     br []
-    div[ Class "standard-margin"] [
-      h1 [Class "title is-2 title-bold"] [str "SPONSORS."]
-      h4 [Class "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
+    section [Class "hero is-small"] [
+        div [Class "hero-body"] [
+          div[ Class "standard-margin"] [
+            h1 [Class "title is-2 title-bold"] [str "SAFE-STACK SEMINAR."]
+            h4 [Class "subtitle is-5 neon-green"] [
+              str "The day before a "
+              a [Href "https://safe-stack.github.io/"] [str "SAFE-Stack"]
+              str " seminar will take place as a separate event. Get your ticket "
+              a [Href "https://www.eventbrite.co.uk/e/cloud-programming-with-f-tickets-48056860363"] [str "HERE"]
+              str "."
+            ]
+          ]
+        ]
     ]
-    div [Class "sponsors"] [
-      div[ Class "columns"] [
-        linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
-        linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
-        linkImage "is-4" "sponsor-ms" "microsoft.png" "https://www.microsoft.com/"
-      // linkImage "nsynk2.png" "http://nsynk.de/"
-      // linkImage "syrpin.jpg" "http://www.syrpin.org/"
-      // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
-      // linkImage "BxGames.png" "http://bordeauxgames.com/"
-      // linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
-      ]
+    br []
+    section [Class "hero is-small"] [
+        div [Class "hero-body"] [
+          div[ Class "standard-margin"] [
+            h1 [Class "title is-2 title-bold"] [str "SPONSORS."]
+            h4 [Class "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
+          ]
+          div [Class "sponsors"] [
+            div[ Class "columns"] [
+              linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
+              linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
+              linkImage "is-4" "sponsor-ms" "microsoft.png" "https://www.microsoft.com/"
+            // linkImage "nsynk2.png" "http://nsynk.de/"
+            // linkImage "syrpin.jpg" "http://www.syrpin.org/"
+            // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
+            // linkImage "BxGames.png" "http://bordeauxgames.com/"
+            // linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
+            ]
+          ]
+        ]
     ]
     br []
     div [Class "container"] [

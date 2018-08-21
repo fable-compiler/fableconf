@@ -286,17 +286,12 @@ module View =
         ]
       ]
       div [Class "card-content"] [
-        a [
-          Href ("#speakers/" + speaker.shortname)
-          Class "content"
-        ] [
-          yield p [Class "title is-4 has-text-centered"] [str speaker.name]
-          yield p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
-          match speaker.bio with
-          | Some bio -> yield p [] [str bio]
-          | None -> ()
-        ]
-        div [
+        yield p [Class "title is-4 has-text-centered"] [str speaker.name]
+        yield p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
+        match speaker.bio with
+        | Some bio -> yield p [] [str bio]
+        | None -> ()
+        yield div [
           Class "level is-mobile"
           Style [MarginTop "20px"]
         ] [
