@@ -211,7 +211,8 @@ let root model dispatch =
     section [Class "hero is-small"] [
         div [Class "hero-body"] [
           div[ Class "standard-margin"] [
-            h1 [Class "title is-2 title-bold"] [str "PRE-CONFERENCE - CLOUD PROGRAMMING WITH F#."]
+            h1 [Class "title is-2 title-bold"] [str "PRE-CONFERENCE."]
+            h2 [Class "title is-3"] [str "CLOUD PROGRAMMING WITH F#"]
             h4 [Class "subtitle is-5 neon-green"] [
               str "The day before FableConf, learn how to write and host "
               a [Href "https://safe-stack.github.io/"] [str "SAFE"]
