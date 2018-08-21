@@ -11,7 +11,7 @@ let pageParser: Parser<Page->Page,Page> =
   oneOf [
     map Home (s "home")
     map Location (s "location")
-    map Planning (s "planning")
+    map Planning (s "planning-super-secret")
     // map Food (s "food")
     // map (Some >> Speakers) (s "speakers" </> str)
     // map (Speakers None) (s "speakers")
@@ -57,3 +57,6 @@ let update msg model =
   | HomeMsg msg ->
       let (home, homeCmd) = Home.State.update msg model.home
       { model with home = home }, Cmd.map HomeMsg homeCmd
+  | PlanningMsg msg ->
+      let planning = Planning.State.update msg model.planning
+      { model with planning = planning }, Cmd.none

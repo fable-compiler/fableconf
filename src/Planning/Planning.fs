@@ -7,7 +7,7 @@ open Fable.Helpers.React.Props
 open Global
 open Speakers.Types
 open Fable.Import.React
-
+open Fulma
 
 module Types =
   type EventKind = KindOne | KindTwo | KindThree
@@ -34,7 +34,13 @@ module Types =
       Events : DayEvent list
     }
 
-  type Model = Day list
+  type Model =
+    { Days: Day list
+      Highlight: Speaker option }
+
+  type Msg =
+    | OpenModal of Speaker
+    | CloseModal
 
 module State =
   open Types
@@ -76,8 +82,8 @@ module State =
     let ws speaker =
       eventFromSpeaker speaker KindTwo
 
-    [
-      {
+    let days =
+     [{
         Date="Day One - Friday 26 Oct. 2018"
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Fable";Description=None;Kind=Some KindOne};{Speaker=None;Title="Remmidemmi";Level=None;Description=None;Kind=Some KindTwo}]}
@@ -168,14 +174,20 @@ module State =
           }
           takeABreak "That's all folks! Have fun in Berlin!" "15:00"
         ]
-      }
-    ]
+      }]
+
+    { Days = days; Highlight = None }
+
+  let update msg model =
+    match msg with
+    | OpenModal s -> { model with Highlight = Some s }
+    | CloseModal -> { model with Highlight = None }
 
 module View =
 
   open Types
 
-  let prepareDay (day:Day) =
+  let prepareDay dispatch (day:Day) =
     let buildEvent i (event:DayEvent) =
       let count = float event.Tracks.Length
       let max = int (System.Math.Floor ( 10. / count))
@@ -196,17 +208,18 @@ module View =
                   "", ""
               | None -> "",""
 
-            let title = h4 [ClassName "subtitle is-4 white";Style[Padding "0";Margin "0"]] [
+            let title = h4 [Class "subtitle is-4 white";Style[Padding "0";Margin "0"]] [
               str track.Title
-              span [ClassName kindClass] [str kindName]
+              span [Class kindClass] [str kindName]
             ]
 
             let speakerName =
               match track.Speaker with
               | Some s ->
-                h5 [ClassName (sprintf "%s is-5 title-light " kindClass);Style[Padding "0";Margin "0"]] [
-                  str s.name
-                ]
+                h5 [Class (sprintf "%s is-5 title-light " kindClass)
+                    OnClick (fun _ -> OpenModal s |> dispatch)
+                    Style [Padding "0"; Margin "0"; Cursor "pointer"]]
+                   [str s.name]
               | None -> str ""
 
             let tag=
@@ -214,18 +227,18 @@ module View =
               | Some level ->
                 match level with
                 | AllLevels ->
-                  span[ClassName "tag is-Light"] [str "All Levels"]
+                  span[Class "tag is-Light"] [str "All Levels"]
                 | Beginner ->
-                  span[ClassName "tag is-success"] [str "Beginner"]
+                  span[Class "tag is-success"] [str "Beginner"]
                 | Intermediate ->
-                  span[ClassName "tag is-primary"] [str "Intermediate"]
+                  span[Class "tag is-primary"] [str "Intermediate"]
                 | Expert ->
-                  span[ClassName "tag is-black"] [str "Expert"]
+                  span[Class "tag is-black"] [str "Expert"]
               | None -> str ""
 
             match track.Description with
             | Some desc ->
-              div[ClassName columnClass] [
+              div[Class columnClass] [
                 title
                 speakerName
                 br[]
@@ -234,35 +247,92 @@ module View =
                 tag
               ]
             | None ->
-              div[ClassName columnClass] [
+              div[Class columnClass] [
                 title
               ]
           )
 
       let color = if i % 2 = 0 then "grey" else "dark"
-      div[ClassName (sprintf "columns %s" color)]
+      div[Class (sprintf "columns %s" color)]
         ([
-          div[ClassName "column column-with-border is-2"] [
-              h4 [ClassName "subtitle is-4 neon-green"] [str event.Time]
+          div[Class "column column-with-border is-2"] [
+              h4 [Class "subtitle is-4 neon-green"] [str event.Time]
           ]
         ] @ lines)
 
-    div[ClassName "container day"]
+    div[Class "container day"]
       [
-        h2 [ClassName "title is-2"] [str day.Date]
-        div[ClassName ""] (day.Events |> List.mapi buildEvent)
+        h2 [Class "title is-2"] [str day.Date]
+        div[Class ""] (day.Events |> List.mapi buildEvent)
       ]
 
-  let root model =
+  let cardView (speaker: Speaker) =
+    div [
+      Class "card"
+      Style [CSSProp.Width "300px"; Margin "5px"]
+    ] [
+      div [Class "card-image"] [
+        Image.image [] [
+          img [
+            Src speaker.picture
+            Style [
+              CSSProp.Width "auto"
+              CSSProp.Height "auto"
+              MaxHeight "300px"
+              MaxWidth "300px"
+              Margin "auto"
+            ]
+          ]
+        ]
+      ]
+      div [Class "card-content"] [
+        a [
+          Href ("#speakers/" + speaker.shortname)
+          Class "content"
+        ] [
+          yield p [Class "title is-4 has-text-centered"] [str speaker.name]
+          yield p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
+          match speaker.bio with
+          | Some bio -> yield p [] [str bio]
+          | None -> ()
+        ]
+        div [
+          Class "level is-mobile"
+          Style [MarginTop "20px"]
+        ] [
+          speaker.twitter |> Option.map (fun username ->
+            a [Class "level-item"; Href ("https://twitter.com/" + username) ] [
+              Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-twitter"] []]
+            ]) |> ofOption
+          speaker.github |> Option.map (fun username ->
+            a [Class "level-item"; Href ("https://github.com/" + username) ] [
+              Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-github"] []]
+            ]) |> ofOption
+        ]
+      ]
+    ]
+
+  let root (model: Model) dispatch =
 
     let events =
-      model
-        |> List.map prepareDay
+      model.Days
+      |> List.map (prepareDay dispatch)
 
     div [] [
-        div[ ClassName "container planning"] [
-          div[ ClassName ""] [
-            h1 [ClassName "title is-1 title-bold"] [str "Planning."]
+        match model.Highlight with
+        | Some speaker ->
+          yield Modal.modal [ Modal.IsActive true ]
+            [ Modal.background [ Props [ OnClick (fun _ -> dispatch CloseModal) ] ] [ ]
+              Modal.content [ Props [Style [Width "350px"]] ]
+                [ Box.box' [ ]
+                    [ cardView speaker ] ]
+              Modal.close [ Modal.Close.Size IsLarge
+                            Modal.Close.OnClick (fun _ -> dispatch CloseModal) ] [ ] ]
+        | None -> ()
+
+        yield div[ Class "container planning"] [
+          div[ Class ""] [
+            h1 [Class "title is-1 title-bold"] [str "Planning."]
             div[] events
           ]
         ]

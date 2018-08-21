@@ -158,7 +158,7 @@ let Gien =
   {
     shortname = "gien"
     name = "Gien Verschatse"
-    picture = "img/Indy.jpeg"
+    picture = "img/Gien.jpg"
     talk =
       { title = "Becoming a full stack artist: a quest into the unknown"
         content = str "? Come back soon! "
@@ -186,9 +186,9 @@ let Evelina =
   {
     shortname = "evelina"
     name = "Evelina Gabasova"
-    picture = "img/Indy.jpeg"
+    picture = "img/Evelina.jpg"
     talk =
-      { title = "Data visualization with Fable?"
+      { title = "Data visualization with Fable"
         content = str "? Come back soon! "
       }
     bio = None

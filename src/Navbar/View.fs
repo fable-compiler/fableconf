@@ -51,7 +51,7 @@ let root currentPage (model: Model) dispatch =
         ]
         menuItem "Home." Home currentPage dispatch
         // menuItem "Speakers." (Speakers None) currentPage
-        menuItem "Planning." Planning currentPage dispatch
+        // menuItem "Planning." Planning currentPage dispatch
         // menuItem "Food" Food currentPage
         menuItem "Location." Page.Location currentPage dispatch
       ]
