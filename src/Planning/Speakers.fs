@@ -139,14 +139,14 @@ let Tomasz =
   {
     shortname = "tomasz"
     name = "Tomasz Heimowski"
-    picture = "img/Indy.jpeg"
+    picture = "img/Tomasz.png"
     talk =
       { title = "Build a game in 45 minutes?"
         content = str "? Come back soon! "
       }
-    bio = None
-    twitter = None
-    github = None
+    bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
+    twitter = Some "theimowski"
+    github = Some "theimowski"
   }
 
 let RomanP =
