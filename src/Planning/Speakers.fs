@@ -153,14 +153,14 @@ let RomanP =
   {
     shortname = "romanp"
     name = "Roman Provazník"
-    picture = "img/Indy.jpeg"
+    picture = "img/Roman.jpg"
     talk =
-      { title = "Event Sourcing with SAFE-Stack"
-        content = str "? Come back soon! "
+      { title = "Event Sourcing with Azure Cosmos DB"
+        content = str "Let me take you on a journey through the development of a web-based event sourcing application in F# & Azure Cosmos DB. I'll show you all the pain points and dead ends we went through and how we end up with a sane design. Warning: this talk contains some bad decisions you definitely do not want to repeat."
       }
-    bio = None
-    twitter = None
-    github = None
+    bio = Some "Roman is the founder of a Czech F# community called FSharping, who works in CN Group as an F# team leader. You can find him mostly in a good mood and ready to chat about the things he loves: F#, functional programming, domain-driven design, event sourcing systems, web development and drums."
+    twitter = Some "rprovaznik"
+    github = Some "dzoukr"
   }
 
 let Zaid =
