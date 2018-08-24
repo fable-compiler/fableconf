@@ -161,7 +161,7 @@ let root model dispatch =
           str "We'll have two days and two tracks of sessions:"
         ]
         p [] [
-          str "Day one will consist of talks on two tracks: the Fable track will provide you with the change to learn all about the latest developments on Fable, whilst the RemmiDemmi track will be our usual \"anything goes\" F# track, with relaxed discussions and sessions on cool F# tech (with a slight focus towards SAFE Stack developments)."
+          str "Day one will consist of talks on two tracks: the Fable track will provide you with the chance to learn all about the latest developments on Fable, whilst the RemmiDemmi track will be our usual \"anything goes\" F# track, with relaxed discussions and sessions on cool F# tech (with a slight focus towards SAFE Stack developments)."
         ]
         p [] [
           str "Day two will be filled with practical workshops and chances to sit down and work alongside fellow members of the F# community to give you confidence in writing Fable and SAFE applications that take full advantage of F#."
