@@ -4,11 +4,8 @@
 open System
 open System.IO
 open System.Text.RegularExpressions
-open System.Collections.Generic
-open Fake
-open Fake.AssemblyInfoFile
 open Fake.Git
-open Fake.ReleaseNotesHelper
+open Fake
 
 #if MONO
 // prevent incorrect output encoding (e.g. https://github.com/fsharp/FAKE/issues/1196)
@@ -16,7 +13,6 @@ System.Console.OutputEncoding <- System.Text.Encoding.UTF8
 #endif
 
 module Util =
-    open System.Net
 
     let run workingDir fileName args =
         printfn "CWD: %s" workingDir
@@ -50,14 +46,26 @@ let root = __SOURCE_DIRECTORY__
 let gitOwner = "fable-compiler"
 let gitProject = "fableconf"
 
-let dotnetcliVersion = "2.1.300"
 let mutable dotnetExePath = environVarOrDefault "DOTNET" "dotnet"
+
+let findLineAndGetGroupValue regexPattern (groupIndex: int) filePath =
+    let reg = Regex(regexPattern)
+    File.ReadLines(filePath)
+    |> Seq.pick (fun line ->
+        let m = reg.Match(line)
+        if m.Success
+        then Some m.Groups.[groupIndex].Value
+        else None)
 
 Target "Clean" (fun () ->
     !! "src/**/bin" ++ "src/**/obj/" |> CleanDirs
 )
 
 Target "InstallDotNetSdk"  (fun () ->
+    let dotnetcliVersion =
+        Path.Combine(__SOURCE_DIRECTORY__, "global.json")
+        |> findLineAndGetGroupValue "\"version\": \"(.*?)\"" 1
+
     dotnetExePath <- DotNetCli.InstallDotNetSDK dotnetcliVersion
 )
 

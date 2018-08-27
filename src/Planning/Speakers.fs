@@ -30,7 +30,7 @@ let Maxime =
     picture = "img/maxime.png"
     talk =
      { title = "Keynote"
-       content = str "? Come back soon! "
+       content = str "TBD: Come back soon!"
      }
     bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
     twitter = Some "MangelMaxime"
@@ -58,9 +58,9 @@ let Krzysztof =
     picture = "img/Krzysztof.jpg"
     talk =
       { title = "Future of web development with F#"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
-    bio = Some "Krzysztof is an software developer, consultant, open source contributor and active member of the F# community."
+    bio = Some "Krzysztof is a software developer, consultant, open source contributor and active member of the F# community."
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
   }
@@ -72,21 +72,23 @@ let Gien =
     picture = "img/Gien.jpg"
     talk =
       { title = "Becoming a full stack artist: a quest into the unknown"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
-    bio = None
-    twitter = None
-    github = None
+    bio = Some "
+Gien Verschatse
+Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
+    twitter = Some "selketjah"
+    github = Some "selketjah"
   }
 
 let Sia =
   {
     shortname = "sia"
     name = "Sia"
-    picture = "img/Indy.jpeg"
+    picture = "img/Mystery.png"
     talk =
       { title = "Azure Functions Deep Dive"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
     bio = None
     twitter = None
@@ -100,21 +102,21 @@ let Evelina =
     picture = "img/Evelina.jpg"
     talk =
       { title = "Data visualization with Fable"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
-    bio = None
-    twitter = None
-    github = None
+    bio = Some "Evelina is a machine learning researcher working in bioinformatics, trying to reverse-engineer cancer at University of Cambridge. When not at work, she likes to play with fun datasets to extract interesting insights."
+    twitter = Some "evelgab"
+    github = Some "evelinag"
   }
 
 let Jeff =
   {
     shortname = "jeff"
     name = "Jeff Hollan"
-    picture = "img/Indy.jpeg"
+    picture = "img/Mystery.png"
     talk =
       { title = "Azure Functions"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
     bio = None
     twitter = None
@@ -125,14 +127,14 @@ let Julien =
   {
     shortname = "julien"
     name = "Julien Roncaglia"
-    picture = "img/Indy.jpeg"
+    picture = "img/Mystery.png"
     talk =
-      { title = "Performance tricks for Fable/React apps?"
-        content = str "? Come back soon! "
+      { title = "Performance tricks for Fable.React apps"
+        content = str "TBD: Come back soon!"
       }
     bio = None
-    twitter = None
-    github = None
+    twitter = Some "virtualblackfox"
+    github = Some "vbfox"
   }
 
 let Tomasz =
@@ -141,8 +143,8 @@ let Tomasz =
     name = "Tomasz Heimowski"
     picture = "img/Tomasz.png"
     talk =
-      { title = "Build a game in 45 minutes?"
-        content = str "? Come back soon! "
+      { title = "Build a game with Fable in 45 minutes"
+        content = str "TBD: Come back soon!"
       }
     bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
     twitter = Some "theimowski"
@@ -167,10 +169,10 @@ let Zaid =
   {
     shortname = "zaid"
     name = "Zaid Ajar"
-    picture = "img/Indy.jpeg"
+    picture = "img/Mystery.png"
     talk =
       { title = "Scaling Elmish Applications"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
     bio = None
     twitter = None
@@ -181,24 +183,24 @@ let RomanS =
   {
     shortname = "romans"
     name = "Roman Sachse"
-    picture = "img/Indy.jpeg"
+    picture = "img/RomanSachse.png"
     talk =
       { title = "Domain Driven UI with SAFE-Stack"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
     bio = None
-    twitter = None
-    github = None
+    twitter = Some "RProvaznik "
+    github = Some "Dzoukr"
   }
 
-let Ketleen =
+let TBD =
   {
-    shortname = "ketleen"
-    name = "Ketleen Gabriels"
-    picture = "img/Indy.jpeg"
+    shortname = "tbd"
+    name = "TBD"
+    picture = "img/Mystery.png"
     talk =
       { title = "Keynote"
-        content = str "? Come back soon! "
+        content = str "TBD: Come back soon!"
       }
     bio = None
     twitter = None
@@ -209,7 +211,7 @@ let Stachu =
   {
     shortname = "stachu"
     name = "Stachu Korick"
-    picture = "img/Indy.jpeg"
+    picture = "img/Mystery.png"
     talk =
       { title = ""
         content = str ""
@@ -233,7 +235,7 @@ let speakersMap =
     RomanP.shortname, RomanP
     Zaid.shortname, Zaid
     RomanS.shortname, RomanS
-    Ketleen.shortname, Ketleen
+    TBD.shortname, TBD
     Stachu.shortname, Stachu
   ] |> Map
 

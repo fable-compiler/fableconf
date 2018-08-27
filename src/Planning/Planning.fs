@@ -132,7 +132,7 @@ module State =
           takeABreak "Last Coffee Break" "16:30"
           { Time="16:45"
             Tracks=[
-              keynote "ketleen" AllLevels
+              keynote "tbd" AllLevels
             ]
           }
           takeABreak "That's all folks!" "17:30"
@@ -143,36 +143,36 @@ module State =
         Date="Day Two - Saturday 27 Oct. 2018"
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
-          takeABreak "Breakfast" "08:15"
-          {
-            Time="09:15"
-            Tracks=[
-              event (Some "zaid") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-              event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-            ]
-          }
-          takeABreak "Coffee Break" "10:15"
-          { Time="10:30"
-            Tracks=[
-              event (Some "francois") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-              event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-            ]
-          }
-          takeABreak "Coffee Break" "11:30"
-          { Time="11:45"
-            Tracks=[
-              event (Some "alfonso") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-              event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-            ]
-          }
-          takeABreak "Lunch" "12:45"
-          { Time="14:00"
-            Tracks=[
-              event (Some "stachu") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-              event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-            ]
-          }
-          takeABreak "That's all folks! Have fun in Berlin!" "15:00"
+          // takeABreak "Breakfast" "08:15"
+          // {
+          //   Time="09:15"
+          //   Tracks=[
+          //     event (Some "zaid") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
+          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
+          //   ]
+          // }
+          // takeABreak "Coffee Break" "10:15"
+          // { Time="10:30"
+          //   Tracks=[
+          //     event (Some "francois") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
+          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
+          //   ]
+          // }
+          // takeABreak "Coffee Break" "11:30"
+          // { Time="11:45"
+          //   Tracks=[
+          //     event (Some "alfonso") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
+          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
+          //   ]
+          // }
+          // takeABreak "Lunch" "12:45"
+          // { Time="14:00"
+          //   Tracks=[
+          //     event (Some "stachu") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
+          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
+          //   ]
+          // }
+          // takeABreak "That's all folks! Have fun in Berlin!" "15:00"
         ]
       }]
 
