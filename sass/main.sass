@@ -47,15 +47,15 @@ $speakerPicSize: 250px
     margin-bottom: 0
   .navbar-burger span
     background-color: white
-
+  .navbar-burger:hover
+    background-color: $dark
   .navbar-logo
     img
       max-height: 4rem
     padding: 0
     padding-left: 1rem
-  .navbar-burger:hover
-    background-color: $dark
-
+  .navbar-menu
+    background-color: $black
   .navbar-start
     .navbar-item
       color: $electric-blue
@@ -78,13 +78,14 @@ $speakerPicSize: 250px
   color: $black !important // Override bulma
   border-color: $black
 
-.cap-sciences
+.venue-img
   background-image: url(img/location.jpg)
   background-repeat: no-repeat
   background-size: cover !important
   background-position-y: -100px
-  @media screen and (max-width: 500px)
-    background-position-y: 0
+  max-height: 380px
+  @media screen and (min-width: 1024px)
+    max-height: 500px
 
 .google-map
   border: 0
@@ -155,7 +156,7 @@ $speakerPicSize: 250px
   background-color: #202020
   text-align: right
   color: $electric-blue
-  font-size: 0.7rem
+  font-size: 1rem
 
 .container
   padding: 5px

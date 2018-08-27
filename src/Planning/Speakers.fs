@@ -168,15 +168,15 @@ let RomanP =
 let Zaid =
   {
     shortname = "zaid"
-    name = "Zaid Ajar"
-    picture = "img/Mystery.png"
+    name = "Zaid Ajaj"
+    picture = "img/Zaid.jpg"
     talk =
       { title = "Scaling Elmish Applications"
-        content = str "TBD: Come back soon!"
+        content = str "Understanding the techniques of building large Elmish applications by example"
       }
     bio = None
-    twitter = None
-    github = None
+    twitter = Some "zaid_ajaj"
+    github = Some "Zaid-Ajaj"
   }
 
 let RomanS =

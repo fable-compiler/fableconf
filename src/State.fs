@@ -11,10 +11,7 @@ let pageParser: Parser<Page->Page,Page> =
   oneOf [
     map Home (s "home")
     map Location (s "location")
-    map Planning (s "planning-super-secret")
-    // map Food (s "food")
-    // map (Some >> Speakers) (s "speakers" </> str)
-    // map (Speakers None) (s "speakers")
+    map Planning (s "planning")
   ]
 
 let urlUpdate (result: Option<Page>) model =

@@ -23,7 +23,7 @@ let root =
       ]
     ]
     br []
-    section [Class "hero is-large is-primary cap-sciences"] [
+    section [Class "hero is-large is-primary venue-img"] [
       div [Class "hero-body"] [
         div [Class "container"] []
       ]

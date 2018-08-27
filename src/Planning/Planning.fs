@@ -267,10 +267,7 @@ module View =
       ]
 
   let cardView (speaker: Speaker) =
-    div [
-      Class "card"
-      Style [CSSProp.Width "300px"; Margin "5px"]
-    ] [
+    div [Class "card"] [
       div [Class "card-image"] [
         Image.image [] [
           img [
@@ -318,7 +315,7 @@ module View =
         | Some speaker ->
           yield Modal.modal [ Modal.IsActive true ]
             [ Modal.background [ Props [ OnClick (fun _ -> dispatch CloseModal) ] ] [ ]
-              Modal.content [ Props [Style [Width "350px"]] ]
+              Modal.content [ ]
                 [ Box.box' [ ]
                     [ cardView speaker ] ]
               Modal.close [ Modal.Close.Size IsLarge
