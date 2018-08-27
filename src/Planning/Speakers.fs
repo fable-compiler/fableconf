@@ -155,7 +155,7 @@ let RomanP =
   {
     shortname = "romanp"
     name = "Roman Provazník"
-    picture = "img/Roman.jpg"
+    picture = "img/RomanP.jpg"
     talk =
       { title = "Event Sourcing with Azure Cosmos DB"
         content = str "Let me take you on a journey through the development of a web-based event sourcing application in F# & Azure Cosmos DB. I'll show you all the pain points and dead ends we went through and how we end up with a sane design. Warning: this talk contains some bad decisions you definitely do not want to repeat."
@@ -183,14 +183,14 @@ let RomanS =
   {
     shortname = "romans"
     name = "Roman Sachse"
-    picture = "img/RomanSachse.png"
+    picture = "img/RomanS.jpg"
     talk =
       { title = "Domain Driven UI with SAFE-Stack"
         content = str "TBD: Come back soon!"
       }
     bio = None
-    twitter = Some "RProvaznik "
-    github = Some "Dzoukr"
+    twitter = Some "R0MMSEN"
+    github = Some "rommsen"
   }
 
 let TBD =
