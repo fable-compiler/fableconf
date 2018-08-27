@@ -86,6 +86,8 @@ $speakerPicSize: 250px
   max-height: 380px
   @media screen and (min-width: 1024px)
     max-height: 500px
+  @media screen and (max-width: 500px)
+    background-position-y: 0
 
 .google-map
   border: 0
@@ -301,6 +303,8 @@ body
   overflow-y: auto
   overflow-x: hidden
   font-family: 'Abel', sans-serif
-  font-size: 1.2rem
+  font-size: 1rem
+  @media screen and (min-width: 400px)
+    font-size: 1.2rem
   background-color: #202020
   color: white
