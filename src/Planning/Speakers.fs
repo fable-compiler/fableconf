@@ -186,9 +186,9 @@ let RomanS =
     picture = "img/RomanS.jpg"
     talk =
       { title = "Domain Driven UI with SAFE-Stack"
-        content = str "TBD: Come back soon!"
+        content = str "Domain Driven Design is a way of thinking about the needs of the customers first and putting an emphasis on their language and interactions. The outcome of this approach is mostly applied to the backend of applications, but a semantic domain model also benefits the UI. Unfortunately these semantics are often lost in translation when transferred to the frontend. I will show you a functional approach that allows you to actually reuse your domain types by combining CQRS/Event-Sourcing on the backend and the Elm architecture on the frontend with an overall messaging architecture."
       }
-    bio = None
+    bio = Some "Roman Sachse started programming 16 years ago rather by accident shortly after founding his first company when he realized how much fun it was building the stuff he was working on by himself. This set him out on a lifelong journey of learning everything about software development and computer science and he was particularly surprised to realize that this branch of science strongly depends on two fields he was always interested in: people and communication. Roman is a proud father of three year old twin girls, holds a bachelors degree in Cognitive Science and a Masters degree in Computer Science and is currently mainly interested in Domain Driven Design, Functional Programming and the inner workings of software development teams."
     twitter = Some "R0MMSEN"
     github = Some "rommsen"
   }
