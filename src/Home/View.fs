@@ -234,7 +234,6 @@ let root model dispatch =
             div[ Class "columns"] [
               linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
               linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
-              linkImage "is-4" "sponsor-ms" "microsoft.png" "https://www.microsoft.com/"
             // linkImage "nsynk2.png" "http://nsynk.de/"
             // linkImage "syrpin.jpg" "http://www.syrpin.org/"
             // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
