@@ -88,7 +88,9 @@ let Sia =
     picture = "img/Mystery.png"
     talk =
       { title = "Azure Functions Deep Dive"
-        content = str "TBD: Come back soon!"
+        content = str """Serverless is a great architecture and it helps saving costs and building more reliable and scalable services.
+Azure functions, the serverless implementation within Azure, is now around for quite sometime and latley it's getting a lot of attention. But how does azure functions look like under the hood? What is the engine behind azure functions and how can we debug the function host, if needed?
+In this session, we'll get some deeper insights into azure functions and get some hints about how to debug and get started to contribute to the project."""
       }
     bio = None
     twitter = None
