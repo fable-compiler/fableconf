@@ -199,7 +199,7 @@ let TBD =
     name = "TBD"
     picture = "img/Mystery.png"
     talk =
-      { title = "Keynote"
+      { title = "TDB"
         content = str "TBD: Come back soon!"
       }
     bio = None
@@ -221,21 +221,55 @@ let Stachu =
     github = None
   }
 
+
+
+let Isaac =
+  {
+    shortname = "isaac"
+    name = "Isaac Abraham"
+    picture = "img/Isaac.png"
+    talk =
+      { title = "SAFE-Stack dojo"
+        content = str "This workshop is designed to allow you to experience the SAFE-Stack based on an ready-made application that you can build on top of. It will take around 90 minutes for you to complete if you have no experience in any of these technologies."
+      }
+    bio = None
+    twitter = Some "isaac_abraham"
+    github = Some "isaacabraham"
+  }
+
+let Steffen =
+  {
+    shortname = "steffen"
+    name = "Steffen Forkmann"
+    picture = "img/Steffen.jpg"
+    talk =
+      { title = "SAFE Tour planning"
+        content = str "In this workshop you can apply your new SAFE-Stack knowledge to a real-world problem. We will get a list with orders and corresponding geodata and try to come up with an algorithm that schedules good tours for delivery. During the whole optimization process we will show the current best plan on a map."
+      }
+    bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
+    twitter = Some "sforkmann"
+    github = Some "forki"
+  }
+
 let speakersMap =
-  [ François.shortname, François
-    Maxime.shortname, Maxime
-    Alfonso.shortname, Alfonso
-    Krzysztof.shortname, Krzysztof
-    Gien.shortname, Gien
-    Sia.shortname, Sia
-    Evelina.shortname, Evelina
-    Jeff.shortname, Jeff
-    Julien.shortname, Julien
-    Tomasz.shortname, Tomasz
-    RomanP.shortname, RomanP
-    Zaid.shortname, Zaid
-    RomanS.shortname, RomanS
-    TBD.shortname, TBD
-    Stachu.shortname, Stachu
-  ] |> Map
+  [ François
+    Maxime
+    Alfonso
+    Krzysztof
+    Gien
+    Sia
+    Evelina
+    Jeff
+    Julien
+    Tomasz
+    RomanP
+    Zaid
+    RomanS
+    TBD
+    Stachu
+    Isaac
+    Steffen
+  ]
+  |> List.map (fun x -> x.shortname,x)
+  |> Map
 
