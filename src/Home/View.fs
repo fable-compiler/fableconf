@@ -139,7 +139,6 @@ let root model dispatch =
         ]
       ]
 
-      // h1 [Class "title is-1"] [str "FableConf 2017"]
       div[Class "general-info"] [
         div[ Class "info" ] [
           h4 [Class "title is-4 title-bold"] [
@@ -148,10 +147,7 @@ let root model dispatch =
             str "Berlin, Germany"
           ]
         ]
-        div[ Class "fsharp"] [
-          h4 [Class "title is-4 title-light"] [
-            str "F# enlightenment" ]
-      ]]
+      ]
 
       div [Class "content standard-margin"] [
         p [] [
@@ -182,6 +178,13 @@ let root model dispatch =
         p [] [
           str "Day two will be filled with practical workshops and chances to sit down and work alongside fellow members of the F# community to give you confidence in writing Fable and SAFE applications that take full advantage of F#."
         ]
+      ]
+      div[Class "general-info"] [
+        div[ Class "fsharp"] [
+          h4 [Class "title is-4 title-light"] [
+            str "F# enlightenment" ]
+      ]]
+      div [Class "content standard-margin"] [
         p [] [
           str "No matter if you are new to Fable or SAFE, don't have much experience in web development or even if you don't know F# yet - if you are a developer interested in writing user interfaces in a functional programming language designed for high productivity and with cutting-edge tooling, this year's FableConf and RemmiDemmi will have something for you!"
         ]
