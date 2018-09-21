@@ -160,35 +160,33 @@ let root model dispatch =
         p [] [
           str "We'll have two days and two tracks of sessions:"
         ]
+      ]
+      div[Class "general-info"] [
+        div[ Class "info" ] [
+          h4 [Class "title is-4 title-light"] [
+            str "Friday: Talks" ]
+        ]
+      ]
+      div [Class "content standard-margin"] [
         p [] [
           str "Day one will consist of talks on two tracks: the Fable track will provide you with the chance to learn all about the latest developments on Fable, whilst the RemmiDemmi track will be our usual \"anything goes\" F# track, with relaxed discussions and sessions on cool F# tech (with a slight focus towards SAFE Stack developments)."
         ]
+      ]
+      div[Class "general-info"] [
+        div[ Class "info" ] [
+          h4 [Class "title is-4 title-light"] [
+            str "Saturday: Workshops" ]
+        ]
+      ]
+      div [Class "content standard-margin"] [
         p [] [
           str "Day two will be filled with practical workshops and chances to sit down and work alongside fellow members of the F# community to give you confidence in writing Fable and SAFE applications that take full advantage of F#."
         ]
         p [] [
           str "No matter if you are new to Fable or SAFE, don't have much experience in web development or even if you don't know F# yet - if you are a developer interested in writing user interfaces in a functional programming language designed for high productivity and with cutting-edge tooling, this year's FableConf and RemmiDemmi will have something for you!"
         ]
-        // p [] [
-        //   str "Check the Programme below, get to know our "
-        //   a [Href "#speakers"] [str "wonderful speakers"]
-        //   str " and feast your eyes with the "
-        //   a [Href "#food"] [str "splendid menu"]
-        //   str " we are preparing. The only thing that is missing is you!"
-        // ]
         br []
-      ]
-    ]
-    section [Class "hero is-small"] [
-      div [Class "hero-body"] [
-        div [Class "container"] [
-          h2 [Class "title is-2 has-text-centered"] [str "Friday: Talks"]
-          p [Class "has-text-centered"] [str "More info coming soon!"]
-          br []
-          h2 [Class "title is-2 has-text-centered"] [str "Saturday: Workshops"]
-          p [Class "has-text-centered"] [str "More info coming soon!"]
-          br []
-        ]
+        p [Class "has-text-centered"] [ str "More details can be found in the "; a [Href "#planning"] [str "agenda" ]]
       ]
     ]
     br []
@@ -234,11 +232,6 @@ let root model dispatch =
             div[ Class "columns"] [
               linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
               linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
-            // linkImage "nsynk2.png" "http://nsynk.de/"
-            // linkImage "syrpin.jpg" "http://www.syrpin.org/"
-            // linkImage "digital-campus.png" "https://www.digital-campus.fr/"
-            // linkImage "BxGames.png" "http://bordeauxgames.com/"
-            // linkImage "cap-sciences2.jpg" "http://www.cap-sciences.net/"
             ]
           ]
         ]
