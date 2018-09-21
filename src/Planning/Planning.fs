@@ -98,14 +98,14 @@ module State =
           { Time="10:30"
             Tracks=[
               talk "gien" Intermediate
-              ws "sia" Expert
+              ws "matt" AllLevels
             ]
           }
           takeABreak "Coffee Break" "11:15"
           { Time="11:30"
             Tracks=[
               talk "evelina" Beginner
-              ws "jeff" AllLevels
+              ws "sia" Expert
             ]
           }
           takeABreak "Lunch" "12:15"
