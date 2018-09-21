@@ -334,7 +334,7 @@ module View =
 
         yield div[ Class "container planning"] [
           div[ Class ""] [
-            h1 [Class "title is-1 title-bold"] [str "Planning."]
+            h1 [Class "title is-1 title-bold"] [str "Agenda."]
             div[] events
           ]
         ]

@@ -50,7 +50,7 @@ let root currentPage (model: Model) dispatch =
           a [Href (toHash Home)] [img [ Src "img/logo_menu.png" ]]
         ]
         menuItem "Home." Home currentPage dispatch
-        menuItem "Planning." Planning currentPage dispatch
+        menuItem "Agenda." Planning currentPage dispatch
         menuItem "Location." Page.Location currentPage dispatch
       ]
       div [Class "navbar-end"] navButtons
