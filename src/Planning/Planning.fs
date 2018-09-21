@@ -142,15 +142,21 @@ module State =
       {
         Date="Day Two - Saturday 27 Oct. 2018"
         Events=[
-          {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
-          // takeABreak "Breakfast" "08:15"
-          // {
-          //   Time="09:15"
-          //   Tracks=[
-          //     event (Some "zaid") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-          //   ]
-          // }
+          {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Fable";Description=None;Kind=Some KindOne};{Speaker=None;Title="SAFE-Stack";Description=None;Kind=Some KindTwo;Level=None}]}
+          takeABreak "Introductory Breakfast" "08:15"
+          { Time="09:15"
+            Tracks=[
+              ws "tbd" AllLevels
+              ws "isaac" AllLevels
+            ]
+          }
+          takeABreak "Coffee Break" "11:15"
+          { Time="11:30"
+            Tracks=[
+              ws "tbd" AllLevels
+              ws "steffen" Intermediate
+            ]
+          }
           // takeABreak "Coffee Break" "10:15"
           // { Time="10:30"
           //   Tracks=[
