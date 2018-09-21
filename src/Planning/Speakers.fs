@@ -85,7 +85,7 @@ let Sia =
   {
     shortname = "sia"
     name = "Sia"
-    picture = "img/Mystery.png"
+    picture = "img/Sia.jpg"
     talk =
       { title = "Azure Functions Deep Dive"
         content = str """Serverless is a great architecture and it helps saving costs and building more reliable and scalable services.
@@ -93,7 +93,7 @@ Azure functions, the serverless implementation within Azure, is now around for q
 In this session, we'll get some deeper insights into azure functions and get some hints about how to debug and get started to contribute to the project."""
       }
     bio = None
-    twitter = None
+    twitter = Some "DerSia_"
     github = None
   }
 
@@ -111,17 +111,17 @@ let Evelina =
     github = Some "evelinag"
   }
 
-let Jeff =
+let Matt =
   {
-    shortname = "jeff"
-    name = "Jeff Hollan"
+    shortname = "matt"
+    name = "Matthew Henderson"
     picture = "img/Mystery.png"
     talk =
       { title = "Azure Functions"
         content = str "TBD: Come back soon!"
       }
     bio = None
-    twitter = None
+    twitter = Some "mattchenderson"
     github = None
   }
 
@@ -261,7 +261,7 @@ let speakersMap =
     Gien
     Sia
     Evelina
-    Jeff
+    Matt
     Julien
     Tomasz
     RomanP
