@@ -213,14 +213,14 @@ let Stachu =
   {
     shortname = "stachu"
     name = "Stachu Korick"
-    picture = "img/Mystery.png"
+    picture = "img/Stachu.jpg"
     talk =
-      { title = ""
-        content = str ""
+      { title = "Solving Puzzles, Functionally"
+        content = str """Learn how to use F# and Fable to solve the Rubik's Cube. We will briefly introduce the history of the puzzle and model the relevant domain, forming a common language and understanding. Then we will iterate through methods of solving, from naive brute-force approaches to heuristic-driven methods that take advantage of multiple processors."""
       }
-    bio = None
-    twitter = None
-    github = None
+    bio = Some """Formerly an active member of the Rubik's Cube speed-solving community, Stachu loves solving problems and follows the cubing adage "Go Slow and Look Ahead" to the best of his ability."""
+    twitter = Some "StachuDotNet"
+    github = Some "StachuDotNet"
   }
 
 

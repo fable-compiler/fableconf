@@ -155,34 +155,14 @@ module State =
               ws "tbd" AllLevels
             ]
           }
+          takeABreak "Lunch" "13:15"
           { Time="14:00"
             Tracks=[
               ws "steffen" Intermediate
               ws "tbd" AllLevels
             ]
           }
-          // takeABreak "Coffee Break" "10:15"
-          // { Time="10:30"
-          //   Tracks=[
-          //     event (Some "francois") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-          //   ]
-          // }
-          // takeABreak "Coffee Break" "11:30"
-          // { Time="11:45"
-          //   Tracks=[
-          //     event (Some "alfonso") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-          //   ]
-          // }
-          // takeABreak "Lunch" "12:45"
-          // { Time="14:00"
-          //   Tracks=[
-          //     event (Some "stachu") "Great workshop" (str "You will learn this and that...") KindOne AllLevels
-          //     event None "Great hackspace" (str "You will learn this and that...") KindTwo AllLevels
-          //   ]
-          // }
-          // takeABreak "That's all folks! Have fun in Berlin!" "15:00"
+          takeABreak "That's all folks! Have fun in Berlin!" "17:30"
         ]
       }]
 
