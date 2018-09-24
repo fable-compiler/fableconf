@@ -145,7 +145,7 @@ module State =
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
           { Time="09:15"
             Tracks=[
-              ws "isaac" AllLevels
+              ws "anthony" AllLevels
               ws "tbd" AllLevels
             ]
           }
