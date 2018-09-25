@@ -232,9 +232,10 @@ let root model dispatch =
             h4 [Class "subtitle is-5 neon-green"] [str "Many thanks to our fabulous sponsors who make this conference possible!"]
           ]
           div [Class "sponsors"] [
-            div[ Class "columns"] [
+            div[ Class "columns is-multiline"] [
               linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
               linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
+              linkImage "is-4" "sponsor-comp" "lambda-factory.png" "https://lambdafactory.io/"
             ]
           ]
         ]
