@@ -8,52 +8,6 @@ open Fulma.FontAwesome
 open Fulma
 open Global
 
-module Workshops =
-  let aTitle = "Developing web apps with Elmish"
-  let aBody =
-    div [] [
-      p [] [
-        str "Thanks to the model-view-update architecture you can easily create a web app without any mutable state messing around. But even if you do need to get your hands dirty to interact with external components, you will learn how Elmish allows you do that without a hassle."
-      ]
-      p [] [
-        str "In this workshop you will be also introduced to an Elmish extension that makes dealing with CSS a much more pleasant task: "
-        a [Href "https://mangelmaxime.github.io/Fable.Elmish.Bulma"] [str "Fable.Fulma"]
-      ]
-    ]
-
-  let bTitle = "Data visualization on-the-fly"
-  let bBody =
-    div [] [
-      p [] [
-        str "From its very beginning, F# has been a great language for exploring data, even more so thanks to tools like "
-        a [Href "https://fslab.org/"] [str "FsLab"]
-        str ". However the solution to visualize the results has not been always ideal: sometimes it was Windows-only and other times was a bit cumbersome and slow."
-      ]
-      p [] [
-        str "Luckily, Fable now brings the whole power of browser graphics to F#. In this workshop you'll learn how to combine .NET F# for data manipulation with JS F# for instantaneous representation in a way that can be later easily embedded in a web while keeping your graphics interactive."
-      ]
-    ]
-
-  let cTitle = "Write your own VS Code extension"
-  let cBody =
-    div [] [
-      a [Href "#speakers/krzysztof"] [str "Krzysztof Cieślak"]
-      str ", "
-      a [Href "http://ionide.io/"] [str "Ionide"]
-      str " author and one of the most veteran Fable users, will show us how easy is to use the power and expressiveness of F# to create extensions for Visual Studio Code, automate common tasks and increase your productivity."
-    ]
-
-  let dTitle = "Make a simple (but addictive!) game"
-  let dBody =
-    div [] [
-      p [] [
-        str "It's time for some fun! Let's close FableConf with a game. We will use the same Elmish architecture as for web apps, in order to reuse our knowledge and tools like the time-travel debugger, but with a different renderer: "
-        a [Href "http://www.pixijs.com/"] [str "PixiJS"]
-      ]
-      p [] [
-        str "You will also learn some techniques to improve performance and make your games run smoothly on any device, like object pooling or background computations with a web worker."
-      ]
-    ]
 
 let genericCard isTalk time body =
   let typ = if isTalk then "talk" else "break"
