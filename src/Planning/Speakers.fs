@@ -1,8 +1,6 @@
 module Speakers
 
-open Fable.Import.React
 open Fable.Helpers.React
-open Fable.Helpers.React.Props
 open Global
 
 type Model =
@@ -225,18 +223,18 @@ let Stachu =
 
 
 
-let Isaac =
+let Anthony =
   {
-    shortname = "isaac"
-    name = "Isaac Abraham"
-    picture = "img/Isaac.png"
+    shortname = "anthony"
+    name = "Anthony Brown"
+    picture = "img/Anthony.jpg"
     talk =
       { title = "SAFE-Stack dojo"
         content = str "This workshop is designed to allow you to experience the SAFE-Stack based on an ready-made application that you can build on top of. It will take around 90 minutes for you to complete if you have no experience in any of these technologies."
       }
-    bio = None
-    twitter = Some "isaac_abraham"
-    github = Some "isaacabraham"
+    bio = Some "Anthony is a consultant at Compositional IT where he helps organisations solve problems using F# and Azure."
+    twitter = Some "bruinbrown93"
+    github = Some "bruinbrown"
   }
 
 let Steffen =
@@ -252,26 +250,3 @@ let Steffen =
     twitter = Some "sforkmann"
     github = Some "forki"
   }
-
-let speakersMap =
-  [ François
-    Maxime
-    Alfonso
-    Krzysztof
-    Gien
-    Sia
-    Evelina
-    Matt
-    Julien
-    Tomasz
-    RomanP
-    Zaid
-    RomanS
-    TBD
-    Stachu
-    Isaac
-    Steffen
-  ]
-  |> List.map (fun x -> x.shortname,x)
-  |> Map
-

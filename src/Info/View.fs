@@ -18,7 +18,7 @@ let root =
             span [Class "title-light neon-green"] [str "Germany"]
           ]
           h3 [Class "subtitle is-4"] [
-            span [Class "title-light neon-green"] [str "26-27 october"]
+            span [Class "title-light neon-green"] [str "26-27 October"]
           ]
       ]
     ]
@@ -40,7 +40,6 @@ The ground floor with its multifunctional spaces and the adjacent Digital Eatery
       ]
     ]
     br []
-    //h4 [Class "title is-4 has-text-centered"] [str "Transportation info coming soon!"]
     iframe [
       Class "google-map"
       Src "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2427.9186937927734!2d13.388362651689432!3d52.516810479714536!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a851db450c485b%3A0x515d86e5ad24fd36!2sMicrosoft+Berlin!5e0!3m2!1sen!2ses!4v1529050295073"
