@@ -188,7 +188,7 @@ let root model dispatch =
           div [Class "sponsors"] [
             div[ Class "columns is-multiline"] [
               linkImage "is-2 is-offset-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
-              linkImage "is-6" "sponsor-company" "compositional-it.png" "https://compositional-it.com/"
+              linkImage "is-6" "sponsor-company" "cit2.png" "https://compositional-it.com/"
               linkImage "is-4 is-offset-2" "sponsor-company" "lambda-factory.png" "https://lambdafactory.io/"
               linkImage "is-4" "sponsor-company" "siaconsulting.png" "https://www.sia-consulting.eu/"
             ]
