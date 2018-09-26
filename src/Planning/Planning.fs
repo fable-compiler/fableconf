@@ -49,12 +49,7 @@ module State =
     let takeABreak title time =
         {Time=time; Tracks=[{Level=None;Speaker=None;Title=title;Description=None;Kind=None}]}
 
-    let event speaker title desc kind level=
-      let speaker =
-        match speaker with
-        | Some name ->
-          Some (speakersMap.Item name)
-        | None -> None
+    let event speaker title desc kind level =
       {
         Speaker=speaker
         Title=title
@@ -63,8 +58,7 @@ module State =
         Level = Some level
       }
 
-    let eventFromSpeaker speaker kind level=
-      let speaker = speakersMap.Item speaker
+    let eventFromSpeaker speaker kind level =
       {
         Speaker=Some speaker
         Title=speaker.talk.title
@@ -91,48 +85,48 @@ module State =
           {
             Time="09:15"
             Tracks=[
-              keynote "maxime" AllLevels
+              keynote Speakers.Maxime AllLevels
             ]
           }
           takeABreak "Coffee Break" "10:15"
           { Time="10:30"
             Tracks=[
-              talk "gien" Intermediate
-              ws "matt" AllLevels
+              talk Speakers.Gien Intermediate
+              ws Speakers.Matt AllLevels
             ]
           }
           takeABreak "Coffee Break" "11:15"
           { Time="11:30"
             Tracks=[
-              talk "evelina" Beginner
-              ws "sia" Expert
+              talk Speakers.Evelina Beginner
+              ws Speakers.Sia Expert
             ]
           }
           takeABreak "Lunch" "12:15"
           { Time="14:00"
             Tracks=[
-              talk "julien" Intermediate
-              ws "krzysztof" Expert
+              talk Speakers.Julien Intermediate
+              ws Speakers.Krzysztof Expert
             ]
           }
           takeABreak "Coffee Break" "14:45"
           { Time="15:00"
             Tracks=[
-              talk "tomasz" AllLevels
-              ws "romanp" Beginner
+              talk Speakers.Tomasz AllLevels
+              ws Speakers.RomanP Beginner
             ]
           }
           takeABreak "Coffee Break" "15:45"
           { Time="16:00"
             Tracks=[
-              talk "zaid" Intermediate
-              ws "romans" Expert
+              talk Speakers.Zaid Intermediate
+              ws Speakers.RomanS Expert
             ]
           }
           takeABreak "Last Coffee Break" "16:30"
           { Time="16:45"
             Tracks=[
-              keynote "tbd" AllLevels
+              keynote Speakers.TBD AllLevels
             ]
           }
           takeABreak "That's all folks!" "17:30"
@@ -145,21 +139,21 @@ module State =
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
           { Time="09:15"
             Tracks=[
-              ws "anthony" AllLevels
-              ws "tbd" AllLevels
+              ws Speakers.Anthony AllLevels
+              ws Speakers.TBD AllLevels
             ]
           }
           { Time="11:30"
             Tracks=[
-              ws "stachu" AllLevels
-              ws "tbd" AllLevels
+              ws Speakers.Stachu AllLevels
+              ws Speakers.TBD AllLevels
             ]
           }
           takeABreak "Lunch" "13:15"
           { Time="14:00"
             Tracks=[
-              ws "steffen" Intermediate
-              ws "tbd" AllLevels
+              ws Speakers.Steffen Intermediate
+              ws Speakers.TBD AllLevels
             ]
           }
           takeABreak "That's all folks! Have fun in Berlin!" "17:30"
