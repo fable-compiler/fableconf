@@ -233,8 +233,10 @@ let root model dispatch =
           ]
           div [Class "sponsors"] [
             div[ Class "columns"] [
-              linkImage "is-2" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
-              linkImage "is-6" "sponsor-comp" "compositional-it.png" "https://compositional-it.com/"
+              linkImage "is-3" "sponsor-fsharp" "fsharp.png" "http://fsharp.org/"
+              linkImage "is-3" "sponsor-company" "compositional-it.png" "https://compositional-it.com/"
+              linkImage "is-3" "sponsor-company" "lambda-factory.png" "https://lambdafactory.io/"
+              linkImage "is-3" "sponsor-company" "siaconsulting.png" "https://www.sia-consulting.eu/"
             ]
           ]
         ]
