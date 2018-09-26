@@ -1,9 +1,7 @@
 module Navbar.View
 
-open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
-open Fulma
 open Global
 open Types
 

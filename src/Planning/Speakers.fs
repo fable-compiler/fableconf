@@ -1,8 +1,6 @@
 module Speakers
 
-open Fable.Import.React
 open Fable.Helpers.React
-open Fable.Helpers.React.Props
 open Global
 
 type Model =
@@ -252,26 +250,3 @@ let Steffen =
     twitter = Some "sforkmann"
     github = Some "forki"
   }
-
-let speakersMap =
-  [ François
-    Maxime
-    Alfonso
-    Krzysztof
-    Gien
-    Sia
-    Evelina
-    Matt
-    Julien
-    Tomasz
-    RomanP
-    Zaid
-    RomanS
-    TBD
-    Stachu
-    Anthony
-    Steffen
-  ]
-  |> List.map (fun x -> x.shortname,x)
-  |> Map
-
