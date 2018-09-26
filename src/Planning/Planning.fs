@@ -1,11 +1,8 @@
 namespace Planning
 
-open Fable.Core
-open Fable.Core.JsInterop
 open Fable.Helpers.React
 open Fable.Helpers.React.Props
 open Global
-open Speakers
 open Fable.Import.React
 open Fulma
 
