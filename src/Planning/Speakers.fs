@@ -13,10 +13,11 @@ let François =
     name = "François Nicaise"
     picture = "img/François.jpg"
     talk =
-     { title = "Fable for busy dads: how Fable helps me to spend more time with my children"
-       content = str "TBD"
+     { title = "Offline Progressive Web Apps with Fable & PouchDB"
+       content = str "Nowadays users want their web app to work anywhere anytime. They want to be able to use their app even when the Internet connection is down.
+       During this workshop you will learn how to build a simple progressive web app that will allow you to create and store data in offline and online mode starring PouchDB helpful synchronization features."
      }
-    bio = Some "François's been programming for over 20 years and finally found his way to F# and Fable. Before becoming a Freelancer, his main area of expertise was massive multiplayer web based video games like www.die2nite.com. Nowadays he's having fun on every single project, hardware or software based. He also spends a lot of time with kids through coding or business curriculums."
+    bio = Some "François's been programming for a long time using so many languages. Now he's deep into functional programming using F# and Fable for all his web and IOT projects. He also spends a lot of time with kids through coding jams and teaches IT to young adults"
     twitter = Some "thewhitetigle"
     github = Some "whitetigle"
   }

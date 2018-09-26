@@ -137,7 +137,7 @@ module State =
           { Time="09:15"
             Tracks=[
               ws Speakers.Anthony AllLevels
-              ws Speakers.TBD AllLevels
+              ws Speakers.François AllLevels
             ]
           }
           { Time="11:30"
