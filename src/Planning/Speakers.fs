@@ -15,7 +15,7 @@ let François =
     talk =
      { title = "Offline Progressive Web Apps with Fable & PouchDB"
        content = str "Nowadays users want their web app to work anywhere anytime. They want to be able to use their app even when the Internet connection is down.
-       During this workshop you will learn how to build a simple progressive web app that will allow you to create and store data in offline and online mode starring PouchDB helpful synchronization features."
+       During this talk you will learn what is a progressive web app, what is PouchDB and how both allow you to create offline apps that store data in the browser and synchronize them when users are back online."
      }
     bio = Some "François's been programming for a long time using so many languages. Now he's deep into functional programming using F# and Fable for all his web and IOT projects. He also spends a lot of time with kids through coding jams and teaches IT to young adults"
     twitter = Some "thewhitetigle"
