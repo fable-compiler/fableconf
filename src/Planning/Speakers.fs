@@ -208,6 +208,21 @@ let TBD =
     github = None
   }
 
+
+let Hackspace =
+  {
+    shortname = "hackspace"
+    name = "Hackspace"
+    picture = "img/Mystery.png"
+    talk =
+      { title = "Hackspace"
+        content = str "You decide what to do! Grab the opportunity of being together with so many OSS contributors to discuss ideas and hack code together. Maybe the next big F# project will start here?"
+      }
+    bio = None
+    twitter = None
+    github = None
+  }
+
 let Stachu =
   {
     shortname = "stachu"
@@ -250,4 +265,32 @@ let Steffen =
     bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
     twitter = Some "sforkmann"
     github = Some "forki"
+  }
+
+let Tomasp =
+  {
+    shortname = "tomasp"
+    name = "Tomas Petricek"
+    picture = "img/Tomasp.jpg"
+    talk =
+      { title = "Build your own Excel 365 in an hour (or so)"
+        content = str "There are many interesting things happening in a spreadsheet. It needs an interactive user interface where users can edit data and formulas in cells, it needs to parse formulas that users write, it needs to evaluate formulas and show results on the fly and it also needs to handle errors such as division by zero and circular references. In this workshop you'll learn how to do all this using the Elm architecture, together with tips and tricks for handling the errors you may encounter on the way."
+      }
+    bio = Some "Tomas is a computer scientist, book author and open-source developer. He wrote a popular book called \"Real-World Functional Programming\" and is a lead developer of several F# open-source libraries, but he also contributed to the design of the F# language as an intern and consultant at Microsoft Research. He is a partner at fsharpWorks where he provides trainings and consulting services. Tomas recently submitted his PhD thesis at the University of Cambridge focused on types for understanding context usage in programming languages, but his most recent work also includes two essays that attempt to understand programming through the perspective of philosophy of science."
+    twitter = Some "tomaspetricek"
+    github = Some "tpetricek"
+  }
+
+let Dag =
+  {
+    shortname = "dag"
+    name = "Dag Brattli"
+    picture = "img/Dag.jpg"
+    talk =
+      { title = "Hands-on Fable Reaction"
+        content = str "Fable Reaction combines the power of reactive programming with the Elmish message stream. In this workshop you will learn how you easily can modify an Elmish application to transform, filter, time-shift and combine keyboard, mouse and websocket events."
+      }
+    bio = Some "Dag Brattli works as a software developer at Serit IT Partner in Norway, a consultant company that uses only F# for software development. He is the creator of the Reactive Extensions for Python (RxPY) and AioReactive (async/await reactive tools for Python). In his previous life he also worked on several prosjects using RxJS and Rx.NET. Meeting the amazing world of Fable and Elmish resulted in the newest creation called Fable Reaction."
+    twitter = Some "dbrattli"
+    github = Some "dbrattli"
   }

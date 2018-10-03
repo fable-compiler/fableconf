@@ -64,14 +64,14 @@ module State =
         Level = Some level
       }
 
-    let talk speaker=
+    let track1 speaker=
       eventFromSpeaker speaker KindOne
+
+    let track2 speaker =
+      eventFromSpeaker speaker KindTwo
 
     let keynote speaker =
       eventFromSpeaker speaker KindThree
-
-    let ws speaker =
-      eventFromSpeaker speaker KindTwo
 
     let days =
      [{
@@ -88,42 +88,42 @@ module State =
           takeABreak "Coffee Break" "10:15"
           { Time="10:30"
             Tracks=[
-              talk Speakers.Gien Intermediate
-              ws Speakers.Matt AllLevels
+              track1 Speakers.Gien Intermediate
+              track2 Speakers.Matt AllLevels
             ]
           }
           takeABreak "Coffee Break" "11:15"
           { Time="11:30"
             Tracks=[
-              talk Speakers.Evelina Beginner
-              ws Speakers.Sia Expert
+              track1 Speakers.Evelina Beginner
+              track2 Speakers.Sia Expert
             ]
           }
           takeABreak "Lunch" "12:15"
           { Time="14:00"
             Tracks=[
-              talk Speakers.Julien Intermediate
-              ws Speakers.François AllLevels
+              track1 Speakers.Julien Intermediate
+              track2 Speakers.François AllLevels
             ]
           }
           takeABreak "Coffee Break" "14:45"
           { Time="15:00"
             Tracks=[
-              talk Speakers.Tomasz AllLevels
-              ws Speakers.RomanP Beginner
+              track1 Speakers.Tomasz AllLevels
+              track2 Speakers.RomanP Beginner
             ]
           }
           takeABreak "Coffee Break" "15:45"
           { Time="16:00"
             Tracks=[
-              talk Speakers.Zaid Intermediate
-              ws Speakers.RomanS Expert
+              track1 Speakers.Zaid Intermediate
+              track2 Speakers.RomanS Expert
             ]
           }
           takeABreak "Last Coffee Break" "16:30"
           { Time="16:45"
             Tracks=[
-              ws Speakers.Krzysztof Expert
+              track2 Speakers.Krzysztof Expert
             ]
           }
           takeABreak "That's all folks!" "17:30"
@@ -133,24 +133,24 @@ module State =
       {
         Date="Day Two - Saturday 27 Oct. 2018"
         Events=[
-          {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops";Description=None;Kind=Some KindOne};{Speaker=None;Title="Hackspace";Description=None;Kind=Some KindTwo;Level=None}]}
+          {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops I";Description=None;Kind=Some KindOne};{Speaker=None;Title="Workshops II";Description=None;Kind=Some KindTwo;Level=None}]}
           { Time="09:15"
             Tracks=[
-              ws Speakers.Anthony AllLevels
-              ws Speakers.TBD AllLevels
+              track1 Speakers.Tomasp AllLevels
+              track2 Speakers.Stachu AllLevels
             ]
           }
           { Time="11:30"
             Tracks=[
-              ws Speakers.Stachu AllLevels
-              ws Speakers.TBD AllLevels
+              track1 Speakers.Anthony AllLevels
+              track2 Speakers.Dag AllLevels
             ]
           }
           takeABreak "Lunch" "13:15"
           { Time="14:00"
             Tracks=[
-              ws Speakers.Steffen Intermediate
-              ws Speakers.TBD AllLevels
+              track1 Speakers.Steffen Intermediate
+              track2 Speakers.Hackspace AllLevels
             ]
           }
           takeABreak "That's all folks! Have fun in Berlin!" "17:30"
