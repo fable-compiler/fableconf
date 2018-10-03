@@ -103,7 +103,7 @@ module State =
           { Time="14:00"
             Tracks=[
               talk Speakers.Julien Intermediate
-              ws Speakers.Krzysztof Expert
+              ws Speakers.François AllLevels
             ]
           }
           takeABreak "Coffee Break" "14:45"
@@ -123,7 +123,7 @@ module State =
           takeABreak "Last Coffee Break" "16:30"
           { Time="16:45"
             Tracks=[
-              keynote Speakers.TBD AllLevels
+              ws Speakers.Krzysztof Expert
             ]
           }
           takeABreak "That's all folks!" "17:30"
@@ -137,7 +137,7 @@ module State =
           { Time="09:15"
             Tracks=[
               ws Speakers.Anthony AllLevels
-              ws Speakers.François AllLevels
+              ws Speakers.TBD AllLevels
             ]
           }
           { Time="11:30"
