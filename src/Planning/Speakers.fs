@@ -128,12 +128,12 @@ let Julien =
   {
     shortname = "julien"
     name = "Julien Roncaglia"
-    picture = "img/Mystery.png"
+    picture = "img/Julien.png"
     talk =
-      { title = "Performance tricks for Fable.React apps"
-        content = str "TBD: Come back soon!"
+      { title = "React performance in a Fable world"
+        content = str "Whenever directly or via Elmish as a Fable developper React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
       }
-    bio = None
+    bio = Some "Julien is a French developer with interests spanning system level programming to functionnal on the .NET stack. He is currently focusing on F#, DevOps and performance."
     twitter = Some "virtualblackfox"
     github = Some "vbfox"
   }
@@ -173,9 +173,9 @@ let Zaid =
     picture = "img/Zaid.jpg"
     talk =
       { title = "Scaling Elmish Applications"
-        content = str "Understanding the techniques of building large Elmish applications by example"
+        content = str "Understanding the techniques of building large Elmish applications by example, we will go through the process of breaking down our code into small, isolated, pieces which we will then wire together to make up the whole application."
       }
-    bio = None
+    bio = Some "Zaid is a software developer who is a life-long learner and very passionate about programming, started as a hobby and later became an addiction thanks to OSS, mainly involved with the F# and Fable community. "
     twitter = Some "zaid_ajaj"
     github = Some "Zaid-Ajaj"
   }
