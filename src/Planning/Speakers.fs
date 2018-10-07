@@ -128,7 +128,7 @@ let Julien =
   {
     shortname = "julien"
     name = "Julien Roncaglia"
-    picture = "img/Julien.png"
+    picture = "img/Julien.jpg"
     talk =
       { title = "React performance in a Fable world"
         content = str "Whenever directly or via Elmish as a Fable developper React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
