@@ -128,12 +128,12 @@ let Julien =
   {
     shortname = "julien"
     name = "Julien Roncaglia"
-    picture = "img/Mystery.png"
+    picture = "img/Julien.png"
     talk =
-      { title = "Performance tricks for Fable.React apps"
-        content = str "TBD: Come back soon!"
+      { title = "React performance in a Fable world"
+        content = str "Whenever directly or via Elmish as a Fable developper React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
       }
-    bio = None
+    bio = Some "Julien is a French developer with interests spanning system level programming to functionnal on the .NET stack. He is currently focusing on F#, DevOps and performance."
     twitter = Some "virtualblackfox"
     github = Some "vbfox"
   }
