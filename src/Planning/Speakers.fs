@@ -173,9 +173,9 @@ let Zaid =
     picture = "img/Zaid.jpg"
     talk =
       { title = "Scaling Elmish Applications"
-        content = str "Understanding the techniques of building large Elmish applications by example"
+        content = str "Understanding the techniques of building large Elmish applications by example, we will go through the process of breaking down our code into small, isolated, pieces which we will then wire together to make up the whole application."
       }
-    bio = None
+    bio = Some "Zaid is a software developer who is a life-long learner and very passionate about programming, started as a hobby and later became an addiction thanks to OSS, mainly involved with the F# and Fable community. "
     twitter = Some "zaid_ajaj"
     github = Some "Zaid-Ajaj"
   }
