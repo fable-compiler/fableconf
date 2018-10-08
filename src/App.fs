@@ -37,7 +37,7 @@ let root model dispatch =
             str "Conf'18"
           ]
           span [] [str " is organised with passion and dedication by fellow Fsharpists!"]
-          a [Href "http://www.biensuratelier.com/graphisme.html";Target "_blank"] [ span [Class "neon-green"] [str " web design by Atelier BIENSÜR Graphisme"]]
+          a [Href "http://www.biensurgraphisme.com";Target "_blank"] [ span [Class "neon-green"] [str " web design by Biensür Graphisme"]]
         ]
     ]
 
