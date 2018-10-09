@@ -72,9 +72,7 @@ let Gien =
       { title = "Becoming a full stack artist: a quest into the unknown"
         content = str "TBD: Come back soon!"
       }
-    bio = Some "
-Gien Verschatse
-Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
+    bio = Some "Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
     twitter = Some "selketjah"
     github = Some "selketjah"
   }
