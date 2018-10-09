@@ -88,42 +88,42 @@ module State =
           takeABreak "Coffee Break" "10:15"
           { Time="10:30"
             Tracks=[
-              track1 Speakers.Gien Intermediate
-              track2 Speakers.Matt AllLevels
+              track1 Speakers.Evelina Beginner
+              track2 Speakers.Gien Intermediate
             ]
           }
           takeABreak "Coffee Break" "11:15"
           { Time="11:30"
             Tracks=[
-              track1 Speakers.Evelina Beginner
-              track2 Speakers.Sia Expert
+              track1 Speakers.Julien Intermediate
+              track2 Speakers.Janek AllLevels
             ]
           }
           takeABreak "Lunch" "12:15"
           { Time="14:00"
             Tracks=[
-              track1 Speakers.Julien Intermediate
-              track2 Speakers.François AllLevels
+              track1 Speakers.François AllLevels
+              track2 Speakers.Sia Expert
             ]
           }
           takeABreak "Coffee Break" "14:45"
           { Time="15:00"
             Tracks=[
-              track1 Speakers.Tomasz AllLevels
+              track1 Speakers.Zaid Intermediate
               track2 Speakers.RomanP Beginner
             ]
           }
           takeABreak "Coffee Break" "15:45"
           { Time="16:00"
             Tracks=[
-              track1 Speakers.Zaid Intermediate
+              track1 Speakers.Tomasz AllLevels
               track2 Speakers.RomanS Expert
             ]
           }
           takeABreak "Last Coffee Break" "16:30"
           { Time="16:45"
             Tracks=[
-              track2 Speakers.Krzysztof Expert
+              track2 Speakers.Krzysztof AllLevels
             ]
           }
           takeABreak "That's all folks!" "17:30"

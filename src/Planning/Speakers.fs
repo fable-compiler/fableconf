@@ -108,18 +108,18 @@ let Evelina =
     github = Some "evelinag"
   }
 
-let Matt =
+let Janek =
   {
-    shortname = "matt"
-    name = "Matthew Henderson"
+    shortname = "janekf"
+    name = "Jan Fellien"
     picture = "img/Mystery.png"
     talk =
       { title = "Azure Functions"
         content = str "TBD: Come back soon!"
       }
     bio = None
-    twitter = Some "mattchenderson"
-    github = None
+    twitter = Some "janekf"
+    github = Some "jfellien"
   }
 
 let Julien =
