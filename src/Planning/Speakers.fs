@@ -114,8 +114,8 @@ let Janek =
     name = "Jan Fellien"
     picture = "img/janekf.png"
     talk =
-      { title = "Azure Functions - Microsofts Glue in Serverless Architectures"
-        content = str "I'm quite sure you heard a lot about Serverless Computing the next evolution of Software Development. Maybe you tried a bit or flirt with thoughts to use it for next feature implementation. Be sure it's harder than expected. Since 2016 I'm deep in Azure Functions, Microsofts answer to AWS Lambda. Also I'm deep in Serverless Architectures in an Azure environment. In many times I'm trapped, but it is fine for me. I've learned a lot which I want to share in this talk."
+      { title = "Azure Functions - Microsoft's Glue in Serverless Architectures"
+        content = str "I'm quite sure you already heard a lot about Serverless Computing the next evolution of Software Development. Maybe you tried a bit or flirt with thoughts to use it for next feature implementation. Be sure it's harder than expected. Since 2016 I'm deep in Azure Functions, Microsofts answer to AWS Lambda. Also I'm deep in Serverless Architectures in an Azure environment. In many times I'm trapped, but it is fine for me. I've learned a lot which I want to share in this talk."
       }
     bio = Some """My current number of life: 26111.4. Software Developer for 26 years, on the road as Rebel at Work for 11 years and Microsoft MVP since first of April 2018.
 I love Domain Driven Design (DDD) as a method for modelling the right thing and implementation by the CQRS philosophy. But also I love Serverless Technologies because I have implemented enough infrastructure in my life.
