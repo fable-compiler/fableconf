@@ -70,8 +70,9 @@ let Gien =
     name = "Gien Verschatse"
     picture = "img/Gien.jpg"
     talk =
-      { title = "Becoming a full stack artist: a quest into the unknown"
-        content = str "TBD: Come back soon!"
+      { title = "Becoming a full stack developer: a quest into the unknown"
+        content = str "A lot of developers, including myself, believe that a full stack developer is a myth. But front-end development has changed a lot and the introduction of Babel and Elm have pushed it in a new direction. So it is time to reinvestigate if it is possible to be one.
+        In this talk I will share my experience with getting back into front-end development, more specifically the Fable ecosystem, after leaving it behind for a long time: how creating a front-end is different from creating a back-end, which parts of learning it was easy and which parts were hard and how thinking about code aesthetics changes the way you write code in general."
       }
     bio = Some "Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
     twitter = Some "selketjah"
