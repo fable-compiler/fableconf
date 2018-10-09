@@ -28,8 +28,8 @@ let Maxime =
     name = "Maxime Mangel"
     picture = "img/maxime.png"
     talk =
-     { title = "Keynote"
-       content = str "TBD: Come back soon!"
+     { title = "Keynote - User-friendly apps start with dev-friendly tools"
+       content = str "As developers we use libraries every day to make our lives easier, but sometimes learning how to use them becomes more complex than the task they're supposed to solve. During this talk I will share my experience creating libraries for the Fable ecosystem, as well as some advice to design and evolve user-friendly APIs."
      }
     bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
     twitter = Some "MangelMaxime"
