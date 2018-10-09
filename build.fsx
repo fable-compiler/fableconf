@@ -71,11 +71,12 @@ Target "InstallDotNetSdk"  (fun () ->
 
 Target "Restore" (fun () ->
     Util.run root "yarn" "install"
-    Util.run (root </> "src") dotnetExePath "restore"
+    // Util.run (root </> "src") dotnetExePath "restore"
 )
 
 Target "Build" (fun () ->
-    Util.run (root </> "src") dotnetExePath "fable yarn-build"
+    Util.run root "yarn" "build"
+    // Util.run (root </> "src") dotnetExePath "fable yarn-build"
 )
 
 let bumpVersion() =

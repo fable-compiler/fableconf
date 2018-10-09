@@ -196,3 +196,13 @@ docs/tools/FSharp.Formatting.svclog
 *.bak
 project.lock.json
 /.ionide/symbolCache.db
+
+art/CIT-Horizontal_1\.png
+
+art/CIT-Horizontal\.png
+
+art/CIT-Horizontal2\.png
+
+art/CIT-Vertical\.png
+
+art/CIT-Vertical2\.png
