@@ -264,6 +264,7 @@ module View =
         ]
       ]
       div [Class "card-content"] [
+        yield a [Href ("#" + speaker.shortname) ] []
         yield p [Class "title is-4 has-text-centered"] [str speaker.name]
         yield p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
         match speaker.bio with
