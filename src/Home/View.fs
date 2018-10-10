@@ -191,6 +191,7 @@ let root model dispatch =
               linkImage "is-6" "sponsor-company" "cit2.png" "https://compositional-it.com/"
               linkImage "is-4 is-offset-2" "sponsor-company" "lambda-factory.png" "https://lambdafactory.io/"
               linkImage "is-4" "sponsor-company" "siaconsulting.png" "https://www.sia-consulting.eu/"
+              linkImage "is-4 is-offset-2" "sponsor-company" "grossweber.png" "https://grossweber.com/"
             ]
           ]
         ]
