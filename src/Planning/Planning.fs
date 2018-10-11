@@ -117,7 +117,7 @@ module State =
           { Time="16:00"
             Tracks=[
               track1 Speakers.Tomasz AllLevels
-              track2 Speakers.RomanS Expert
+              track2 Speakers.RomanS Intermediate
             ]
           }
           takeABreak "Last Coffee Break" "16:30"
