@@ -13,7 +13,7 @@ let François =
     name = "François Nicaise"
     picture = "img/François.jpg"
     talk =
-     { title = "Offline Progressive Web Apps with Fable & PouchDB"
+     { title = "Offline Progressive Web Apps with PouchDB"
        content = str "Nowadays users want their web app to work anywhere anytime. They want to be able to use their app even when the Internet connection is down.
        During this talk you will learn what is a progressive web app, what is PouchDB and how both allow you to create offline apps that store data in the browser and synchronize them when users are back online."
      }
@@ -28,8 +28,8 @@ let Maxime =
     name = "Maxime Mangel"
     picture = "img/maxime.png"
     talk =
-     { title = "Keynote"
-       content = str "TBD: Come back soon!"
+     { title = "Keynote: User-friendly apps start with dev-friendly tools"
+       content = str "As developers we use libraries every day to make our lives easier, but sometimes learning how to use them becomes more complex than the task they're supposed to solve. During this talk I will share my experience creating libraries for the Fable ecosystem, as well as some advice to design and evolve user-friendly APIs."
      }
     bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
     twitter = Some "MangelMaxime"
@@ -56,8 +56,8 @@ let Krzysztof =
     name = "Krzysztof Cieślak"
     picture = "img/Krzysztof.jpg"
     talk =
-      { title = "Future of web development with F#"
-        content = str "TBD: Come back soon!"
+      { title = "Keynote: Future of web development with F#"
+        content = str "Over the last few years, developments in the F# web programming space has been really interesting - raise of the Fable, Giraffe, Saturn and SAFE stack has opened new opportunities for F# developers. But there is even more excitement on the horizon... let's boldly go where no talk has gone before!"
       }
     bio = Some "Krzysztof is a software developer, consultant, open source contributor and active member of the F# community."
     twitter = Some "k_cieslak"
@@ -70,8 +70,9 @@ let Gien =
     name = "Gien Verschatse"
     picture = "img/Gien.jpg"
     talk =
-      { title = "Becoming a full stack artist: a quest into the unknown"
-        content = str "TBD: Come back soon!"
+      { title = "Becoming a full stack developer: a quest into the unknown"
+        content = str "A lot of developers, including myself, believe that a full stack developer is a myth. But front-end development has changed a lot and the introduction of Babel and Elm have pushed it in a new direction. So it is time to reinvestigate if it is possible to be one.
+        In this talk I will share my experience with getting back into front-end development, more specifically the Fable ecosystem, after leaving it behind for a long time: how creating a front-end is different from creating a back-end, which parts of learning it were easy and which parts were hard and how thinking about code aesthetics changes the way you write code in general."
       }
     bio = Some "Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
     twitter = Some "selketjah"
@@ -86,7 +87,7 @@ let Sia =
     talk =
       { title = "Azure Functions Deep Dive"
         content = str """Serverless is a great architecture and it helps saving costs and building more reliable and scalable services.
-Azure functions, the serverless implementation within Azure, is now around for quite sometime and latley it's getting a lot of attention. But how does azure functions look like under the hood? What is the engine behind azure functions and how can we debug the function host, if needed?
+Azure functions, the serverless implementation within Azure, is now around for quite sometime and lately it's getting a lot of attention. But how does azure functions look like under the hood? What is the engine behind azure functions and how can we debug the function host, if needed?
 In this session, we'll get some deeper insights into azure functions and get some hints about how to debug and get started to contribute to the project."""
       }
     bio = None
@@ -101,7 +102,7 @@ let Evelina =
     picture = "img/Evelina.jpg"
     talk =
       { title = "Data visualization with Fable"
-        content = str "TBD: Come back soon!"
+        content = str "Analyzing the data is only part of the job. Properly visualizing it is not only important to show your results to others, but in many ocassions it's also crucial to get new insights yourself. F#, since it's very beginning, has been a great tool to play with data, but creating nice graphics out of it was not always easy. In this talk we will learn how to use F# and Fable to combine the powers of .NET for data anaylisis and JS libraries for interactive visualizations"
       }
     bio = Some "Evelina is a machine learning researcher working in bioinformatics, trying to reverse-engineer cancer at University of Cambridge. When not at work, she likes to play with fun datasets to extract interesting insights."
     twitter = Some "evelgab"
@@ -131,9 +132,9 @@ let Julien =
     picture = "img/Julien.jpg"
     talk =
       { title = "React performance in a Fable world"
-        content = str "Whenever directly or via Elmish as a Fable developper React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
+        content = str "Whenever directly or via Elmish, as a Fable developer React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
       }
-    bio = Some "Julien is a French developer with interests spanning system level programming to functionnal on the .NET stack. He is currently focusing on F#, DevOps and performance."
+    bio = Some "Julien is a French developer with interests spanning system level programming to functional on the .NET stack. He is currently focusing on F#, DevOps and performance."
     twitter = Some "virtualblackfox"
     github = Some "vbfox"
   }
@@ -145,7 +146,7 @@ let Tomasz =
     picture = "img/Tomasz.png"
     talk =
       { title = "Build a game with Fable in 45 minutes"
-        content = str "TBD: Come back soon!"
+        content = str "Can we write Elmish-style games that easily run at 60 FPS? If you don't mind a bit of mutation the answer is yes! In this talk, Tomasz Heimowski, the wizard of live coding, will show you how to interop with JS libraries to control the physics, use time-travel debugging to tweak your constants and finally deploy your game for everybody to enjoy your creation!"
       }
     bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
     twitter = Some "theimowski"
@@ -259,8 +260,13 @@ let Steffen =
     name = "Steffen Forkmann"
     picture = "img/Steffen.jpg"
     talk =
-      { title = "SAFE Tour planning"
-        content = str "In this workshop you can apply your new SAFE-Stack knowledge to a real-world problem. We will get a list with orders and corresponding geodata and try to come up with an algorithm that schedules good tours for delivery. During the whole optimization process we will show the current best plan on a map."
+      { title = "Build a music box for kids with Raspberry Pi and SAFE"
+        content = str """In this workshop you can apply your new SAFE-Stack knowledge and we will build a music box for kids. 
+The idea is that children will get a Wi-Fi connected box and some objects (e.g. Playmobil figures) that are equipped with NFC stickers. Whenever the child puts such an object on the box, the box will start to play audio: A Playmobil knight might make the box play an exciting story about knights, or a picture of grandpa may start playing him singing his favourite song. The NFC to audio URL translation can be configured on a Saturn server in the Azure cloud. 
+
+Whether you want to build it for your own kids or donate the box for a kindergarten - this project will be a lot of fun for yourself and for the kids.
+
+NOTE: We will publish a list with required hardware very soon on this website. The price for the cheapest version will be around 40,- €. We will have a small number of hardware sets available for you if you don’t want to buy it yourself and just want to tinker with it during the workshop."""
       }
     bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
     twitter = Some "sforkmann"
