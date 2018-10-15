@@ -261,12 +261,12 @@ let Steffen =
     picture = "img/Steffen.jpg"
     talk =
       { title = "Build a music box for kids with Raspberry Pi and SAFE"
-        content = str """In this workshop you can apply your new SAFE-Stack knowledge and we will build a music box for kids. 
-The idea is that children will get a Wi-Fi connected box and some objects (e.g. Playmobil figures) that are equipped with NFC stickers. Whenever the child puts such an object on the box, the box will start to play audio: A Playmobil knight might make the box play an exciting story about knights, or a picture of grandpa may start playing him singing his favourite song. The NFC to audio URL translation can be configured on a Saturn server in the Azure cloud. 
+        content = str """In this workshop you can apply your new SAFE-Stack knowledge and we will build a music box for kids.
+The idea is that children will get a Wi-Fi connected box and some objects (e.g. Playmobil figures) that are equipped with NFC stickers. Whenever the child puts such an object on the box, the box will start to play audio: A Playmobil knight might make the box play an exciting story about knights, or a picture of grandpa may start playing him singing his favourite song. The NFC to audio URL translation can be configured on a Saturn server in the Azure cloud.
 
 Whether you want to build it for your own kids or donate the box for a kindergarten - this project will be a lot of fun for yourself and for the kids.
 
-NOTE: We will publish a list with required hardware very soon on this website. The price for the cheapest version will be around 40,- €. We will have a small number of hardware sets available for you if you don’t want to buy it yourself and just want to tinker with it during the workshop."""
+NOTE: We will publish a list with required hardware very soon on this website. The price for the cheapest version will be around 40,- €. Thanks to our sponsor [Danpower](https://www.danpower.de/de) we will have a number of hardware sets available for you if you don’t want to buy it yourself and just want to tinker with it during the workshop. Danpower will donate these jukeboxes to local Kindergarten after the event."""
       }
     bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
     twitter = Some "sforkmann"
