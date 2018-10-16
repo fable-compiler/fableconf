@@ -82,9 +82,10 @@ let root model dispatch =
 
       div[ Class "logo"] [
         Image.image [Image.CustomClass "fableconf-logo"] [
-          img [Src "img/fablelogo.svg"] // this is in low res for now
+          img [Src "img/landing.png"] // this is in low res for now
         ]
 
+        (*
         Image.image [Image.CustomClass "remmidemmi"] [
           img [Src "img/logo_Remmidemmi landing.png"] // this is in low res for now
         ]
@@ -92,6 +93,7 @@ let root model dispatch =
         Image.image [Image.CustomClass "conf2018"] [
           img [Src "img/conf2018.svg"] // this is in low res for now
         ]
+        *)
       ]
 
       div[Class "general-info"] [
