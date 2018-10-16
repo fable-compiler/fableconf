@@ -59,7 +59,7 @@ let Krzysztof =
       { title = "Keynote: Future of web development with F#"
         content = str "Over the last few years, developments in the F# web programming space has been really interesting - raise of the Fable, Giraffe, Saturn and SAFE stack has opened new opportunities for F# developers. But there is even more excitement on the horizon... let's boldly go where no talk has gone before!"
       }
-    bio = Some "Krzysztof is a software developer, consultant, open source contributor and active member of the F# community."
+    bio = Some "Krzysztof is a MICROSOFT MVP!!!"
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
   }
