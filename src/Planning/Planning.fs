@@ -120,8 +120,8 @@ module State =
               track2 Speakers.RomanS Intermediate
             ]
           }
-          takeABreak "Last Coffee Break" "17:00"
-          { Time="17:15"
+//          takeABreak "Last Coffee Break" "17:00"
+          { Time="17:00"
             Tracks=[
               track2 Speakers.Krzysztof AllLevels
             ]
