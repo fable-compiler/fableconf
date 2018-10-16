@@ -82,9 +82,10 @@ let root model dispatch =
 
       div[ Class "logo"] [
         Image.image [Image.CustomClass "fableconf-logo"] [
-          img [Src "img/fablelogo.svg"] // this is in low res for now
+          img [Src "img/landing.png"] // this is in low res for now
         ]
 
+        (*
         Image.image [Image.CustomClass "remmidemmi"] [
           img [Src "img/logo_Remmidemmi landing.png"] // this is in low res for now
         ]
@@ -92,6 +93,7 @@ let root model dispatch =
         Image.image [Image.CustomClass "conf2018"] [
           img [Src "img/conf2018.svg"] // this is in low res for now
         ]
+        *)
       ]
 
       div[Class "general-info"] [
@@ -192,8 +194,9 @@ let root model dispatch =
               linkImage "is-6" "sponsor-company" "cit2.png" "https://compositional-it.com/"
               linkImage "is-4 is-offset-2" "sponsor-company" "lambda-factory.png" "https://lambdafactory.io/"
               linkImage "is-4" "sponsor-company" "siaconsulting.png" "https://www.sia-consulting.eu/"
-              linkImage "is-4 is-offset-2" "sponsor-company" "grossweber.png" "https://grossweber.com/"
-              linkImage "is-4" "sponsor-company" "danpower.jpg" "https://www.danpower.de/de"
+              linkImage "is-4 is-offset-2" "sponsor-company" "logo-grossweber.jpg" "https://grossweber.com/"
+              linkImage "is-4" "sponsor-company" "danpower.png" "https://www.danpower.de/de"
+              linkImage "is-2 is-offset-2" "sponsor-company" "biensur.png" "https://www.biensurgraphisme.com"
             ]
           ]
         ]

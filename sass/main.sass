@@ -16,9 +16,13 @@ $speakerPicSize: 250px
   margin: 5%
 
   .fableconf-logo
-    width: 30%
-    left: 20%
-    margin-bottom: 0
+    @media screen and (max-width: 500px)
+      width: 100%
+      margin-bottom: 0
+    @media screen and (min-width: 500px)
+      width: 50%
+      left: 20%
+      margin-bottom: 0
 
   .remmidemmi
     position: absolute

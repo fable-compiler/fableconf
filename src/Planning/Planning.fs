@@ -114,14 +114,14 @@ module State =
             ]
           }
           takeABreak "Coffee Break" "15:45"
-          { Time="16:00"
+          { Time="16:15"
             Tracks=[
               track1 Speakers.Tomasz AllLevels
               track2 Speakers.RomanS Intermediate
             ]
           }
-          takeABreak "Last Coffee Break" "16:30"
-          { Time="16:45"
+//          takeABreak "Last Coffee Break" "17:00"
+          { Time="17:00"
             Tracks=[
               track2 Speakers.Krzysztof AllLevels
             ]
