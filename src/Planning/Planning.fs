@@ -225,13 +225,14 @@ module View =
                 yield br[]
                 yield span[] [ desc]
                 yield br[]
-                yield tag
                 match track.Speaker with
                 | Some s when s.links <> [] ->
                       yield ul [] [
-                        for (l,t) in s.links ->  li [] [a [Href l ] [str t]]
+                        for (t,l) in s.links ->  li [] [a [Href l ] [str t]]
                       ]
-                | _ -> () ]
+                      yield br[]
+                | _ -> ()
+                yield tag ]
             | None ->
               div[Class columnClass] [
                 title
