@@ -25,5 +25,6 @@ type Speaker =
     talk: Talk
     bio: string option
     twitter: string option
+    links : (string * string) list
     github: string option
   }

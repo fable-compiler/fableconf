@@ -203,7 +203,7 @@ module View =
                    [str s.name]
               | None -> str ""
 
-            let tag=
+            let tag =
               match track.Level with
               | Some level ->
                 match level with
@@ -220,13 +220,18 @@ module View =
             match track.Description with
             | Some desc ->
               div[Class columnClass] [
-                title
-                speakerName
-                br[]
-                span[] [ desc]
-                br[]
-                tag
-              ]
+                yield title
+                yield speakerName
+                yield br[]
+                yield span[] [ desc]
+                yield br[]
+                yield tag
+                match track.Speaker with
+                | Some s when s.links <> [] ->
+                      yield ul [] [
+                        for (l,t) in s.links ->  li [] [a [Href l ] [str t]]
+                      ]
+                | _ -> () ]
             | None ->
               div[Class columnClass] [
                 title
