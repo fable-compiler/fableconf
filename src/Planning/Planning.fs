@@ -28,6 +28,7 @@ module Types =
   type Day =
     {
       Date:string
+      SubtitleLink: (string*string) option
       Events : DayEvent list
     }
 
@@ -76,6 +77,7 @@ module State =
     let days =
      [{
         Date="Day One - Friday 26 Oct. 2018"
+        SubtitleLink=None
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Fable";Description=None;Kind=Some KindOne};{Speaker=None;Title="Remmidemmi";Level=None;Description=None;Kind=Some KindTwo}]}
           takeABreak "Introductory Breakfast" "08:15"
@@ -132,6 +134,7 @@ module State =
 
       {
         Date="Day Two - Saturday 27 Oct. 2018"
+        SubtitleLink=Some ("Registration for morning workshops", "https://docs.google.com/forms/d/e/1FAIpQLSftL4EzYUHuiwgLdqQqkDJuBR-g_GVrIqrK-OdHNPHLtWtr-g/viewform")
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Workshops I";Description=None;Kind=Some KindOne};{Speaker=None;Title="Workshops II";Description=None;Kind=Some KindTwo;Level=None}]}
           { Time="09:15"
@@ -249,8 +252,13 @@ module View =
 
     div[Class "container day"]
       [
-        h2 [Class "title is-2"] [str day.Date]
-        div[Class ""] (day.Events |> List.mapi buildEvent)
+        yield h2 [Class "title is-2"] [str day.Date]
+        match day.SubtitleLink with
+        | Some(txt,url) ->
+          yield h4 [Class "subtitle is-4"] [a [Href url] [
+            span [Class "electric-blue"; Style [TextDecoration "underline"]] [str txt]]]
+        | None -> ()
+        yield div[Class ""] (day.Events |> List.mapi buildEvent)
       ]
 
   let cardView (speaker: Speaker) =
