@@ -155,7 +155,7 @@ let Tomasz =
     picture = "img/Tomasz.png"
     talk =
       { title = "Build a game with Fable in 45 minutes"
-        content = str "Can we write Elmish-style games that easily run at 60 FPS? If you don't mind a bit of mutation the answer is yes! In this talk, Tomasz Heimowski, the wizard of live coding, will show you how to interop with JS libraries to control the physics, use time-travel debugging to tweak your constants and finally deploy your game for everybody to enjoy your creation!"
+        content = str "Can we write Elmish-style games that easily run at 60 FPS? If you don't mind a bit of mutation the answer is yes! In this talk, Tomasz Heimowski, the wizard of live coding, will show you how to interop with JS libraries to control the physics, use hot reload to watch changes live and finally deploy your game for everybody to enjoy your creation!"
       }
     bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
     twitter = Some "theimowski"
