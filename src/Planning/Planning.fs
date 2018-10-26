@@ -77,7 +77,7 @@ module State =
     let days =
      [{
         Date="Day One - Friday 26 Oct. 2018"
-        SubtitleLink=None
+        SubtitleLink=Some ("Registration for dinner", "https://docs.google.com/forms/d/e/1FAIpQLSfdnhr1UOziLLfqKbAmdywHE1o4GY4GjIqUQN0xxES7dfuPpA/viewform")
         Events=[
           {Time="TRACKS"; Tracks=[{Level=None;Speaker=None;Title="Fable";Description=None;Kind=Some KindOne};{Speaker=None;Title="Remmidemmi";Level=None;Description=None;Kind=Some KindTwo}]}
           takeABreak "Introductory Breakfast" "08:15"
