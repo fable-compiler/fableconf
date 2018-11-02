@@ -16,7 +16,7 @@ let François =
      { title = "Offline Progressive Web Apps with PouchDB"
        content = str "Nowadays users want their web app to work anywhere anytime. They want to be able to use their app even when the Internet connection is down.
        During this talk you will learn what is a progressive web app, what is PouchDB and how both allow you to create offline apps that store data in the browser and synchronize them when users are back online."
-       video = None
+       video = Some "https://youtu.be/C3mh-YJmDps?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
      }
     bio = Some "François's been programming for a long time using so many languages. Now he's deep into functional programming using F# and Fable for all his web and IOT projects. He also spends a lot of time with kids through coding jams and teaches IT to young adults"
     twitter = Some "thewhitetigle"
@@ -66,7 +66,7 @@ let Gien =
       { title = "Becoming a full stack developer: a quest into the unknown"
         content = str "A lot of developers, including myself, believe that a full stack developer is a myth. But front-end development has changed a lot and the introduction of Babel and Elm have pushed it in a new direction. So it is time to reinvestigate if it is possible to be one.
         In this talk I will share my experience with getting back into front-end development, more specifically the Fable ecosystem, after leaving it behind for a long time: how creating a front-end is different from creating a back-end, which parts of learning it were easy and which parts were hard and how thinking about code aesthetics changes the way you write code in general."
-        video = None
+        video = Some "https://youtu.be/gQZrIGYN0ek?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some "Gien is a software developer with 8 years of experience, mainly in a .NET environment. She is a strong believer of continuously learning by deliberate practice and knowledge sharing, which is why she takes part in the organization of two Belgian communities, namely DDDBE and SoCraTesBE."
     twitter = Some "selketjah"
@@ -84,7 +84,7 @@ let Sia =
         content = str """Serverless is a great architecture and it helps saving costs and building more reliable and scalable services.
 Azure functions, the serverless implementation within Azure, is now around for quite sometime and lately it's getting a lot of attention. But how does azure functions look like under the hood? What is the engine behind azure functions and how can we debug the function host, if needed?
 In this session, we'll get some deeper insights into azure functions and get some hints about how to debug and get started to contribute to the project."""
-        video = None
+        video = Some "https://youtu.be/iGOOommSuI4?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = None
     twitter = Some "DerSia_"
@@ -116,7 +116,7 @@ let Janek =
     talk =
       { title = "Azure Functions - Microsoft's Glue in Serverless Architectures"
         content = str "I'm quite sure you already heard a lot about Serverless Computing, the next evolution of Software Development. Maybe you tried a bit or flirt with thoughts to use it for your next feature implementation. Be sure it's harder than expected. Since 2016 I'm deep in Azure Functions, Microsoft's answer to AWS Lambda. Also I'm deep in Serverless Architectures in an Azure environment. In many times I'm trapped, but it is fine for me. I've learned a lot which I want to share in this talk."
-        video = None
+        video = Some "https://youtu.be/D6e6PRyzHgY?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some """My current number of life: 26111.4. Software Developer for 26 years, on the road as Rebel at Work for 11 years and Microsoft MVP since first of April 2018.
 I love Domain Driven Design (DDD) as a method for modelling the right thing and implementation by the CQRS philosophy. But also I love Serverless Technologies because I have implemented enough infrastructure in my life.
@@ -134,7 +134,7 @@ let Julien =
     talk =
       { title = "React performance in a Fable world"
         content = str "Whenever directly or via Elmish, as a Fable developer React is a big part of the story. This talk will explain how the main React mechanisms works and show how to use them to produce performant applications."
-        video = None
+        video = Some "https://youtu.be/9VJoaNoutm4?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some "Julien is a French developer with interests spanning system level programming to functional on the .NET stack. He is currently focusing on F#, DevOps and performance."
     twitter = Some "virtualblackfox"
@@ -166,7 +166,7 @@ let RomanP =
     talk =
       { title = "Event Sourcing with Azure Cosmos DB"
         content = str "Let me take you on a journey through the development of a web-based event sourcing application in F# & Azure Cosmos DB. I'll show you all the pain points and dead ends we went through and how we end up with a sane design. Warning: this talk contains some bad decisions you definitely do not want to repeat."
-        video = None
+        video = Some "https://youtu.be/E2oVmA3QKpA?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some "Roman is the founder of a Czech F# community called FSharping, who works in CN Group as an F# team leader. You can find him mostly in a good mood and ready to chat about the things he loves: F#, functional programming, domain-driven design, event sourcing systems, web development and drums."
     twitter = Some "rprovaznik"
@@ -182,7 +182,7 @@ let Zaid =
     talk =
       { title = "Scaling Elmish Applications"
         content = str "Understanding the techniques of building large Elmish applications by example, we will go through the process of breaking down our code into small, isolated, pieces which we will then wire together to make up the whole application."
-        video = None
+        video = Some "https://youtu.be/-Oc4xJivY78?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some "Zaid is a software developer who is a life-long learner and very passionate about programming, started as a hobby and later became an addiction thanks to OSS, mainly involved with the F# and Fable community. "
     twitter = Some "zaid_ajaj"
@@ -198,7 +198,7 @@ let RomanS =
     talk =
       { title = "Domain Driven UI with SAFE-Stack"
         content = str "Domain Driven Design is a way of thinking about the needs of the customers first and putting an emphasis on their language and interactions. The outcome of this approach is mostly applied to the backend of applications, but a semantic domain model also benefits the UI. Unfortunately these semantics are often lost in translation when transferred to the frontend. I will show you a functional approach that allows you to actually reuse your domain types by combining CQRS/Event-Sourcing on the backend and the Elm architecture on the frontend with an overall messaging architecture."
-        video = None
+        video = Some "https://youtu.be/bW0ZQAofro8?list=PL4vOF1DmOhsmzsCd1ghrey7sASjOngnOt"
       }
     bio = Some "Roman Sachse started programming 16 years ago rather by accident shortly after founding his first company when he realized how much fun it was building the stuff he was working on by himself. This set him out on a lifelong journey of learning everything about software development and computer science and he was particularly surprised to realize that this branch of science strongly depends on two fields he was always interested in: people and communication. Roman is a proud father of three year old twin girls, holds a bachelors degree in Cognitive Science and a Masters degree in Computer Science and is currently mainly interested in Domain Driven Design, Functional Programming and the inner workings of software development teams."
     twitter = Some "R0MMSEN"
