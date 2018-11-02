@@ -14,7 +14,9 @@ let toHash page =
   | Home -> "#home"
 
 type Talk =
-  { title: string; content: ReactElement }
+  { title: string
+    video : string option
+    content: ReactElement }
 
 
 type Speaker =

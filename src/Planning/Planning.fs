@@ -220,6 +220,20 @@ module View =
                   span[Class "tag is-black"] [str "Expert"]
               | None -> str ""
 
+
+            let videoLink =
+              match track.Speaker with
+              | Some s ->
+                match s.talk.video with
+                | Some v ->
+                  div [] [
+                    a [Class "tag is-Light"; Href v] [str "Video"]
+                    str " "
+                    tag
+                  ]
+                | None -> tag
+              | None -> tag
+
             match track.Description with
             | Some desc ->
               div[Class columnClass] [
@@ -227,7 +241,7 @@ module View =
                 yield speakerName
                 yield br[]
                 yield span[] [ desc]
-                yield br[]
+                yield br []
                 match track.Speaker with
                 | Some s when s.links <> [] ->
                       yield ul [] [
@@ -235,7 +249,7 @@ module View =
                       ]
                       yield br[]
                 | _ -> ()
-                yield tag ]
+                yield videoLink ]
             | None ->
               div[Class columnClass] [
                 title
