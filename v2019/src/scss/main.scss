@@ -1,0 +1,32 @@
+@import "~bulma/sass/utilities/initial-variables";
+@import "~bulma/sass/utilities/functions";
+
+// Customize
+// Colors
+$primary: #2D3947;
+// Links
+$link-hover: #00D1B2;
+
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
+@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+@import '~bulma/bulma.sass';
+@import '~bulma-pageloader/dist/css/bulma-pageloader.sass';
+
+html {
+  height: 100%;
+}
+// Needed otherwise iframes show a disabled scrollbar
+body {
+  overflow-y: auto;
+  overflow-x: auto;
+  font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  //background-color: #fff;
+  height: 100%;
+}
