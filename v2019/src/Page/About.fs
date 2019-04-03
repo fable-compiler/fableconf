@@ -28,15 +28,35 @@ module About =
 
     let root model dispatch = 
       div [] [
-        Hero.hero [ Hero.IsLarge] [
-          Hero.body [
-            Props [
-              Style [
-                BackgroundImage "landing.png"
-              ]
+        Hero.hero [ 
+          Hero.IsFullHeight
+          Hero.Props [
+            Style [
+              BackgroundImage """url("./landing.jpg")"""
+              BackgroundRepeat "no-repeat"
+              BackgroundPosition "center center"
+              BackgroundSize "cover"
+              BackgroundColor "#fff"
             ]
+          ]
+        
+        ] [
+          Hero.body [
           ] [
-
+            str ""
+          ]
+        ]
+        Hero.hero [ 
+          Hero.IsFullHeight
+          Hero.Props [
+            Style [
+              BackgroundColor "#000"
+            ]
+          ]
+        ] [
+          Hero.body [
+          ] [
+            str "pouet2"
           ]
         ]
       ]
