@@ -27,4 +27,16 @@ module About =
     open Fable.Helpers.React.Props
 
     let root model dispatch = 
-      div [] [ str "welcome" ]
+      div [] [
+        Hero.hero [ Hero.IsLarge] [
+          Hero.body [
+            Props [
+              Style [
+                BackgroundImage "landing.png"
+              ]
+            ]
+          ] [
+
+          ]
+        ]
+      ]

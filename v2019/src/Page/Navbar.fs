@@ -49,7 +49,7 @@ module View =
     ] 
       [
         Navbar.Brand.div [] [
-          str ""
+          str "toto"
         ]
         Navbar.menu
           [ 
