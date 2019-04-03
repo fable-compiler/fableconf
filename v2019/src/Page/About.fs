@@ -41,22 +41,34 @@ module About =
           ]
         
         ] [
-          Hero.body [
-          ] [
-            str ""
-          ]
-        ]
-        Hero.hero [ 
-          Hero.IsFullHeight
-          Hero.Props [
-            Style [
-              BackgroundColor "#000"
+          Hero.body [] [
+            div [
+              ClassName "ftitle"
+            ] [
+              Heading.h1 [] [
+                  span [ ClassName "top" ] [ str "FABLE" ]
+                  br []
+                  span [ ClassName "bottom" ] [ str "CONF'19" ]
+              ]
+              div [
+                ClassName "dates"
+              ] [
+                  span [ ClassName "date"] [ str "6/7 sept 2019" ]
+                  br []
+                  span [ ClassName "date"] [ 
+                    strong [] [str "Antwerp" ]
+                    str ", Belgium" ]
+              ]
+              hr []
+              div [ 
+                ClassName "axxesLogo"
+              ] [ 
+                span [] [ strong [] [ str "Powered by"]]
+                img [
+                  Src "./logo.png"
+                ] 
+              ]
             ]
-          ]
-        ] [
-          Hero.body [
-          ] [
-            str "pouet2"
           ]
         ]
       ]
