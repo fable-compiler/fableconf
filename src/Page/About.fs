@@ -41,7 +41,7 @@ module About =
           ]
         
         ] [
-          Hero.body [] [
+          div [] [
             div [
               ClassName "ftitle"
             ] [
@@ -59,7 +59,7 @@ module About =
                     strong [] [str "Antwerp" ]
                     str ", Belgium" ]
               ]
-              hr []
+              //hr []
               div [ 
                 ClassName "axxesLogo"
               ] [ 

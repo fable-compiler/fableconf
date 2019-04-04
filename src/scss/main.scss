@@ -31,6 +31,11 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
       @content;
     }
   }
+  @if $point==414 {
+    @media ( min-width: 414px ) {
+      @content;
+    }
+  }
   @if $point==480 {
     @media ( min-width: 480px ) {
       @content;
@@ -61,7 +66,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
       @content;
     }
   }
-  @if $point==1500 {
+  @if $point>=1500 {
     @media ( min-width: 1500px ) {
       @content;
     }
@@ -95,8 +100,8 @@ body {
       @include r(768) { padding-top:35%; }
       @include r(1024) { }
       @include r(1140) {}
-      @include r(1280) { padding-top:0%; margin-left: 30%; }
-      @include r(1500) { padding-top:0%; margin-left: 30%;}
+      @include r(1280) { padding-top:20%; margin-left: 30%; }
+      @include r(1500) { padding-top:10%;}
 
       span.top {
         @include r(240) {font-size: 4rem; }
@@ -124,7 +129,7 @@ body {
       color : #2d2d2d;
       font-family: "Open Sans";
       font-weight: 400;
-      @include r(240) { margin-left:10%; margin-top:20%;}
+      @include r(240) { margin-left:10%; margin-top:5%;}
       @include r(320) { }
       @include r(480) { }
       @include r(768) {}
@@ -152,8 +157,8 @@ body {
       @include r(768) { width:30%;margin-left: 10%;}
       @include r(1024) { }
       @include r(1140) {}
-      @include r(1280) { margin-left: 30%; }
-      @include r(1500) { margin-left: 30%;}
+      @include r(1280) { width:20%;margin-left: 30%; }
+      @include r(1500) { }
   }
   }
 
@@ -161,12 +166,13 @@ body {
     color : #2d2d2d;
     font-family: "Dosis";
     font-weight: 500;
-    @include r(240) { margin-left:70%;width:40%; font-size:1rem;}
-    @include r(320) { }
+    @include r(240) { margin-left:10%; margin-top:18%;width:40%; font-size:1rem;}
+    @include r(320) { margin-top: 45%;}
+    @include r(414) { margin-top: 58%;}
     @include r(480) { }
-    @include r(768) { width:30%;font-size:2rem;}
-    @include r(1024) {width:20%;font-size:1.5rem;}
+    @include r(768) { width:25%;font-size:1.3rem; margin-top: 28%;}
+    @include r(1024) {width:20%;font-size:1.5rem;margin-top: 28%;}
     @include r(1140) {}
-    @include r(1280) { margin-left:70%;width:20%;font-size:1.5rem;margin-top: 5%;}
-    @include r(1500) { margin-left:80%;margin-top: 10%;}    
+    @include r(1280) { margin-left:85%; width:15%;font-size:1.5rem; margin-top: 18%;}
+    @include r(1500) { width:15%;font-size:1.5rem;  }    
   }
