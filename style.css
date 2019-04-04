@@ -12320,12 +12320,11 @@ body {
         padding-top: 35%; } }
     @media (min-width: 1280px) {
       .ftitle h1 {
-        padding-top: 0%;
+        padding-top: 20%;
         margin-left: 30%; } }
     @media (min-width: 1500px) {
       .ftitle h1 {
-        padding-top: 0%;
-        margin-left: 30%; } }
+        padding-top: 10%; } }
     @media (min-width: 240px) {
       .ftitle h1 span.top {
         font-size: 4rem; } }
@@ -12351,7 +12350,7 @@ body {
     @media (min-width: 240px) {
       .ftitle .dates {
         margin-left: 10%;
-        margin-top: 20%; } }
+        margin-top: 5%; } }
     @media (min-width: 1280px) {
       .ftitle .dates {
         margin-top: 0%;
@@ -12377,9 +12376,7 @@ body {
         margin-left: 10%; } }
     @media (min-width: 1280px) {
       .ftitle hr {
-        margin-left: 30%; } }
-    @media (min-width: 1500px) {
-      .ftitle hr {
+        width: 20%;
         margin-left: 30%; } }
 
 .axxesLogo {
@@ -12388,27 +12385,36 @@ body {
   font-weight: 500; }
   @media (min-width: 240px) {
     .axxesLogo {
-      margin-left: 70%;
+      margin-left: 10%;
+      margin-top: 18%;
       width: 40%;
       font-size: 1rem; } }
+  @media (min-width: 320px) {
+    .axxesLogo {
+      margin-top: 45%; } }
+  @media (min-width: 414px) {
+    .axxesLogo {
+      margin-top: 58%; } }
   @media (min-width: 768px) {
     .axxesLogo {
-      width: 30%;
-      font-size: 2rem; } }
+      width: 25%;
+      font-size: 1.3rem;
+      margin-top: 28%; } }
   @media (min-width: 1024px) {
     .axxesLogo {
       width: 20%;
-      font-size: 1.5rem; } }
+      font-size: 1.5rem;
+      margin-top: 28%; } }
   @media (min-width: 1280px) {
     .axxesLogo {
-      margin-left: 70%;
-      width: 20%;
+      margin-left: 85%;
+      width: 15%;
       font-size: 1.5rem;
-      margin-top: 5%; } }
+      margin-top: 18%; } }
   @media (min-width: 1500px) {
     .axxesLogo {
-      margin-left: 80%;
-      margin-top: 10%; } }
+      width: 15%;
+      font-size: 1.5rem; } }
 
 
 /*# sourceMappingURL=style.css.map*/
