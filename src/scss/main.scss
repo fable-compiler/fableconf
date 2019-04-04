@@ -173,6 +173,6 @@ body {
     @include r(768) { width:25%;font-size:1.3rem; margin-top: 28%;}
     @include r(1024) {width:20%;font-size:1.5rem;margin-top: 28%;}
     @include r(1140) {}
-    @include r(1280) { margin-left:85%; width:15%;font-size:1.5rem; margin-top: 20%;}
+    @include r(1280) { margin-left:90%; width:15%;font-size:1.5rem; margin-top: 20%;}
     @include r(1500) { width:15%;font-size:1.5rem;  }    
   }
