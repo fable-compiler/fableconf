@@ -12375,6 +12375,9 @@ body {
       .ftitle hr {
         width: 30%;
         margin-left: 10%; } }
+    @media (min-width: 1280px) {
+      .ftitle hr {
+        margin-left: 30%; } }
     @media (min-width: 1500px) {
       .ftitle hr {
         margin-left: 30%; } }
@@ -12398,8 +12401,10 @@ body {
       font-size: 1.5rem; } }
   @media (min-width: 1280px) {
     .axxesLogo {
+      margin-left: 70%;
       width: 20%;
-      font-size: 1.5rem; } }
+      font-size: 1.5rem;
+      margin-top: 5%; } }
   @media (min-width: 1500px) {
     .axxesLogo {
       margin-left: 80%;
