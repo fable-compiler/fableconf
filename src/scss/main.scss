@@ -100,7 +100,7 @@ body {
       @include r(768) { padding-top:35%; }
       @include r(1024) { }
       @include r(1140) {}
-      @include r(1280) { padding-top:20%; margin-left: 30%; }
+      @include r(1280) { padding-top:10%; margin-left: 30%; }
       @include r(1500) { padding-top:10%;}
 
       span.top {
@@ -173,6 +173,6 @@ body {
     @include r(768) { width:25%;font-size:1.3rem; margin-top: 28%;}
     @include r(1024) {width:20%;font-size:1.5rem;margin-top: 28%;}
     @include r(1140) {}
-    @include r(1280) { margin-left:85%; width:15%;font-size:1.5rem; margin-top: 18%;}
+    @include r(1280) { margin-left:85%; width:15%;font-size:1.5rem; margin-top: 22%;}
     @include r(1500) { width:15%;font-size:1.5rem;  }    
   }
