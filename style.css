@@ -12318,6 +12318,10 @@ body {
     @media (min-width: 768px) {
       .ftitle h1 {
         padding-top: 35%; } }
+    @media (min-width: 1500px) {
+      .ftitle h1 {
+        padding-top: 0%;
+        margin-left: 30%; } }
     @media (min-width: 240px) {
       .ftitle h1 span.top {
         font-size: 4rem; } }
@@ -12340,7 +12344,8 @@ body {
         margin-top: 20%; } }
     @media (min-width: 1280px) {
       .ftitle .dates {
-        margin-top: 15%; } }
+        margin-top: 0%;
+        margin-left: 30%; } }
     @media (min-width: 240px) {
       .ftitle .dates span.date {
         font-size: 1.5rem; } }
@@ -12360,6 +12365,9 @@ body {
       .ftitle hr {
         width: 30%;
         margin-left: 10%; } }
+    @media (min-width: 1500px) {
+      .ftitle hr {
+        margin-left: 30%; } }
 
 .axxesLogo {
   color: #2d2d2d;
@@ -12374,6 +12382,10 @@ body {
     .axxesLogo {
       width: 30%;
       font-size: 2rem; } }
+  @media (min-width: 1500px) {
+    .axxesLogo {
+      margin-left: 80%;
+      margin-top: 10%; } }
 
 
 /*# sourceMappingURL=style.css.map*/
