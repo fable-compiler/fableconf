@@ -80,10 +80,12 @@ module About =
               div [ 
                 ClassName "axxesLogo"
               ] [ 
-                span [] [ strong [] [ str "Powered by"]]
-                img [
-                  Src "./logo.png"
-                ] 
+                span [] [ strong [] [ str "Powered by "]]
+                a [ Href "https://axxes.com/"; Target "_blank" ] [
+                  img [
+                    Src "./logo.png"
+                  ] 
+                ]
               ]
             ]
           ]
@@ -131,7 +133,10 @@ module About =
           ]
           cesure
           Level.item [] [
-            str "FABLE CONF is organised by Fable lovers. Powered this year by Axxes!"
+            span [] [
+              str "FABLE CONF is organised by Fable lovers. Powered this year by "
+              a [ Href "https://axxes.com/"; Target "_blank"] [ str " AXXES!"]
+            ]
           ]
         ]
       ]
