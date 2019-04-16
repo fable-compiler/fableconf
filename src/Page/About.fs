@@ -93,13 +93,13 @@ module About =
 
     let about = 
         Hero.hero [ 
-          Hero.IsMedium
+          Hero.IsLarge
           Hero.Props [
             Id "about"
           ]
         
         ] [
-          Hero.body [] [
+          Hero.body [ Props [ ClassName "addMargins"] ] [
             Content.content [] [
               p[] [strong [] [str "Come to the beautiful city of Antwerp and be part of the FABLECONF conferences! This year again FABLECONF will provide two days of F# and Javascript opportunities for learning and meeting people frome the Fable community." ]]
               h2[ ] [str "Friday: talks"]
@@ -135,7 +135,7 @@ module About =
           Level.item [] [
             span [] [
               str "FABLE CONF is organised by Fable lovers. Powered this year by "
-              a [ Href "https://axxes.com/"; Target "_blank"] [ str " AXXES!"]
+              a [ Href "https://axxes.com/"; Target "_blank"] [ str " Axxes!"]
             ]
           ]
         ]

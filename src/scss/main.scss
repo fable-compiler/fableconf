@@ -124,6 +124,16 @@ body {
   h4 {
     font-weight: 300;
   }
+  .addMargins {
+    @include r(240) {padding-bottom:5%;padding-top:5%; margin-left: 10%;margin-right:10%;}
+    @include r(320) {  }
+    @include r(480) { }
+    @include r(768) {}
+    @include r(1024) { }
+    @include r(1140) { }
+    @include r(1280) { }
+    @include r(1500) {}
+  }
 }
 
 
