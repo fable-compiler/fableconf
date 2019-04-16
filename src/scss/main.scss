@@ -73,6 +73,10 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
   }
 }
 
+$orange: #bb4321;
+$blueback: #B1C5CE;
+$customGrey:#2d2d2d;
+
 html {
   height: 100%;
 }
@@ -88,10 +92,45 @@ body {
   height: 100%;
 }
 
+#footer {
+  font-family: "Dosis";
+  padding: 1rem;
+  background-color: $blueback;
+  @include r(240) { font-size: 1rem; }
+  @include r(320) {  }
+  @include r(480) { padding-left: 5%; padding-right: 5%; }
+  @include r(768) { font-size: 0.7rem; padding-left: 10%; padding-right: 10%; }
+  @include r(1024) { font-size: 0.8rem; padding-left: 10%; padding-right: 10%; }
+  @include r(1140) { padding-left: 20%; padding-right: 20%; }
+  @include r(1280) { font-size: 0.9rem; }
+  @include r(1500) { padding-left: 25%; padding-right: 25%; }
+  a {
+    color: $customGrey;
+  }
+}
+
+.picCredits {
+  font-size: 0.5rem;
+}
+
+#about {
+  background-color: $blueback;
+  color: $customGrey;
+  h2, h4 {
+    font-family: "dosis";
+    font-weight: 500;
+    color:$orange;
+  }  
+  h4 {
+    font-weight: 300;
+  }
+}
+
+
 .ftitle {
   width:90%;
   h1 {      
-      color : #BB4321;
+      color : $orange;
       font-family: "Dosis";
       font-weight: 500;
       @include r(240) { padding-top:50%; margin-left: 10%; }
@@ -150,7 +189,7 @@ body {
     }    
 
     hr {
-      border: 1px solid #BB4321;      
+      border: 1px solid $orange;      
       @include r(240) { margin-left:10%; width:60%; }
       @include r(320) { }
       @include r(480) { }
