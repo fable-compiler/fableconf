@@ -12302,10 +12302,58 @@ body {
   background-color: #fff;
   height: 100%; }
 
+#footer {
+  font-family: "Dosis";
+  padding: 1rem;
+  background-color: #B1C5CE; }
+  @media (min-width: 240px) {
+    #footer {
+      font-size: 1rem; } }
+  @media (min-width: 480px) {
+    #footer {
+      padding-left: 5%;
+      padding-right: 5%; } }
+  @media (min-width: 768px) {
+    #footer {
+      font-size: 0.7rem;
+      padding-left: 10%;
+      padding-right: 10%; } }
+  @media (min-width: 1024px) {
+    #footer {
+      font-size: 0.8rem;
+      padding-left: 10%;
+      padding-right: 10%; } }
+  @media (min-width: 1140px) {
+    #footer {
+      padding-left: 20%;
+      padding-right: 20%; } }
+  @media (min-width: 1280px) {
+    #footer {
+      font-size: 0.9rem; } }
+  @media (min-width: 1500px) {
+    #footer {
+      padding-left: 25%;
+      padding-right: 25%; } }
+  #footer a {
+    color: #2d2d2d; }
+
+.picCredits {
+  font-size: 0.5rem; }
+
+#about {
+  background-color: #B1C5CE;
+  color: #2d2d2d; }
+  #about h2, #about h4 {
+    font-family: "dosis";
+    font-weight: 500;
+    color: #bb4321; }
+  #about h4 {
+    font-weight: 300; }
+
 .ftitle {
   width: 90%; }
   .ftitle h1 {
-    color: #BB4321;
+    color: #bb4321;
     font-family: "Dosis";
     font-weight: 500; }
     @media (min-width: 240px) {
@@ -12365,7 +12413,7 @@ body {
       .ftitle .dates span.date {
         font-size: 2rem; } }
   .ftitle hr {
-    border: 1px solid #BB4321; }
+    border: 1px solid #bb4321; }
     @media (min-width: 240px) {
       .ftitle hr {
         margin-left: 10%;
