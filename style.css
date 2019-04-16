@@ -12349,6 +12349,12 @@ body {
     color: #bb4321; }
   #about h4 {
     font-weight: 300; }
+  @media (min-width: 240px) {
+    #about .addMargins {
+      padding-bottom: 5%;
+      padding-top: 5%;
+      margin-left: 10%;
+      margin-right: 10%; } }
 
 .ftitle {
   width: 90%; }
