@@ -73,6 +73,7 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
   }
 }
 
+$black-orange: #8F3220;
 $orange: #bb4321;
 $blueback: #B1C5CE;
 $customGrey:#2d2d2d;
@@ -124,6 +125,10 @@ body {
   h4 {
     font-weight: 300;
   }
+  p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
   .addMargins {
     @include r(240) {padding-bottom:5%;padding-top:5%; margin-left: 10%;margin-right:10%;}
     @include r(320) {  }
@@ -136,6 +141,25 @@ body {
   }
 }
 
+a.fbutton {
+  font-family: "dosis";
+  font-size: 2.5rem;
+  width : 40%;
+  color: #EB5731;
+  .innerLeft {
+    border: 2px solid $black-orange;
+    position: relative;
+    height:80px;
+  }
+  .innerRight {
+    border: 2px solid $orange;
+    position: relative;
+    top: -65px;
+    left: 10px;
+    height:80px;
+    text-align: center;
+  }
+}
 
 .ftitle {
   width:90%;
