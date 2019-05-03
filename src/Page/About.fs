@@ -23,8 +23,9 @@ module About =
     open Types
     open Fulma
     open Fable.Core.JsInterop
-    open Fable.Helpers.React
-    open Fable.Helpers.React.Props
+    open Fable.React
+    open Fable.React.Props
+    open ReactReveal
 
     let pic = 
         Hero.hero [ 
@@ -95,7 +96,7 @@ module About =
         Hero.hero [ 
           Hero.IsLarge
           Hero.Props [
-            Id "about"
+            ClassName "contents"
           ]
         
         ] [
@@ -110,6 +111,39 @@ module About =
               p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to give confidence in writing Fable applications that take full advantage of F# and Javascript."]
               h2[ ] [str "F# enlightenment"]
               p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for hogh productivity and with cutting-edge tooling, this year's FABLECONF will have something for you!"]
+            ]
+          ]
+        ]
+      
+    let coc  = 
+        Hero.hero [ 
+          Hero.IsLarge
+          Hero.Props [
+            ClassName "contents"
+          ]
+        
+        ] [
+          Hero.body [ Props [ ClassName "addMargins"] ] [
+            Content.content [] [
+              h2[ ] [str "Code of Conduct"]
+              h4[ ] [str "Be responsible, be open and be considerate"]
+            ]
+            Columns.columns [ Columns.IsMobile ] [
+              Column.column [
+                Column.Width (Screen.All, Column.IsThreeQuarters)
+              ] [
+                Content.content [] [
+                  p[] [
+                    str "Our conference is dedicated to providing a harassment-free conference experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), or technology choices. We do not tolerate harassment of conference participants in any form. Sexual language and imagery is not appropriate for any conference venue, including talks, workshops, parties, Twitter and other online media. Conference participants violating these rules may be sanctioned or expelled from the conference without a refund at the discretion of the conference organisers."
+                  ]
+                ]
+              ]
+              Column.column [] [
+                zoom [] [
+                  Image.image [ Image.Is128x128 ]
+                    [ img [ Src "https://i2.wp.com/diversitycharter.org/wp-content/uploads/2016/05/sharelogo_small.png?w=200&ssl=1" ] ]
+                ]
+              ]
             ]
           ]
         ]
@@ -144,7 +178,8 @@ module About =
     let root model dispatch = 
       div [] [
         cover
-        about
+        fade [] [about]
         pic
+        fade [] [coc]
         footer
       ]

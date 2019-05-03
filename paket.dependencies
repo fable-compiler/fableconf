@@ -1,14 +1,21 @@
 source https://nuget.org/api/v2
 storage:none
 
-nuget Fable.Core
-nuget Fable.Import.Browser
-nuget Fulma
-nuget Thoth.Json
-nuget Fable.Elmish
-nuget Fable.Elmish.React
-nuget Fable.Elmish.Browser
-nuget Fable.Elmish.Debugger
-nuget Fable.Elmish.HMR
+nuget FSharp.Core redirects:force
+nuget Fulma prerelease
+nuget Thoth.Json prerelease
 nuget Fable.FontAwesome
 nuget Fable.FontAwesome.Free
+
+nuget Fable.React prerelease
+nuget Fable.Core prerelease
+nuget Fable.Promise prerelease
+nuget Fable.Fetch prerelease
+nuget Fable.Date prerelease
+nuget Fable.Browser.Dom prerelease
+
+nuget Fable.Elmish prerelease
+nuget Fable.Elmish.Browser prerelease
+nuget Fable.Elmish.Debugger prerelease
+nuget Fable.Elmish.React prerelease
+nuget Fable.Elmish.HMR prerelease

@@ -1,10 +1,10 @@
 module Router
 
 open Types
-open Fable.Import
-open Fable.Helpers.React.Props
-open Elmish.Browser.Navigation
-open Elmish.Browser.UrlParser
+open Browser.Dom
+open Fable.React.Props
+open Elmish.Navigation
+open Elmish.UrlParser
 
 let private toHash (page:Route) =
   
@@ -30,4 +30,4 @@ let newUrl route =
   route |> toHash |> Navigation.newUrl
 
 let modifyLocation route =
-  Browser.window.location.href <- toHash route
+  window.location.href <- toHash route

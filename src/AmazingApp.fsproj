@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Types.fs" />
+    <Compile Include="ReactReveal.fs" />
     <Compile Include="Page/Navbar.fs" />
     <Compile Include="Page/About.fs" />
     <Compile Include="Router.fs" />

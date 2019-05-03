@@ -28,8 +28,8 @@ module State =
 
   open Types
   open Elmish
-  open Elmish.Browser.Navigation
-  open Elmish.Browser.UrlParser
+  open Elmish.Navigation
+  open Elmish.UrlParser
 
   module Update =
 
@@ -112,8 +112,8 @@ module View =
   open Types
   open Fulma
   open Fable.Core.JsInterop
-  open Fable.Helpers.React
-  open Fable.Helpers.React.Props
+  open Fable.React
+  open Fable.React.Props
   
   let root (model:Model) dispatch = 
 
