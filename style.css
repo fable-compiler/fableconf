@@ -12349,12 +12349,32 @@ body {
     color: #bb4321; }
   .contents h4 {
     font-weight: 300; }
+  .contents p {
+    text-align: justify;
+    text-justify: inter-word; }
   @media (min-width: 240px) {
     .contents .addMargins {
       padding-bottom: 5%;
       padding-top: 5%;
       margin-left: 10%;
       margin-right: 10%; } }
+
+a.fbutton {
+  font-family: "dosis";
+  font-size: 2.5rem;
+  width: 40%;
+  color: #EB5731; }
+  a.fbutton .innerLeft {
+    border: 2px solid #8F3220;
+    position: relative;
+    height: 80px; }
+  a.fbutton .innerRight {
+    border: 2px solid #bb4321;
+    position: relative;
+    top: -65px;
+    left: 10px;
+    height: 80px;
+    text-align: center; }
 
 .ftitle {
   width: 90%; }
