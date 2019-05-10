@@ -78,6 +78,19 @@ module About =
                       strong [] [str "Antwerp" ]
                       str ", Belgium" ]
                 ]
+                div [
+                  ClassName "ticket"
+                ] [
+                    a [ 
+                      ClassName "fbutton"
+                      Href "https://www.eventbrite.com/e/fable-conference-2019-tickets-60873524350"
+                      Target "_blank"
+                    ] [
+                      div [ClassName "innerLeft"] []
+                      div [ClassName "innerRight"] [ str "BUY YOUR TICKET"]              
+                    ]                      
+
+                ]
                 //hr []
                 div [ 
                   ClassName "axxesLogo"
@@ -123,6 +136,33 @@ module About =
           ]
         ]
       
+    let ticket = 
+        Hero.hero [ 
+          Hero.IsMedium
+          Hero.Props [
+            ClassName "contents"
+          ]          
+        ] [
+          Hero.body [ Props [ ClassName "addMargins"] ] [
+            Content.content [] [
+              Columns.columns [ ] [
+                Column.column [
+                  Column.Width (Screen.All, Column.IsThreeQuarters)
+                ] [
+                  a [ 
+                    ClassName "fbutton"
+                    Href "https://www.eventbrite.com/e/fable-conference-2019-tickets-60873524350"
+                    Target "_blank"
+                  ] [
+                    div [ClassName "innerLeft"] []
+                    div [ClassName "innerRight"] [ str "JOIN US! BUY YOUR TICKET NOW!"]              
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+
     let cfp =  
         Hero.hero [ 
           Hero.IsMedium
@@ -269,6 +309,8 @@ module About =
         fade [] [about]
         fade [] [pic]
         fade [] [cfp]
+        fade [] [pic]
+        //fade [] [ticket]
         fade [] [sponsors]
         fade [] [coc]
         footer
