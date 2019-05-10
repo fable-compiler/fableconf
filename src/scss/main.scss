@@ -143,8 +143,8 @@ body {
 
 a.fbutton {
   font-family: "dosis";
-  @include r(240) { font-size: 1.8rem;}
-  @include r(320) {  }
+  @include r(240) { font-size: 1.3rem;}
+  @include r(320) { font-size: 1.5rem; }
   @include r(480) { }
   @include r(768) { font-size: 2.5rem; }
   @include r(1024) { }
