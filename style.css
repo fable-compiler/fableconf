@@ -12365,6 +12365,9 @@ a.fbutton {
   color: #EB5731; }
   @media (min-width: 240px) {
     a.fbutton {
+      font-size: 1.5rem; } }
+  @media (min-width: 320px) {
+    a.fbutton {
       font-size: 1.8rem; } }
   @media (min-width: 768px) {
     a.fbutton {
