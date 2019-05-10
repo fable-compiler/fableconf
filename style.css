@@ -12365,7 +12365,7 @@ a.fbutton {
   color: #EB5731; }
   @media (min-width: 240px) {
     a.fbutton {
-      font-size: 2rem; } }
+      font-size: 1.8rem; } }
   @media (min-width: 768px) {
     a.fbutton {
       font-size: 2.5rem; } }
@@ -12450,7 +12450,8 @@ a.fbutton {
     @media (min-width: 240px) {
       .ftitle .ticket {
         margin-left: 10%;
-        margin-top: 5%; } }
+        margin-top: 5%;
+        max-width: 70%; } }
     @media (min-width: 768px) {
       .ftitle .ticket {
         max-width: 50%; } }
