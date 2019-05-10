@@ -12361,9 +12361,14 @@ body {
 
 a.fbutton {
   font-family: "dosis";
-  font-size: 2.5rem;
   width: 40%;
   color: #EB5731; }
+  @media (min-width: 240px) {
+    a.fbutton {
+      font-size: 2rem; } }
+  @media (min-width: 768px) {
+    a.fbutton {
+      font-size: 2.5rem; } }
   a.fbutton .innerLeft {
     border: 2px solid #8F3220;
     position: relative;
@@ -12441,25 +12446,24 @@ a.fbutton {
   .ftitle .ticket {
     color: #2d2d2d;
     font-family: "Open Sans";
-    font-weight: 400;
-    max-width: 30%; }
+    font-weight: 400; }
     @media (min-width: 240px) {
       .ftitle .ticket {
         margin-left: 10%;
         margin-top: 5%; } }
+    @media (min-width: 768px) {
+      .ftitle .ticket {
+        max-width: 50%; } }
+    @media (min-width: 1024px) {
+      .ftitle .ticket {
+        max-width: 40%; } }
+    @media (min-width: 1140px) {
+      .ftitle .ticket {
+        max-width: 30%; } }
     @media (min-width: 1280px) {
       .ftitle .ticket {
         margin-top: 2%;
         margin-left: 30%; } }
-    @media (min-width: 240px) {
-      .ftitle .ticket span.date {
-        font-size: 1.5rem; } }
-    @media (min-width: 768px) {
-      .ftitle .ticket span.date {
-        font-size: 2rem; } }
-    @media (min-width: 1280px) {
-      .ftitle .ticket span.date {
-        font-size: 2rem; } }
   .ftitle hr {
     border: 1px solid #bb4321; }
     @media (min-width: 240px) {
