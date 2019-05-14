@@ -12340,6 +12340,14 @@ body {
 .picCredits {
   font-size: 0.5rem; }
 
+@media (min-width: 240px) {
+  .picContents {
+    background-image: url(b2e66612a792781fcc4fe11f0aaf7d82.jpg); } }
+
+@media (min-width: 1280px) {
+  .picContents {
+    background-image: url(4b40ff630bf49e2acf7cf070a0e2e691.jpg); } }
+
 .contents {
   background-color: #B1C5CE;
   color: #2d2d2d; }
