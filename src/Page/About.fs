@@ -50,8 +50,9 @@ module About =
         Hero.hero [ 
           Hero.IsFullHeight
           Hero.Props [
+            ClassName "landing"
             Style [
-              BackgroundImage """url("./landing.jpg")"""
+              //BackgroundImage """url("./landing.jpg")"""
               BackgroundRepeat "no-repeat"
               BackgroundPosition "center center"
               BackgroundSize "cover"
