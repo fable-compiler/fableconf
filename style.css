@@ -12348,6 +12348,14 @@ body {
   .picContents {
     background-image: url(4b40ff630bf49e2acf7cf070a0e2e691.jpg); } }
 
+@media (min-width: 240px) {
+  .landing {
+    background-image: url(6841ee342c29921995f94de58ae823fd.jpg); } }
+
+@media (min-width: 1280px) {
+  .landing {
+    background-image: url(1ea3ab0134e8b075e93e20dd7ce3affa.jpg); } }
+
 .contents {
   background-color: #B1C5CE;
   color: #2d2d2d; }
