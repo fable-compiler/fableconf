@@ -114,6 +114,17 @@ body {
   font-size: 0.5rem;
 }
 
+.picContents {
+  @include r(240) { background-image: url("../../public/mas1000.jpg") }
+  @include r(320) {  }
+  @include r(480) {  }
+  @include r(768) {  }
+  @include r(1024) {  }
+  @include r(1140) {  }
+  @include r(1280) { background-image: url("../../public/mas.jpg") }
+  @include r(1500) {}
+}
+
 .contents {
   background-color: $blueback;
   color: $customGrey;

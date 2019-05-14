@@ -31,8 +31,9 @@ module About =
         Hero.hero [ 
           Hero.IsLarge
           Hero.Props [
+            ClassName "picContents"
             Style [
-              BackgroundImage """url("./mas.jpg")"""
+              //BackgroundImage """url("./mas.jpg")"""
               BackgroundRepeat "no-repeat"
               BackgroundPosition "center center"
               BackgroundSize "cover"
