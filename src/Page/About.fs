@@ -151,7 +151,8 @@ module About =
                 Column.column [
                   Column.Width (Screen.All, Column.IsThreeQuarters)
                 ] [
-                  a [ 
+                  a [
+                    Id "cfp"
                     ClassName "fbutton"
                     Href "https://www.eventbrite.com/e/fable-conference-2019-tickets-60873524350"
                     Target "_blank"
