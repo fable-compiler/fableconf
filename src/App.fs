@@ -8,12 +8,11 @@ open Elmish.React
 open Elmish.Debug
 open Elmish.HMR
 
-// register CSS
-importAll "./scss/main.scss"
-
 Program.mkProgram Main.State.init Main.State.update Main.View.root
   |> Program.toNavigable (parseHash Router.pageParser) Main.State.setRoute
-  |> Program.withReactBatched "elmish-app"
+  |> Program.withReactSynchronous "elmish-app"
+#if DEBUG
   |> Program.withConsoleTrace
+#endif
   |> Program.run
 

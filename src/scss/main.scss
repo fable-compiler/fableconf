@@ -14,11 +14,15 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
 @import '~bulma/bulma.sass';
-@import '~bulma-pageloader/dist/css/bulma-pageloader.sass';
+// @import '~bulma-pageloader/dist/css/bulma-pageloader.sass';
 
 // ******************************************************* LAYOUT ****************************************************
 
 // mixin source: https://gist.github.com/ahmadawais/7a6c9eb73f2e90d6b7c9d470c75b9811
+
+@mixin text-white-shadow {
+    text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+}
 
 @mixin r( $point ) {
   @if $point==240 {
@@ -118,22 +122,27 @@ body {
   @include r(240) { background-image: url("../../public/mas1000.jpg") }
   @include r(320) {  }
   @include r(480) {  }
-  @include r(768) {  }
+  @include r(768) { background-image: url("../../public/mas.jpg") }
   @include r(1024) {  }
   @include r(1140) {  }
-  @include r(1280) { background-image: url("../../public/mas.jpg") }
+  @include r(1280) {  }
   @include r(1500) {}
 }
 
 .landing {
-  @include r(240) { background-image: url("../../public/landing1000.jpg") }
-  @include r(320) {  }
-  @include r(480) {  }
-  @include r(768) {  }
-  @include r(1024) {  }
-  @include r(1140) {  }
-  @include r(1280) { background-image: url("../../public/landing.jpg") }
-  @include r(1500) {}
+  background-image: url("../../public/landing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: $blueback;
+  @include r(240) { background-position: center -150px; }
+  @include r(768) { background-position: center center; }
+}
+
+.sponsors {
+    img {
+        max-width: 150px;
+        margin: 0 20px;
+    }
 }
 
 .contents {
@@ -143,7 +152,7 @@ body {
     font-family: "dosis";
     font-weight: 500;
     color:$orange;
-  }  
+  }
   h4 {
     font-weight: 300;
   }
@@ -165,16 +174,17 @@ body {
 
 a.fbutton {
   font-family: "dosis";
-  @include r(240) { font-size: 1.3rem;}
-  @include r(320) { font-size: 1.5rem; }
+  @include r(240) { font-size: 2rem;}
+  @include r(320) {  }
   @include r(480) { }
   @include r(768) { font-size: 2.5rem; }
   @include r(1024) { }
   @include r(1140) { }
   @include r(1280) { }
-  @include r(1500) {}    
+  @include r(1500) {}
   width : 40%;
   color: #EB5731;
+  @include text-white-shadow;
   .innerLeft {
     border: 2px solid $black-orange;
     position: relative;
@@ -192,20 +202,21 @@ a.fbutton {
 
 .ftitle {
   width:90%;
-  h1 {      
+  h1 {
       color : $orange;
       font-family: "Dosis";
       font-weight: 500;
       @include r(240) { padding-top:50%; margin-left: 10%; }
-      @include r(320) { padding-top:60%; }
+      @include r(320) { padding-top:40%; }
       @include r(480) { }
-      @include r(768) { padding-top:35%; }
+      @include r(768) { padding-top:10%; }
       @include r(1024) { }
       @include r(1140) {}
       @include r(1280) { padding-top:10%; margin-left: 30%; }
       @include r(1500) { padding-top:10%;}
 
       span.top {
+        @include text-white-shadow;
         @include r(240) {font-size: 4rem; }
         @include r(320) { }
         @include r(480) { }
@@ -216,7 +227,8 @@ a.fbutton {
         @include r(1500) {}
       }
       span.bottom {
-        @include r(240) {font-size: 3.2rem; }
+        @include text-white-shadow;
+        @include r(240) {font-size: 4rem; }
         @include r(320) { }
         @include r(480) { }
         @include r(768) { font-size: 6.5rem;}
@@ -225,16 +237,16 @@ a.fbutton {
         @include r(1280) {}
         @include r(1500) {}
       }
-    }    
+    }
 
     .dates {
       color : #2d2d2d;
       font-family: "Open Sans";
       font-weight: 400;
-      @include r(240) { margin-left:10%; margin-top:5%;}
+      @include r(240) { margin-left:10%; margin-top:50%;}
       @include r(320) { }
-      @include r(480) { }
-      @include r(768) {}
+      @include r(480) { margin-top: 5% }
+      @include r(768) { }
       @include r(1024) { }
       @include r(1140) { }
       @include r(1280) {margin-top:0%; margin-left: 30%;}
@@ -249,7 +261,7 @@ a.fbutton {
         @include r(1280) {font-size: 2rem}
         @include r(1500) {}
       }
-    }    
+    }
 
     .ticket {
       color : #2d2d2d;
@@ -263,10 +275,10 @@ a.fbutton {
       @include r(1140) {max-width: 30%; }
       @include r(1280) {margin-top:2%; margin-left: 30%; }
       @include r(1500) {}
-    }    
+    }
 
     hr {
-      border: 1px solid $orange;      
+      border: 1px solid $orange;
       @include r(240) { margin-left:10%; width:60%; }
       @include r(320) { }
       @include r(480) { }
@@ -282,13 +294,13 @@ a.fbutton {
     color : #2d2d2d;
     font-family: "Dosis";
     font-weight: 500;
-    @include r(240) { margin-left:10%; margin-top:18%;width:40%; font-size:1rem;}
-    @include r(320) { margin-top: 45%;}
-    @include r(414) { margin-top: 58%;}
-    @include r(480) { }
-    @include r(768) { width:25%;font-size:1.3rem; margin-top: 28%;}
-    @include r(1024) {width:20%;font-size:1.5rem;margin-top: 28%;}
+    @include r(240) { margin-left:10%; width:40%; font-size:1rem;}
+    @include r(320) { }
+    @include r(414) { }
+    @include r(480) {  }
+    @include r(768) { width:25%;font-size:1.3rem; }
+    @include r(1024) {width:20%;font-size:1.5rem; }
     @include r(1140) {}
-    @include r(1280) { margin-left:90%; width:15%;font-size:1.5rem; margin-top: 20%;}
-    @include r(1500) { width:15%;font-size:1.5rem;  }    
+    @include r(1280) { width:15%;font-size:1.5rem; }
+    @include r(1500) { width:15%;font-size:1.5rem; }
   }
