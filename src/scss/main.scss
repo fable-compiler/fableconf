@@ -3,17 +3,17 @@
 
 // Customize
 // Colors
-$primary: #2D3947;
+$primary: #2d3947;
 // Links
-$link-hover: #00D1B2;
+$link-hover: #00d1b2;
 
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
-@import '~@fortawesome/fontawesome-free/scss/fontawesome.scss';
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
 @import "~@fortawesome/fontawesome-free/scss/solid.scss";
 @import "~@fortawesome/fontawesome-free/scss/regular.scss";
 @import "~@fortawesome/fontawesome-free/scss/brands.scss";
 
-@import '~bulma/bulma.sass';
+@import "~bulma/bulma.sass";
 // @import '~bulma-pageloader/dist/css/bulma-pageloader.sass';
 
 // ******************************************************* LAYOUT ****************************************************
@@ -21,66 +21,73 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 // mixin source: https://gist.github.com/ahmadawais/7a6c9eb73f2e90d6b7c9d470c75b9811
 
 @mixin text-white-shadow {
-    text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
+  text-shadow: 1px 1px #fff, -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff;
 }
 
-@mixin r( $point ) {
+@mixin tablet {
+    @media screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin r($point) {
   @if $point==240 {
-    @media ( min-width: 240px ) {
+    @media (min-width: 240px) {
       @content;
     }
   }
   @if $point==320 {
-    @media ( min-width: 320px ) {
+    @media (min-width: 320px) {
       @content;
     }
   }
-  @if $point==414 { // I love new ipads!
-    @media ( min-width: 414px ) {
+  @if $point==414 {
+    // I love new ipads!
+    @media (min-width: 414px) {
       @content;
     }
   }
   @if $point==480 {
-    @media ( min-width: 480px ) {
+    @media (min-width: 480px) {
       @content;
     }
   }
   @if $point==600 {
-    @media ( min-width: 600px ) {
+    @media (min-width: 600px) {
       @content;
     }
   }
   @if $point==768 {
-    @media ( min-width: 768px ) {
+    @media (min-width: 768px) {
       @content;
     }
   }
   @if $point==1024 {
-    @media ( min-width: 1024px ) {
+    @media (min-width: 1024px) {
       @content;
     }
   }
   @if $point==1140 {
-    @media ( min-width: 1140px ) {
+    @media (min-width: 1140px) {
       @content;
     }
   }
   @if $point==1280 {
-    @media ( min-width: 1280px ) {
+    @media (min-width: 1280px) {
       @content;
     }
   }
   @if $point>=1500 {
-    @media ( min-width: 1500px ) {
+    @media (min-width: 1500px) {
       @content;
     }
   }
 }
 
-$black-orange: #8F3220;
+$black-orange: #8f3220;
 $orange: #bb4321;
-$blueback: #B1C5CE;
-$customGrey:#2d2d2d;
+$blueback: #b1c5ce;
+$customGrey: #2d2d2d;
 
 html {
   height: 100%;
@@ -89,11 +96,11 @@ html {
 body {
   overflow-y: auto;
   overflow-x: auto;
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
-  background-color: #fff;
+  background-color: $blueback;
   height: 100%;
 }
 
@@ -101,14 +108,36 @@ body {
   font-family: "Dosis";
   padding: 1rem;
   background-color: $blueback;
-  @include r(240) { font-size: 1rem; }
-  @include r(320) {  }
-  @include r(480) { padding-left: 5%; padding-right: 5%; }
-  @include r(768) { font-size: 0.7rem; padding-left: 10%; padding-right: 10%; }
-  @include r(1024) { font-size: 0.8rem; padding-left: 10%; padding-right: 10%; }
-  @include r(1140) { padding-left: 20%; padding-right: 20%; }
-  @include r(1280) { font-size: 0.9rem; }
-  @include r(1500) { padding-left: 25%; padding-right: 25%; }
+  @include r(240) {
+    font-size: 1rem;
+  }
+  @include r(320) {
+  }
+  @include r(480) {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+  @include r(768) {
+    font-size: 0.7rem;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include r(1024) {
+    font-size: 0.8rem;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+  @include r(1140) {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  @include r(1280) {
+    font-size: 0.9rem;
+  }
+  @include r(1500) {
+    padding-left: 25%;
+    padding-right: 25%;
+  }
   a {
     color: $customGrey;
   }
@@ -119,39 +148,43 @@ body {
 }
 
 .picContents {
-  @include r(240) { background-image: url("../../public/mas1000.jpg") }
-  @include r(320) {  }
-  @include r(480) {  }
-  @include r(768) { background-image: url("../../public/mas.jpg") }
-  @include r(1024) {  }
-  @include r(1140) {  }
-  @include r(1280) {  }
-  @include r(1500) {}
-}
-
-.landing {
-  background-image: url("../../public/landing.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-color: $blueback;
-  @include r(240) { background-position: center -150px; }
-  @include r(768) { background-position: center center; }
+  margin: 3% 0;
+  @include r(240) {
+    background-image: url("../../public/mas1000.jpg");
+  }
+  @include r(320) {
+  }
+  @include r(480) {
+  }
+  @include r(768) {
+    background-image: url("../../public/mas.jpg");
+  }
+  @include r(1024) {
+  }
+  @include r(1140) {
+  }
+  @include r(1280) {
+  }
+  @include r(1500) {
+  }
 }
 
 .sponsors {
-    img {
-        max-width: 150px;
-        margin: 0 20px;
-    }
+  img {
+    max-height: 150px;
+    max-width: 200px;
+    margin: 0 20px;
+  }
 }
 
 .contents {
-  background-color: $blueback;
+//   background-color: $blueback;
   color: $customGrey;
-  h2, h4 {
+  h2,
+  h4 {
     font-family: "dosis";
     font-weight: 500;
-    color:$orange;
+    color: $orange;
   }
   h4 {
     font-weight: 300;
@@ -161,146 +194,118 @@ body {
     text-justify: inter-word;
   }
   .addMargins {
-    @include r(240) {padding-bottom:5%;padding-top:5%; margin-left: 10%;margin-right:10%;}
-    @include r(320) {  }
-    @include r(480) { }
-    @include r(768) {}
-    @include r(1024) { }
-    @include r(1140) { }
-    @include r(1280) { }
-    @include r(1500) {}
+    // margin-bottom: 2%;
+    // margin-top: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
 
 a.fbutton {
   font-family: "dosis";
-  @include r(240) { font-size: 2rem;}
-  @include r(320) {  }
-  @include r(480) { }
-  @include r(768) { font-size: 2.5rem; }
-  @include r(1024) { }
-  @include r(1140) { }
-  @include r(1280) { }
-  @include r(1500) {}
-  width : 40%;
-  color: #EB5731;
-  @include text-white-shadow;
+  @include r(240) {
+    font-size: 2rem;
+  }
+  @include r(320) {
+  }
+  @include r(480) {
+  }
+  @include r(768) {
+    font-size: 2.5rem;
+  }
+  @include r(1024) {
+  }
+  @include r(1140) {
+  }
+  @include r(1280) {
+  }
+  @include r(1500) {
+  }
+  width: 40%;
+  color: #eb5731;
+  //   @include text-white-shadow;
   .innerLeft {
     border: 2px solid $black-orange;
     position: relative;
-    height:80px;
+    height: 80px;
   }
   .innerRight {
     border: 2px solid $orange;
     position: relative;
     top: -65px;
     left: 10px;
-    height:80px;
+    height: 80px;
     text-align: center;
   }
 }
 
-.ftitle {
-  width:90%;
-  h1 {
-      color : $orange;
-      font-family: "Dosis";
-      font-weight: 500;
-      @include r(240) { padding-top:50%; margin-left: 10%; }
-      @include r(320) { padding-top:40%; }
-      @include r(480) { }
-      @include r(768) { padding-top:10%; }
-      @include r(1024) { }
-      @include r(1140) {}
-      @include r(1280) { padding-top:10%; margin-left: 30%; }
-      @include r(1500) { padding-top:10%;}
-
-      span.top {
-        @include text-white-shadow;
-        @include r(240) {font-size: 4rem; }
-        @include r(320) { }
-        @include r(480) { }
-        @include r(768) { font-size: 8rem;}
-        @include r(1024) { font-size: 5rem;}
-        @include r(1140) {}
-        @include r(1280) {}
-        @include r(1500) {}
-      }
-      span.bottom {
-        @include text-white-shadow;
-        @include r(240) {font-size: 4rem; }
-        @include r(320) { }
-        @include r(480) { }
-        @include r(768) { font-size: 6.5rem;}
-        @include r(1024) {font-size: 4rem;}
-        @include r(1140) {}
-        @include r(1280) {}
-        @include r(1500) {}
-      }
+.landing {
+    height: 800px;
+    background-image: url("../../public/landing.jpg");
+    background-repeat: no-repeat;
+    background-position: center -100px;
+    background-size: cover;
+    @include r(1280) {
+        background-size: contain;
     }
-
-    .dates {
-      color : #2d2d2d;
-      font-family: "Open Sans";
-      font-weight: 400;
-      @include r(240) { margin-left:10%; margin-top:50%;}
-      @include r(320) { }
-      @include r(480) { margin-top: 5% }
-      @include r(768) { }
-      @include r(1024) { }
-      @include r(1140) { }
-      @include r(1280) {margin-top:0%; margin-left: 30%;}
-      @include r(1500) {}
-      span.date {
-        @include r(240) { font-size: 1.5rem; }
-        @include r(320) { }
-        @include r(480) { }
-        @include r(768) { font-size: 2rem}
-        @include r(1024) { }
-        @include r(1140) {}
-        @include r(1280) {font-size: 2rem}
-        @include r(1500) {}
-      }
+    // background-color: $blueback;
+    .inner {
+        margin: 0 auto;
+        max-width: 1024px;
+        position: relative;
+        .info {
+            position: absolute;
+            left: 10%;
+            top: 50px;
+            @include tablet { top: 180px; }
+            .ftitle {
+                font-family: "Dosis-Medium";
+                color: #BB4321;
+                .top {
+                    font-size: 100px;
+                }
+                .bottom {
+                    margin-top: -50px;
+                    font-size: 75px;
+                }
+            @include tablet {
+                    .top {
+                        font-size: 124px;
+                    }
+                    .bottom {
+                        margin-top: -50px;
+                        font-size: 100px;
+                    }
+                }
+            }
+            .dates {
+                color: #2d2d2d;
+                font-family: "Open Sans";
+                font-size: 30px;
+                @include tablet {
+                    font-size: 40px;
+                    margin-top: 40px;
+                }
+            }
+        }
+        .axxesLogo {
+            font-family: "Dosis";
+            position: absolute;
+            right: 5%;
+            top: 490px;
+            font-size: 20px;
+            img {
+                margin-top: 10px;
+                max-height: 40px;
+            }
+            @include tablet {
+                top: 610px;
+                font-size: 25px;
+                img {
+                    margin-top: 10px;
+                    max-height: 50px;
+                }
+            }
+        }
     }
-
-    .ticket {
-      color : #2d2d2d;
-      font-family: "Open Sans";
-      font-weight: 400;
-      @include r(240) { margin-left:10%; margin-top:5%; max-width: 70%; }
-      @include r(320) { }
-      @include r(480) { }
-      @include r(768) { max-width: 50%;  }
-      @include r(1024) { max-width: 40%;  }
-      @include r(1140) {max-width: 30%; }
-      @include r(1280) {margin-top:2%; margin-left: 30%; }
-      @include r(1500) {}
-    }
-
-    hr {
-      border: 1px solid $orange;
-      @include r(240) { margin-left:10%; width:60%; }
-      @include r(320) { }
-      @include r(480) { }
-      @include r(768) { width:30%;margin-left: 10%;}
-      @include r(1024) { }
-      @include r(1140) {}
-      @include r(1280) { width:20%;margin-left: 30%; }
-      @include r(1500) { }
-  }
-  }
-
-  .axxesLogo {
-    color : #2d2d2d;
-    font-family: "Dosis";
-    font-weight: 500;
-    @include r(240) { margin-left:10%; width:40%; font-size:1rem;}
-    @include r(320) { }
-    @include r(414) { }
-    @include r(480) {  }
-    @include r(768) { width:25%;font-size:1.3rem; }
-    @include r(1024) {width:20%;font-size:1.5rem; }
-    @include r(1140) {}
-    @include r(1280) { width:15%;font-size:1.5rem; }
-    @include r(1500) { width:15%;font-size:1.5rem; }
-  }
+}

@@ -38,7 +38,7 @@ module About =
         Hero.hero [
           Hero.IsLarge
           Hero.Props [
-            ClassName "picContents"
+            Class "picContents"
             Style [
               //BackgroundImage """url("./mas.jpg")"""
               BackgroundRepeat "no-repeat"
@@ -50,69 +50,41 @@ module About =
           ]
 
         ] [
-          div [ ClassName "picCredits"] [ str "Picture credits: PanaTomix CC-BY-NC 2.0 0b" ]
+          div [ Class "picCredits"] [ str "Picture credits: PanaTomix CC-BY-NC 2.0 0b" ]
         ]
 
     let cover =
-        Hero.hero [
-          Hero.IsFullHeight
-          Hero.CustomClass "landing"
-        ] [
-            fade [] [
-              div [
-                ClassName "ftitle"
-              ] [
-                Heading.h1 [] [
-                    span [ ClassName "top" ] [ str "FABLE" ]
-                    br []
-                    span [ ClassName "bottom" ] [ str "CONF'19" ]
+        div [ Class "landing" ] [
+          fade [
+            div [ Class "inner" ] [
+              div [ Class "info" ] [
+                div [Class "ftitle"] [
+                  div [Class "top"] [str "FABLE"]
+                  div [Class "bottom"] [str "CONF'19"]
                 ]
-                div [
-                  ClassName "dates"
-                ] [
-                    span [ ClassName "date"] [ str "6/7 sept 2019" ]
-                    br []
-                    span [ ClassName "date"] [
+                div [Class "dates"] [
+                  div [ Class "top"] [ str "6/7 sept 2019" ]
+                  div [ Class "bottom"] [
                       strong [] [str "Antwerp" ]
-                      str ", Belgium" ]
-                ]
-                div [
-                  ClassName "ticket"
-                ] [
-                    a [
-                      ClassName "fbutton"
-                      Href "https://www.eventbrite.com/e/fable-conference-2019-tickets-60873524350"
-                      Target "_blank"
-                    ] [
-                      div [ClassName "innerLeft"] []
-                      div [ClassName "innerRight"] [ str "BUY YOUR TICKET"]
-                    ]
-
-                ]
-                //hr []
-                div [
-                  ClassName "axxesLogo"
-                ] [
-                  span [] [ strong [] [ str "Powered by "]]
-                  a [ Href "https://axxes.com/"; Target "_blank" ] [
-                    img [
-                      Src "./logo.png"
-                    ]
+                      str ", Belgium"
                   ]
                 ]
               ]
-           ]
+              div [ Class "axxesLogo" ] [
+                div [] [ strong [] [ str "powered by"] ]
+                a [ Href "https://axxes.com/"; Target "_blank" ]
+                  [ img [ Src "./axxesLogo.png" ] ]
+              ]
+            ]
+          ]
         ]
 
     let about =
         Hero.hero [
           Hero.IsLarge
-          Hero.Props [
-            ClassName "contents"
-          ]
-
+          Hero.CustomClass "contents"
         ] [
-          Hero.body [ Props [ ClassName "addMargins"] ] [
+          Hero.body [ Props [ Class "addMargins"] ] [
             centerDesktop [
                 Content.content [] [
                   p[] [strong [] [str "Come to the beautiful city of Antwerp and be part of the FABLECONF conferences! This year again FABLECONF will provide two days of F# and Javascript opportunities for learning and meeting people frome the Fable community." ]]
@@ -131,21 +103,20 @@ module About =
 
     let ticket =
         Hero.hero [
-          Hero.IsMedium
-          Hero.Props [
-            ClassName "contents"
-          ]
+        //   Hero.IsMedium
+          Hero.CustomClass "contents"
         ] [
-          Hero.body [ Props [ ClassName "addMargins"] ] [
-            Content.content [] [
+          Hero.body [ GenericOption.CustomClass "addMargins" ]
+                    [
+            centerDesktop [
               a [
                 Id "cfp"
-                ClassName "fbutton"
+                Class "fbutton"
                 Href "https://www.eventbrite.com/e/fable-conference-2019-tickets-60873524350"
                 Target "_blank"
               ] [
-                div [ClassName "innerLeft"] []
-                div [ClassName "innerRight"] [ str "JOIN US! BUY YOUR TICKET NOW!"]
+                div [Class "innerLeft"] []
+                div [Class "innerRight"] [ str "GET YOUR TICKET NOW!"]
               ]
             ]
           ]
@@ -154,11 +125,9 @@ module About =
     let cfp =
         Hero.hero [
           Hero.IsMedium
-          Hero.Props [
-            ClassName "contents"
-          ]
+          Hero.CustomClass "contents"
         ] [
-          Hero.body [ Props [ ClassName "addMargins"] ] [
+          Hero.body [ Props [ Class "addMargins"] ] [
             centerDesktop [
               Content.content [] [
                 h2[ ] [str "Call for papers"]
@@ -170,12 +139,12 @@ module About =
                 ]
               ]
               a [
-                ClassName "fbutton"
+                Class "fbutton"
                 Href "https://docs.google.com/forms/d/e/1FAIpQLSfarg6l9_SRju5ynIAA2OwrFRGuy2sUHUrd-T-P6q1SjVyDow/viewform"
                 Target "_blank"
               ] [
-                div [ClassName "innerLeft"] []
-                div [ClassName "innerRight"] [ str "SUBMIT YOUR IDEA!"]
+                div [Class "innerLeft"] []
+                div [Class "innerRight"] [ str "SUBMIT YOUR IDEA!"]
               ]
             ]
           ]
@@ -184,18 +153,15 @@ module About =
     let sponsors =
         Hero.hero [
           Hero.IsLarge
-          Hero.Props [
-            ClassName "contents"
-          ]
-
+          Hero.CustomClass "contents"
         ] [
-          Hero.body [ Props [ ClassName "addMargins"] ] [
+          Hero.body [ Props [ Class "addMargins"] ] [
             Heading.h2 [] [str "Sponsors"]
             Level.level [Level.Level.CustomClass "sponsors"] [
                 Level.item [] [
-                    zoom [] [
+                    zoom [
                         a [ Href "https://axxes.com/"; Target "_blank" ] [
-                            img [ Src "./logo.png" ]
+                            img [ Src "./axxesLogo.png" ]
                         ]
                         a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"] [
                           img [ Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" ]
@@ -209,12 +175,9 @@ module About =
     let coc  =
         Hero.hero [
           Hero.IsLarge
-          Hero.Props [
-            ClassName "contents"
-          ]
-
+          Hero.CustomClass "contents"
         ] [
-          Hero.body [ Props [ ClassName "addMargins"] ] [
+          Hero.body [ Props [ Class "addMargins"] ] [
             Content.content [] [
               h2[ ] [str "Code of Conduct"]
               h4[ ] [str "Be responsible, be open and be considerate"]
@@ -233,7 +196,7 @@ module About =
               ] [
                 Level.level [] [
                     Level.item [] [
-                        zoom [] [
+                        zoom [
                           Image.image [ Image.Is128x128 ]
                             [ img [ Src "https://i2.wp.com/diversitycharter.org/wp-content/uploads/2016/05/sharelogo_small.png?w=200&ssl=1" ] ]
                         ]
@@ -270,12 +233,12 @@ module About =
     let root model dispatch =
       fragment [] [
         cover
-        fade [] [about]
-        fade [] [pic]
-        fade [] [cfp]
-        fade [] [pic]
-        //fade [] [ticket]
-        fade [] [sponsors]
-        fade [] [coc]
+        fade [ticket]
+        fade [about]
+        fade [pic]
+        fade [cfp]
+        fade [pic]
+        fade [sponsors]
+        fade [coc]
         footer
       ]
