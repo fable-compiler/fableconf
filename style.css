@@ -11266,6 +11266,7 @@ body {
   height: 100%; }
 
 #footer {
+  margin-top: 25px;
   font-family: "Dosis";
   padding: 1rem;
   background-color: #b1c5ce; }
@@ -11330,8 +11331,12 @@ body {
     text-align: justify;
     text-justify: inter-word; }
   .contents .addMargins {
-    margin-left: 10%;
-    margin-right: 10%; }
+    margin-left: 5%;
+    margin-right: 5%; }
+    @media screen and (min-width: 769px) {
+      .contents .addMargins {
+        margin-left: 10%;
+        margin-right: 10%; } }
 
 a.fbutton {
   font-family: "dosis";
@@ -11376,7 +11381,8 @@ a.fbutton {
         .landing .inner .info {
           top: 180px; } }
       .landing .inner .info .ftitle {
-        font-family: "Dosis-Medium";
+        font-family: "Dosis";
+        font-weight: 500;
         color: #BB4321; }
         .landing .inner .info .ftitle .top {
           font-size: 100px; }
@@ -11413,6 +11419,15 @@ a.fbutton {
           .landing .inner .axxesLogo img {
             margin-top: 10px;
             max-height: 50px; } }
+
+.ticket {
+  margin-top: -100px; }
+  @media screen and (min-width: 769px) {
+    .ticket {
+      margin-top: inherit; } }
+
+.coc {
+  margin-top: 25px; }
 
 
 /*# sourceMappingURL=style.css.map*/
