@@ -105,6 +105,7 @@ body {
 }
 
 #footer {
+  margin-top: 25px;
   font-family: "Dosis";
   padding: 1rem;
   background-color: $blueback;
@@ -194,10 +195,12 @@ body {
     text-justify: inter-word;
   }
   .addMargins {
-    // margin-bottom: 2%;
-    // margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    @include tablet {
+      margin-left: 10%;
+      margin-right: 10%;
+    }
   }
 }
 
@@ -259,7 +262,8 @@ a.fbutton {
             top: 50px;
             @include tablet { top: 180px; }
             .ftitle {
-                font-family: "Dosis-Medium";
+                font-family: "Dosis";
+                font-weight: 500;
                 color: #BB4321;
                 .top {
                     font-size: 100px;
@@ -308,4 +312,15 @@ a.fbutton {
             }
         }
     }
+}
+
+.ticket {
+    margin-top: -100px;
+    @include tablet {
+        margin-top: inherit;
+    }
+}
+
+.coc {
+    margin-top: 25px;
 }

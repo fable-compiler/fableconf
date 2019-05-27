@@ -87,15 +87,15 @@ module About =
           Hero.body [ Props [ Class "addMargins"] ] [
             centerDesktop [
                 Content.content [] [
-                  p[] [strong [] [str "Come to the beautiful city of Antwerp and be part of the FABLECONF conferences! This year again FABLECONF will provide two days of F# and Javascript opportunities for learning and meeting people frome the Fable community." ]]
+                  p[] [strong [] [str "Come to the beautiful city of Antwerp and be part of one of the best events organized by the F# community in Europe! This year again FableConf will provide two days full of opportunities to learn and meet the awesome members of the Fable and F# communities!" ]]
                   h2[ ] [str "Friday: talks"]
                   h4[ ] [str "Ankerrui 9, 2000 Antwerpen"]
-                  p [][str "Day one will consists of talks. "; i[][ str "(More information to come soon...)"]]
+                  p [][str "Day one will consist of talks introducing the technologies key to modern web development, as well as presenting the latest additions to Fable ecosystem."; i [] [str "(Speakers lineup will be published soon.)"] ]
                   h2[ ] [str "Saturday: workshops"]
                   h4[ ] [str "Entrepotkaai 10A, 2000 Antwerpen"]
-                  p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to give confidence in writing Fable applications that take full advantage of F# and Javascript."]
+                  p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to learn how to write Fable applications that take full advantage of F# and Javascript."]
                   h2[ ] [str "F# enlightenment"]
-                  p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for hogh productivity and with cutting-edge tooling, this year's FABLECONF will have something for you!"]
+                  p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for hogh productivity and with cutting-edge tooling, this year's FableConf will have something for you!"]
                 ]
             ]
           ]
@@ -104,10 +104,10 @@ module About =
     let ticket =
         Hero.hero [
         //   Hero.IsMedium
-          Hero.CustomClass "contents"
+          Hero.CustomClass "contents ticket"
         ] [
-          Hero.body [ GenericOption.CustomClass "addMargins" ]
-                    [
+          Hero.body [ GenericOption.CustomClass "addMargins"
+                      GenericOption.Props [ Style [ Padding 0 ] ] ] [
             centerDesktop [
               a [
                 Id "cfp"
@@ -116,7 +116,7 @@ module About =
                 Target "_blank"
               ] [
                 div [Class "innerLeft"] []
-                div [Class "innerRight"] [ str "GET YOUR TICKET NOW!"]
+                div [Class "innerRight"] [ str "GET YOUR TICKET!"]
               ]
             ]
           ]
@@ -132,7 +132,7 @@ module About =
               Content.content [] [
                 h2[ ] [str "Call for papers"]
                 p [] [
-                  str "Do you want to be part of one of the best events organized by the F# community? Have you been to the past editions in Bordeaux and Berlin and think it's time to live it from the other side? Then this is your opportunity to send a talk proposal for FableConf 2019 taking place the next September at the beautiful city of Antwerp in Belgium!"
+                  str "Do you want to share your knowledge? Have you been to the past editions in Bordeaux and Berlin and think it's time to live it from the other side? Then this is your opportunity to send a talk proposal for FableConf 2019!"
                 ]
                 p [] [
                   str "We're looking for talks and workshops about Fable, either introductory or advanced. But we're also open to broader topics like other uses of F# for web projects, or related technologies commonly used in Fable projects, like Webpack, JS optimization, CSS styling, etc. Really excited to know about all your great ideas to help the community!"
@@ -158,11 +158,13 @@ module About =
           Hero.body [ Props [ Class "addMargins"] ] [
             Heading.h2 [] [str "Sponsors"]
             Level.level [Level.Level.CustomClass "sponsors"] [
-                Level.item [] [
-                    zoom [
+                zoom [
+                    Level.item [] [
                         a [ Href "https://axxes.com/"; Target "_blank" ] [
                             img [ Src "./axxesLogo.png" ]
                         ]
+                    ]
+                    Level.item [] [
                         a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"] [
                           img [ Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" ]
                         ]
@@ -172,10 +174,10 @@ module About =
           ]
         ]
 
-    let coc  =
+    let coc =
         Hero.hero [
           Hero.IsLarge
-          Hero.CustomClass "contents"
+          Hero.CustomClass "contents coc"
         ] [
           Hero.body [ Props [ Class "addMargins"] ] [
             Content.content [] [
