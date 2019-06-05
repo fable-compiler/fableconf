@@ -11,9 +11,11 @@ module Types =
 
   type ActivePage =
     | About of Page.About.Types.Model
+    | Schedule of Page.Schedule.Types.Model
 
   type Msg =
     | AboutMsg of Page.About.Types.Msg
+    | ScheduleMsg of Page.Schedule.Types.Msg
     | NavbarMsg of Page.Navbar.Types.Msg
 
   type Model =
@@ -52,12 +54,17 @@ module State =
   let rec setRoute (optRoute: Option<Route>) model =
       let model = { model with CurrentRoute = optRoute }
       match optRoute with
-        | Some ( Route.About )
-        | Some Route.Schedule -> // TODO
+        | Some ( Route.About ) -> 
           model
             |> Update.activePage
               (ActivePage.About (Page.About.Types.initialModel))
               Route.About
+
+        | Some Route.Schedule -> // TODO
+          model
+            |> Update.activePage
+              (ActivePage.Schedule (Page.Schedule.Types.initialModel))
+              Route.Schedule
 
         | None ->
           model |> setRoute( Some (Route.About))
@@ -102,6 +109,13 @@ module State =
               model
                 |> Update.routeMessage (ActivePage.About updated) AboutMsg cmd
 
+        | Schedule md, ScheduleMsg msg ->
+          match msg with
+          | _ ->
+              let updated, cmd = Page.Schedule.State.update msg md
+              model
+                |> Update.routeMessage (ActivePage.Schedule updated) ScheduleMsg cmd
+
         | _ ->
           model, Cmd.none
 
@@ -126,6 +140,10 @@ module View =
       match page with
       | (ActivePage.About md) ->
           Page.About.View.root md (AboutMsg >> dispatch)
+            |> publicView model dispatch
+
+      | (ActivePage.Schedule md) ->
+          Page.Schedule.View.root md (ScheduleMsg >> dispatch)
             |> publicView model dispatch
 
     | None ->

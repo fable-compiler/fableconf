@@ -251,7 +251,11 @@ a.fbutton {
     @include r(1280) {
         background-size: contain;
     }
-    // background-color: $blueback;
+    @include r(1920) {
+      background-size: cover;
+    }
+  }
+  // background-color: $blueback;
     .inner {
         margin: 0 auto;
         max-width: 1024px;
@@ -310,9 +314,17 @@ a.fbutton {
                     max-height: 50px;
                 }
             }
+            @include r(1920) {
+              right: 15%;
+              top: 640px;
+              img {
+                  margin-top: 45;
+                  max-height: 50px;
+              }
+            }            
         }
     }
-}
+
 
 .ticket {
     margin-top: -100px;
