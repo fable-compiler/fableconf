@@ -29,9 +29,10 @@ module About =
 
     let centerDesktop els =
         Columns.columns [] [
-          Column.column [Column.Width(Screen.Desktop, Column.IsThreeFifths)
-                         Column.Offset(Screen.Desktop, Column.IsOneFifth)]
-                        els
+          Column.column [
+            Column.Width(Screen.Desktop, Column.IsThreeFifths)
+            Column.Offset(Screen.Desktop, Column.IsOneFifth)
+          ] els
         ]
 
     let pic =

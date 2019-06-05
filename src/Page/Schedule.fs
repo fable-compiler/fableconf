@@ -90,7 +90,7 @@ module Schedule =
                       Title="Remoting with Fable"
                       Video=None
                       Speakers=[Speakers.Zaid]
-                      Content=str "Blah. Blah. Blah." 
+                      Content=str "Blah. Blah. Blah. Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah." 
                     } 
                     Intermediate
                   track2 
@@ -330,31 +330,47 @@ module Schedule =
           let lines =
             event.Tracks
               |> List.map( fun track ->
-                let kindClass, kindName =
+                let kindClass, kindName, color =
                   match track.Kind with
                   | Some kind ->
                     match kind with
                     | KindOne ->
-                      "red", " //////"
+                      "subtitle", " //////", "#bb4321"
                     | KindTwo ->
-                      "electric-blue", " //////"
+                      "blue", " //////", "#5b97b4"
                     | _ ->
-                      "", ""
-                  | None -> "",""
+                      "", "", ""
+                  | None -> "","", ""
 
-                let title = h4 [Class "subtitle is-4 white";Style[Padding "0";Margin "0"]] [
-                  str track.Title
-                  span [Class kindClass] [str kindName]
-                ]
+                let title = 
+                  Heading.h4 [
+                    Heading.Props [
+                      Style[
+                        Padding "0"
+                        Margin "0"
+                        FontWeight "600"
+                        Color color
+                      ]
+                    ]
+                  ] [
+                    str track.Title
+                    span [Class kindClass] [str kindName]
+                  ]
 
                 let speakerName =
                   match track.Talk with 
                   | Some talk -> 
                     talk.Speakers
                       |> List.map( fun s -> 
-                        h5 [Class (sprintf "%s is-5 title-light " kindClass)
+                        h6 [Class (sprintf "%s is-6 title-light " kindClass)
                             OnClick (fun _ -> OpenModal s |> dispatch)
-                            Style [Padding "0"; Margin "0"; Cursor "pointer"]]
+                            Style [
+                              Padding "0"
+                              Margin "0"
+                              MarginTop "0.5rem"
+                              Cursor "pointer"
+                              TextTransform "uppercase"
+                              Color "black"]]
                           [str s.name]
                       )
                       |> fragment []
@@ -365,13 +381,13 @@ module Schedule =
                   | Some level ->
                     match level with
                     | AllLevels ->
-                      span[Class "tag is-Light"] [str "All Levels"]
+                      Tag.tag [ Tag.CustomClass "all"] [str "All Levels"]
                     | Beginner ->
-                      span[Class "tag is-success"] [str "Beginner"]
+                      Tag.tag [ Tag.CustomClass "beginner"] [str "Beginner"]
                     | Intermediate ->
-                      span[Class "tag is-primary"] [str "Intermediate"]
+                      Tag.tag [ Tag.CustomClass "intermediate"]  [str "Intermediate"]
                     | Expert ->
-                      span[Class "tag is-black"] [str "Expert"]
+                      Tag.tag [ Tag.CustomClass "expert"]  [str "Expert"]
                   | None -> str ""
 
 
@@ -388,34 +404,66 @@ module Schedule =
                     | None -> tag
                   | None -> tag
 
-                match track.Talk with
-                | None -> str ""
-                | Some talk -> 
-                  div[Class columnClass] [
-                    title
-                    speakerName
-                    br[]
-                    talk.Content
-                    br []
-                    videoLink 
+                let contents = 
+                  match track.Talk with
+                  | None -> str ""
+                  | Some talk ->  talk.Content
+
+                div[
+                  Class columnClass
+                  Style [
+                    BorderLeft "1px solid rgba(0,0,0,0.2)"
                   ]
+                ] [
+                  title
+                  speakerName
+                  br[]
+                  div [
+                    ClassName "contents"
+                  ] [contents]
+                  br []
+                  videoLink 
+                ]
               )
 
-          let color = if i % 2 = 0 then "grey" else "dark"
-          div[Class (sprintf "columns %s" color)]
-            ([
-              div[Class "column column-with-border is-2"] [
-                  h4 [Class "subtitle is-4 neon-green"] [str event.Time]
+          let color = if i % 2 = 0 then "lighter" else "darker"
+          Columns.columns 
+            [ 
+              Columns.CustomClass color
+              Columns.Props [
+                Style [
+                  Color "white"
+                ]
               ]
+            ]
+            ([
+              Column.column [
+                Column.Width (Screen.All, Column.Is2)
+              ][
+                  Heading.h4 [ 
+                    Heading.Modifiers [
+                      Modifier.TextAlignment (Screen.All,TextAlignment.Centered)
+                    ]
+                  ] [str event.Time]
+              ] 
             ] @ lines)
 
-        div[Class "container day"]
+        div[
+          Class "container day"
+        ]
           [
-            yield h2 [Class "title is-2"] [str day.Date]
+            yield Heading.h3 [
+              Heading.Props [
+                Style [
+                  Margin "1.2rem"
+                  //Color "#bb4321"
+                ]
+              ]
+            ] [str day.Date]
             match day.SubtitleLink with
             | Some(txt,url) ->
               yield h4 [Class "subtitle is-4"] [a [Href url] [
-                span [Class "electric-blue"; Style [TextDecoration "underline"]] [str txt]]]
+                span [Style [TextDecoration "underline"]] [str txt]]]
             | None -> ()
             yield div[Class ""] (day.Events |> List.mapi buildEvent)
           ]
@@ -476,7 +524,7 @@ module Schedule =
 
           yield div[ Class "container planning"] [
             div[ Class ""] [
-              h1 [Class "title is-1 title-bold"] [str "Agenda."]
+              //h1 [Class "title is-1 title-bold"] [str "Agenda."]
               div[] events
             ]
           ]
@@ -506,7 +554,9 @@ module Schedule =
       ]
 
     let root model dispatch =
-      fragment [] [
+      div [
+        ClassName "addMargins"
+      ] [
         cover
         agenda model dispatch
         footer

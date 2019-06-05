@@ -286,3 +286,15 @@ let Georg =
     github = Some "MangelMaxime"
     links = []
   }   
+
+
+let Florian =
+  {
+    shortname = "florian"
+    name = "Florian Verdonck"
+    picture = "img/maxime.png"
+    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
+    twitter = Some "MangelMaxime"
+    github = Some "MangelMaxime"
+    links = []
+  }     

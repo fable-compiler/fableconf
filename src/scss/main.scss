@@ -325,6 +325,45 @@ a.fbutton {
         }
     }
 
+.intermediate:not(body) { 
+  text-transform: uppercase;
+  background-color: #f5de75;
+}
+
+.expert:not(body) {
+  text-transform: uppercase; 
+  background-color: #a43d22;
+  color:white;
+}
+
+.all:not(body) {
+  background-color: #73dfb5;
+  text-transform: uppercase; 
+}
+.beginner:not(body) {
+  text-transform: uppercase; 
+  background-color: #88c7e4;
+}
+
+.blue {
+  color: #5b97b4;
+}
+.subtitle {
+  color : $orange;  
+}
+
+.lighter {
+  background-color: white;
+}
+
+.darker {
+  background-color: rgba(255,255,255,0.6);
+}
+
+.contents {
+  color:black;
+  font-weight: 300;
+}
 
 .ticket {
     margin-top: -100px;
