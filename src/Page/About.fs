@@ -157,7 +157,8 @@ module About =
           Hero.CustomClass "contents"
         ] [
           Hero.body [ Props [ Class "addMargins"] ] [
-            Heading.h2 [] [str "Sponsors"]
+            Heading.h2 [Heading.Modifiers [Modifier.TextAlignment(Screen.All, TextAlignment.Centered)]]
+                       [str "THANKS TO OUR SPONSORS"]
             Level.level [Level.Level.CustomClass "sponsors"] [
                 zoom [
                     Level.item [] [
