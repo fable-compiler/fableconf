@@ -68,7 +68,7 @@ module Schedule =
       let days =
         [
           {
-            Date="Day One - Friday 6 Oct."
+            Date="Day One - Friday 6 Sept."
             SubtitleLink=None //Some ("Registration for dinner", "https://docs.google.com/forms/d/e/1FAIpQLSfdnhr1UOziLLfqKbAmdywHE1o4GY4GjIqUQN0xxES7dfuPpA/viewform")
             Events=[
               {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Track A";Kind=Some TrackOne};{Level=None;Talk=None;Title="Track B";Kind=Some TrackTwo}]}
@@ -238,7 +238,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
             ]
           }
           {
-            Date="Day Two - Saturday 7 Oct."
+            Date="Day Two - Saturday 7 Sept."
             SubtitleLink=None //Some ("Registration for morning workshops", "https://docs.google.com/forms/d/e/1FAIpQLSftL4EzYUHuiwgLdqQqkDJuBR-g_GVrIqrK-OdHNPHLtWtr-g/viewform")
             Events=[
               {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Workshops I";Kind=Some TrackOne};{Talk=None;Title="Workshops II";Kind=Some TrackTwo;Level=None}]}
