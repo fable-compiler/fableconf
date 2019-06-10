@@ -118,13 +118,13 @@ let Diego =
     twitter = Some "virtualblackfox"
     github = Some "vbfox"
     links = []
-  }  
+  }
 
 let Tomasz =
   {
     shortname = "tomasz"
     name = "Tomasz Heimowski"
-    picture = "img/Tomasz.png"
+    picture = "img/Tomasz.jpg"
     bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
     twitter = Some "theimowski"
     github = Some "theimowski"
@@ -252,7 +252,7 @@ let Vagif =
     twitter = Some "dbrattli"
     github = Some "dbrattli"
     links = []
-  }  
+  }
 
 let Joerg =
   {
@@ -274,7 +274,7 @@ let Colin =
     twitter = Some "MangelMaxime"
     github = Some "MangelMaxime"
     links = []
-  }  
+  }
 
 let Brett =
   {
@@ -296,7 +296,7 @@ let Georg =
     twitter = Some "MangelMaxime"
     github = Some "MangelMaxime"
     links = []
-  }   
+  }
 
 
 let Florian =
@@ -308,4 +308,4 @@ let Florian =
     twitter = Some "MangelMaxime"
     github = Some "MangelMaxime"
     links = []
-  }     
+  }

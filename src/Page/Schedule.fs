@@ -155,7 +155,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Web Remote Control"
                       Video=None
                       Speakers=[Speakers.Tomasz]
-                      Content=str """Datto Remote Management and Monitoring is a software that runs on 3M devices and lets Managed Service Providers to administrate whole networks of computers. "Web Remote Control" is a new client that will allow those administrators to establish a Remote Desktop connection straight from their browsers using Apache Guacamole tech. It has plenty of features implemented on the front end using Fable and Elmish, including interaction with other JS libraries and F# code sharing with Agents that are running on the end devices."""
+                      Content=str """Datto Remote Management and Monitoring (RMM) is the platform of choice for thousands of Managed Service Providers to administrate large computer networks. "Web Remote Control" is a new application within RMM kit, implemented using Fable and Elmish, that allows to establish Remote Control & Takeover connections directly from a browser. During this session we'll explore its set of handy features, discuss technical challenges of interacting with JS libraries and sharing F# code with Agents running on the end computers."""
                     }
                     Intermediate
                 ]
@@ -398,9 +398,9 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       |> List.map( fun s ->
                         h6 [Class (sprintf "%s is-6 title-light " kindClass)
 //  TODO: Enable when bios are complete
-//                            OnClick (fun _ -> OpenModal s |> dispatch)
+                            OnClick (fun _ ->  OpenModal s |> dispatch)
                             Style [
-//                              Cursor "pointer"
+                              Cursor "pointer"
                               Padding "0"
                               Margin "0"
                               MarginTop "0.5rem"
@@ -525,11 +525,11 @@ In this talk we share some of our experience and lessons learned in the aardvark
             ] [
               speaker.twitter |> Option.map (fun username ->
                 a [Class "level-item"; Href ("https://twitter.com/" + username) ] [
-                  Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-twitter"] []]
+                  Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-twitter fa-2x"] []]
                 ]) |> ofOption
               speaker.github |> Option.map (fun username ->
                 a [Class "level-item"; Href ("https://github.com/" + username) ] [
-                  Icon.icon [Icon.Size Size.IsMedium] [i [Class "fa fa-github"] []]
+                  Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-github fa-2x"] []]
                 ]) |> ofOption
             ]
           ]
