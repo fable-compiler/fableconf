@@ -172,6 +172,17 @@ module About =
                     ]
                 ]
             ]
+            centerDesktop [
+              a [
+                Id "cfp"
+                Class "fbutton"
+                Href "/FableConf2019_Sponsorship.pdf"
+                Target "_blank"
+              ] [
+                div [Class "innerLeft"] []
+                div [Class "innerRight"] [ str "SUPPORT US!"]
+              ]
+            ]
           ]
         ]
 
@@ -238,8 +249,6 @@ module About =
         cover
         fade [ticket]
         fade [about]
-        fade [pic]
-        fade [cfp]
         fade [pic]
         fade [sponsors]
         fade [coc]
