@@ -177,7 +177,7 @@ module About =
               a [
                 Id "cfp"
                 Class "fbutton"
-                Href "/FableConf2019_Sponsorship.pdf"
+                Href "./FableConf2019_Sponsorship.pdf"
                 Target "_blank"
               ] [
                 div [Class "innerLeft"] []
