@@ -11369,56 +11369,100 @@ a.fbutton {
   @media (min-width: 1280px) {
     .landing {
       background-size: contain; } }
-  .landing .inner {
-    margin: 0 auto;
-    max-width: 1024px;
-    position: relative; }
-    .landing .inner .info {
-      position: absolute;
-      left: 10%;
-      top: 50px; }
-      @media screen and (min-width: 769px) {
-        .landing .inner .info {
-          top: 180px; } }
-      .landing .inner .info .ftitle {
-        font-family: "Dosis";
-        font-weight: 500;
-        color: #BB4321; }
-        .landing .inner .info .ftitle .top {
-          font-size: 100px; }
-        .landing .inner .info .ftitle .bottom {
-          margin-top: -50px;
-          font-size: 75px; }
-        @media screen and (min-width: 769px) {
-          .landing .inner .info .ftitle .top {
-            font-size: 124px; }
-          .landing .inner .info .ftitle .bottom {
-            margin-top: -50px;
-            font-size: 100px; } }
-      .landing .inner .info .dates {
-        color: #2d2d2d;
-        font-family: "Open Sans";
-        font-size: 30px; }
-        @media screen and (min-width: 769px) {
-          .landing .inner .info .dates {
-            font-size: 40px;
-            margin-top: 40px; } }
-    .landing .inner .axxesLogo {
+  @media (min-width: 1500px) {
+    .landing {
+      background-size: cover; } }
+
+.inner {
+  margin: 0 auto;
+  max-width: 1024px;
+  position: relative; }
+  .inner .info {
+    position: absolute;
+    left: 10%;
+    top: 50px; }
+    @media screen and (min-width: 769px) {
+      .inner .info {
+        top: 180px; } }
+    .inner .info .ftitle {
       font-family: "Dosis";
-      position: absolute;
-      right: 5%;
-      top: 490px;
-      font-size: 20px; }
-      .landing .inner .axxesLogo img {
-        margin-top: 10px;
-        max-height: 40px; }
+      font-weight: 500;
+      color: #BB4321; }
+      .inner .info .ftitle .top {
+        font-size: 100px; }
+      .inner .info .ftitle .bottom {
+        margin-top: -50px;
+        font-size: 75px; }
       @media screen and (min-width: 769px) {
-        .landing .inner .axxesLogo {
-          top: 610px;
-          font-size: 25px; }
-          .landing .inner .axxesLogo img {
-            margin-top: 10px;
-            max-height: 50px; } }
+        .inner .info .ftitle .top {
+          font-size: 124px; }
+        .inner .info .ftitle .bottom {
+          margin-top: -50px;
+          font-size: 100px; } }
+    .inner .info .dates {
+      color: #2d2d2d;
+      font-family: "Open Sans";
+      font-size: 30px; }
+      @media screen and (min-width: 769px) {
+        .inner .info .dates {
+          font-size: 40px;
+          margin-top: 40px; } }
+  .inner .axxesLogo {
+    font-family: "Dosis";
+    position: absolute;
+    right: 5%;
+    top: 490px;
+    font-size: 20px; }
+    .inner .axxesLogo img {
+      margin-top: 10px;
+      max-height: 40px; }
+    @media screen and (min-width: 769px) {
+      .inner .axxesLogo {
+        top: 610px;
+        font-size: 25px; }
+        .inner .axxesLogo img {
+          margin-top: 10px;
+          max-height: 50px; } }
+    @media (min-width: 1500px) {
+      .inner .axxesLogo {
+        right: 15%;
+        top: 640px; }
+        .inner .axxesLogo img {
+          margin-top: 45;
+          max-height: 50px; } }
+
+.intermediate:not(body) {
+  text-transform: uppercase;
+  background-color: #f5de75; }
+
+.expert:not(body) {
+  text-transform: uppercase;
+  background-color: #a43d22;
+  color: white; }
+
+.all:not(body) {
+  background-color: #73dfb5;
+  text-transform: uppercase; }
+
+.beginner:not(body) {
+  text-transform: uppercase;
+  background-color: #88c7e4; }
+
+.blue {
+  color: #5b97b4; }
+
+.subtitle {
+  color: #bb4321; }
+
+.lighter {
+  background-color: white; }
+
+.darker {
+  background-color: rgba(255, 255, 255, 0.6); }
+
+.contents {
+  color: black;
+  font-weight: 300; }
 
 .ticket {
   margin-top: -100px; }
@@ -11428,6 +11472,13 @@ a.fbutton {
 
 .coc {
   margin-top: 25px; }
+
+.day {
+  margin-top: 60px; }
+  @media screen and (max-width: 769px) {
+    .day .column {
+      padding-left: 20px;
+      padding-right: 20px; } }
 
 
 /*# sourceMappingURL=style.css.map*/
