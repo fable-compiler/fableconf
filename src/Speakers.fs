@@ -10,7 +10,7 @@ type Model =
 let Alfonso =
   {
     shortname = "Alfonso"
-    name = "Alfonso"
+    name = "Alfonso García-Caro"
     picture = "img/François.jpg"
     bio = Some "François's been programming for a long time using so many languages. Now he's deep into functional programming using F# and Fable for all his web and IOT projects. He also spends a lot of time with kids through coding jams and teaches IT to young adults"
     twitter = Some "thewhitetigle"
@@ -275,6 +275,17 @@ let Colin =
     github = Some "MangelMaxime"
     links = []
   }  
+
+let Brett =
+  {
+    shortname = "brett"
+    name = "Brett Rowberry"
+    picture = "img/maxime.png"
+    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
+    twitter = Some "MangelMaxime"
+    github = Some "MangelMaxime"
+    links = []
+  }
 
 let Georg =
   {

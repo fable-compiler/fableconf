@@ -8,9 +8,10 @@ module Schedule =
 
   module Types =
 
-    type EventKind = KindOne | KindTwo | KindThree
+    type EventKind = TrackOne | TrackTwo | Keynote | Lightning
 
     type Level = Beginner | Intermediate | Expert | AllLevels
+
     type Track =
       {
         Title:string
@@ -40,7 +41,7 @@ module Schedule =
       | OpenModal of Speaker
       | CloseModal
 
-    let initialModel = 
+    let initialModel =
       let takeABreak title time =
           {Time=time; Tracks=[{Level=None;Talk=None;Title=title;Kind=None}]}
 
@@ -53,149 +54,182 @@ module Schedule =
         }
 
       let track1 talk=
-        eventFromSpeaker talk KindOne
+        eventFromSpeaker talk TrackOne
 
       let track2 talk =
-        eventFromSpeaker talk KindTwo
+        eventFromSpeaker talk TrackTwo
 
       let keynote talk =
-        eventFromSpeaker talk KindThree
+        eventFromSpeaker talk Keynote
+
+      let lightning talk =
+        eventFromSpeaker talk Lightning
 
       let days =
         [
           {
-            Date="Day One - Friday 6 Oct. 2019"
+            Date="Day One - Friday 6 Oct."
             SubtitleLink=None //Some ("Registration for dinner", "https://docs.google.com/forms/d/e/1FAIpQLSfdnhr1UOziLLfqKbAmdywHE1o4GY4GjIqUQN0xxES7dfuPpA/viewform")
             Events=[
-              {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Track A";Kind=Some KindOne};{Level=None;Talk=None;Title="Track B";Kind=Some KindTwo}]}
+              {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Track A";Kind=Some TrackOne};{Level=None;Talk=None;Title="Track B";Kind=Some TrackTwo}]}
               takeABreak "Introductory Breakfast" "08:15"
               {
                 Time="09:15"
                 Tracks=[
-                  keynote 
+                  keynote
                     {
-                      Title="Keynote"
+                      Title="Keynote: The Joys of OSS"
                       Video=None
-                      Speakers=[Speakers.Alfonso;Speakers.François]
-                      Content=str "Opening Keynote" 
-                    } 
+                      Speakers=[Speakers.Zaid]
+                      Content=str "TBD"
+                    }
                     AllLevels
                 ]
               }
               takeABreak "Coffee Break" "10:15"
               { Time="10:30"
                 Tracks=[
-                  track1 
+                  track1
                     {
-                      Title="Remoting with Fable"
+                      Title="A Journey into the Compiler and Tooling"
                       Video=None
-                      Speakers=[Speakers.Zaid]
-                      Content=str "Blah. Blah. Blah. Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah.Blah. Blah. Blah." 
-                    } 
+                      Speakers=[Speakers.Florian]
+                      Content=str "TBD"
+                    }
                     Intermediate
-                  track2 
+                  track2
                     {
-                      Title="Release the magic with Reactive MVU"
+                      Title="Release the Magic with Reactive MVU"
                       Video=None
                       Speakers=[Speakers.Dag]
-                      Content=str "Blah. Blah. Blah." 
-                    } 
-                    AllLevels
+                      Content=str """The Model View Update (MVU) pattern, also known as "The Elm Architecture" is getting increasingly popular thanks to Elm and Fable/Elmish (F#). In MVU the model is updated in a purely functional and predictable way enabling safer, debuggable and bug free applications.
+
+Elmish Streams is an implementation of Async Observables in F# and takes event handling in MVU to a higher level by combining the worlds of MVU with reactive programming and Async Observables. The real magic however is that different event processing pipelines may be subscribed or disposed based on the current model. This enables powerful event handling while effectively solving the lifetime management of ongoing web requests, mouse-moves or web sockets that may occur in single page web applications.
+
+During the talk I will also show how web applications using Elmish Streams can be scaled and made hierarchical, enabling reactive components to be reused as sub-components without the need for code changes."""
+                    }
+                    Intermediate
                 ]
               }
               takeABreak "Coffee Break" "11:15"
               { Time="11:30"
                 Tracks=[
-                  track1 
+                  track1
                     {
                       Title="Too Old for JavaScript, Still Young for Elmish"
                       Video=None
                       Speakers=[Speakers.Vagif]
-                      Content=str "Blah. Blah. Blah." 
-                    } 
-                    Intermediate
-                  track2 
+                      Content=str """I am a backend developer, and I always have enough backend-related cards on our Kanban board, so how could I squeeze into it a Web UI task using Fable that I really really wanted to do? But when we migrated our service event store from MongoDB to Azure and needed to have an eye on the new system, I realized it's now or never. If I manage to quickly build a decent UI for a new event store, it may be appreciated, and not only I will be forgiven - we will have a strong case to promote Fable into our organization where F# is already used by a large number of developers. In this talk I will show how little time and code it took to build a Web app using Fable, Fable.Elmish and Fulma, what obstacles newcomers can face and what else we can use Fable for in our organization - and you might consider in yours."""
+                    }
+                    Beginner
+                  track2
                     {
-                      Title="Server Side Rendering"
+                      Title="Functional Adventures on High-Performance Computer Graphics"
                       Video=None
-                      Speakers=[Speakers.Steffen]
-                      Content=str "Blah. Blah. Blah." 
-                    } 
+                      Speakers=[Speakers.Georg]
+                      Content=str """Functional programming finally made it from academia to web applications e.g. via react, elm or fable.
+Over the last couple of years we worked on the idea of bringing functional programming to high-performance computer graphics.
+Our approach on easy to use programming interfaces while not giving back on performance builds on domain-specific-languages, compilers, incremental evaluation.
+In this talk we share some of our experience and lessons learned in the aardvark plaform:
+
+- In the first part we give an overview on conceptual and technical modules needed for a functional-first, high-performance rendering engine.
+- In the second part we more dive into the field of approachable GPU programming using the FShade language.
+- Recently, we ported a substantial part of the rendering engine to Fable. In this last part we want to discuss the status and future steps in that the direction as community activities."""
+                    }
                     Expert
                 ]
               }
               takeABreak "Lunch" "12:15"
               { Time="14:00"
                 Tracks=[
-                  track1 
+                  track1
                     {
-                      Title="Datto Remote Management and Monitoring"
-                      Video=None
-                      Speakers=[Speakers.Tomasz]
-                      Content=str "Blah. Blah. Blah." 
-                    } 
-                    AllLevels
-                  track2 
-                    {
-                      Title="Building F# tooling in Fable"
+                      Title="Building F# Tooling"
                       Video=None
                       Speakers=[Speakers.Krzysztof]
-                      Content=str "Blah. Blah. Blah." 
-                    } 
+                      Content=str """TBD"""
+                    }
+                    AllLevels
+                  track2
+                    {
+                      Title="Web Remote Control"
+                      Video=None
+                      Speakers=[Speakers.Tomasz]
+                      Content=str """Datto Remote Management and Monitoring is a software that runs on 3M devices and lets Managed Service Providers to administrate whole networks of computers. "Web Remote Control" is a new client that will allow those administrators to establish a Remote Desktop connection straight from their browsers using Apache Guacamole tech. It has plenty of features implemented on the front end using Fable and Elmish, including interaction with other JS libraries and F# code sharing with Agents that are running on the end devices."""
+                    }
                     Intermediate
                 ]
               }
               takeABreak "Coffee Break" "14:45"
               { Time="15:00"
                 Tracks=[
-                  track1 
+                  track1
                     {
-                      Title="Fable Breakout - Beyond Elmish"
-                      Video=None
-                      Speakers=[Speakers.Joerg]
-                      Content=str "Blah. Blah. Blah." 
-                    }                   
-                    Intermediate
-                  track2 
-                    {
-                      Title="From I to X: simple tricks to improve user experience"
+                      Title="From I to X: Simple Tricks to Improve User Experience"
                       Video=None
                       Speakers=[Speakers.Gien]
-                      Content=str "Blah. Blah. Blah." 
-                    }                   
-                    Beginner
+                      Content=str "TBD"
+                    }
+                    AllLevels
+                  track2
+                    {
+                      Title="Fable Breakout: Beyond Elmish"
+                      Video=None
+                      Speakers=[Speakers.Joerg]
+                      Content=str """Up to now Fable has been most associated with web development via the Elish ecosystem. However the there are other domains were the language to could be usefully applied. This talk will explore three:
+1. Use of Fable for developing CloudFlare Workers. This part of the talk will be based on this: https://github.com/jbeeko/cfworker-hello-world
+2. Use of Fable for developing CosmosDB stored procedures. Currently writing these is a terrible experience. Allowing these to be written using Fable could much improve the experience. It may also be possible share code between client and the stored procedures.
+3. Use of Fable for concurrent programming. Erlang has been very successful with the Actor model of programming. Something similar could be done with Fable by making FSharp Mailbox processors separate workers using the browser worker interface. Each Mailbox processor will run as a worker on a separate thread."""
+                    }
+                    Expert
                 ]
               }
               takeABreak "Coffee Break" "15:45"
               { Time="16:15"
                 Tracks=[
-                  track1 
+                  lightning
                     {
                       Title="Intensive browser computation and Fable"
                       Video=None
                       Speakers=[Speakers.Colin]
-                      Content=str "Blah. Blah. Blah." 
-                    }                   
-                    AllLevels
-                  track2 
+                      Content=str "For some applications you want to run computationally intensive code in the browser due to cost, privacy, or simplicity. What are some options? How can you use Web Workers in Fable to run your F# in parallel and use external C++ code via WebAssembly?"
+                    }
+                    Expert
+                ]
+              }
+              { Time="16:30"
+                Tracks=[
+                  lightning
                     {
-                      Title="Functional Adventures on High-Performance Computer Graphics"
+                      Title="Type-safe Server & Client Communication"
                       Video=None
-                      Speakers=[Speakers.Georg]
-                      Content=str "Blah. Blah. Blah." 
-                    }                   
-                    Intermediate
+                      Speakers=[Speakers.Brett]
+                      Content=str "Let's see Fable.Remoting in action and also how full-stack F# allows you to share crutial information between your client and server, like routes."
+                    }
+                    Beginner
+                ]
+              }
+              { Time="16:45"
+                Tracks=[
+                  lightning
+                    {
+                      Title="Fable 2029"
+                      Video=None
+                      Speakers=[Speakers.François; Speakers.Alfonso]
+                      Content=str "It's 2019 and Fable has risen to world dominance becoming the only way to write programs. In an unprecedent research of Software History, we will review the series of events that have led to this outcome (humorous)."
+                    }
+                    AllLevels
                 ]
               }
     //          takeABreak "Last Coffee Break" "17:00"
               { Time="17:00"
                 Tracks=[
-                  keynote 
+                  keynote
                     {
                       Title="Closing Keynote"
                       Video=None
-                      Speakers=[Speakers.Maxime]
-                      Content=str "Blah. Blah. Blah." 
+                      Speakers=[]
+                      Content=str "TBD"
                     }
                     AllLevels
                 ]
@@ -204,69 +238,69 @@ module Schedule =
             ]
           }
           {
-            Date="Day Two - Saturday 7 Oct. 2019"
+            Date="Day Two - Saturday 7 Oct."
             SubtitleLink=None //Some ("Registration for morning workshops", "https://docs.google.com/forms/d/e/1FAIpQLSftL4EzYUHuiwgLdqQqkDJuBR-g_GVrIqrK-OdHNPHLtWtr-g/viewform")
             Events=[
-              {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Workshops I";Kind=Some KindOne};{Talk=None;Title="Workshops II";Kind=Some KindTwo;Level=None}]}
+              {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Workshops I";Kind=Some TrackOne};{Talk=None;Title="Workshops II";Kind=Some TrackTwo;Level=None}]}
               { Time="09:00"
                 Tracks=[
-                  track1 
+                  track1
                     {
-                      Title="Interop with Fable: a deep dive"
+                      Title="Interop with Fable: a Deep Dive"
                       Video=None
                       Speakers=[Speakers.Zaid]
-                      Content=str "Blah. Blah. Blah." 
-                    }                  
-                    AllLevels
-                  track2 
-                    {
-                      Title="Hands-on with SAFE Stack"
-                      Video=None
-                      Speakers=[Speakers.Tomasz]
-                      Content=str "Blah. Blah. Blah." 
+                      Content=str "An in-depth workshop on Interop with Fable, how to integrate with exisiting libraries from the Javascript ecosystem, wrapping the API's around safe functions and libraries to be used in Fable applications."
                     }
-                    AllLevels
+                    Beginner
+                  track2
+                    {
+                      Title="Build an Azure Storage Account Manager with SAFE"
+                      Video=None
+                      Speakers=[Speakers.Brett]
+                      Content=str "When businesses learn how easy it is to set up Azure Storage Accounts, and that they are free to create, everybody wants some! Let’s build a storage account manager website using the .NET Azure SDKs, the Giraffe Web Server, and a SPA using Fable and Elmish."
+                    }
+                    Intermediate
                 ]
               }
               { Time="11:30"
                 Tracks=[
-                  track1 
+                  track1
                     {
-                      Title="Fable.React performance"
+                      Title="Take React's performance to its Fullest"
                       Video=None
                       Speakers=[Speakers.Julien]
-                      Content=str "Blah. Blah. Blah." 
-                    }                                     
-                    AllLevels
-                  track2 
+                      Content=str "TBD"
+                    }
+                    Beginner
+                  track2
                     {
-                      Title="Elmish.Bridge"
+                      Title="Remove server/client boundaries with Elmish.Bridge"
                       Video=None
                       Speakers=[Speakers.Diego]
-                      Content=str "Blah. Blah. Blah." 
-                    }                                     
-                    AllLevels
+                      Content=str "TBD"
+                    }
+                    Intermediate
                 ]
               }
               takeABreak "Lunch" "13:15"
               { Time="14:00"
                 Tracks=[
-                  track1 
+                  track1
                     {
                       Title="Mindful Programming"
                       Video=None
-                      Speakers=[Speakers.Alfonso;Speakers.François]
-                      Content=str "Blah. Blah. Blah." 
+                      Speakers=[Speakers.François]
+                      Content=str "TBD"
                     }
                     AllLevels
-                  track2 
+                  track2
                     {
-                      Title="OMG! Fable!"
+                      Title="Mastering Server Side Rendering"
                       Video=None
-                      Speakers=[Speakers.Alfonso;Speakers.François]
-                      Content=str "Blah. Blah. Blah." 
+                      Speakers=[Speakers.Steffen]
+                      Content=str "TBD"
                     }
-                    AllLevels
+                    Intermediate
                 ]
               }
               takeABreak "That's all folks! Have fun in Antwerpen!" "17:30"
@@ -320,7 +354,7 @@ module Schedule =
           ]
         ]
 
-    let agenda model dispatch= 
+    let agenda model dispatch=
       let prepareDay dispatch (day:Day) =
         let buildEvent i (event:DayEvent) =
           let count = float event.Tracks.Length
@@ -334,15 +368,15 @@ module Schedule =
                   match track.Kind with
                   | Some kind ->
                     match kind with
-                    | KindOne ->
+                    | TrackOne ->
                       "subtitle", " //////", "#bb4321"
-                    | KindTwo ->
+                    | TrackTwo ->
                       "blue", " //////", "#5b97b4"
                     | _ ->
                       "", "", ""
                   | None -> "","", ""
 
-                let title = 
+                let title =
                   Heading.h4 [
                     Heading.Props [
                       Style[
@@ -358,17 +392,18 @@ module Schedule =
                   ]
 
                 let speakerName =
-                  match track.Talk with 
-                  | Some talk -> 
+                  match track.Talk with
+                  | Some talk ->
                     talk.Speakers
-                      |> List.map( fun s -> 
+                      |> List.map( fun s ->
                         h6 [Class (sprintf "%s is-6 title-light " kindClass)
-                            OnClick (fun _ -> OpenModal s |> dispatch)
+//  TODO: Enable when bios are complete
+//                            OnClick (fun _ -> OpenModal s |> dispatch)
                             Style [
+//                              Cursor "pointer"
                               Padding "0"
                               Margin "0"
                               MarginTop "0.5rem"
-                              Cursor "pointer"
                               TextTransform "uppercase"
                               Color "black"]]
                           [str s.name]
@@ -404,31 +439,25 @@ module Schedule =
                     | None -> tag
                   | None -> tag
 
-                let contents = 
+                let contents =
                   match track.Talk with
-                  | None -> str ""
-                  | Some talk ->  talk.Content
+                  | None -> [nothing]
+                  | Some talk -> [
+                    br []
+                    div [ClassName "contents"] [talk.Content]
+                  ]
 
                 div[
                   Class columnClass
                   Style [
                     BorderLeft "1px solid rgba(0,0,0,0.2)"
                   ]
-                ] [
-                  title
-                  speakerName
-                  br[]
-                  div [
-                    ClassName "contents"
-                  ] [contents]
-                  br []
-                  videoLink 
-                ]
+                ] (title :: speakerName :: contents @ [videoLink])
               )
 
           let color = if i % 2 = 0 then "lighter" else "darker"
-          Columns.columns 
-            [ 
+          Columns.columns
+            [
               Columns.CustomClass color
               Columns.Props [
                 Style [
@@ -440,12 +469,12 @@ module Schedule =
               Column.column [
                 Column.Width (Screen.All, Column.Is2)
               ][
-                  Heading.h4 [ 
+                  Heading.h4 [
                     Heading.Modifiers [
                       Modifier.TextAlignment (Screen.All,TextAlignment.Centered)
                     ]
                   ] [str event.Time]
-              ] 
+              ]
             ] @ lines)
 
         div[
@@ -465,7 +494,7 @@ module Schedule =
               yield h4 [Class "subtitle is-4"] [a [Href url] [
                 span [Style [TextDecoration "underline"]] [str txt]]]
             | None -> ()
-            yield div[Class ""] (day.Events |> List.mapi buildEvent)
+            yield fragment [] (day.Events |> List.mapi buildEvent)
           ]
 
       let cardView (speaker: Speaker) =
@@ -510,7 +539,7 @@ module Schedule =
         model.Days
         |> List.map (prepareDay dispatch)
 
-      div [] [
+      fragment [] [
           match model.Highlight with
           | Some speaker ->
             yield Modal.modal [ Modal.IsActive true ]
@@ -522,12 +551,9 @@ module Schedule =
                               Modal.Close.OnClick (fun _ -> dispatch CloseModal) ] [ ] ]
           | None -> ()
 
-          yield div[ Class "container planning"] [
-            div[ Class ""] [
+          yield div[ Class "container planning"]
               //h1 [Class "title is-1 title-bold"] [str "Agenda."]
-              div[] events
-            ]
-          ]
+              events
       ]
 
     let footer =
