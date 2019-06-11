@@ -395,18 +395,18 @@ In this talk we share some of our experience and lessons learned in the aardvark
                   match track.Talk with
                   | Some talk ->
                     talk.Speakers
-                      |> List.map( fun s ->
-                        h6 [Class (sprintf "%s is-6 title-light " kindClass)
-//  TODO: Enable when bios are complete
-                            OnClick (fun _ ->  OpenModal s |> dispatch)
-                            Style [
-                              Cursor "pointer"
-                              Padding "0"
-                              Margin "0"
-                              MarginTop "0.5rem"
-                              TextTransform "uppercase"
-                              Color "black"]]
-                          [str s.name]
+                      |> List.map(fun speaker ->
+                        let hasBio = Option.isSome speaker.bio
+                        h6 [ yield Class (sprintf "%s is-6 title-light " kindClass)
+                             if hasBio then yield OnClick (fun _ -> OpenModal speaker |> dispatch)
+                             yield Style [
+                                  if hasBio then yield Cursor "pointer"
+                                  yield Padding "0"
+                                  yield Margin "0"
+                                  yield MarginTop "0.5rem"
+                                  yield TextTransform "uppercase"
+                                  yield Color "black"]]
+                          [str speaker.name]
                       )
                       |> fragment []
                     | None -> fragment [] []
