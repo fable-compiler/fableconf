@@ -26,9 +26,10 @@ namespace Page.Agenda
 
     type Day =
       {
-        Date:string
+        Class: string
+        Date: string
         SubtitleLink: (string*string) option
-        Events : DayEvent list
+        Events: DayEvent list
       }
 
     type Model =
@@ -66,11 +67,12 @@ namespace Page.Agenda
       let days =
         [
           {
+            Class="talks"
             Date="Day One - Friday 6 Sept."
             SubtitleLink=None //Some ("Registration for dinner", "https://docs.google.com/forms/d/e/1FAIpQLSfdnhr1UOziLLfqKbAmdywHE1o4GY4GjIqUQN0xxES7dfuPpA/viewform")
             Events=[
               {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Track A";Kind=Some TrackOne};{Level=None;Talk=None;Title="Track B";Kind=Some TrackTwo}]}
-              takeABreak "Introductory Breakfast" "08:15"
+              takeABreak "Introductory Breakfast" "08:30"
               {
                 Time="09:15"
                 Tracks=[
@@ -169,7 +171,7 @@ namespace Page.Agenda
                 ]
               }
               takeABreak "Coffee Break" "15:45"
-              { Time="16:15"
+              { Time="16:00"
                 Tracks=[
                   lightning
                     {
@@ -181,7 +183,7 @@ namespace Page.Agenda
                     Expert
                 ]
               }
-              { Time="16:30"
+              { Time="16:15"
                 Tracks=[
                   lightning
                     {
@@ -193,7 +195,7 @@ namespace Page.Agenda
                     Beginner
                 ]
               }
-              { Time="16:45"
+              { Time="16:30"
                 Tracks=[
                   lightning
                     {
@@ -205,7 +207,7 @@ namespace Page.Agenda
                     AllLevels
                 ]
               }
-    //          takeABreak "Last Coffee Break" "17:00"
+              takeABreak "Last Coffee Break" "16:45"
               { Time="17:00"
                 Tracks=[
                   keynote
@@ -218,10 +220,11 @@ namespace Page.Agenda
                     AllLevels
                 ]
               }
-              takeABreak "That's all folks!" "17:30"
+              takeABreak "That's all folks!" "17:45"
             ]
           }
           {
+            Class="workshops"
             Date="Day Two - Saturday 7 Sept."
             SubtitleLink=None //Some ("Registration for morning workshops", "https://docs.google.com/forms/d/e/1FAIpQLSftL4EzYUHuiwgLdqQqkDJuBR-g_GVrIqrK-OdHNPHLtWtr-g/viewform")
             Events=[
@@ -246,11 +249,12 @@ namespace Page.Agenda
                     Intermediate
                 ]
               }
-              { Time="11:30"
+              takeABreak "Coffee Break" "11:20"
+              { Time="11:40"
                 Tracks=[
                   track1
                     {
-                      Title="Take React's performance to its Fullest"
+                      Title="Take React's Performance to its Fullest"
                       Video=None
                       Speakers=[Speakers.Julien]
                       Content=str "React, Elmish and Fable allow us to write web apps in a declarative way using only F# code, and in 99% of cases it works! But sometimes you need to squeeze the performance of your app. In this workshop you will learn how to use React profiling tools, and how to apply a few changes that will make your UI render much faster."
@@ -258,7 +262,7 @@ namespace Page.Agenda
                     Beginner
                   track2
                     {
-                      Title="Remove server/client boundaries with Elmish.Bridge"
+                      Title="Remove Server/Client Boundaries with Elmish.Bridge"
                       Video=None
                       Speakers=[Speakers.Diego]
                       Content=str "The Elm architecture is great, but when you start writing the backend for your app everything starts to feel disconnected. Elmish.Bridge creates, well, a bridge between server and client using websockets so you can keep the same model-view-update mindset to create the server side model."
@@ -266,8 +270,8 @@ namespace Page.Agenda
                     Intermediate
                 ]
               }
-              takeABreak "Lunch" "13:15"
-              { Time="14:00"
+              takeABreak "Lunch" "14:00"
+              { Time="15:30"
                 Tracks=[
                   track1
                     {
@@ -287,7 +291,7 @@ namespace Page.Agenda
                     Intermediate
                 ]
               }
-              takeABreak "That's all folks! Have fun in Antwerpen!" "17:30"
+              takeABreak "That's all folks! Have fun in Antwerpen!" "17:45"
             ]
         }]
 
@@ -435,7 +439,7 @@ namespace Page.Agenda
                   | None -> [nothing]
                   | Some talk -> [
                     br []
-                    div [ClassName "contents"] [talk.Content]
+                    div [Class "contents"] [talk.Content]
                   ]
 
                 div[
@@ -446,16 +450,7 @@ namespace Page.Agenda
                 ] (title :: speakerName :: contents @ [videoLink])
               )
 
-          let color = if i % 2 = 0 then "lighter" else "darker"
-          Columns.columns
-            [
-              Columns.CustomClass color
-              Columns.Props [
-                Style [
-                  Color "white"
-                ]
-              ]
-            ]
+          Columns.columns []
             ([
               Column.column [
                 Column.Width (Screen.All, Column.Is2)
@@ -468,24 +463,12 @@ namespace Page.Agenda
               ]
             ] @ lines)
 
-        div[
-          Class "container day"
-        ]
+        div [Class ("container day " + day.Class)]
           [
-            yield Heading.h3 [
-              Heading.Props [
-                Style [
-                  Margin "1.2rem"
-                  //Color "#bb4321"
-                ]
-              ]
-            ] [str day.Date]
-            match day.SubtitleLink with
-            | Some(txt,url) ->
-              yield h4 [Class "subtitle is-4"] [a [Href url] [
-                span [Style [TextDecoration "underline"]] [str txt]]]
-            | None -> ()
-            yield fragment [] (day.Events |> List.mapi buildEvent)
+            Heading.h3 [] [str day.Date]
+            day.SubtitleLink |> ofOptionMap (fun (txt,url) ->
+              h4 [Class "subtitle is-4"] [a [Href url] [span [Style [TextDecoration "underline"]] [str txt]]])
+            fragment [] (day.Events |> List.mapi buildEvent)
           ]
 
       let cardView (speaker: Speaker) =
@@ -574,9 +557,7 @@ namespace Page.Agenda
       ]
 
     let root model dispatch =
-      div [
-        ClassName "addMargins"
-      ] [
+      div [Class "addMargins"] [
         // cover
         agenda model dispatch
         footer

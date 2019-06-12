@@ -6,6 +6,7 @@
 $primary: #2d3947;
 // Links
 $link-hover: #00d1b2;
+$navbar-breakpoint: $tablet;
 
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -358,12 +359,23 @@ a.fbutton {
   color: #5b97b4;
 }
 
-.lighter {
-  background-color: white;
-}
+.container.day {
+    // &>h3 {
+    //     margin: 1.2rem;
+    // }
+    &.talks > .columns {
+        background-color: white;
+        &:nth-child(odd) {
+            background-color: rgba(255,255,255,0.6);
+        }
+    }
+    &.workshops > .columns {
+        background-color: white;
+        &:nth-child(even) {
+            background-color: rgba(255,255,255,0.6);
+        }
+    }
 
-.darker {
-  background-color: rgba(255,255,255,0.6);
 }
 
 .contents {
@@ -383,7 +395,9 @@ a.fbutton {
 }
 
 .day {
-    margin-top: 60px;
+    @include tablet {
+        margin-top: 60px;
+    }
     .column {
         @media screen and (max-width: $tablet) {
             padding-left: 20px;
