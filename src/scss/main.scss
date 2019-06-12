@@ -31,6 +31,12 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
     }
 }
 
+@mixin only-mobile {
+    @media screen and (max-width: $tablet) {
+        @content;
+    }
+}
+
 @mixin r($point) {
   @if $point==240 {
     @media (min-width: 240px) {
@@ -359,25 +365,6 @@ a.fbutton {
   color: #5b97b4;
 }
 
-.container.day {
-    // &>h3 {
-    //     margin: 1.2rem;
-    // }
-    &.talks > .columns {
-        background-color: white;
-        &:nth-child(odd) {
-            background-color: rgba(255,255,255,0.6);
-        }
-    }
-    &.workshops > .columns {
-        background-color: white;
-        &:nth-child(even) {
-            background-color: rgba(255,255,255,0.6);
-        }
-    }
-
-}
-
 .contents {
   color:black;
   font-weight: 300;
@@ -395,11 +382,29 @@ a.fbutton {
 }
 
 .day {
-    @include tablet {
-        margin-top: 60px;
+    margin-top: 60px;
+    &.talks {
+        @include only-mobile {
+            margin-top: 0;
+        }
+    }
+    // &>h3 {
+    //     margin: 1.2rem;
+    // }
+    &.talks > .columns {
+        background-color: white;
+        &:nth-child(odd) {
+            background-color: rgba(255,255,255,0.6);
+        }
+    }
+    &.workshops > .columns {
+        background-color: white;
+        &:nth-child(even) {
+            background-color: rgba(255,255,255,0.6);
+        }
     }
     .column {
-        @media screen and (max-width: $tablet) {
+        @include only-mobile {
             padding-left: 20px;
             padding-right: 20px;
         }
