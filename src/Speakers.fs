@@ -234,7 +234,7 @@ let Dag =
 let Vagif =
   {
     shortname = "vagif"
-    name = "Vagif Agilof"
+    name = "Vagif Abilov"
     picture = "img/Vagif.png"
     bio = Some "Vagif Abilov is a Russian/Norwegian software developer and architect working for Miles. He has several decades of programming experience that includes various programming languages, currently using mostly C# and F#. Vagif writes articles and speaks (and sometimes sings) at user group sessions and conferences."
     twitter = Some "ooobject"
