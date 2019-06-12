@@ -313,6 +313,9 @@ namespace Page.Agenda
     open Fable.React.Props
     open ReactReveal
 
+    let ofOptionMap f x =
+        Option.map f x |> ofOption
+
     let cover =
         div [ Class "landing" ] [
           fade [
@@ -505,20 +508,23 @@ namespace Page.Agenda
             yield p [Class "title is-4 has-text-centered"] [str speaker.name]
             //yield p [Class "subtitle is-6 has-text-centered"] [str speaker.talk.title]
             match speaker.bio with
-            | Some bio -> yield p [] [str bio]
+            | Some bio -> yield p [Class "has-text-centered"] [str bio]
             | None -> ()
+            for txt, link in speaker.links do
+                yield a [Href link; Target "_blank"]
+                        [p [Class "has-text-centered"] [str txt]]
             yield div [
               Class "level is-mobile"
               Style [MarginTop "20px"]
             ] [
-              speaker.twitter |> Option.map (fun username ->
+              speaker.twitter |> ofOptionMap (fun username ->
                 a [Class "level-item"; Href ("https://twitter.com/" + username) ] [
                   Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-twitter fa-2x"] []]
-                ]) |> ofOption
-              speaker.github |> Option.map (fun username ->
+                ])
+              speaker.github |> ofOptionMap (fun username ->
                 a [Class "level-item"; Href ("https://github.com/" + username) ] [
                   Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-github fa-2x"] []]
-                ]) |> ofOption
+                ])
             ]
           ]
         ]

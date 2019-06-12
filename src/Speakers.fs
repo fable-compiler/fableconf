@@ -206,7 +206,7 @@ let Steffen =
     bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
     twitter = Some "sforkmann"
     github = Some "forki"
-    links = ["Shopping list","https://github.com/forki/Audio/raw/master/AudioBoxConrad.pdf"]
+    links = []
   }
 
 let Tomasp =
@@ -257,11 +257,11 @@ let Colin =
   {
     shortname = "colin"
     name = "Colin Gravill"
-    picture = "img/Mistery.jpg"
-    bio = None
-    twitter = None
-    github = None
-    links = []
+    picture = "https://pbs.twimg.com/profile_images/1105163203783348225/ZDySxIq6_400x400.png"
+    bio = Some """I'm a software developer at Microsoft Research. My group works on Biological Computation where we try to reprogram biology with domain-specific languages, robotic automation, and a lot of computation!"""
+    twitter = Some "CGravill"
+    github = Some "cgravill"
+    links = ["Microsoft Biological Computation", "https://www.microsoft.com/en-us/research/group/biological-computation/"]
   }
 
 let Brett =
