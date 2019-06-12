@@ -11448,6 +11448,12 @@ a.fbutton {
   text-transform: uppercase;
   background-color: #88c7e4; }
 
+.lightning:not(body) {
+  text-transform: uppercase;
+  background-color: goldenrod;
+  color: white;
+  margin-left: 10px; }
+
 .blue {
   color: #5b97b4; }
 
@@ -11479,6 +11485,23 @@ a.fbutton {
     .day .column {
       padding-left: 20px;
       padding-right: 20px; } }
+
+.navbar {
+  font-family: "Dosis";
+  background-color: #b1c5ce; }
+  .navbar .navbar-logo {
+    background-color: #BB4321; }
+    .navbar .navbar-logo h1 {
+      color: white;
+      font-weight: 500;
+      font-size: 1.2em; }
+  .navbar a.navbar-item {
+    color: #BB4321;
+    font-weight: 500;
+    font-size: 1.2em; }
+  .navbar .icon {
+    color: #BB4321;
+    font-size: 1.5em; }
 
 
 /*# sourceMappingURL=style.css.map*/
