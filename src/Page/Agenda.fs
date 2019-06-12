@@ -200,7 +200,7 @@ namespace Page.Agenda
                       Title="Fable 2029"
                       Video=None
                       Speakers=[Speakers.François; Speakers.Alfonso]
-                      Content=str "It's 2019 and Fable has risen to world dominance becoming the only way to write programs. In an unprecedent research of Software History, we will review the series of events that have led to this outcome (humorous)."
+                      Content=str "It's 2029 and Fable has risen to world dominance becoming the only way to write programs. In an unprecedent research of Software History, we will review the series of events that have led to this outcome (humorous)."
                     }
                     AllLevels
                 ]
