@@ -344,6 +344,12 @@ a.fbutton {
   text-transform: uppercase;
   background-color: #88c7e4;
 }
+.lightning:not(body) {
+    text-transform: uppercase;
+    background-color: goldenrod;
+    color:white;
+    margin-left: 10px;
+  }
 
 .blue {
   color: #5b97b4;

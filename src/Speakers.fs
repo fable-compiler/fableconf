@@ -45,7 +45,7 @@ let Krzysztof =
   {
     shortname = "krzysztof"
     name = "Krzysztof Cieślak"
-    picture = "img/Mistery.jpg"
+    picture = "img/Krzysztof.jpg"
     bio = Some "Krzysztof is a software developer, consultant, open source contributor and active member of the F# community."
     twitter = Some "k_cieslak"
     github = Some "Krzysztof-Cieslak"
@@ -102,7 +102,7 @@ let Julien =
   {
     shortname = "julien"
     name = "Julien Roncaglia"
-    picture = "img/Mistery.jpg"
+    picture = "img/Julien.jpg"
     bio = Some "Julien is a French developer with interests spanning system level programming to functional on the .NET stack. He is currently focusing on F#, DevOps and performance."
     twitter = Some "virtualblackfox"
     github = Some "vbfox"

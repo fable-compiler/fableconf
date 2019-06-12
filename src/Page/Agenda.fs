@@ -48,7 +48,7 @@ namespace Page.Agenda
           Talk=Some talk
           Title=talk.Title
           Kind=Some kind
-          Level = Some level
+          Level=Some level
         }
 
       let track1 talk=
@@ -79,7 +79,7 @@ namespace Page.Agenda
                       Title="Keynote: The Joys of OSS"
                       Video=None
                       Speakers=[Speakers.Zaid]
-                      Content=str "TBD"
+                      Content=str "Publishing Open Source Software brings the reward of feeling useful to the community. However with great sharing comes great responsibility, or so they say. In this talk I will try to offer my experience in publishing many OSS libraries, go through the challenges of maintaining them, think how they can be overcome but also celebrate what you get in return when you share your work with others."
                     }
                     AllLevels
                 ]
@@ -92,7 +92,7 @@ namespace Page.Agenda
                       Title="A Journey into the Compiler and Tooling"
                       Video=None
                       Speakers=[Speakers.Florian]
-                      Content=str "TBD"
+                      Content=str "When I wanted to add the capability of compiling F# scripts to Fable, I had to explore the infrastructure of the compiler as well as its JS clients, like fable-loader and fable-splitter. In this talk we will do this journey together to understand how all the pieces fit together so, maybe in the future, you can contribute a new feature to the compiler too."
                     }
                     Intermediate
                   track2
@@ -100,11 +100,7 @@ namespace Page.Agenda
                       Title="Release the Magic with Reactive MVU"
                       Video=None
                       Speakers=[Speakers.Dag]
-                      Content=str """The Model View Update (MVU) pattern, also known as "The Elm Architecture" is getting increasingly popular thanks to Elm and Fable/Elmish (F#). In MVU the model is updated in a purely functional and predictable way enabling safer, debuggable and bug free applications.
-
-Elmish Streams is an implementation of Async Observables in F# and takes event handling in MVU to a higher level by combining the worlds of MVU with reactive programming and Async Observables. The real magic however is that different event processing pipelines may be subscribed or disposed based on the current model. This enables powerful event handling while effectively solving the lifetime management of ongoing web requests, mouse-moves or web sockets that may occur in single page web applications.
-
-During the talk I will also show how web applications using Elmish Streams can be scaled and made hierarchical, enabling reactive components to be reused as sub-components without the need for code changes."""
+                      Content=str """The Model View Update pattern is getting increasingly popular thanks to Elm and Fable/Elmish. Elmish Streams is an implementation of Async Observables in that takes event handling to a higher level by combining the worlds of MVU with reactive programming. The real magic however is that different event processing pipelines may be subscribed or disposed based on the current model. This enables powerful event handling while effectively solving the lifetime management of ongoing web requests, mouse-moves or web sockets that may occur in single page web applications. The talk will show how web applications using Elmish Streams can be scaled and made hierarchical, enabling reactive components to be reused as sub-components without the need for code changes."""
                     }
                     Intermediate
                 ]
@@ -117,7 +113,7 @@ During the talk I will also show how web applications using Elmish Streams can b
                       Title="Too Old for JavaScript, Still Young for Elmish"
                       Video=None
                       Speakers=[Speakers.Vagif]
-                      Content=str """I am a backend developer, and I always have enough backend-related cards on our Kanban board, so how could I squeeze into it a Web UI task using Fable that I really really wanted to do? But when we migrated our service event store from MongoDB to Azure and needed to have an eye on the new system, I realized it's now or never. If I manage to quickly build a decent UI for a new event store, it may be appreciated, and not only I will be forgiven - we will have a strong case to promote Fable into our organization where F# is already used by a large number of developers. In this talk I will show how little time and code it took to build a Web app using Fable, Fable.Elmish and Fulma, what obstacles newcomers can face and what else we can use Fable for in our organization - and you might consider in yours."""
+                      Content=str """I am a backend developer and only care about backend stuff. But when we migrated our service event store from MongoDB to Azure and needed to have an eye on the new system, I had to find a way to quickly build a decent UI for our new event store. In this talk I will show how little time and code it took to build it using Fable, Elmish and Fulma, what obstacles newcomers can face and what else we can use Fable for in our organization - and you might consider in yours."""
                     }
                     Beginner
                   track2
@@ -125,14 +121,7 @@ During the talk I will also show how web applications using Elmish Streams can b
                       Title="Functional Adventures on High-Performance Computer Graphics"
                       Video=None
                       Speakers=[Speakers.Georg]
-                      Content=str """Functional programming finally made it from academia to web applications e.g. via react, elm or fable.
-Over the last couple of years we worked on the idea of bringing functional programming to high-performance computer graphics.
-Our approach on easy to use programming interfaces while not giving back on performance builds on domain-specific-languages, compilers, incremental evaluation.
-In this talk we share some of our experience and lessons learned in the aardvark plaform:
-
-- In the first part we give an overview on conceptual and technical modules needed for a functional-first, high-performance rendering engine.
-- In the second part we more dive into the field of approachable GPU programming using the FShade language.
-- Recently, we ported a substantial part of the rendering engine to Fable. In this last part we want to discuss the status and future steps in that the direction as community activities."""
+                      Content=str """Over the last couple of years we worked on the idea of bringing functional programming to high-performance computer graphics. Our approach, while not giving back on performance, builds on domain-specific-languages, compilers, incremental evaluation. In this talk we share some of our experience and lessons learned in the aardvark plaform, including how we've used Fable to make GPU programming more approachable with the FShade language."""
                     }
                     Expert
                 ]
@@ -145,7 +134,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Building F# Tooling"
                       Video=None
                       Speakers=[Speakers.Krzysztof]
-                      Content=str """TBD"""
+                      Content=str """What are the new horizons in F# tooling? Are there new capabilities coming to editors for Fable apps? How do you design good tooling? And how do you collaborate with the community to make everything sustainable? Come to this talk to find the answers to all these questions!"""
                     }
                     AllLevels
                   track2
@@ -166,7 +155,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="From I to X: Simple Tricks to Improve User Experience"
                       Video=None
                       Speakers=[Speakers.Gien]
-                      Content=str "TBD"
+                      Content=str "Having an advanced compiler to check your code is great for developers, but if you want to write compelling interfaces you really need to know about user experience. This talk will give you some tricks to help you achieve this goal."
                     }
                     AllLevels
                   track2
@@ -174,12 +163,9 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Fable Breakout: Beyond Elmish"
                       Video=None
                       Speakers=[Speakers.Joerg]
-                      Content=str """Up to now Fable has been most associated with web development via the Elish ecosystem. However the there are other domains were the language to could be usefully applied. This talk will explore three:
-1. Use of Fable for developing CloudFlare Workers. This part of the talk will be based on this: https://github.com/jbeeko/cfworker-hello-world
-2. Use of Fable for developing CosmosDB stored procedures. Currently writing these is a terrible experience. Allowing these to be written using Fable could much improve the experience. It may also be possible share code between client and the stored procedures.
-3. Use of Fable for concurrent programming. Erlang has been very successful with the Actor model of programming. Something similar could be done with Fable by making FSharp Mailbox processors separate workers using the browser worker interface. Each Mailbox processor will run as a worker on a separate thread."""
+                      Content=str """Fable is more than Elmish web apps! This talk will explore three uncharted territories: 1. CloudFlare Workers, a new JS cloud computing platform with interesting properties; 2. CosmosDB stored procedures, currently writing these is a terrible experience and Fable can really improve it; and 3. Concurrent programming à-la-Erlang. F# Mailbox Processors can simulate actors by running in independent web workers."""
                     }
-                    Expert
+                    Intermediate
                 ]
               }
               takeABreak "Coffee Break" "15:45"
@@ -227,7 +213,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Closing Keynote"
                       Video=None
                       Speakers=[]
-                      Content=str "TBD"
+                      Content=str "Big surprise! To be announced soon."
                     }
                     AllLevels
                 ]
@@ -267,7 +253,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Take React's performance to its Fullest"
                       Video=None
                       Speakers=[Speakers.Julien]
-                      Content=str "TBD"
+                      Content=str "React, Elmish and Fable allow us to write web apps in a declarative way using only F# code, and in 99% of cases it works! But sometimes you need to squeeze the performance of your app. In this workshop you will learn how to use React profiling tools, and how to apply a few changes that will make your UI render much faster."
                     }
                     Beginner
                   track2
@@ -275,7 +261,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Remove server/client boundaries with Elmish.Bridge"
                       Video=None
                       Speakers=[Speakers.Diego]
-                      Content=str "TBD"
+                      Content=str "The Elm architecture is great, but when you start writing the backend for your app everything starts to feel disconnected. Elmish.Bridge creates, well, a bridge between server and client using websockets so you can keep the same model-view-update mindset to create the server side model."
                     }
                     Intermediate
                 ]
@@ -288,7 +274,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Mindful Programming"
                       Video=None
                       Speakers=[Speakers.François]
-                      Content=str "TBD"
+                      Content=str """Mindfulness is everywhere, and of course it's also important for programmming. We put our full brains at work when we are coding. But what if we pushed this idea to its limits? Let's build a web app that directly reacts... to our brainwaves!"""
                     }
                     AllLevels
                   track2
@@ -296,7 +282,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Title="Mastering Server Side Rendering"
                       Video=None
                       Speakers=[Speakers.Steffen]
-                      Content=str "TBD"
+                      Content=str """SPAs have made web apps truly dynamic and are easy (and fun) to develop. However, when newcomers are visiting your site you want them to see the content as soon as possible. And serving fully generated HTML is important for search engines too. This workshop will teach how to use exactly the same code you use in your client to generate HTML in your .NET server."""
                     }
                     Intermediate
                 ]
@@ -423,6 +409,10 @@ In this talk we share some of our experience and lessons learned in the aardvark
                       Tag.tag [ Tag.CustomClass "expert"]  [str "Expert"]
                   | None -> str ""
 
+                let tag =
+                    match track.Kind with
+                    | Some Lightning -> fragment [] [tag; Tag.tag [Tag.CustomClass "lightning"] [str "Lightning"]]
+                    | _ -> tag
 
                 let videoLink =
                   match track.Talk with
