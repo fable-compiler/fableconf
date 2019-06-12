@@ -1,9 +1,4 @@
-module Types 
-
-[<RequireQualifiedAccess>]
-type Route =
-  | About
-  | Schedule
+module Types
 
 type Speaker =
   {

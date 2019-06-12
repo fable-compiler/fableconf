@@ -1,6 +1,4 @@
-namespace Page
-
-module About =
+namespace Page.Home
 
   module Types =
 

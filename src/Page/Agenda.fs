@@ -1,10 +1,8 @@
-namespace Page
+namespace Page.Agenda
 
-module Schedule =
   open Types
   open Fable.React
   open Speakers
-
 
   module Types =
 
@@ -583,7 +581,7 @@ In this talk we share some of our experience and lessons learned in the aardvark
       div [
         ClassName "addMargins"
       ] [
-        cover
+        // cover
         agenda model dispatch
         footer
       ]

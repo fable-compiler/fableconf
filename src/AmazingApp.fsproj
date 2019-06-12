@@ -3,14 +3,13 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ReactReveal.fs" />
+    <Compile Include="Router.fs" />
     <Compile Include="Types.fs" />
     <Compile Include="Speakers.fs" />
-    <Compile Include="ReactReveal.fs" />
-    <Compile Include="Page/Schedule.fs" />
     <Compile Include="Page/Navbar.fs" />
-    <Compile Include="Page/About.fs" />
-    <Compile Include="Router.fs" />
-    <Compile Include="Main.fs" />
+    <Compile Include="Page/Home.fs" />
+    <Compile Include="Page/Agenda.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <Import Project="..\.paket\Paket.Restore.targets" />

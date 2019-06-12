@@ -2,8 +2,6 @@ namespace Page.Navbar
 
 module Types =
 
-  open Types 
-
   type Msg =
     | Disconnect
     | ShowChangeLog
@@ -15,7 +13,7 @@ module Types =
     IsBurgerOpen : bool
   }
 
-module State = 
+module State =
 
   open Elmish
   open Types
@@ -26,33 +24,62 @@ module State =
     match msg with
     | ToggleBurger ->
       { model with IsBurgerOpen = not model.IsBurgerOpen }, Cmd.none
-
     | _ ->
       model, Cmd.none
 
-
 module View =
 
-  open Fulma
-  open Fable.React
-  open Fable.React.Props
-  open Fable.FontAwesome
+    open Fable.React
+    open Fable.React.Props
+    open Router
+    open Types
 
-  open Types
-
-  let root model dispatch  =
-
-    Navbar.navbar [ 
-      Navbar.HasShadow
-      Navbar.Color IsDark
-    ] 
-      [
-        Navbar.Brand.div [] [
-          str "toto"
+    let navButton classy href faClass =
+      a [ Href href
+          Target "_blank" ]
+        [ span
+            [ Class "icon" ]
+            [ i
+                [ Class (sprintf "navbar-social-icon %s" faClass) ]
+                [ ] ]
         ]
-        Navbar.menu
-          [ 
-            Fulma.Navbar.Menu.IsActive model.IsBurgerOpen 
+
+    let navButtons =
+      [
+        div [Class "navbar-item navbar-social"]
+              [ navButton "twitter" "https://twitter.com/FableCompiler" "fab fa-twitter" ]
+        div [Class "navbar-item navbar-social"] [
+                navButton "gitter" "https://gitter.im/fable-compiler/Fable" "fas fa-comment-dots" ]
+      ]
+
+    let menuItem label page currentPage dispatch=
+        a [
+          classList ["navbar-item", true; "is-active", page = currentPage]
+          Href (toHash page)
+          OnClick (fun _ -> dispatch ToggleBurger)
+        ] [str label]
+
+    let root currentPage (model: Model) dispatch =
+      nav [Class "navbar"] [
+        div [Class "navbar-brand"] [
+          div [
+            classList ["navbar-burger", true
+                       "is-active", model.IsBurgerOpen]
+            OnClick (fun _ -> dispatch ToggleBurger)
+          ] [
+            span [] []
+            span [] []
+            span [] []
           ]
-          [ Navbar.Start.div[] [str "" ] ]
+        ]
+        div [classList ["navbar-menu", true; "is-active", model.IsBurgerOpen]] [
+          div [Class "navbar-start"] [
+            div [Class "navbar-item navbar-logo"] [
+              a [Href (toHash Route.Home)] [h1 [] [str "FABLECONF'19"] ]
+            ]
+            menuItem "Home" Route.Home currentPage dispatch
+            menuItem "Agenda" Route.Agenda currentPage dispatch
+          ]
+          div [Class "navbar-end"] navButtons
+        ]
       ]

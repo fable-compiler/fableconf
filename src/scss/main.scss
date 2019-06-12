@@ -385,3 +385,25 @@ a.fbutton {
         }
     }
 }
+
+.navbar {
+    font-family: "Dosis";
+    background-color: $blueback;
+    .navbar-logo {
+        background-color: #BB4321;
+        h1 {
+            color: white;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+    }
+    a.navbar-item {
+        color: #BB4321;
+        font-weight: 500;
+        font-size: 1.2em;
+    }
+    .icon {
+        color: #BB4321;
+        font-size: 1.5em;
+    }
+}
