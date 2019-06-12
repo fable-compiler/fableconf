@@ -11460,16 +11460,6 @@ a.fbutton {
 .track-two {
   color: #5b97b4; }
 
-.container.day.talks > .columns {
-  background-color: white; }
-  .container.day.talks > .columns:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.6); }
-
-.container.day.workshops > .columns {
-  background-color: white; }
-  .container.day.workshops > .columns:nth-child(even) {
-    background-color: rgba(255, 255, 255, 0.6); }
-
 .contents {
   color: black;
   font-weight: 300; }
@@ -11483,14 +11473,23 @@ a.fbutton {
 .coc {
   margin-top: 25px; }
 
-@media screen and (min-width: 769px) {
-  .day {
-    margin-top: 60px; } }
-
-@media screen and (max-width: 769px) {
-  .day .column {
-    padding-left: 20px;
-    padding-right: 20px; } }
+.day {
+  margin-top: 60px; }
+  @media screen and (max-width: 769px) {
+    .day.talks {
+      margin-top: 0; } }
+  .day.talks > .columns {
+    background-color: white; }
+    .day.talks > .columns:nth-child(odd) {
+      background-color: rgba(255, 255, 255, 0.6); }
+  .day.workshops > .columns {
+    background-color: white; }
+    .day.workshops > .columns:nth-child(even) {
+      background-color: rgba(255, 255, 255, 0.6); }
+  @media screen and (max-width: 769px) {
+    .day .column {
+      padding-left: 20px;
+      padding-right: 20px; } }
 
 .navbar {
   font-family: "Dosis";
