@@ -356,9 +356,9 @@ namespace Page.Agenda
                   | Some kind ->
                     match kind with
                     | TrackOne ->
-                      "subtitle", " //////", "#bb4321"
+                      "track-one", " //////", "#bb4321"
                     | TrackTwo ->
-                      "blue", " //////", "#5b97b4"
+                      "track-two", " //////", "#5b97b4"
                     | _ ->
                       "", "", ""
                   | None -> "","", ""
