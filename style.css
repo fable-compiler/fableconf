@@ -11454,11 +11454,11 @@ a.fbutton {
   color: white;
   margin-left: 10px; }
 
-.blue {
-  color: #5b97b4; }
-
-.subtitle {
+.track-one {
   color: #bb4321; }
+
+.track-two {
+  color: #5b97b4; }
 
 .lighter {
   background-color: white; }
