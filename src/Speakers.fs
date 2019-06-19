@@ -279,10 +279,13 @@ let Georg =
   {
     shortname = "georg"
     name = "Georg Haaser"
-    picture = "img/Mistery.jpg"
-    bio = None
+    picture = "img/Georg.jpg"
+    bio = Some """I'm a researcher at the VRVis Research Center in Vienna for 10 years now, interested in Computer Graphics, Compilers, Functional Programming, Geometry and generally solving formal Problems.
+Over the last years I spent most of my time implementing/improving our research renderer/platform in F#.
+Recently me and some friends founded Aardworx, a company aimed at creating high performance software for problems in the field of computer graphics.
+In my free time I enjoy hiking and generally spending time in nature."""
     twitter = None
-    github = None
+    github = Some "krauthaufen"
     links = []
   }
 
