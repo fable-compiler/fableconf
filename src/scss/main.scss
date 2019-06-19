@@ -6,6 +6,7 @@
 $primary: #2d3947;
 // Links
 $link-hover: #00d1b2;
+$navbar-breakpoint: $tablet;
 
 $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 @import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
@@ -26,6 +27,12 @@ $fa-font-path: "~@fortawesome/fontawesome-free/webfonts/";
 
 @mixin tablet {
     @media screen and (min-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin only-mobile {
+    @media screen and (max-width: $tablet) {
         @content;
     }
 }
@@ -321,43 +328,41 @@ a.fbutton {
                   margin-top: 45;
                   max-height: 50px;
               }
-            }            
+            }
         }
     }
 
-.intermediate:not(body) { 
+.intermediate:not(body) {
   text-transform: uppercase;
   background-color: #f5de75;
 }
 
 .expert:not(body) {
-  text-transform: uppercase; 
+  text-transform: uppercase;
   background-color: #a43d22;
   color:white;
 }
 
 .all:not(body) {
   background-color: #73dfb5;
-  text-transform: uppercase; 
+  text-transform: uppercase;
 }
 .beginner:not(body) {
-  text-transform: uppercase; 
+  text-transform: uppercase;
   background-color: #88c7e4;
 }
+.lightning:not(body) {
+    text-transform: uppercase;
+    background-color: goldenrod;
+    color:white;
+    margin-left: 10px;
+  }
 
-.blue {
+.track-one {
+  color: $orange;
+}
+.track-two {
   color: #5b97b4;
-}
-.subtitle {
-  color : $orange;  
-}
-
-.lighter {
-  background-color: white;
-}
-
-.darker {
-  background-color: rgba(255,255,255,0.6);
 }
 
 .contents {
@@ -374,4 +379,56 @@ a.fbutton {
 
 .coc {
     margin-top: 25px;
+}
+
+.day {
+    margin-top: 60px;
+    &.talks {
+        @include only-mobile {
+            margin-top: 0;
+        }
+    }
+    // &>h3 {
+    //     margin: 1.2rem;
+    // }
+    &.talks > .columns {
+        background-color: white;
+        &:nth-child(odd) {
+            background-color: rgba(255,255,255,0.6);
+        }
+    }
+    &.workshops > .columns {
+        background-color: white;
+        &:nth-child(even) {
+            background-color: rgba(255,255,255,0.6);
+        }
+    }
+    .column {
+        @include only-mobile {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+    }
+}
+
+.navbar {
+    font-family: "Dosis";
+    background-color: $blueback;
+    .navbar-logo {
+        background-color: #BB4321;
+        h1 {
+            color: white;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+    }
+    a.navbar-item {
+        color: #BB4321;
+        font-weight: 500;
+        font-size: 1.2em;
+    }
+    .icon {
+        color: #BB4321;
+        font-size: 1.5em;
+    }
 }

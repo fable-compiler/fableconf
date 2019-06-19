@@ -1,22 +1,23 @@
 module Router
 
-open Types
-open Browser.Dom
 open Fable.React.Props
 open Elmish.Navigation
 open Elmish.UrlParser
 
-let private toHash (page:Route) =
-  
+[<RequireQualifiedAccess>]
+type Route =
+  | Home
+  | Agenda
+
+let toHash page =
   match page with
-  | Route.About -> "#about"
-  | Route.Schedule -> "#schedule"
+  | Route.Agenda -> "#agenda"
+  | Route.Home -> "#home"
 
 let pageParser: Parser<Route->Route,_> =
-  
   oneOf [
-    map Route.About (s "about")
-    map Route.Schedule (s "schedule")
+    map Route.Agenda (s "agenda")
+    map Route.Home (s "home")
   ]
 
 let href route =
@@ -26,8 +27,4 @@ let modifyUrl route =
   route |> toHash |> Navigation.modifyUrl
 
 let newUrl route =
-//  route |> toHash |> Navigation.modifyUrl
   route |> toHash |> Navigation.newUrl
-
-let modifyLocation route =
-  window.location.href <- toHash route

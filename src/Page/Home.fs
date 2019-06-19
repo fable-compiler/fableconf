@@ -1,6 +1,4 @@
-namespace Page
-
-module About =
+namespace Page.Home
 
   module Types =
 
@@ -91,10 +89,10 @@ module About =
                   p[] [strong [] [str "Come to the beautiful city of Antwerp and be part of one of the best events organized by the F# community in Europe! This year again FableConf will provide two days full of opportunities to learn and meet the awesome members of the Fable and F# communities!" ]]
                   h2[ ] [str "Friday: talks"]
                   h4[ ] [str "Ankerrui 9, 2000 Antwerpen"]
-                  p [][str "Day one will consist of talks introducing the technologies key to modern web development, as well as presenting the latest additions to Fable ecosystem."; i [] [str "(Speakers lineup will be published soon.)"] ]
+                  p [][str "Day one will consist of talks introducing the technologies key to modern web development, as well as presenting the latest additions to Fable ecosystem."; a [Href "#agenda"] [str "Check out the agenda!"] ]
                   h2[ ] [str "Saturday: workshops"]
                   h4[ ] [str "Entrepotkaai 10A, 2000 Antwerpen"]
-                  p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to learn how to write Fable applications that take full advantage of F# and Javascript."]
+                  p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to learn how to write Fable applications that take full advantage of F# and Javascript."; a [Href "#agenda"] [str "Check out the agenda!"]]
                   h2[ ] [str "F# enlightenment"]
                   p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for hogh productivity and with cutting-edge tooling, this year's FableConf will have something for you!"]
                 ]
@@ -157,7 +155,8 @@ module About =
           Hero.CustomClass "contents"
         ] [
           Hero.body [ Props [ Class "addMargins"] ] [
-            Heading.h2 [] [str "Sponsors"]
+            Heading.h2 [Heading.Modifiers [Modifier.TextAlignment(Screen.All, TextAlignment.Centered)]]
+                       [str "THANKS TO OUR SPONSORS"]
             Level.level [Level.Level.CustomClass "sponsors"] [
                 zoom [
                     Level.item [] [
@@ -171,6 +170,17 @@ module About =
                         ]
                     ]
                 ]
+            ]
+            centerDesktop [
+              a [
+                Id "cfp"
+                Class "fbutton"
+                Href "./FableConf2019_Sponsorship.pdf"
+                Target "_blank"
+              ] [
+                div [Class "innerLeft"] []
+                div [Class "innerRight"] [ str "SUPPORT US!"]
+              ]
             ]
           ]
         ]
@@ -238,8 +248,6 @@ module About =
         cover
         fade [ticket]
         fade [about]
-        fade [pic]
-        fade [cfp]
         fade [pic]
         fade [sponsors]
         fade [coc]

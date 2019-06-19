@@ -10,11 +10,11 @@ type Model =
 let Alfonso =
   {
     shortname = "Alfonso"
-    name = "Alfonso"
-    picture = "img/François.jpg"
-    bio = Some "François's been programming for a long time using so many languages. Now he's deep into functional programming using F# and Fable for all his web and IOT projects. He also spends a lot of time with kids through coding jams and teaches IT to young adults"
-    twitter = Some "thewhitetigle"
-    github = Some "whitetigle"
+    name = "Alfonso García-Caro"
+    picture = "img/Alfonso.jpeg"
+    bio = Some """A linguist by heart and a programmer by choice, Alfonso has brought his passion for natural languages to the computing world. He is the creator of Fable, a popular F# to JS compiler, and coauthor of the book "Mastering F#". Currently works as a web engineer using F# and Fable for highly productive and reliable software development."""
+    twitter = Some "alfonsogcnunez"
+    github = Some "alfonsogarciacaro"
     links = []
   }
 
@@ -113,18 +113,18 @@ let Diego =
   {
     shortname = "diego"
     name = "Diego Esmerio"
-    picture = "img/Julien.jpg"
-    bio = Some "Julien is a French developer with interests spanning system level programming to functional on the .NET stack. He is currently focusing on F#, DevOps and performance."
-    twitter = Some "virtualblackfox"
-    github = Some "vbfox"
+    picture = "img/Mistery.jpg"
+    bio = None
+    twitter = None
+    github = None
     links = []
-  }  
+  }
 
 let Tomasz =
   {
     shortname = "tomasz"
     name = "Tomasz Heimowski"
-    picture = "img/Tomasz.png"
+    picture = "img/Tomasz.jpg"
     bio = Some "Tomasz is a passionate developer whose main areas of interest are F# and Functional Programming in general. As a Senior Software Engineer at Datto he tackles problems from various domains. In his free time, apart from contributing to OSS projects and learning new tech stuff, he enjoys lifting weights as well as dancing."
     twitter = Some "theimowski"
     github = Some "theimowski"
@@ -168,19 +168,7 @@ let TBD =
   {
     shortname = "tbd"
     name = "TBD"
-    picture = "img/Mystery.png"
-    bio = None
-    twitter = None
-    github = None
-    links = []
-  }
-
-
-let Hackspace =
-  {
-    shortname = "hackspace"
-    name = "Hackspace"
-    picture = "img/Mystery.png"
+    picture = "img/Mystery.jpg"
     bio = None
     twitter = None
     github = None
@@ -218,7 +206,7 @@ let Steffen =
     bio = Some "Steffen Forkmann works as a Software Developer on large billing systems and therefore has great experience in applying functional concepts to real-world applications. Steffen is a very active part in the F# open source community and works on many OSS projects like FAKE - F# Make, Paket and the F# compiler."
     twitter = Some "sforkmann"
     github = Some "forki"
-    links = ["Shopping list","https://github.com/forki/Audio/raw/master/AudioBoxConrad.pdf"]
+    links = []
   }
 
 let Tomasp =
@@ -236,7 +224,7 @@ let Dag =
   {
     shortname = "dag"
     name = "Dag Brattli"
-    picture = "img/Dag.jpg"
+    picture = "img/Dag.jpeg"
     bio = Some "Dag Brattli works as a software developer at Serit IT Partner in Norway, a consultant company that uses only F# for software development. He is the creator of the Reactive Extensions for Python (RxPY) and AioReactive (async/await reactive tools for Python). In his previous life he also worked on several prosjects using RxJS and Rx.NET. Meeting the amazing world of Fable and Elmish resulted in the newest creation called Fable Reaction."
     twitter = Some "dbrattli"
     github = Some "dbrattli"
@@ -246,22 +234,22 @@ let Dag =
 let Vagif =
   {
     shortname = "vagif"
-    name = "Vagif Agilof"
-    picture = "img/Dag.jpg"
-    bio = Some "Dag Brattli works as a software developer at Serit IT Partner in Norway, a consultant company that uses only F# for software development. He is the creator of the Reactive Extensions for Python (RxPY) and AioReactive (async/await reactive tools for Python). In his previous life he also worked on several prosjects using RxJS and Rx.NET. Meeting the amazing world of Fable and Elmish resulted in the newest creation called Fable Reaction."
-    twitter = Some "dbrattli"
-    github = Some "dbrattli"
+    name = "Vagif Abilov"
+    picture = "img/Vagif.png"
+    bio = Some "Vagif Abilov is a Russian/Norwegian software developer and architect working for Miles. He has several decades of programming experience that includes various programming languages, currently using mostly C# and F#. Vagif writes articles and speaks (and sometimes sings) at user group sessions and conferences."
+    twitter = Some "ooobject"
+    github = Some "object"
     links = []
-  }  
+  }
 
 let Joerg =
   {
     shortname = "joerg"
     name = "Joerg Beekmann"
-    picture = "img/maxime.png"
-    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
-    twitter = Some "MangelMaxime"
-    github = Some "MangelMaxime"
+    picture = "img/Mistery.jpg"
+    bio = None
+    twitter = None
+    github = None
     links = []
   }
 
@@ -269,32 +257,43 @@ let Colin =
   {
     shortname = "colin"
     name = "Colin Gravill"
-    picture = "img/maxime.png"
-    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
-    twitter = Some "MangelMaxime"
-    github = Some "MangelMaxime"
+    picture = "https://pbs.twimg.com/profile_images/1105163203783348225/ZDySxIq6_400x400.png"
+    bio = Some """I'm a software developer at Microsoft Research. My group works on Biological Computation where we try to reprogram biology with domain-specific languages, robotic automation, and a lot of computation!"""
+    twitter = Some "CGravill"
+    github = Some "cgravill"
+    links = ["Microsoft Biological Computation", "https://www.microsoft.com/en-us/research/group/biological-computation/"]
+  }
+
+let Brett =
+  {
+    shortname = "brett"
+    name = "Brett Rowberry"
+    picture = "img/Mistery.jpg"
+    bio = None
+    twitter = None
+    github = None
     links = []
-  }  
+  }
 
 let Georg =
   {
     shortname = "georg"
     name = "Georg Haaser"
-    picture = "img/maxime.png"
-    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
-    twitter = Some "MangelMaxime"
-    github = Some "MangelMaxime"
+    picture = "img/Mistery.jpg"
+    bio = None
+    twitter = None
+    github = None
     links = []
-  }   
+  }
 
 
 let Florian =
   {
     shortname = "florian"
     name = "Florian Verdonck"
-    picture = "img/maxime.png"
-    bio = Some "Maxime's has been testing a lot of languages over the past 10 years. Finally, he stopped with F# thanks to Fable discovery. He is working at Fleet Performance on a monitoring solution for mining quarry."
-    twitter = Some "MangelMaxime"
-    github = Some "MangelMaxime"
+    picture = "img/Florian.jpeg"
+    bio = None
+    twitter = None
+    github = None
     links = []
-  }     
+  }
