@@ -275,10 +275,10 @@ namespace Page.Agenda
                 Tracks=[
                   track1
                     {
-                      Title="Mindful Programming"
+                      Title="Live FAAS Collaborative Mindful Programming"
                       Video=None
                       Speakers=[Speakers.François]
-                      Content=str """Mindfulness is everywhere, and of course it's also important for programmming. We put our full brains at work when we are coding. But what if we pushed this idea to its limits? Let's build a web app that directly reacts... to our brainwaves!"""
+                      Content=str """Mindfulness. Everywhere. let's take the concept to the next level. We'll harvest the fruits from your minds. You code your vision. You deploy. We fetch all the data your mind came with. We do the same with all your neighbours. From the gathered results The Holy Generator will create a brand new world. Every minute. Streamed live on twitch. In... 100s of 1000s of nice 16x16 sprites. This is the Retro-pixel Future. This is 2029 in 2019."""
                     }
                     AllLevels
                   track2
