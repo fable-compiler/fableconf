@@ -278,7 +278,7 @@ namespace Page.Agenda
                       Title="Live FAAS Collaborative Mindful Programming"
                       Video=None
                       Speakers=[Speakers.François]
-                      Content=str """Mindfulness. Everywhere. let's take the concept to the next level. We'll harvest the fruits from your minds. You code your vision. You deploy. We fetch all the data your mind came with. We do the same with all your neighbours. From the gathered results The Holy Generator will create a brand new world. Every minute. Streamed live on twitch. In... 100s of 1000s of nice 16x16 sprites. This is the Retro-pixel Future. This is 2029 in 2019."""
+                      Content=str """Mindfulness. Everywhere. let's take the concept to the next level. We'll harvest the fruits from your minds. You code your vision. You deploy. We fetch all the data your mind came with. We do the same with all your neighbours. From the gathered results The Holy Generator will create a brand new world. Every minute. Streamed live on twitch. In... 100s of 1000s of nice 16x16 sprites. This is the Retro-pixel Future. This is 2029 in 2019. You will toy around with Fable, F#, Node.js, cloud hosted functions, JSON and some procedural generation patterns."""
                     }
                     AllLevels
                   track2
