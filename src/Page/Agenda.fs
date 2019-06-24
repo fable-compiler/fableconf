@@ -187,10 +187,10 @@ namespace Page.Agenda
                 Tracks=[
                   lightning
                     {
-                      Title="Type-safe Server & Client Communication"
+                      Title="Type-safe Client & Server Communication"
                       Video=None
                       Speakers=[Speakers.Brett]
-                      Content=str "Let's see Fable.Remoting in action and also how full-stack F# allows you to share crutial information between your client and server, like routes."
+                      Content=str "Let's make a routing function that can be shared by an F# client and server. Next, let's compare this approach with Fable.Remoting."
                     }
                     Beginner
                 ]
