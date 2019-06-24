@@ -275,10 +275,10 @@ namespace Page.Agenda
                 Tracks=[
                   track1
                     {
-                      Title="Live FAAS Collaborative Mindful Programming"
+                      Title="Join the Live Fable Collaborative playground team!"
                       Video=None
                       Speakers=[Speakers.François]
-                      Content=str """Mindfulness. Everywhere. let's take the concept to the next level. We'll harvest the fruits from your minds. You code your vision. You deploy. We fetch all the data your mind came with. We do the same with all your neighbours. From the gathered results The Holy Generator will create a brand new world. Every minute. Streamed live on twitch. In... 100s of 1000s of nice 16x16 sprites. This is the Retro-pixel Future. This is 2029 in 2019. You will toy around with Fable, F#, Node.js, cloud hosted functions, JSON and some procedural generation patterns."""
+                      Content=str """We'll use Cloud hosted functions to create a collaborative world and render it with a 2D graphics engine on the Browser. This world map will be refreshed every minute to reflect the changes you will make in your function. If all goes well, we'll stream that on twitch!"""
                     }
                     AllLevels
                   track2
