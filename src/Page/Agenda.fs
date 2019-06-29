@@ -154,10 +154,14 @@ namespace Page.Agenda
                 Tracks=[
                   track1
                     {
-                      Title="From I to X: Simple Tricks to Improve User Experience"
+                      Title="Mastering Server Side Rendering"
                       Video=None
-                      Speakers=[Speakers.Gien]
-                      Content=str "Having an advanced compiler to check your code is great for developers, but if you want to write compelling interfaces you really need to know about user experience. This talk will give you some tricks to help you achieve this goal."
+                      Speakers=[Speakers.Steffen]
+                      Content=str """SPAs have made web apps truly dynamic and are easy (and fun) to develop. However, when newcomers are visiting your site you want them to see the content as soon as possible. And serving fully generated HTML is important for search engines too. Steffen will show how to use exactly the same code you use in your client to generate HTML in your .NET server."""
+//                      Title="From I to X: Simple Tricks to Improve User Experience"
+                      //Video=None
+                      //Speakers=[Speakers.Gien]
+                      //Content=str "Having an advanced compiler to check your code is great for developers, but if you want to write compelling interfaces you really need to know about user experience. This talk will give you some tricks to help you achieve this goal."
                     }
                     AllLevels
                   track2
@@ -283,10 +287,10 @@ namespace Page.Agenda
                     AllLevels
                   track2
                     {
-                      Title="Mastering Server Side Rendering"
+                      Title="TBD"
                       Video=None
-                      Speakers=[Speakers.Steffen]
-                      Content=str """SPAs have made web apps truly dynamic and are easy (and fun) to develop. However, when newcomers are visiting your site you want them to see the content as soon as possible. And serving fully generated HTML is important for search engines too. This workshop will teach how to use exactly the same code you use in your client to generate HTML in your .NET server."""
+                      Speakers=[] //[Speakers.Steffen]
+                      Content=str "TBD"//str """SPAs have made web apps truly dynamic and are easy (and fun) to develop. However, when newcomers are visiting your site you want them to see the content as soon as possible. And serving fully generated HTML is important for search engines too. This workshop will teach how to use exactly the same code you use in your client to generate HTML in your .NET server."""
                     }
                     Intermediate
                 ]

@@ -94,7 +94,7 @@ namespace Page.Home
                   h4[ ] [str "Entrepotkaai 10A, 2000 Antwerpen"]
                   p [][str "Day two will be filled with practical workshops and chances to sit down and works alongside members of the F# community to learn how to write Fable applications that take full advantage of F# and Javascript."; a [Href "#agenda"] [str "Check out the agenda!"]]
                   h2[ ] [str "F# enlightenment"]
-                  p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for hogh productivity and with cutting-edge tooling, this year's FableConf will have something for you!"]
+                  p[] [ str "No matter if you're new to Fable, don't have much experience in front or server development or even if you don't know F# yet. If you're a developer interested in writing code using a functional programming language designed for high productivity and with cutting-edge tooling, this year's FableConf will have something for you!"]
                 ]
             ]
           ]
