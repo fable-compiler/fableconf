@@ -505,11 +505,11 @@ namespace Page.Agenda
               Style [MarginTop "20px"]
             ] [
               speaker.twitter |> ofOptionMap (fun username ->
-                a [Class "level-item"; Href ("https://twitter.com/" + username) ] [
+                a [Class "level-item"; Href ("https://twitter.com/" + username); Target "_blank" ] [
                   Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-twitter fa-2x"] []]
                 ])
               speaker.github |> ofOptionMap (fun username ->
-                a [Class "level-item"; Href ("https://github.com/" + username) ] [
+                a [Class "level-item"; Href ("https://github.com/" + username); Target "_blank" ] [
                   Icon.icon [Icon.Size Size.IsMedium] [i [Class "fab fa-github fa-2x"] []]
                 ])
             ]
