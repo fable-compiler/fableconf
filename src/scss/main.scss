@@ -177,10 +177,43 @@ body {
   }
 }
 
-.sponsors {
+.sponsors.level {
+  margin: 3rem 0;
+  text-align: center;
+  display: inline-block;
+
+  .silver,.gold,.diamond {
+    display: inline-block;
+    margin: 1rem 0;
+    text-align: center;
+
+    img {
+      vertical-align: central;
+    }
+  }
+
+  .silver {
+    width: 25%;
+    img {
+      max-height: 100px;
+    }
+  }
+
+  .gold {
+    width: 33%;
+    img {
+      max-height: 150px;
+    }
+  }
+
+  .diamond {
+    width: 50%;
+    img {
+      max-height: 200px;
+    }
+  }
+
   img {
-    max-height: 150px;
-    max-width: 200px;
     margin: 0 20px;
   }
 }
