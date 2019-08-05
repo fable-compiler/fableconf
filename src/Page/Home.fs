@@ -18,9 +18,7 @@ namespace Page.Home
 
   module View =
 
-    open Types
     open Fulma
-    open Fable.Core.JsInterop
     open Fable.React
     open Fable.React.Props
     open ReactReveal
@@ -159,15 +157,30 @@ namespace Page.Home
                        [str "THANKS TO OUR SPONSORS"]
             Level.level [Level.Level.CustomClass "sponsors"] [
                 zoom [
-                    Level.item [] [
-                        a [ Href "https://axxes.com/"; Target "_blank" ] [
+                    Level.item [Level.Item.CustomClass "diamond"] [
+                        a [ Href "https://axxes.com/"; Target "_blank"; Title "Axxes IT Consultancy" ] [
                             img [ Src "./axxesLogo.png" ]
                         ]
                     ]
-                    Level.item [] [
-                        a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"] [
+                    Level.item [Level.Item.CustomClass "silver"] [
+                        a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"; Title "Biensür Graphisme" ] [
                           img [ Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" ]
                         ]
+                    ]
+                    Level.item [Level.Item.CustomClass "gold"] [
+                      a [ Href "http://foundation.fsharp.org/about"; Target "_blank"; Title "F# Software Foundation" ] [
+                        img [ Src "./fsharp-foundation.png" ]
+                      ]
+                    ]
+                    Level.item [Level.Item.CustomClass "silver"] [
+                      a [ Href "https://demetrixbio.com/"; Target "_blank"; Title "Demetrix Media" ] [
+                        img [ Src "./Demetrix.jpg" ]
+                      ]
+                    ]
+                    Level.item [Level.Item.CustomClass "diamond"] [
+                      a [ Href "https://tactics.be/"; Target "_blank"; Title "Tactics" ] [
+                        img [ Src "./Tactics.png"; ]
+                      ]
                     ]
                 ]
             ]
