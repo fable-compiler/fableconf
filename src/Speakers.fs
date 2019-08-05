@@ -294,9 +294,11 @@ let Florian =
   {
     shortname = "florian"
     name = "Florian Verdonck"
-    picture = "img/Florian.jpeg"
-    bio = None
-    twitter = None
-    github = None
-    links = []
+    picture = "img/Florian.jpg"
+    bio = Some """Florian is a passionate young .NET consultant at Axxes.
+With a love for functional programming, he contributes to open-source projects and tries to be active in the community."""
+    twitter = Some "verdonckflorian"
+    github = Some "nojaf"
+    links = ["Axxes", "https://axxes.com/en"
+             "Blog", "https://blog.nojaf.com"]
   }
