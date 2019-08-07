@@ -153,37 +153,116 @@ namespace Page.Home
           Hero.CustomClass "contents"
         ] [
           Hero.body [ Props [ Class "addMargins"] ] [
-            Heading.h2 [Heading.Modifiers [Modifier.TextAlignment(Screen.All, TextAlignment.Centered)]]
-                       [str "THANKS TO OUR SPONSORS"]
-            Level.level [Level.Level.CustomClass "sponsors"] [
-                zoom [
-                    Level.item [Level.Item.CustomClass "diamond"] [
-                        a [ Href "https://axxes.com/"; Target "_blank"; Title "Axxes IT Consultancy" ] [
-                            img [ Src "./axxesLogo.png" ]
-                        ]
-                    ]
-                    Level.item [Level.Item.CustomClass "silver"] [
-                        a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"; Title "Biensür Graphisme" ] [
-                          img [ Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" ]
-                        ]
-                    ]
-                    Level.item [Level.Item.CustomClass "gold"] [
-                      a [ Href "http://foundation.fsharp.org/about"; Target "_blank"; Title "F# Software Foundation" ] [
-                        img [ Src "./fsharp-foundation.png" ]
-                      ]
-                    ]
-                    Level.item [Level.Item.CustomClass "silver"] [
-                      a [ Href "https://demetrixbio.com/"; Target "_blank"; Title "Demetrix Media" ] [
-                        img [ Src "./Demetrix.jpg" ]
-                      ]
-                    ]
-                    Level.item [Level.Item.CustomClass "diamond"] [
-                      a [ Href "https://tactics.be/"; Target "_blank"; Title "Tactics" ] [
-                        img [ Src "./Tactics.png"; ]
-                      ]
-                    ]
-                ]
-            ]
+            Heading.h2  [Heading.Modifiers [Modifier.TextAlignment(Screen.All, TextAlignment.Centered)]]
+                        [str "THANKS TO OUR SPONSORS"]
+            
+            hr []
+
+            Container.container [] 
+              [ Heading.h3 
+                  [ Heading.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]
+                    Heading.Props [ Style [ Color "#8f3220"]]
+                  ] 
+                  [ str "Diamond sponsors"]
+                Columns.columns 
+                  [ Columns.IsVCentered ]
+                  [
+                  zoom [
+                      Column.column [] []
+                      Column.column 
+                        [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
+                        [
+                          a 
+                            [ Href "https://axxes.com/"; Target "_blank"; Title "Axxes IT Consultancy" ] 
+                            [ img 
+                                [ 
+                                  Src "./axxesLogo.png" 
+                                  Style [
+                                    Width "70%"
+                                    MaxWidth "200px"
+                                  ]
+                                ] ] ]
+                      Column.column 
+                        [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
+                        [
+                          a 
+                            [ Href "https://tactics.be/"; Target "_blank"; Title "Tactics" ] 
+                            [ img 
+                                [ 
+                                  Src "./Tactics.png"
+                                  Style [
+                                    Width "60%"
+                                    MaxWidth "150px"
+                                  ]
+                                ]] ]
+                      Column.column [] []
+                      ] ] ] 
+
+            hr []
+            Container.container 
+                  [ Container.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ]
+                    Container.Props [ Style [ MarginTop "2rem"]]
+                  ] 
+                  [ Heading.h4 [] [ str "Gold sponsors"]
+                    a 
+                      [ Href "http://foundation.fsharp.org/about"
+                        Target "_blank"
+                        Title "F# Software Foundation" 
+                        Style [ TextAlign TextAlignOptions.Center ]
+                      ] 
+                      [ img 
+                              [ 
+                                Src "./fsharp-foundation.png" 
+                                Style [
+                                  Width "20%"
+                                  MaxWidth "200px"
+                                  MarginLeft "auto"
+                                  MarginRight "auto"
+                                ]
+                              ] ] ] 
+
+            hr []
+            Container.container 
+                  [ 
+                    Container.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ]
+                    Container.Props [ Style [ MarginTop "2rem"; MarginBottom "2rem"]]
+                  ] 
+                  [ Heading.h4 [] [ str "Silver sponsors"]
+                    Columns.columns 
+                      [ Columns.IsVCentered ] 
+                      [ zoom [
+                          Column.column [] []
+                          Column.column 
+                            [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
+                            [
+                              a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"; Title "Biensür Graphisme" ] [
+                                img 
+                                  [ 
+                                    Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" 
+                                    Style [
+                                      Width "80%"
+                                      MaxWidth "100px"
+                                    ]
+                                    ] ]
+                              
+                          ]
+                          Column.column 
+                            [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
+                            [
+                            a [ Href "https://demetrixbio.com/"; Target "_blank"; Title "Demetrix Media" ] [
+                              img 
+                                [ 
+                                  Src "./Demetrix.jpg" 
+                                  Style [
+                                    Width "80%"
+                                    MaxWidth "150px"
+                                  ]
+                                ]]
+                            
+                          ]
+                          Column.column [] []
+                    ] ] ] 
+
             centerDesktop [
               a [
                 Id "cfp"
