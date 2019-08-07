@@ -1,6 +1,7 @@
 public/bundle.js*
 output/
 .idea
+.ionide
 
 # Node
 node_modules/
