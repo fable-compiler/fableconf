@@ -11265,6 +11265,10 @@ body {
   background-color: #b1c5ce;
   height: 100%; }
 
+hr {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1); }
+
 #footer {
   margin-top: 25px;
   font-family: "Dosis";
@@ -11313,10 +11317,30 @@ body {
     .picContents {
       background-image: url(64cf9ef673d0b4eb2db6e28051718828.jpg); } }
 
-.sponsors img {
-  max-height: 150px;
-  max-width: 200px;
-  margin: 0 20px; }
+.sponsors.level {
+  margin: 3rem 0;
+  text-align: center;
+  display: inline-block; }
+  .sponsors.level .silver, .sponsors.level .gold, .sponsors.level .diamond {
+    display: inline-block;
+    margin: 1rem 0;
+    text-align: center; }
+    .sponsors.level .silver img, .sponsors.level .gold img, .sponsors.level .diamond img {
+      vertical-align: central; }
+  .sponsors.level .silver {
+    width: 25%; }
+    .sponsors.level .silver img {
+      max-height: 100px; }
+  .sponsors.level .gold {
+    width: 33%; }
+    .sponsors.level .gold img {
+      max-height: 150px; }
+  .sponsors.level .diamond {
+    width: 50%; }
+    .sponsors.level .diamond img {
+      max-height: 200px; }
+  .sponsors.level img {
+    margin: 0 20px; }
 
 .contents {
   color: #2d2d2d; }
