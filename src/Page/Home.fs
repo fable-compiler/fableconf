@@ -23,6 +23,14 @@ namespace Page.Home
     open Fable.React.Props
     open ReactReveal
 
+    type SponsorTier = Diamond | Gold | Silver
+
+    let sponsorImg (width: int) src href =
+        a [ Href href; Target "_blank" ] 
+          [ img [ Src src
+                  Style [ MaxWidth (string width + "px")
+                          MaxHeight "fit-content" ] ] ]            
+
     let centerDesktop els =
         Columns.columns [] [
           Column.column [
@@ -158,110 +166,48 @@ namespace Page.Home
             
             hr []
 
-            Container.container [] 
+            div [ Class "has-text-centered" ] 
               [ Heading.h3 
-                  [ Heading.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]
-                    Heading.Props [ Style [ Color "#8f3220"]]
-                  ] 
+                  [ Heading.Props [ Style [ Color "#8f3220" ]] ] 
                   [ str "Diamond sponsors"]
                 Columns.columns 
-                  [ Columns.IsVCentered ]
-                  [
-                  zoom [
-                      Column.column [] []
-                      Column.column 
-                        [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
-                        [
-                          a 
-                            [ Href "https://axxes.com/"; Target "_blank"; Title "Axxes IT Consultancy" ] 
-                            [ img 
-                                [ 
-                                  Src "./axxesLogo.png" 
-                                  Style [
-                                    Width "70%"
-                                    MaxWidth "200px"
-                                  ]
-                                ] ] ]
-                      Column.column 
-                        [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
-                        [
-                          a 
-                            [ Href "https://tactics.be/"; Target "_blank"; Title "Tactics" ] 
-                            [ img 
-                                [ 
-                                  Src "./Tactics.png"
-                                  Style [
-                                    Width "60%"
-                                    MaxWidth "150px"
-                                  ]
-                                ]] ]
-                      Column.column [] []
-                      ] ] ] 
-
+                  [ Columns.IsVCentered
+                    Columns.Props [ Style [ MarginTop "30px"; MarginBottom "30px" ]]
+                  ]
+                  [ zoom [
+                      Column.column [
+                          Column.Offset (Screen.All, Column.IsOneFifth)
+                          Column.Width (Screen.All, Column.IsOneFifth)
+                      ] [ sponsorImg 220 "./Tactics.svg" "https://tactics.be/" ]
+                      Column.column [
+                          Column.Offset (Screen.All, Column.IsOneFifth)
+                          Column.Width (Screen.All, Column.IsOneFifth)
+                      ] [ sponsorImg 200 "./axxesLogo.png" "https://axxes.com/" ]
+                  ] ]
+            ] 
             hr []
-            Container.container 
-                  [ Container.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ]
-                    Container.Props [ Style [ MarginTop "2rem"]]
-                  ] 
+            div [ Class "has-text-centered"
+                  Style [ MarginTop "2rem" ] ] 
                   [ Heading.h4 [] [ str "Gold sponsors"]
-                    a 
-                      [ Href "http://foundation.fsharp.org/about"
-                        Target "_blank"
-                        Title "F# Software Foundation" 
-                        Style [ TextAlign TextAlignOptions.Center ]
-                      ] 
-                      [ img 
-                              [ 
-                                Src "./fsharp-foundation.png" 
-                                Style [
-                                  Width "20%"
-                                  MaxWidth "200px"
-                                  MarginLeft "auto"
-                                  MarginRight "auto"
-                                ]
-                              ] ] ] 
-
+                    sponsorImg 140 "./fsharp-foundation.png"  "http://foundation.fsharp.org/about" ]
             hr []
-            Container.container 
-                  [ 
-                    Container.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered) ]
-                    Container.Props [ Style [ MarginTop "2rem"; MarginBottom "2rem"]]
-                  ] 
+            div [ Class "has-text-centered"
+                  Style [ MarginTop "2rem"; MarginBottom "2rem"] ] 
                   [ Heading.h4 [] [ str "Silver sponsors"]
                     Columns.columns 
                       [ Columns.IsVCentered ] 
                       [ zoom [
-                          Column.column [] []
-                          Column.column 
-                            [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
-                            [
-                              a [ Href "https://www.biensurgraphisme.com/about"; Target "_blank"; Title "Biensür Graphisme" ] [
-                                img 
-                                  [ 
-                                    Src "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp" 
-                                    Style [
-                                      Width "80%"
-                                      MaxWidth "100px"
-                                    ]
-                                    ] ]
-                              
-                          ]
-                          Column.column 
-                            [ Column.Modifiers [ Modifier.TextAlignment (Screen.All, TextAlignment.Centered)]] 
-                            [
-                            a [ Href "https://demetrixbio.com/"; Target "_blank"; Title "Demetrix Media" ] [
-                              img 
-                                [ 
-                                  Src "./Demetrix.jpg" 
-                                  Style [
-                                    Width "80%"
-                                    MaxWidth "150px"
-                                  ]
-                                ]]
-                            
-                          ]
-                          Column.column [] []
-                    ] ] ] 
+                          Column.column [
+                              Column.Offset (Screen.All, Column.IsOneFifth)
+                              Column.Width (Screen.All, Column.IsOneFifth)
+                          ] [ sponsorImg 200 "./Demetrix.png" "https://demetrixbio.com/" ]
+                          Column.column [
+                              Column.Offset (Screen.All, Column.IsOneFifth)
+                              Column.Width (Screen.All, Column.IsOneFifth)
+                          ] [ sponsorImg 100 "https://static.wixstatic.com/media/df463e_ae881edc7926481fb32950bbd51745a0~mv2.png/v1/crop/x_0,y_30,w_537,h_619/fill/w_201,h_230,al_c,q_80,usm_0.66_1.00_0.01/df463e_ae881edc7926481fb32950bbd51745a0~mv2.webp"
+                                             "https://www.biensurgraphisme.com/about" ]
+                      ] ]
+                  ]
 
             centerDesktop [
               a [
