@@ -194,7 +194,7 @@ namespace Page.Agenda
                       Title="Type-safe Client & Server Communication"
                       Video=None
                       Speakers=[Speakers.Brett]
-                      Content=str "Let's make a routing function that can be shared by an F# client and server. Next, let's compare this approach with Fable.Remoting."
+                      Content=str "Let's create a unit conversion service to see Fable.Remoting in action!"
                     }
                     Beginner
                 ]
