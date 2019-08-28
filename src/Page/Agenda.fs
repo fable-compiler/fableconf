@@ -282,7 +282,7 @@ namespace Page.Agenda
                       Title="Join the Live Fable Collaborative playground team!"
                       Video=None
                       Speakers=[Speakers.François]
-                      Content=str """We'll use Cloud hosted functions to create a collaborative world and render it with a 2D graphics engine on the Browser. This world map will be refreshed every minute to reflect the changes you will make in your function. If all goes well, we'll stream that on twitch!"""
+                      Content=str """We'll code together and render our results on the Browser. You will create your own F# server or cloud Function and we'll link that to our game. Then our game will be refreshed every minute to reflect the changes you will make in your code. If all goes well, we'll stream that on twitch!"""
                     }
                     AllLevels
                   track2
