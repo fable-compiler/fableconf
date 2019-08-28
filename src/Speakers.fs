@@ -269,9 +269,9 @@ let Brett =
     shortname = "brett"
     name = "Brett Rowberry"
     picture = "img/Mistery.jpg"
-    bio = None
-    twitter = None
-    github = None
+    bio = Some """I’ve been doing enterprise .NET development since 2016 and F# found me through a C# course on Pluralsight. I live in Houston with my beautiful wife and energetic son."""
+    twitter = Some "BrettRowberry"
+    github = Some "brettrowberry"
     links = []
   }
 
