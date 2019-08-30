@@ -191,7 +191,7 @@ namespace Page.Agenda
                 Tracks=[
                   lightning
                     {
-                      Title="Type-safe Client & Server Communication"
+                      Title="Fable.Remoting"
                       Video=None
                       Speakers=[Speakers.Brett]
                       Content=str "Let's create a unit conversion service to see Fable.Remoting in action!"
