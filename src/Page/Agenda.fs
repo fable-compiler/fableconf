@@ -233,6 +233,7 @@ namespace Page.Agenda
             SubtitleLink=None //Some ("Registration for morning workshops", "https://docs.google.com/forms/d/e/1FAIpQLSftL4EzYUHuiwgLdqQqkDJuBR-g_GVrIqrK-OdHNPHLtWtr-g/viewform")
             Events=[
               {Time="TRACKS"; Tracks=[{Level=None;Talk=None;Title="Workshops I";Kind=Some TrackOne};{Talk=None;Title="Workshops II";Kind=Some TrackTwo;Level=None}]}
+              takeABreak "Breakfast" "08:30"
               { Time="09:00"
                 Tracks=[
                   track1

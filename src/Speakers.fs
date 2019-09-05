@@ -248,7 +248,7 @@ let Joerg =
     name = "Joerg Beekmann"
     picture = "img/Mistery.jpg"
     bio = None
-    twitter = None
+    twitter = Some "jbeeko"
     github = None
     links = []
   }
