@@ -288,10 +288,10 @@ namespace Page.Agenda
                     AllLevels
                   track2
                     {
-                      Title="TBD"
+                      Title="Elmish, Beyond the Basics"
                       Video=None
-                      Speakers=[] //[Speakers.Steffen]
-                      Content=str "TBD"//str """SPAs have made web apps truly dynamic and are easy (and fun) to develop. However, when newcomers are visiting your site you want them to see the content as soon as possible. And serving fully generated HTML is important for search engines too. This workshop will teach how to use exactly the same code you use in your client to generate HTML in your .NET server."""
+                      Speakers=[Speakers.Alfonso]
+                      Content=str """You probably have seen several Elm(ish) tutorials already and got a good grip of the architecture. But unfortunately articles that go beyond that point don't abound. In this workshop we'll see how to perform some of the most common operations in Elmish apps, like routing, authentication or real-time validation, as well as see the actual difference between Elmish and React components."""
                     }
                     Intermediate
                 ]
